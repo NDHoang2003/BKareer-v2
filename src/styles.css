@@ -1,0 +1,229 @@
+@font-face {
+  font-family: "Jomhuria";
+  src: url(https://fonts.google.com/share?selection.family=Jomhuria);
+}
+
+@font-face {
+	font-family: "NunitoSans10ptCondensedRegular";
+	src: local("NunitoSans10ptCondensedRegular"), url("./assets/fonts/NunitoSans10ptCondensedRegular.ttf") format ("truetype");
+	font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+	font-family: "NunitoSans10ptCondensedBold";
+	src: local("NunitoSans10ptCondensedBold"), url("./assets/fonts/NunitoSans10ptCondensedBold.ttf") format ("truetype");
+	font-style: bold;
+  font-weight: bold;
+}
+
+.test {
+  background-color: #4596cf;
+  padding: 1px;
+}
+
+:root {
+  background-color: #F5F5F5;
+  font-family: NunitoSans10ptCondensedRegular, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0; /* Override user agent stylesheet*/
+} 
+
+/* Body Style */
+.body {
+  background-color: #F5F5F5;
+  margin: 5rem 8rem;
+}
+
+/* Single Special Style */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-content-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-items-center {
+  display: flex;
+  align-items: center;
+}
+
+.width-45 {
+  width: 45%;
+}
+
+.width-fit-content {
+  width: fit-content;
+}
+
+/* App Name Style */
+.appName {
+  font-family: Jomhuria, sans-serif;
+  font-size: 2rem;
+  color: white;
+}
+
+/* Navbar */
+.nav {
+  background-color: #358bca;
+  line-height: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0rem 5rem;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav li:hover {
+  background-color: #4596cf;
+  padding: 0.75rem 0;
+}
+
+.nav li:active {
+  background-color: #4596cf;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+/* Card */
+.card {
+  background-color: white;
+  padding: 2rem 4rem;
+}
+
+.card-margin-top {
+  margin-top: 2px;
+}
+
+.card-margin-right {
+  margin-right: 2px;
+}
+
+.card-left {
+  display: flex;
+  flex: 9;
+}
+
+.card-right {
+  display: flex;
+  flex: 6;
+}
+
+.card-title {
+  font-family: NunitoSans10ptCondensedBold, sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: #358bca;
+}
+
+.card-content {
+  font-family: NunitoSans10ptCondensedRegular, sans-serif;
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+
+/* Images */
+.img1 {
+  width: 45%;
+  height: fit-content;
+  margin-right: 3rem;
+}
+
+.img2 {
+  width: 50%;
+  height: fit-content;
+}
+
+/* Buttons */
+.white-outline-btn {
+  background-color: #358bca;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-width: 1px;
+  border-color: white;
+  border-radius: 30px;
+  border-style: ridge;
+}
+
+.white-outline-btn:hover {
+  background-color: white;
+  color: #358bca;
+}
+
+.white-outline-btn:active {
+  background-color: white;
+  color: #358bca;
+}
+
+.secondary-outline-btn {
+  background-color: white;
+  color: #888;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-width: 1px;
+  border-color: #888;
+  border-radius: 30px;
+  border-style: ridge;
+}
+
+.secondary-outline-btn:hover {
+  background-color: #888;
+  color: white;
+}
+
+.secondary-outline-btn:active {
+  background-color: #888;
+  color: white;
+}
+
+/* Footer */
+.footer {
+  background-color: #F5F5F5;
+  color: #888;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-info {
+  margin-bottom: 1rem;
+}
