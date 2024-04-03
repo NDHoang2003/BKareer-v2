@@ -70,23 +70,6 @@ function Home() {
             </div>
           </div>
         </div>
-
-        {/* Row 2 */}
-        {/* <div className="card-margin-top flex-row">
-          <div className="card card-left card-margin-right flex-row flex-space-between">
-            <div className="width-45">
-              <div className="card-title">Ikigai</div>
-              <div className="card-content">Fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem sed euismod placerat. Vivamus porttitor et magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper lorem ipsum.</div>
-            </div>
-            <img src={image2} className="img2"/>
-          </div>
-
-          <div className="card card-right flex-col">
-            <div className="card-title">Block title 2</div>
-            <div className="card-content">Fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem sed euismod placerat. Vivamus porttitor et magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper lorem ipsum.</div>
-            <button className="secondary-outline-btn" type="button" onClick={{}}>Tìm hiểu thêm</button>
-          </div>
-        </div> */}
       </body>
     </>
   );

@@ -72,6 +72,15 @@ body {
   width: fit-content;
 }
 
+.screen-title {
+  color: #358bca;
+  font-family: NunitoSans10ptCondensedBold, sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
 /* App Name Style */
 .appName {
   font-family: Jomhuria, sans-serif;
@@ -153,6 +162,61 @@ body {
   font-family: NunitoSans10ptCondensedRegular, sans-serif;
   color: #888;
   margin-bottom: 1.5rem;
+}
+
+/* MBTI Screen */
+.MBTI-question-card {
+  background-color: white;
+  border-radius: 25px;
+  padding: 2rem 4rem;
+  margin-bottom: 2rem;
+}
+
+.MBTI-question-txt {
+  color: #358bca;
+  font-family: NunitoSans10ptCondensedBold, sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.MBTI-option-btn {
+  width: 47.5%;
+  border-radius: 100px;
+  border-color: #358bca;
+  border-width: 1px;
+  border-style: ridge;
+  padding: 1rem 2rem;
+  text-align: left;
+  background-color: white;
+  color: #358bca;
+}
+
+.MBTI-option-btn:hover {
+  background-color: #358bca;
+  color: white;
+}
+
+.MBTI-option-btn:active {
+  background-color: #358bca;
+  color: white;
+}
+
+.MBTI-show-res-btn {
+  display: flex;
+  align-self: center;
+  background-color: #358bca;
+  border-radius: 10px;
+  border-width: 1px;
+  border-color: #358bca;
+  border-style: ridge;
+  margin-top: 3rem;
+  padding: 1rem 4rem;
+  color: white;
+}
+
+.MBTI-show-res-btn:hover {
+  background-color: #3285c0;
+  color: white;
 }
 
 /* Images */
