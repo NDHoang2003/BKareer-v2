@@ -1,7 +1,7 @@
 import image1 from "../assets/images/graduationOrCareerChoice.jpg"
 import image2 from "../assets/images/ikigai.jpg"
 
-function Home() {
+function HomeScreen() {
   return (
     <>
       <body className="body">
@@ -75,4 +75,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomeScreen;

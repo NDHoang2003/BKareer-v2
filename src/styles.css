@@ -1,20 +1,16 @@
 @font-face {
   font-family: "Jomhuria";
-  src: url(https://fonts.google.com/share?selection.family=Jomhuria);
+  src: url("./assets/fonts/Jomhuria-Regular.ttf");
 }
 
 @font-face {
-	font-family: "NunitoSans10ptCondensedRegular";
-	src: local("NunitoSans10ptCondensedRegular"), url("./assets/fonts/NunitoSans10ptCondensedRegular.ttf") format ("truetype");
-	font-style: normal;
-  font-weight: normal;
+	font-family: "Nunito_Sans_10pt_Condensed_Regular";
+	src: url("./assets/fonts/NunitoSans_10pt_Condensed-Regular.ttf");
 }
 
 @font-face {
-	font-family: "NunitoSans10ptCondensedBold";
-	src: local("NunitoSans10ptCondensedBold"), url("./assets/fonts/NunitoSans10ptCondensedBold.ttf") format ("truetype");
-	font-style: bold;
-  font-weight: bold;
+	font-family: "Nunito_Sans_10pt_Condensed_Bold";
+	src: url("./assets/fonts/NunitoSans_10pt_Condensed-Bold.ttf");
 }
 
 .test {
@@ -24,7 +20,7 @@
 
 :root {
   background-color: #F5F5F5;
-  font-family: NunitoSans10ptCondensedRegular, sans-serif;
+  font-family: Nunito_Sans_10pt_Condensed_Regular;
   line-height: 1.5;
 }
 
@@ -36,6 +32,20 @@ body {
 .body {
   background-color: #F5F5F5;
   margin: 5rem 8rem;
+}
+
+/* Font Style */
+.bold-txt {
+  font-family: Nunito_Sans_10pt_Condensed_Bold;
+}
+
+/* Font Size */
+.font-20 {
+  font-size: 20px;
+}
+
+.font-18 {
+  font-size: 18px;
 }
 
 /* Single Special Style */
@@ -64,6 +74,16 @@ body {
   align-items: center;
 }
 
+.flex-items-start {
+  display: flex;
+  align-items: flex-start;
+}
+
+.flex-self-start {
+  display: flex;
+  align-self: flex-start;
+}
+
 .width-45 {
   width: 45%;
 }
@@ -74,7 +94,7 @@ body {
 
 .screen-title {
   color: #358bca;
-  font-family: NunitoSans10ptCondensedBold, sans-serif;
+  font-family: Nunito_Sans_10pt_Condensed_Bold;
   font-size: 2rem;
   margin-bottom: 2.5rem;
   display: flex;
@@ -83,9 +103,11 @@ body {
 
 /* App Name Style */
 .appName {
-  font-family: Jomhuria, sans-serif;
-  font-size: 2rem;
+  font-family: Jomhuria;
+  font-size: 3rem;
   color: white;
+  line-height: 1.5;
+  letter-spacing: 1px;
 }
 
 /* Navbar */
@@ -110,7 +132,9 @@ body {
 
 .nav li:hover {
   background-color: #4596cf;
-  padding: 0.75rem 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .nav li:active {
@@ -150,7 +174,7 @@ body {
 }
 
 .card-title {
-  font-family: NunitoSans10ptCondensedBold, sans-serif;
+  font-family: Nunito_Sans_10pt_Condensed_Bold;
   font-size: 1.5rem;
   font-weight: bold;
   margin-top: 2rem;
@@ -159,13 +183,13 @@ body {
 }
 
 .card-content {
-  font-family: NunitoSans10ptCondensedRegular, sans-serif;
+  font-family: Nunito_Sans_10pt_Condensed_Regular;
   color: #888;
   margin-bottom: 1.5rem;
 }
 
 /* MBTI Screen */
-.MBTI-question-card {
+.MBTI-card {
   background-color: white;
   border-radius: 25px;
   padding: 2rem 4rem;
@@ -174,7 +198,7 @@ body {
 
 .MBTI-question-txt {
   color: #358bca;
-  font-family: NunitoSans10ptCondensedBold, sans-serif;
+  font-family: Nunito_Sans_10pt_Condensed_Bold;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -187,6 +211,7 @@ body {
   border-style: ridge;
   padding: 1rem 2rem;
   text-align: left;
+  font-family: Nunito_Sans_10pt_Condensed_Regular;
   background-color: white;
   color: #358bca;
 }
@@ -201,22 +226,77 @@ body {
   color: white;
 }
 
-.MBTI-show-res-btn {
-  display: flex;
-  align-self: center;
+.test-show-res-btn {
   background-color: #358bca;
   border-radius: 10px;
   border-width: 1px;
   border-color: #358bca;
   border-style: ridge;
-  margin-top: 3rem;
+  color: white;
   padding: 1rem 4rem;
+  font-family: Nunito_Sans_10pt_Condensed_Bold;
+  font-size: 1rem;
+  /* centering */
+  display: block;
+  margin: 3rem auto;
+}
+
+.test-show-res-btn:hover {
+  background-color: #3285c0;
   color: white;
 }
 
-.MBTI-show-res-btn:hover {
-  background-color: #3285c0;
-  color: white;
+/* Career Cluster Screen */
+.CC-instruction-txt {
+  font-family: Nunito_Sans_10pt_Condensed_Regular;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.CC-card {
+  background-color: white;
+  border-radius: 25px;
+  padding: 2rem 1.5rem 2rem 0.25rem; /* top right bottom left*/
+  margin-bottom: 2rem;
+}
+
+.CC-card-title-txt {
+  color: #358bca;
+  transform: rotate(-90deg);
+  font-family: Nunito_Sans_10pt_Condensed_Bold;
+  font-size: 1.25rem;
+  text-align: center;
+  width: 65px;
+}
+
+.CC-separate-line {
+  height: 200px;
+  border-left: 1px solid #888;
+}
+
+.CC-checkbox {
+  margin-left: 0px;
+  margin-bottom: 7px;
+  vertical-align: middle;
+  accent-color: #358bca;
+}
+
+.CC-activities-block {
+  width: 40%;
+  margin-left: 0.5rem;
+  margin-right: 1rem;
+  /* background-color: #d5d5d5; */
+}
+
+.CC-qualities-block {
+  width: 25%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.CC-subjects-block {
+  width: 25%;
+  margin-left: 1rem;
 }
 
 /* Images */
@@ -240,6 +320,7 @@ body {
   border-color: white;
   border-radius: 30px;
   border-style: ridge;
+  font-family: Nunito_Sans_10pt_Condensed_Regular;
 }
 
 .white-outline-btn:hover {
@@ -261,6 +342,7 @@ body {
   border-color: #888;
   border-radius: 30px;
   border-style: ridge;
+  font-family: Nunito_Sans_10pt_Condensed_Regular;
 }
 
 .secondary-outline-btn:hover {

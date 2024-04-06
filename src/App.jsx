@@ -1,15 +1,18 @@
 import Navbar from "./components/Navbar";
-import Home from "./screens/Home";
 import Footer from "./components/Footer";
+import HomeScreen from "./screens/HomeScreen";
+import MBTITest from "./screens/MBTIScreen";
+import CCTest from "./screens/CareerClusterScreen";
+// import
 
 function App() {
   return (
     <>
       <Navbar/>
-      <Home/>
+      <MBTITest/>
       <Footer/>
     </>
   );
 }
 
-export default App
+export default App;
