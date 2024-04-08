@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Navbar/>
-      <MBTITest/>
+      <HomeScreen/>
       <Footer/>
     </>
   );
