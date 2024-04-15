@@ -13,6 +13,11 @@
 	src: url("./assets/fonts/NunitoSans_10pt_Condensed-Bold.ttf");
 }
 
+@font-face {
+  font-family: "Nunito_Sans_10pt_Condensed_SemiBold";
+  src: url("./assets/fonts/NunitoSans_10pt_Condensed-SemiBold.ttf");
+}
+
 .test {
   background-color: #4596cf;
   padding: 1px;
@@ -21,6 +26,7 @@
 :root {
   background-color: #F5F5F5;
   font-family: Nunito_Sans_10pt_Condensed_Regular;
+  font-size: 18;
   line-height: 1.5;
 }
 
@@ -34,9 +40,13 @@ body {
   margin: 5rem 8rem;
 }
 
-/* Font Style */
+/* Font Weight */
 .bold-txt {
   font-family: Nunito_Sans_10pt_Condensed_Bold;
+}
+
+.semi-bold-txt {
+  font-family: Nunito_Sans_10pt_Condensed_SemiBold;
 }
 
 /* Font Size */
@@ -46,6 +56,10 @@ body {
 
 .font-18 {
   font-size: 18px;
+}
+
+.font-16 {
+  font-size: 16px;
 }
 
 /* Single Special Style */
@@ -82,6 +96,33 @@ body {
 .flex-self-start {
   display: flex;
   align-self: flex-start;
+}
+
+.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
+.margin-top-1rem {
+  margin-top: 1rem;
+}
+
+.margin-top-2rem {
+  margin-top: 2rem;
+}
+
+.margin-left-20 {
+  margin-left: 20%;
+}
+
+.margin-bottom-2rem {
+  margin-bottom: 2rem;
+}
+
+.width-20 {
+  width: 20%;
 }
 
 .width-45 {
@@ -189,14 +230,14 @@ body {
 }
 
 /* MBTI Screen */
-.question_card {
+.question-card {
   background-color: white;
   border-radius: 25px;
   padding: 2rem 4rem;
   margin-bottom: 2rem;
 }
 
-.question_card h1 {
+.question-card h1 {
   color: #358bca;
   font-family: Nunito_Sans_10pt_Condensed_Bold;
   font-size: 1.5rem;
@@ -210,24 +251,24 @@ body {
   margin-bottom: 1rem;
 }
 
-.answer_form {
+.answer-form {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
 
-.answer_item {
-  width: 47.5%;
+.answer-item {
+  width: 42.5%;
   height: 70px;
-  border: 1px ridge #358bca;
   display: flex;
   flex-direction: row;
   justify-content: start;
   text-align: left;
   align-items: center;
+  border: 1px ridge #358bca;
   border-radius: 50px;
   cursor: pointer;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   color: #358bca;
   font-family: Nunito_Sans_10pt_Condensed_Regular;
 }
@@ -242,36 +283,6 @@ body {
   background-color: #358bca;
   color: white;
   border: 0;
-} 
-
-.selected:hover {
-  background-color: #358bca;
-  color: white;
-}
-
-.MBTI-option-btn:active {
-  background-color: #358bca;
-  color: white;
-}
-
-.test-show-res-btn {
-  background-color: #358bca;
-  border-radius: 10px;
-  border-width: 1px;
-  border-color: #358bca;
-  border-style: ridge;
-  color: white;
-  padding: 1rem 4rem;
-  font-family: Nunito_Sans_10pt_Condensed_Bold;
-  font-size: 1rem;
-  /* centering */
-  display: block;
-  margin: 3rem auto;
-}
-
-.test-show-res-btn:hover {
-  background-color: #3285c0;
-  color: white;
 }
 
 .Panel {
@@ -292,11 +303,6 @@ body {
   background-color: white;
   border-radius: 20px;
   overflow: hidden;
-}
-
-.img {
-  float: right;
-  cursor: pointer;
 }
 
 .panel_info {
@@ -362,7 +368,6 @@ body {
   width: 40%;
   margin-left: 0.5rem;
   margin-right: 1rem;
-  /* background-color: #d5d5d5; */
 }
 
 .CC-qualities-block {
@@ -376,19 +381,100 @@ body {
   margin-left: 1rem;
 }
 
+/* Major Result Screen */
+.left-res-block {
+  display: flex;
+  flex: 1;
+}
+
+.right-res-block {
+  display: flex;
+  flex: 2;
+}
+
+.res-block {
+  margin-top: 5rem;
+}
+
 /* Images */
-.img1 {
+.img-home-1 {
   width: 45%;
   height: fit-content;
   margin-right: 3rem;
 }
 
-.img2 {
+.img-home-2 {
   width: 50%;
   height: fit-content;
 }
 
+.img-major{
+  width: 35%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
+}
+
+.img {
+  float: right;
+  cursor: pointer;
+}
+
+/* Dropdown */
+.dropdown {
+  width: 45%;
+  background-color: white;
+  color: #444;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-width: 1px;
+  border-color: #444;
+  border-radius: 10px;
+  border-style: ridge;
+  font-family: Nunito_Sans_10pt_Condensed_Regular;
+  font-size: 18px;
+  text-decoration: none;
+}
+
 /* Buttons */
+.primary-btn {
+  background-color: #358bca;
+  color: white;
+  padding: 1rem 2rem;
+  border-width: 1px;
+  border-color: #358bca;
+  border-radius: 10px;
+  border-style: ridge;
+  font-family: Nunito_Sans_10pt_Condensed_Bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+.primary-btn:hover {
+  background-color: #3285c0;
+  color: white;
+}
+
+.primary-txt-btn {
+  color: #358bca;
+  font-family: Nunito_Sans_10pt_Condensed_Bold;
+  text-decoration: none;
+}
+
+.primary-outline-btn {
+  background-color: white;
+  color: #358bca;
+  padding: 0.5rem 1.5rem;
+  border-width: 1px;
+  border-color: #358bca;
+  border-radius: 30px;
+  border-style: ridge;
+  font-family: Nunito_Sans_10pt_Condensed_Regular;
+  text-decoration: none;
+}
+
 .white-outline-btn {
   background-color: #358bca;
   color: white;
@@ -420,6 +506,7 @@ body {
   border-radius: 30px;
   border-style: ridge;
   font-family: Nunito_Sans_10pt_Condensed_Regular;
+  text-decoration: none;
 }
 
 .secondary-outline-btn:hover {

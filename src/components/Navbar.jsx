@@ -1,8 +1,12 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 import HomeScreen from "../screens/HomeScreen";
 import MBTITest from "../screens/MBTIScreen";
 import CCTest from "../screens/CareerClusterScreen";
 import News from "../screens/NewsScreen";
+import MajorTest from "../screens/MajorTestScreen";
+import MajorResult from "../screens/MajorResultScreen";
+import Ikigai from "../screens/IkigaiDetail";
 
 function Navbar() {
   return (
@@ -22,6 +26,9 @@ function Navbar() {
 
       <Routes>
         <Route path="/" element={<HomeScreen />} />
+        <Route path="/majorTest" element={<MajorTest />} />
+        <Route path="/majorResult" element={<MajorResult />} />
+        <Route path="/ikigai" element={<Ikigai />} />
         <Route path="/mbti" element={<MBTITest />} />
         <Route path="/career" element={<CCTest />} />
         <Route path="/news" element={<News />} />

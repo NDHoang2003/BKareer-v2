@@ -1,5 +1,3 @@
-import "../styles.css"
-
 const Card = ({ Ques }) => {
   const onSelected = (answerId) => {
     var radioInput = document.getElementById(answerId);
@@ -21,11 +19,11 @@ const Card = ({ Ques }) => {
   };
   return (
     <>
-      <div className="question_card">
+      <div className="question-card">
         <h1>{Ques.content}</h1>
-        <div className="answer_form">
+        <div className="answer-form">
           <div
-            className="answer_item"
+            className="answer-item"
             onClick={() => onSelected(Ques.answers[0].answerId)}
           >
             <input
@@ -38,7 +36,7 @@ const Card = ({ Ques }) => {
             <label htmlFor="answer1">{Ques.answers[0].answerContent}</label>
           </div>
           <div
-            className="answer_item"
+            className="answer-item"
             onClick={() => onSelected(Ques.answers[1].answerId)}
           >
             <input

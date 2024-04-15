@@ -1,4 +1,3 @@
-import "../styles.css";
 import exit from "../assets/remove.png"
 
 const Panel = ({ Data }) => {

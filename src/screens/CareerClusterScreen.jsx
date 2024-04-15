@@ -139,7 +139,7 @@ function CCTest() {
             </div>
           </div>
         ))}
-        <button className="test-show-res-btn">Xem kết quả</button>
+        <button className="primary-btn font-18 align-center">Xem kết quả</button>
       </body>
     </>
   );

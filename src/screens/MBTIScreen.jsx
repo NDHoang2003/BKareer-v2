@@ -1,10 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import Card from '../components/Card.jsx'; 
+
+import Card from "../components/Card.jsx";
+import Panel from "../components/Panel.jsx";
 import questions from "../database/MBTIQuest";
 import perlist from "../database/MBTIPersonality";
-import Panel from "../components/Panel.jsx";
-import results from "../database/Result.js"; 
+import results from "../database/Result.js";
 
 function MBTITest() {
   // const question = require("../database/MBTIQuest");
@@ -13,138 +14,18 @@ function MBTITest() {
   const [per, setPer] = useState({});
   const Elist = ["1", "15", "29", "41", "57", "71", "85", "99", "113", "127"];
   const Ilist = ["2", "16", "30", "42", "58", "72", "86", "100", "114", "128"];
-  const Slist = [
-    "3",
-    "17",
-    "31",
-    "45",
-    "59",
-    "73",
-    "87",
-    "101",
-    "115",
-    "129",
-    "5",
-    "19",
-    "33",
-    "47",
-    "61",
-    "75",
-    "89",
-    "103",
-    "117",
-    "131",
-  ];
-  const Nlist = [
-    "4",
-    "18",
-    "32",
-    "46",
-    "60",
-    "74",
-    "88",
-    "102",
-    "116",
-    "130",
-    "6",
-    "20",
-    "34",
-    "48",
-    "62",
-    "76",
-    "90",
-    "104",
-    "118",
-    "132",
-  ];
-  const Tlist = [
-    "7",
-    "21",
-    "35",
-    "49",
-    "63",
-    "77",
-    "91",
-    "105",
-    "119",
-    "133",
-    "9",
-    "23",
-    "37",
-    "51",
-    "65",
-    "79",
-    "93",
-    "107",
-    "121",
-    "135",
-  ];
-  const Flist = [
-    "8",
-    "22",
-    "36",
-    "50",
-    "64",
-    "78",
-    "92",
-    "106",
-    "120",
-    "134",
-    "10",
-    "24",
-    "38",
-    "52",
-    "66",
-    "80",
-    "94",
-    "108",
-    "122",
-    "136",
-  ];
-  const Jlist = [
-    "11",
-    "25",
-    "39",
-    "53",
-    "67",
-    "81",
-    "95",
-    "109",
-    "123",
-    "137",
-    "13",
-    "27",
-    "41",
-    "55",
-    "69",
-    "83",
-    "97",
-    "111",
-    "125",
-    "139",
-  ];
-  const Plist = [
-    "12",
-    "26",
-    "40",
-    "54",
-    "68",
-    "82",
-    "96",
-    "110",
-    "124",
-    "138",
-    "14",
-    "28",
-    "42",
-    "56",
-    "70",
-    "84",
-    "98",
-    "112",
-    "126",
-    "140",
-  ];
+  const Slist = ["3", "17", "31", "45", "59", "73", "87", "101", "115", "129",
+                "5", "19", "33", "47", "61", "75", "89", "103", "117", "131"];
+  const Nlist = ["4", "18", "32", "46", "60", "74", "88", "102", "116", "130",
+                "6", "20", "34", "48", "62", "76", "90", "104", "118", "132"];
+  const Tlist = ["7", "21", "35", "49", "63", "77", "91", "105", "119", "133",
+                "9", "23", "37", "51", "65", "79", "93", "107", "121", "135"];
+  const Flist = ["8", "22", "36", "50", "64", "78", "92", "106", "120", "134", 
+                "10", "24", "38", "52", "66", "80", "94", "108", "122", "136"];
+  const Jlist = ["11", "25", "39", "53", "67", "81", "95", "109", "123", "137",
+                "13", "27", "41", "55", "69", "83", "97", "111", "125", "139"];
+  const Plist = ["12", "26", "40", "54", "68", "82", "96", "110", "124", "138",
+                "14", "28", "42", "56", "70", "84", "98", "112", "126", "140"];
 
   const result = () => {
     let listAnswer = document.querySelectorAll('input[type="radio"]');
@@ -215,17 +96,17 @@ function MBTITest() {
       document.querySelector(".Panel").style.display = "flex";
 
       results.push({ mbtiResult: data });
-
     }
   };
   return (
     <>
       <div className="body">
+        <div className="screen-title">Trắc nghiệm MBTI</div>
         {list.map((item) => (
           <Card Ques={item} key={item.content} />
         ))}
-        <div className="button_container">
-          <button onClick={result}>Hoàn tất</button>
+        <div>
+          <button className="primary-btn font-18 align-center" onClick={result}>Xem kết quả</button>
         </div>
       </div>
       <Panel Data={per} />
