@@ -23,7 +23,7 @@ function HomeScreen() {
           <div className="card-left card-margin-right flex-col">
             {/* Ikigai Card */}
             <div className="card flex-row flex-space-between flex-items-center">
-              <div className="width-45">
+              <div className="width-45 flex-col flex-self-start">
                 <div className="card-title">Ikigai</div>
                 <div className="card-content">Fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem sed euismod placerat. Vivamus porttitor et magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper lorem ipsum.</div>
                 <Link className="secondary-outline-btn" to="/ikigai">Tìm hiểu thêm</Link>
@@ -51,7 +51,7 @@ function HomeScreen() {
               </div>
 
               <div className="card flex-1">
-                <div className="card-title">Block title 4</div>
+                <div className="card-title">Trắc nghiệm EQ</div>
                 <div className="card-content">Fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem sed euismod placerat. Vivamus porttitor et magna enim, ac accumsan tortor cursus at.</div>
               </div>
             </div>
@@ -60,13 +60,13 @@ function HomeScreen() {
           {/* Right Col */}
           <div className="card-right flex-col">
             <div className="card">
-              <div className="card-title">Block title 2</div>
+              <div className="card-title">Weighted Sum</div>
               <div className="card-content">Fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem sed euismod placerat. Vivamus porttitor et magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper lorem ipsum.</div>
               <button className="secondary-outline-btn" type="button" onClick={{}}>Tìm hiểu thêm</button>
             </div>
 
             <div className="card card-margin-top">
-              <div className="card-title">Block title 3</div>
+              <div className="card-title">VIKOR</div>
               <div className="card-content">Fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem sed euismod placerat. Vivamus porttitor et magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper lorem ipsum.</div>
               <button className="secondary-outline-btn" type="button" onClick={{}}>Tìm hiểu thêm</button>
             </div>

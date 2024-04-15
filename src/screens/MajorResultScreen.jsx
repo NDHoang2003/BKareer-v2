@@ -51,7 +51,7 @@ function MajorResult() {
   };
 
   return (
-    <body className="body card">
+    <body className="body screen-block">
       <div className="screen-title">Kết quả MBTI và Nhóm ngành yêu thích</div>
       <div className="flex-row flex-items-start">
         <div className="font-18 semi-bold-txt left-res-block">Nhóm tính cách MBTI:</div>

@@ -40,6 +40,11 @@ body {
   margin: 5rem 8rem;
 }
 
+.screen-block {
+  background-color: white;
+  padding: 3rem 4rem;
+}
+
 /* Font Weight */
 .bold-txt {
   font-family: Nunito_Sans_10pt_Condensed_Bold;
@@ -216,7 +221,7 @@ body {
 
 .card-title {
   font-family: Nunito_Sans_10pt_Condensed_Bold;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -225,6 +230,7 @@ body {
 
 .card-content {
   font-family: Nunito_Sans_10pt_Condensed_Regular;
+  font-size: 18px;
   color: #888;
   margin-bottom: 1.5rem;
 }
@@ -507,6 +513,7 @@ body {
   border-style: ridge;
   font-family: Nunito_Sans_10pt_Condensed_Regular;
   text-decoration: none;
+  width: fit-content;
 }
 
 .secondary-outline-btn:hover {
