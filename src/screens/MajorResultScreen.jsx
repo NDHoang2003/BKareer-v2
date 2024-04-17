@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Dropdown from 'react-dropdown';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DataTable from 'react-data-table-component';
 
@@ -51,7 +51,7 @@ function MajorResult() {
     var radioInput = document.getElementById(answerId);
     radioInput.checked = true;
     
-  };
+  }
 
   const [mbtiValue, setMbtiValue] = useState('');
   const [careerValue, setCareerValue] = useState('');
@@ -59,34 +59,44 @@ function MajorResult() {
   // const [tableData, setTableData] = useState([]);
   const [result, setResult] = useState([]);
   const [recom, setRecom] = useState([]);
+  // const [rowData, setRowData] = useState([]);
 
   const handleMbtiChange = (selectedOption) => {
     // Lấy 4 chữ cái đầu tiên từ giá trị option
     const mbti = selectedOption.value.substring(0, 4);
     setMbtiValue(mbti);
-  };
+  }
 
   const handleCareerChange = (selectedOption) => {
     setCareerValue(selectedOption.value);
   };
 
-  const resultColumns = [
-    { name: 'Jobs', selector: 'Jobs', sortable: true },
-    { name: 'Salary_AVG_VND', selector: 'Salary_AVG_VND', sortable: true },
-    { name: 'Number (thousands)', selector: 'Number(thoundsand)', sortable: true },
-    { name: 'MBTI Score', selector: 'mbti_score', sortable: true },
-    { name: 'Major Score', selector: 'major_score', sortable: true },
-    { name: 'Salary Score', selector: 's_salary', sortable: true },
-    { name: 'Job Score', selector: 's_job', sortable: true },
-    { name: 'Total Score', selector: 's_total', sortable: true },
-    { name: 'Relative Total', selector: 'r_total', sortable: true },
-    { name: 'Q Total', selector: 'q_total', sortable: true }
+  const VikorColumns = [
+    { name: 'Jobs', selector: row=>row.Jobs},
+    { name: 'Salary_AVG_VND', selector: row=>row.Salary_AVG_VND},
+    { name: 'Number (thousands)', selector: row=>row["Number(thoundsand)"] },
+    { name: 'MBTI Score', selector: row=>row.mbti_score},
+    { name: 'Major Score', selector: row=>row.major_score},
+    { name: 'Salary Score', selector: row=>row.s_salary},
+    { name: 'Job Score', selector: row=>row.s_job},
+    { name: 'Total Score', selector: row=>row.s_total},
+    { name: 'Relative Total', selector: row=>row.r_total},
+    { name: 'Q Total', selector: row=>row.q_total}
   ];
 
+  const WeightsumColumns = [
+    { name: "Jobs" , selector: row=>row.Jobs },
+    { name: "Salary_AVG_VND", selector: row=>row.Salary_AVG_VND},
+    { name: "Number(thoundsand)", selector: row=>row["Number(thoundsand)"]},
+    { name: "MBTI Score", selector: row=>row.mbti_score},
+    { name: "Major Score", selector: row=>row.major_score},
+    { name: "Ikigai Score", selector: row=>row.ikigai_score},
+  ]
+
   const recomColumns = [
-    { name: 'Jobs', selector: 'Jobs', sortable: true },
-    { name: 'Description', selector: 'Description', sortable: true },
-    { name: 'Major', selector: 'Major', sortable: true },
+    { name: 'Jobs', selector: row=>row.Jobs},
+    { name: 'Description', selector: row=>row.Description},
+    { name: 'Major', selector: row=>row.Major},
   ];
 
   const handleCalcMethodChange = (method) => {
@@ -99,7 +109,7 @@ function MajorResult() {
         .then((response) => {
           const data = response.data;
           setResult(data.result);
-          setRecom(data.recom);
+          setRecom(data.recom); 
         })
         .catch((error) => {
           console.error("Error fetching data:", error);
@@ -117,7 +127,6 @@ function MajorResult() {
     }
   };
   
-
   return (
     <body className="body screen-block">
       <div className="screen-title">Kết quả MBTI và Nhóm ngành yêu thích</div>
@@ -171,15 +180,24 @@ function MajorResult() {
 
       <div className="margin-top-2rem">
         <button className="primary-btn font-18 align-center" onClick={handleViewResult}>Gửi kết quả</button>
-
-        {result.length > 0 && (
+        {result.length > 0 && calcMethod === 'Weighted Sum' &&(
           <>
             <h1>Result Table</h1>
             <DataTable
-              title="Result Table"
-              columns={resultColumns}
+              title="Weighted Sum Result Table"
+              columns={WeightsumColumns}
               data={result}
-              pagination
+            />
+          </>
+        )}
+
+        {result.length > 0 && calcMethod === 'VIKOR' &&(
+          <>
+            <h1>Result Table</h1>
+            <DataTable
+              title="VIKOR Result Table"
+              columns={VikorColumns}
+              data={result}
             />
           </>
         )}
@@ -187,14 +205,15 @@ function MajorResult() {
         {recom.length > 0 && (
           <>
             <h1>Recommendation Table</h1>
-            <DataTable
+            <DataTable 
               title="Recommendation Table"
               columns={recomColumns}
               data={recom}
-              pagination
             />
           </>
-        )}
+        )
+        } 
+
       </div>
 
       <div className="res-block"></div>
