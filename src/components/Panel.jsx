@@ -1,10 +1,19 @@
 import exit from "../assets/remove.png"
+import React from "react";
+// import { setMbti } from "../database/Result";
 
 const Panel = ({ Data }) => {
+
   const closeform = () => {
     document.querySelector(".Panel").style.display = "none";
     window.scrollTo(0, 0);
   };
+
+  // const handleReturnClick = () => {
+  //   // Chuyển hướng người dùng về trang Major Result và truyền dữ liệu qua URL
+  //   window.location.replace('/majorResult');
+  // };
+
   return (
     <div className="Panel">
       <div className="result_form">

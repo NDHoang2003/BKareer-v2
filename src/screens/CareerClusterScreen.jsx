@@ -1,6 +1,7 @@
 import CC from "../database/CCQuest";
 import React, { useState } from "react";
-import results from "../database/Result.js";
+import Result from "../database/Result.js";
+import { Link } from 'react-router-dom';
 
 function CCTest() {
   const [checkboxStates, setCheckboxStates] = useState(
@@ -75,7 +76,8 @@ function CCTest() {
   const highestScoredMajor = mapHighestScoredItemToMajor(highestScoredItemIndex); // Ánh xạ ô có điểm cao nhất vào nhóm ngành tương ứng
   console.log("Nhóm ngành có điểm cao nhất là:", highestScoredMajor);
 
-  results.ccResult = highestScoredMajor;
+  Result.setCc(highestScoredMajor);
+  console.log(Result.getCc());
 
   return (
     <>
@@ -140,6 +142,7 @@ function CCTest() {
           </div>
         ))}
         <button className="primary-btn font-18 align-center">Xem kết quả</button>
+        <Link to={`/majorResult?ccResult=${highestScoredMajor}`}><button>Quay về nhập kết quả</button></Link>
       </body>
     </>
   );

@@ -1,11 +1,12 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 import Card from "../components/Card.jsx";
 import Panel from "../components/Panel.jsx";
 import questions from "../database/MBTIQuest";
 import perlist from "../database/MBTIPersonality";
-import results from "../database/Result.js";
+import Result from "../database/Result.js";
 
 function MBTITest() {
   // const question = require("../database/MBTIQuest");
@@ -95,7 +96,8 @@ function MBTITest() {
       setPer(re);
       document.querySelector(".Panel").style.display = "flex";
 
-      results.push({ mbtiResult: data });
+      Result.setMbti(data);
+      console.log(Result.getMbti());
     }
   };
   return (
@@ -108,6 +110,7 @@ function MBTITest() {
         <div>
           <button className="primary-btn font-18 align-center" onClick={result}>Xem kết quả</button>
         </div>
+        <Link to={`/majorResult?mbtiResult=${result}`}><button>Quay về nhập kết quả</button></Link>
       </div>
       <Panel Data={per} />
     </>

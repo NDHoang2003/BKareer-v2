@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import Dropdown from 'react-dropdown';
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import DataTable from 'react-data-table-component';
 
+import Result from "../database/Result.js";
 
 function MajorResult() {
   const mbtiOptions = [
@@ -53,13 +55,25 @@ function MajorResult() {
     
   }
 
-  const [mbtiValue, setMbtiValue] = useState('');
-  const [careerValue, setCareerValue] = useState('');
+  const { mbtiResult } = useParams();
+  const { ccResult } = useParams();
+
+  const [mbtiValue, setMbtiValue] = useState(mbtiResult || '');
+  const [careerValue, setCareerValue] = useState(ccResult || '');
   const [calcMethod, setCalcMethod] = useState('');
   // const [tableData, setTableData] = useState([]);
   const [result, setResult] = useState([]);
   const [recom, setRecom] = useState([]);
   // const [rowData, setRowData] = useState([]);
+
+
+
+  useEffect(() => {
+    const mbtiResult = Result.getMbti(); // Lấy giá trị MBTI từ result.js
+    if (mbtiResult) {
+      setMbtiValue(mbtiResult);
+    }
+  }, []);  
 
   const handleMbtiChange = (selectedOption) => {
     // Lấy 4 chữ cái đầu tiên từ giá trị option
@@ -70,6 +84,13 @@ function MajorResult() {
   const handleCareerChange = (selectedOption) => {
     setCareerValue(selectedOption.value);
   };
+
+  useEffect(() => {
+    const ccResult = Result.getCc(); // Lấy giá trị MBTI từ result.js
+    if (ccResult) {
+      setCareerValue(ccResult);
+    }
+  }, []);  
 
   const VikorColumns = [
     { name: 'Jobs', selector: row=>row.Jobs},
@@ -143,7 +164,7 @@ function MajorResult() {
         <div className="font-18 semi-bold-txt left-res-block">Nhóm ngành yêu thích:</div>
         <div className="flex-row flex-space-between right-res-block">
           <Dropdown className="dropdown dropdown-block" options={careerOptions} value={careerValue} onChange={handleCareerChange} placeholder="Chọn nhóm ngành phù hợp" />
-          <Link className="primary-outline-btn font-18 margin-left-20 flex-self-start" to="/career">Kiểm tra ngay</Link>
+          <Link className="primary-outline-btn font-18 margin-left-20 flex-self-start" to="/career" >Kiểm tra ngay</Link>
         </div>
         
       </div>
