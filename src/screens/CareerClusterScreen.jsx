@@ -141,8 +141,11 @@ function CCTest() {
             </div>
           </div>
         ))}
-        <button className="primary-btn font-18 align-center">Xem kết quả</button>
-        <Link to={`/majorResult?ccResult=${highestScoredMajor}`}><button>Quay về nhập kết quả</button></Link>
+
+        <div className="flex-row align-center width-fit-content">
+          <Link to={`/majorResult?ccResult=${highestScoredMajor}`} className="primary-btn font-18 width-45 margin-right-3rem">Quay về nhập kết quả</Link>
+          <button className="primary-btn font-18">Xem kết quả</button>
+        </div>
       </body>
     </>
   );

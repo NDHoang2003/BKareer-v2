@@ -103,11 +103,20 @@ body {
   align-self: flex-start;
 }
 
+.flex-self-end {
+  display: flex;
+  align-self: flex-end;
+}
+
 .align-center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 25%;
+}
+
+.text-decor-none {
+  text-decoration: none;
 }
 
 .margin-top-1rem {
@@ -118,16 +127,20 @@ body {
   margin-top: 2rem;
 }
 
-.margin-left-20 {
-  margin-left: 20%;
+.margin-right-3rem {
+  margin-right: 5rem;
 }
 
 .margin-bottom-2rem {
   margin-bottom: 2rem;
 }
 
-.width-20 {
-  width: 20%;
+.margin-left-20 {
+  margin-left: 20%;
+}
+
+.width-30 {
+  width: 30%;
 }
 
 .width-45 {
@@ -399,7 +412,7 @@ body {
 }
 
 .res-block {
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
 /* Images */
