@@ -82,7 +82,7 @@ function CCTest() {
   return (
     <>
       <body className="body">
-        <div className="screen-title">Nhóm ngành yêu thích</div>
+        <div className="screen-title">Khám phá năng lực nghề nghiệp</div>
         <div className="CC-instruction-txt font-18">
           <span className="bold-txt">Hướng dẫn: </span>
           <span>Đánh dấu các mục trong mỗi ô mô tả chính xác nhất về bạn. Bạn có thể chọn một hoặc nhiều mục trong mỗi ô. Sau khi hoàn thành, hệ thống sẽ hiển thị kết quả ba ô có số điểm cao nhất và các Nhóm ngành tương ứng. Bạn cũng có thể xem thêm các Nhóm ngành khác để xem bạn có thể muốn khám phá những Nhóm ngành nào.</span>

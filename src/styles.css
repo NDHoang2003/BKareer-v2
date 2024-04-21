@@ -78,6 +78,10 @@ body {
   flex-direction: column;
 }
 
+.flex-1 {
+  flex: 1;
+}
+
 .flex-space-between {
   display: flex;
   justify-content: space-between;
@@ -151,6 +155,10 @@ body {
   width: fit-content;
 }
 
+.height-max-content {
+  height: max-content;
+}
+
 .screen-title {
   color: #358bca;
   font-family: Nunito_Sans_10pt_Condensed_Bold;
@@ -170,7 +178,7 @@ body {
 }
 
 /* Navbar */
-.nav {
+#nav {
   background-color: #358bca;
   line-height: 2;
   display: flex;
@@ -180,7 +188,7 @@ body {
   padding: 0rem 5rem;
 }
 
-.nav ul {
+#nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -189,18 +197,18 @@ body {
   gap: 1rem;
 }
 
-.nav li:hover {
+#nav li:hover {
   background-color: #4596cf;
   height: 100%;
   display: flex;
   align-items: center;
 }
 
-.nav li:active {
+#nav li:active {
   background-color: #4596cf;
 }
 
-.nav a {
+#nav a {
   color: white;
   text-decoration: none;
   display: flex;
@@ -230,6 +238,32 @@ body {
 .card-right {
   display: flex;
   flex: 6;
+}
+
+.card-group-container {
+  display: table;
+  width: 100%;
+}
+
+.card-group-col {
+  display: table-cell;
+  border-left: 2px solid #F5F5F5;
+}
+
+.card-group-col:nth-of-type(2n - 1) {
+  display: table-cell;
+  border-left: 0px solid transparent;
+}
+
+.card-group-ele {
+  display: table-cell;
+  width: 50%;
+  border-left: 2px solid #F5F5F5;
+}
+
+.card-group-ele:nth-of-type(2n - 1) {
+  margin-right: 2px;
+  border: 0px solid transparent;
 }
 
 .card-title {
@@ -448,8 +482,7 @@ body {
   color: #444;
   padding: 0.5rem 1.5rem;
   margin-bottom: 1.5rem;
-  border-width: 1px;
-  border-color: #444;
+  border: 1px solid #444;
   border-radius: 10px;
   border-style: ridge;
   font-family: Nunito_Sans_10pt_Condensed_Regular;

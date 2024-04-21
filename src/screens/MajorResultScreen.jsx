@@ -150,7 +150,7 @@ function MajorResult() {
       </div>
 
       <div className="margin-top-1rem flex-row flex-items-start">
-        <div className="font-18 semi-bold-txt left-res-block">Nhóm ngành yêu thích:</div>
+        <div className="font-18 semi-bold-txt left-res-block">Khám phá năng lực nghề nghiệp:</div>
         <div className="flex-row flex-space-between right-res-block">
           <Dropdown className="dropdown dropdown-block" options={careerOptions} value={careerValue} onChange={handleCareerChange} placeholder="Chọn nhóm ngành phù hợp" />
           <Link className="primary-outline-btn font-18 margin-left-20 flex-self-start" to="/career" >Kiểm tra ngay</Link>
@@ -158,7 +158,7 @@ function MajorResult() {
       </div>
 
       <div className="margin-top-1rem flex-row flex-items-center">
-        <div className="font-18 semi-bold-txt left-res-block">Chọn cách tính:</div>
+        <div className="font-18 semi-bold-txt left-res-block">Chọn phương pháp tính:</div>
         <div className="right-res-block">
           <input
             type="radio"
