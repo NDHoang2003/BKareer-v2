@@ -211,6 +211,7 @@ function MajorResult() {
             columns={VikorColumns}
             data={result}
             striped
+            responsive = {true}
           />
         )}
       </div>
