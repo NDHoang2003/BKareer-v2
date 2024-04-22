@@ -224,6 +224,7 @@ function MajorResult() {
               columns={recomColumns}
               data={recom}
               striped
+              responsive = {true}
             />
           </>
         )}
