@@ -26,7 +26,7 @@ function MajorResult() {
     "Du lịch",
     "Dịch vụ con người",
     "Công nghệ",
-    "Luật, An toàn công cộng, Sửa chữa và bảo mật",
+    "Luật, An toàn công cộng,Sửa chữa và bảo mật",
     "Kỹ thuật",
     "Thương mại",
     "Khoa học",
@@ -63,6 +63,10 @@ function MajorResult() {
     if (mbtiResult) {
       setMbtiValue(mbtiResult);
     }
+    const ccResult = Result.getCc(); // Lấy giá trị CC từ result.js
+    if (ccResult) {
+      setCareerValue(ccResult);
+    }
   }, []);  
 
   const handleMbtiChange = (selectedOption) => {
@@ -74,13 +78,6 @@ function MajorResult() {
   const handleCareerChange = (selectedOption) => {
     setCareerValue(selectedOption.value);
   };
-
-  useEffect(() => {
-    const ccResult = Result.getCc(); // Lấy giá trị MBTI từ result.js
-    if (ccResult) {
-      setCareerValue(ccResult);
-    }
-  }, []);  
 
   const VikorColumns = [
     { name: 'Jobs', selector: row=>row.Jobs},
@@ -138,6 +135,7 @@ function MajorResult() {
           console.error("Error fetching data:", error);
         });
     }
+    console.log(result)
   };
   
   return (

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from 'react-router-dom';
 
 import Card from "../components/Card.jsx";
-import Panel from "../components/Panel.jsx";
+import Panel from "../components/mbtiPanel.jsx";
 import questions from "../database/MBTIQuest";
 import perlist from "../database/MBTIPersonality";
 import Result from "../database/Result.js";
@@ -96,7 +96,7 @@ function MBTITest() {
       document.querySelector(".Panel").style.display = "flex";
 
       Result.setMbti(data);
-      console.log(Result.getMbti());
+
     }
   };
   return (
