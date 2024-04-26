@@ -64,14 +64,14 @@ function HomeScreen() {
           {/* Right Col */}
           <div className="card-right card-group-col">
             <div className="card">
-              <div className="card-title">Weighted Sum</div>
-              <div className="card-content">Fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem sed euismod placerat. Vivamus porttitor et magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper lorem ipsum.</div>
+              <div className="card-title">Weight-sum</div>
+              <div className="card-content">Dựa trên dữ liệu đầu vào từ người dùng và dữ liệu của tổ chức lao động thế giới ILOSTAT, phương pháp Weight-sum gán trọng số cho từng tiêu chí dựa trên tầm quan trọng tương đối của chúng.</div>
               <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/weightedSum">Tìm hiểu thêm</Link></div>
             </div>
 
             <div className="card card-margin-top">
               <div className="card-title">VIKOR</div>
-              <div className="card-content">Fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem sed euismod placerat. Vivamus porttitor et magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper lorem ipsum.</div>
+              <div className="card-content">Dựa trên dữ liệu đầu vào từ người dùng và dữ liệu của tổ chức lao động thế giới ILOSTAT, phương pháp VIKOR xác định các nghiệm lý tưởng và phản lý tưởng</div>
               <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/vikor">Tìm hiểu thêm</Link></div>
             </div>
           </div>

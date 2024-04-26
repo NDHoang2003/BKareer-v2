@@ -8,14 +8,14 @@ function Footer() {
       <div className="flex-row">
         <div className="card card-left card-margin-right flex-col">
           <div className="card-title">Về chúng tôi</div>
-          <div className="card-content">
+          {/* <div className="card-content">
             <span>
               Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur malesuada.
             </span>
             <p>
               Sagittis felis ac sagittis semper. Curabitur purus leo donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis.
             </p>
-          </div>
+          </div> */}
           <button className="secondary-outline-btn width-fit-content" type="button" onClick={{}}>Tìm hiểu thêm</button>
         </div>
         

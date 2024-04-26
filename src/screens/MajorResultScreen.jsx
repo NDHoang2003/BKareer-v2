@@ -103,11 +103,11 @@ function MajorResult() {
     { name: "ikigai_score", selector: row=>row.ikigai_score},
   ]
 
-  const recomColumns = [
-    { name: 'Jobs', selector: row=>row.Jobs},
-    { name: 'Description', selector: row=>row.Description},
-    { name: 'Major', selector: row=>row.Major},
-  ];
+  // const recomColumns = [
+  //   { name: 'Jobs', selector: row=>row.Jobs},
+  //   { name: 'Description', selector: row=>row.Description},
+  //   { name: 'Major', selector: row=>row.Major},
+  // ];
 
   const handleCalcMethodChange = (method) => {
     setCalcMethod(method);

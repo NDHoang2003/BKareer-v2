@@ -3,6 +3,7 @@
   src: url("./assets/fonts/Jomhuria-Regular.ttf");
 }
 
+
 @font-face {
   font-family: "Nunito_Sans_10pt_Condensed_Light";
   src: url("./assets/fonts/NunitoSans_10pt_Condensed-Light.ttf");
@@ -27,37 +28,33 @@
   background-color: #4596cf;
   padding: 1px;
 }
-
 :root {
   background-color: #F5F5F5;
   font-family: Nunito_Sans_10pt_Condensed_Regular;
   font-size: 18;
   line-height: 1.5;
 }
-
 body {
   margin: 0; /* Override user agent stylesheet*/
 } 
-
 /* Body Style */
 .body {
   background-color: #F5F5F5;
-  margin: 10rem 8rem 5rem 8rem; /* 5rem top-down + 5rem sticky navbar */
+  margin: 10rem 8rem 5rem 8rem;
 }
 
 .screen-block {
   background-color: white;
   padding: 3rem 4rem;
 }
-
 /* Font Weight */
 .bold-txt {
   font-family: Nunito_Sans_10pt_Condensed_Bold;
 }
-
 .semi-bold-txt {
   font-family: Nunito_Sans_10pt_Condensed_SemiBold;
 }
+
 
 .light-txt {
   font-family: Nunito_Sans_10pt_Condensed_Light;
@@ -67,77 +64,72 @@ body {
 .font-20 {
   font-size: 20px;
 }
-
 .font-18 {
   font-size: 18px;
 }
-
 .font-16 {
   font-size: 16px;
 }
-
 /* Single Special Style */
 .flex-row {
   display: flex;
   flex-direction: row;
 }
-
 .flex-col {
   display: flex;
   flex-direction: column;
 }
-
 .flex-1 {
   flex: 1;
 }
-
 .flex-space-between {
   display: flex;
   justify-content: space-between;
 }
-
 .flex-content-center {
   display: flex;
   justify-content: center;
 }
-
 .flex-items-center {
   display: flex;
   align-items: center;
 }
-
 .flex-items-start {
   display: flex;
   align-items: flex-start;
 }
-
 .flex-self-start {
   display: flex;
   align-self: flex-start;
 }
-
 .flex-self-end {
   display: flex;
   align-self: flex-end;
 }
-
 .align-center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 25%;
 }
-
 .text-decor-none {
   text-decoration: none;
 }
-
 .margin-top-1rem {
   margin-top: 1rem;
 }
-
 .margin-top-2rem {
   margin-top: 2rem;
+}
+
+.margin-right-3rem {
+  margin-right: 5rem;
+}
+.margin-bottom-2rem {
+  margin-bottom: 2rem;
+}
+.margin-left-20 {
+  margin-left: 20%;
 }
 
 .margin-top-10 {
@@ -148,38 +140,24 @@ body {
   margin-top: 12%;
 }
 
-.margin-right-3rem {
-  margin-right: 5rem;
-}
-
-.margin-bottom-2rem {
-  margin-bottom: 2rem;
-}
-
-.margin-left-20 {
-  margin-left: 20%;
-}
-
 .width-30 {
   width: 30%;
 }
-
 .width-45 {
   width: 45%;
-}
-
-.width-100 {
-  width: 100%;
 }
 
 .width-fit-content {
   width: fit-content;
 }
 
+.width-100 {
+  width: 100%;
+}
+
 .height-max-content {
   height: max-content;
 }
-
 .screen-title {
   color: #358bca;
   font-family: Nunito_Sans_10pt_Condensed_Bold;
@@ -188,7 +166,6 @@ body {
   display: flex;
   justify-content: center;
 }
-
 /* App Name Style */
 .appName {
   font-family: Jomhuria;
@@ -200,7 +177,6 @@ body {
 
 /* Navbar */
 #nav {
-  z-index: 10; /* Để đè được lên DataTable */
   position: fixed;
   top: 0;
   width: 90vw;
@@ -212,7 +188,6 @@ body {
   gap: 2rem;
   padding: 0rem 5rem;
 }
-
 #nav ul {
   list-style: none;
   margin: 0;
@@ -221,18 +196,15 @@ body {
   align-items: center;
   gap: 1rem;
 }
-
 #nav li:hover {
   background-color: #4596cf;
   height: 100%;
   display: flex;
   align-items: center;
 }
-
 #nav li:active {
   background-color: #4596cf;
 }
-
 #nav a {
   color: white;
   text-decoration: none;
@@ -240,57 +212,46 @@ body {
   align-items: center;
   padding: 0.25rem;
 }
-
 /* Card */
 .card {
   background-color: white;
   padding: 2rem 4rem;
 }
-
 .card-margin-top {
   margin-top: 2px;
 }
-
 .card-margin-right {
   margin-right: 2px;
 }
-
 .card-left {
   display: flex;
   flex: 9;
 }
-
 .card-right {
   display: flex;
   flex: 6;
 }
-
 .card-group-container {
   display: table;
   width: 100%;
 }
-
 .card-group-col {
   display: table-cell;
   border-left: 2px solid #F5F5F5;
 }
-
 .card-group-col:nth-of-type(2n - 1) {
   display: table-cell;
   border-left: 0px solid transparent;
 }
-
 .card-group-ele {
   display: table-cell;
   width: 50%;
   border-left: 2px solid #F5F5F5;
 }
-
 .card-group-ele:nth-of-type(2n - 1) {
   margin-right: 2px;
   border: 0px solid transparent;
 }
-
 .card-title {
   font-family: Nunito_Sans_10pt_Condensed_Bold;
   font-size: 2rem;
@@ -299,7 +260,6 @@ body {
   margin-bottom: 2rem;
   color: #358bca;
 }
-
 .card-content {
   font-family: Nunito_Sans_10pt_Condensed_Regular;
   font-size: 18px;
@@ -307,7 +267,6 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Login Screen */
 .appName-block {
   flex: 3;
   height: 100vh;
@@ -384,27 +343,23 @@ body {
   padding: 2rem 4rem;
   margin-bottom: 2rem;
 }
-
 .question-card h1 {
   color: #358bca;
   font-family: Nunito_Sans_10pt_Condensed_Bold;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-
 .MBTI-question-txt {
   color: #358bca;
   font-family: Nunito_Sans_10pt_Condensed_Bold;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-
 .answer-form {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
-
 .answer-item {
   width: 42.5%;
   height: 70px;
@@ -421,8 +376,8 @@ body {
   font-family: Nunito_Sans_10pt_Condensed_Regular;
 }
 
-.answer_item:hover {
-  background-color: white;
+.answer-item:hover {
+  background-color: #eaeaea;
   border-color: #142531;
   color: #142531;
 }
@@ -433,72 +388,48 @@ body {
   border: 0;
 }
 
-/* Panel */
-.panel {
+.Panel {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: #00000080; /* Màu đen với độ trong suốt 70% (0.7) */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Màu đen với độ trong suốt 70% (0.7) */
   justify-content: center;
   align-items: center;
   display: none;
 }
 
-.result-form {
+.result_form {
   width: 70%;
   background-color: white;
   border-radius: 20px;
   overflow: hidden;
 }
 
-.panel-info {
-  padding: 2.5rem;
-  background-color: white;
+.panel_info {
+  padding: 32px;
 }
 
-.panel-info p {
-  font-size: 16px;
-  color: #666;
+.panel_info p {
+  font-size: 13px;
 }
-
-.panel-img-container {
-  flex: 2;
-  display: flex;
-  align-items: center;
-  margin-right: 1.5rem;
-}
-
-.panel-img{
-  width: 100%;
-
-}
-
-.panel-script {
-  color: #444;
-  font-family: Nunito_Sans_10pt_Condensed_SemiBold;
-  font-size: 18px;
-}
-
-.panel-title {
-  color: #358BCA;
-  font-family: Nunito_Sans_10pt_Condensed_Bold;
-  font-size: 28px;
-}
-
 .info {
-  background-color: white;
+  background-color: antiquewhite;
   padding: 10px;
   border-radius: 10px;
 }
-
 .hero {
-  flex: 5;
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: 20px;
+}
+
+.hero span {
+  font-weight: "bold";
+  font-size: 20px;
 }
 
 /* Career Cluster Screen */
@@ -507,14 +438,12 @@ body {
   color: #666;
   margin-bottom: 2rem;
 }
-
 .CC-card {
   background-color: white;
   border-radius: 25px;
   padding: 2rem 1.5rem 2rem 0.25rem; /* top right bottom left*/
   margin-bottom: 2rem;
 }
-
 .CC-card-title-txt {
   color: #358bca;
   transform: rotate(-90deg);
@@ -523,71 +452,41 @@ body {
   text-align: center;
   width: 65px;
 }
-
 .CC-separate-line {
   height: 200px;
   border-left: 1px solid #888;
 }
-
 .CC-checkbox {
   margin-left: 0px;
   margin-bottom: 7px;
   vertical-align: middle;
   accent-color: #358bca;
 }
-
 .CC-activities-block {
   width: 40%;
   margin-left: 0.5rem;
   margin-right: 1rem;
 }
-
 .CC-qualities-block {
   width: 25%;
   margin-left: 1rem;
   margin-right: 1rem;
 }
-
 .CC-subjects-block {
   width: 25%;
   margin-left: 1rem;
 }
-
 /* Major Result Screen */
 .left-res-block {
   display: flex;
   flex: 1;
 }
-
 .right-res-block {
   display: flex;
   flex: 2;
 }
-
 .res-block {
   margin-top: 4rem;
-}
-
-.rcm-card-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.rcm-card {
-  padding: 1.5rem;
-  width: 27%;
-  background-color: #F5F5F5;
-  border-radius: 10px;
-}
-
-.rcm-card h1 {
-  font-family: Nunito_Sans_10pt_Condensed_Bold;
-  font-size: 24px;
-  color: #358BCA;
-  text-align: center;
-  margin-top: 0;
 }
 
 /* Detail Screens */
@@ -607,12 +506,10 @@ body {
   height: fit-content;
   margin-right: 3rem;
 }
-
 .img-home-2 {
   width: 50%;
   height: fit-content;
 }
-
 .img-major{
   width: 35%;
   display: block;
@@ -622,16 +519,9 @@ body {
   margin-bottom: 1rem;
 }
 
-.img-detail {
-  width: 35%;
-  margin: auto;
-  display: block;
-}
-
-.close-panel-icon {
+.img {
   float: right;
   cursor: pointer;
-  padding: 1.5rem 1.5rem;
 }
 
 /* Dropdown */
@@ -649,6 +539,11 @@ body {
   text-decoration: none;
 }
 
+.dropdown-option:hover {
+  background-color: #888;
+  color: #fff; /* Thay đổi màu chữ khi hover vào option */
+}
+
 /* Buttons */
 .primary-btn {
   background-color: #358bca;
@@ -662,12 +557,10 @@ body {
   text-align: center;
   text-decoration: none;
 }
-
 .primary-btn:hover {
   background-color: #3285c0;
   color: white;
 }
-
 .primary-txt-btn {
   color: #358bca;
   font-family: Nunito_Sans_10pt_Condensed_Bold;
@@ -688,6 +581,7 @@ body {
   border-style: ridge;
   font-family: Nunito_Sans_10pt_Condensed_Regular;
   text-decoration: none;
+  text-align: center;
 }
 
 .primary-outline-btn:hover {
@@ -705,17 +599,14 @@ body {
   border-style: ridge;
   font-family: Nunito_Sans_10pt_Condensed_Regular;
 }
-
 .white-outline-btn:hover {
   background-color: white;
   color: #358bca;
 }
-
 .white-outline-btn:active {
   background-color: white;
   color: #358bca;
 }
-
 .secondary-outline-btn {
   background-color: white;
   color: #888;
@@ -729,17 +620,14 @@ body {
   text-decoration: none;
   width: fit-content;
 }
-
 .secondary-outline-btn:hover {
   background-color: #888;
   color: white;
 }
-
 .secondary-outline-btn:active {
   background-color: #888;
   color: white;
 }
-
 /* Footer */
 .footer {
   background-color: #F5F5F5;
@@ -747,14 +635,12 @@ body {
   display: flex;
   justify-content: center;
 }
-
 .footer-icon {
   width: 25px;
   height: 25px;
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
-
 .footer-info {
   margin-bottom: 1rem;
 }
