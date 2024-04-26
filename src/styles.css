@@ -644,3 +644,17 @@ body {
 .footer-info {
   margin-bottom: 1rem;
 }
+
+.rcm-card{
+  padding: 40px;
+}
+
+.rcm-card-container{
+  background-color: #AED6F1;
+  border: 1px solid #AED6F1;
+  border-radius: 50px;
+}
+
+.rcm-card-des{
+  color:#34495E;
+}

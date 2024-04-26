@@ -3,7 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import Dropdown from 'react-dropdown';
 import axios from 'axios';
 import DataTable from 'react-data-table-component';
-
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
 import Result from "../database/Result.js";
 
 function MajorResult() {
@@ -207,6 +208,27 @@ function MajorResult() {
       <button className="primary-btn font-18 align-center margin-top-2rem test" onClick={handleViewResult}>Gửi kết quả</button>
       
       <div className="res-block">
+        {recom.length > 0 && (
+          <>
+            
+            <div className="rcm-card-container">
+              <Slide>
+                {
+                  recom.map(item =>
+                    <div className="rcm-card">
+                      <h1 className='screen-title margin-top-2rem'>{item.Jobs}</h1>
+                      <p className='rcm-card-des'>{item.Description}</p>
+                      <p className='rcm-card-des'>{item.Major}</p>
+                    </div>
+                  )
+                }
+              </Slide>
+            </div>
+          </>
+        )}
+      </div>
+
+      <div className="res-block">
         {result.length > 0 ? <>
           <hr className="seperate-line" />
           <div className="screen-title margin-top-2rem">Bảng kết quả </div>
@@ -231,26 +253,13 @@ function MajorResult() {
         )}
       </div>
       
-      <div className="res-block">
-        {recom.length > 0 && (
-          <>
-            <div className="screen-title margin-top-2rem">3 ngành nghề phù hợp được đề xuất</div>
-            <div className="rcm-card-container">
-              {
-                recom.map(item =>
-                  <div className="rcm-card">
-                    <h1>{item.Jobs}</h1>
-                    <div>{item.Description}</div>
-                    <div>{item.Major}</div>
-                  </div>
-                )
-              }
-            </div>
-          </>
-        )}
-      </div>
+      
 
-      <div className="res-block"></div>
+
+      {/* <div className="res-block"></div> */}
+
+
+
     </body>
   );
 }
