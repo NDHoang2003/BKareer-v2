@@ -12,7 +12,6 @@ function CCTest() {
     // const [showPanel, setShowPanel] = useState(false);
 
     const [isPanelOpen, setIsPanelOpen] = useState(false); // State để điều khiển việc hiển thị panel
-    // const [selectedMajor, setSelectedMajor] = useState("");
 
     const [checkboxStates, setCheckboxStates] = useState(
       CC.map(() => ({
@@ -85,13 +84,9 @@ function CCTest() {
     const highestScoredItemIndex = findHighestScoredItem(scores); // Xác định ô có điểm cao nhất
     const highestScoredMajor = mapHighestScoredItemToMajor(highestScoredItemIndex); // Ánh xạ ô có điểm cao nhất vào nhóm ngành tương ứng
 
-    // const result = () =>{
-      // const temp = clusterList.getdata(highestScoredMajor);
-      // setCluster(temp);
-      // // document.querySelector(".CCPanel").style.display = "flex";
 
-      Result.setCc(highestScoredMajor);
-    // };
+    Result.setCc(highestScoredMajor);
+
     const handleOpenPanel = () => {
       setIsPanelOpen(true);
     };
@@ -102,9 +97,6 @@ function CCTest() {
       console.log(isPanelOpen)
     };
 
-    // const showCareerClusterPanel = () => {
-    //   setShowPanel(true); // Đặt giá trị của state là true để hiển thị panel
-    // };
 
   return (
     <>
@@ -183,7 +175,6 @@ function CCTest() {
             />
           )}  
 
-        {/* {isPanelOpen && <CCPanel Data={cluster} />}  */}
       </body>
     </>
   );
