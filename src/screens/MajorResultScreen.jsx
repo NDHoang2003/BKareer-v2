@@ -236,12 +236,16 @@ function MajorResult() {
       <div className="res-block">
         {recom.length > 0 && (
           <>
-            <div className="screen-title margin-top-2rem">Recommendation Table</div>
-            <DataTable
-              columns={recomColumns}
-              data={recom}
-              striped
-            />
+            <div className="screen-title margin-top-2rem">3 ngành nghề phù hợp được đề xuất</div>
+            <div className="rcm-card-container">
+              { recom.map(item =>
+                  <div className="rcm-card">
+                    <h1>{item.Jobs}</h1>
+                    <div>{item.Description}</div>
+                    <div>{item.Major}</div>
+                  </div>
+              )}
+            </div>
           </>
         )}
       </div>

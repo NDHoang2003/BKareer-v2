@@ -200,6 +200,7 @@ body {
 
 /* Navbar */
 #nav {
+  z-index: 10; /* Để đè được lên DataTable */
   position: fixed;
   top: 0;
   width: 90vw;
@@ -565,6 +566,28 @@ body {
 
 .res-block {
   margin-top: 4rem;
+}
+
+.rcm-card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.rcm-card {
+  padding: 1.5rem;
+  width: 27%;
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}
+
+.rcm-card h1 {
+  font-family: Nunito_Sans_10pt_Condensed_Bold;
+  font-size: 24px;
+  color: #358BCA;
+  text-align: center;
+  margin-top: 0;
 }
 
 /* Detail Screens */
