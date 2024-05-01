@@ -162,7 +162,7 @@ function CCTest() {
         ))}
 
         <div className="flex-row align-center width-fit-content">
-          <Link to={`/majorResult?ccResult=${highestScoredMajor}`} className="primary-btn font-18 width-45 margin-right-3rem">Quay về nhập kết quả</Link>
+          <Link to={`/majorResult?ccResult=${highestScoredMajor}`} className="primary-btn font-18 width-45 margin-right-5rem">Quay về nhập kết quả</Link>
           <button className="primary-btn font-18" onClick={() => handleOpenPanel()}>Xem kết quả</button>
           
         </div>

@@ -146,7 +146,7 @@ function MajorResult() {
         <div className="font-18 semi-bold-txt left-res-block">Nhóm tính cách MBTI:</div>
         <div className="flex-row flex-space-between right-res-block">
           <Dropdown className="dropdown dropdown-block" options={mbtiOptions} value={mbtiValue} onChange={handleMbtiChange} placeholder="Chọn nhóm tính cách MBTI" />
-          <Link className="primary-outline-btn font-18 margin-left-20 flex-self-start" to="/mbti">Kiểm tra ngay</Link>
+          <Link className="primary-outline-btn width-fit-content font-18 margin-left-10 flex-self-start" to="/mbti">Kiểm tra ngay</Link>
         </div>
       </div>
 
@@ -154,7 +154,7 @@ function MajorResult() {
         <div className="font-18 semi-bold-txt left-res-block">Khám phá năng lực nghề nghiệp:</div>
         <div className="flex-row flex-space-between right-res-block">
           <Dropdown className="dropdown dropdown-block" options={careerOptions} value={careerValue} onChange={handleCareerChange} placeholder="Chọn nhóm ngành phù hợp" />
-          <Link className="primary-outline-btn font-18 margin-left-20 flex-self-start" to="/career" >Kiểm tra ngay</Link>
+          <Link className="primary-outline-btn font-18 margin-left-10 flex-self-start" to="/career" >Kiểm tra ngay</Link>
         </div>
       </div>
 
@@ -173,7 +173,7 @@ function MajorResult() {
           />
           <label
             htmlFor="Weighted Sum"
-            className="font-18"
+            className="font-18 margin-right-2rem"
             onClick={() => {
               handleCalcMethodChange(calcOptions[0].title);
               onSelected(calcOptions[0].id);
@@ -205,7 +205,11 @@ function MajorResult() {
         </div>
       </div>
 
-      <button className="primary-btn font-18 align-center margin-top-2rem test" onClick={handleViewResult}>Gửi kết quả</button>
+      { 
+        (mbtiValue == "" || careerValue == "" || calcMethod == "")
+        ? <button className="primary-btn disable-primary-btn font-18 align-center margin-top-2rem test" disabled>Gửi kết quả</button>
+        : <button className="primary-btn font-18 align-center margin-top-2rem test" onClick={handleViewResult}>Gửi kết quả</button>
+      }      
       
       <div className="res-block">
         {recom.length > 0 && (
@@ -216,9 +220,9 @@ function MajorResult() {
                 {
                   recom.map(item =>
                     <div className="rcm-card">
-                      <h1 className='screen-title margin-top-2rem'>{item.Jobs}</h1>
-                      <p className='rcm-card-des'>{item.Description}</p>
-                      <p className='rcm-card-des'>{item.Major}</p>
+                      <h1 className="screen-title margin-top-0">{item.Jobs}</h1>
+                      <p className="rcm-card-content">{item.Description}</p>
+                      <p className="rcm-card-content">{item.Major}</p>
                     </div>
                   )
                 }
@@ -229,12 +233,13 @@ function MajorResult() {
       </div>
 
       <div className="res-block">
-        {result.length > 0 ? <>
-          <hr className="seperate-line" />
-          <div className="screen-title margin-top-2rem">Bảng kết quả </div>
-        </> : <></>}
+        {
+          result.length > 0
+          ? <div className="screen-title margin-top-2rem">Bảng kết quả </div>
+          : <></>
+        }
 
-        {result.length > 0 && calcMethod === 'Weighted Sum' &&(
+        {result.length > 0 && calcMethod === 'Weighted Sum' && (
           <DataTable
             title="Weighted Sum"
             columns={WeightsumColumns}
@@ -252,14 +257,6 @@ function MajorResult() {
           />
         )}
       </div>
-      
-      
-
-
-      {/* <div className="res-block"></div> */}
-
-
-
     </body>
   );
 }
