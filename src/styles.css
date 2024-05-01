@@ -150,6 +150,11 @@ body {
   margin-left: 10%;
 }
 
+.home-card {
+  background-color: white;
+  padding: 2rem 3.5rem;
+}
+
 .width-30 {
   width: 30%;
 }
@@ -227,7 +232,7 @@ body {
 /* Card */
 .card {
   background-color: white;
-  padding: 2rem 4rem;
+  padding: 3rem 4rem;
 }
 .card-margin-top {
   margin-top: 2px;
