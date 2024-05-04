@@ -139,34 +139,36 @@ function MajorResult() {
       behavior: "smooth", // for smooth scrolling
     });
     setLoading(true);
-    if (calcMethod === "Weighted Sum") {
-      axios
-        .get(
-          `https://ikigaihcmutv2-332ubqslia-as.a.run.app/cal_weight_sum?MBTI=${mbtiValue}&CC=${careerValue}`
-        )
-        .then((response) => {
-          const data = response.data;
-          setResult(data.result);
-          setRecom(data.recom);
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-        });
-    } else if (calcMethod === "VIKOR") {
-      axios
-        .get(
-          `https://ikigaihcmutv2-332ubqslia-as.a.run.app/cal_vikor?MBTI=${mbtiValue}&CC=${careerValue}`
-        )
-        .then((response) => {
-          const data = response.data;
-          setResult(data.result);
-          setRecom(data.recom);
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-        });
-    }
-    setLoading(false);
+    setTimeout(() => {
+      if (calcMethod === "Weighted Sum") {
+        axios
+          .get(
+            `https://ikigaihcmutv2-332ubqslia-as.a.run.app/cal_weight_sum?MBTI=${mbtiValue}&CC=${careerValue}`
+          )
+          .then((response) => {
+            const data = response.data;
+            setResult(data.result);
+            setRecom(data.recom);
+          })
+          .catch((error) => {
+            console.error("Error fetching data:", error);
+          });
+      } else if (calcMethod === "VIKOR") {
+        axios
+          .get(
+            `https://ikigaihcmutv2-332ubqslia-as.a.run.app/cal_vikor?MBTI=${mbtiValue}&CC=${careerValue}`
+          )
+          .then((response) => {
+            const data = response.data;
+            setResult(data.result);
+            setRecom(data.recom);
+            setLoading(false);
+          })
+          .catch((error) => {
+            console.error("Error fetching data:", error);
+          });
+      }
+    }, 1000);
   };
   const override = {
     display: "block",
@@ -292,7 +294,7 @@ function MajorResult() {
           data-testid="loader"
           cssOverride={override}
         />
-        {recom.length > 0 && (
+        {recom.length > 0 && loading === false && (
           <>
             <div className="rcm-card-container">
               <Slide>
@@ -316,16 +318,18 @@ function MajorResult() {
           <></>
         )}
 
-        {result.length > 0 && calcMethod === "Weighted Sum" && (
-          <DataTable
-            title="Weighted Sum"
-            columns={WeightsumColumns}
-            data={result}
-            striped
-          />
-        )}
+        {result.length > 0 &&
+          calcMethod === "Weighted Sum" &&
+          loading === false && (
+            <DataTable
+              title="Weighted Sum"
+              columns={WeightsumColumns}
+              data={result}
+              striped
+            />
+          )}
 
-        {result.length > 0 && calcMethod === "VIKOR" && (
+        {result.length > 0 && calcMethod === "VIKOR" && loading === false && (
           <DataTable
             title="VIKOR"
             columns={VikorColumns}
