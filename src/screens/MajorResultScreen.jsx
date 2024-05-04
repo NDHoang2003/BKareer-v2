@@ -7,6 +7,7 @@ import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import Result from "../database/Result.js";
 import { BounceLoader } from "react-spinners";
+import { Alert } from "bootstrap";
 
 function MajorResult() {
   const mbtiOptions = [
@@ -165,7 +166,7 @@ function MajorResult() {
             setLoading(false);
           })
           .catch((error) => {
-            console.error("Error fetching data:", error);
+            Alert("Error fetching data:", error);
           });
       }
     }, 1000);
