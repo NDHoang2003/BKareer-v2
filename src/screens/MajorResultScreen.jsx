@@ -150,6 +150,7 @@ function MajorResult() {
             const data = response.data;
             setResult(data.result);
             setRecom(data.recom);
+            setLoading(false);
           })
           .catch((error) => {
             console.error("Error fetching data:", error);
