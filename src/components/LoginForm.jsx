@@ -1,33 +1,93 @@
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  signInStart,
+  signInSuccess,
+  signInFailure,
+} from "../redux/user/userSlice.js";
+import OAuth from "./OAuth.jsx";
 function LoginForm() {
+  const [formData, setFormData] = useState({});
+  const { loading, error } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      dispatch(signInStart());
+      const res = await fetch("/api/auth/signin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      console.log(data);
+      if (data.success === "false") {
+        dispatch(signInFailure(data.message));
+        return;
+      }
+      dispatch(signInSuccess(data));
+      navigate("/");
+    } catch (error) {
+      dispatch(signInFailure(error.message));
+    }
+  };
   return (
     <div className="form-block">
-      <form className="" action="" method="post">
+      <form onSubmit={handleSubmit}>
         <div className="login-title-txt flex-self-start">Đăng nhập</div>
 
         <div className="answer-form">
-          <input className="input-field width-100" type="text" placeholder="Email/Số điện thoại" required/>
+          <input
+            className="input-field width-100"
+            type="email"
+            placeholder="Email"
+            required
+            id="email"
+            onChange={handleChange}
+          />
         </div>
 
         <div className="answer-form">
-          <input className="input-field width-100" type="password" placeholder="Mật khẩu" required/>
-        </div>
-
-        {/* Remember Me - Forgot password */}
-        <div className="flex-space-between">
-          <label className="light-txt"><input className="login-checkbox" type="checkbox"/>Ghi nhớ đăng nhập</label>
-          <a className="light-txt text-decor-none" href="#">Quên mật khẩu?</a>
+          <input
+            className="input-field width-100"
+            type="password"
+            placeholder="Mật khẩu"
+            required
+            id="password"
+            onChange={handleChange}
+          />
         </div>
 
         {/* Login Button */}
-        <input className="primary-btn margin-top-10 font-18 align-center width-100" type="submit" value="Đăng nhập" />
-
-        {/* Register Now */}
-        <div className="align-center width-fit-content font-18">
-          <p>Chưa có tài khoản? <a className="text-decor-none" href="/register">Đăng ký ngay</a></p>
-        </div>
+        <button
+          className="primary-btn margin-top-10 font-18 align-center width-100"
+          disabled={loading}
+        >
+          {loading ? "Loading..." : "Đăng nhập"}
+        </button>
       </form>
+      {error && <p className="red">{error}</p>}
+
+      {/* Register Now */}
+      <OAuth />
+      <div className="align-center width-fit-content font-18">
+        <p>
+          Chưa có tài khoản?{" "}
+          <a className="text-decor-none" href="/register">
+            Đăng ký ngay
+          </a>
+        </p>
+      </div>
     </div>
   );
 }
