@@ -22,13 +22,16 @@ function LoginForm() {
     e.preventDefault();
     try {
       dispatch(signInStart());
-      const res = await fetch("/api/auth/signin", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://backend-datn-v2.vercel.app/api/auth/signin",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       const data = await res.json();
       console.log(data);
       if (data.success === "false") {

@@ -61,12 +61,18 @@ function News() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     const fetchdata = async () => {
-      const response = await fetch("/api/news/");
-      const data = await response.json();
-      if (data.length > 0) {
-        console.log(data);
-        setLoading(true);
-        setRssItems(data);
+      try {
+        const response = await fetch(
+          "https://backend-datn-v2.vercel.app/api/news/"
+        );
+        const data = await response.json();
+        if (data.length > 0) {
+          console.log(data);
+          setLoading(true);
+          setRssItems(data);
+        }
+      } catch (error) {
+        console.error("Error fetching data: ", error);
       }
     };
     fetchdata();
