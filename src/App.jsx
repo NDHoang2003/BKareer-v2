@@ -26,6 +26,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomeScreen />} />
+        <Route path="*" element={<p>Page not found</p>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/majorTest" element={<MajorTest />} />
