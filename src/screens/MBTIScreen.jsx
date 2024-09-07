@@ -110,7 +110,7 @@ function MBTITest() {
         ))}
         
         <div className="flex-row align-center width-fit-content">
-          <Link to={`/majorResult?mbtiResult=${result}`} className="primary-btn font-18 width-45 margin-right-3rem">Quay về nhập kết quả</Link>
+          <Link to={`/majorResult?mbtiResult=${result}`} className="primary-btn font-18 width-45 margin-right-5rem">Quay về nhập kết quả</Link>
           <button className="primary-btn font-18" onClick={result}>Xem kết quả</button>
         </div>
       </div>
