@@ -64,6 +64,7 @@ function News() {
       const response = await fetch("/api/news/");
       const data = await response.json();
       if (data.length > 0) {
+        console.log(data);
         setLoading(true);
         setRssItems(data);
       }
