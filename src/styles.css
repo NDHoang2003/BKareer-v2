@@ -1,8 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: "Jomhuria";
   src: url("./assets/fonts/Jomhuria-Regular.ttf");
 }
-
 
 @font-face {
   font-family: "Nunito_Sans_10pt_Condensed_Light";
@@ -10,8 +13,8 @@
 }
 
 @font-face {
-	font-family: "Nunito_Sans_10pt_Condensed_Regular";
-	src: url("./assets/fonts/NunitoSans_10pt_Condensed-Regular.ttf");
+  font-family: "Nunito_Sans_10pt_Condensed_Regular";
+  src: url("./assets/fonts/NunitoSans_10pt_Condensed-Regular.ttf");
 }
 
 @font-face {
@@ -20,8 +23,8 @@
 }
 
 @font-face {
-	font-family: "Nunito_Sans_10pt_Condensed_Bold";
-	src: url("./assets/fonts/NunitoSans_10pt_Condensed-Bold.ttf");
+  font-family: "Nunito_Sans_10pt_Condensed_Bold";
+  src: url("./assets/fonts/NunitoSans_10pt_Condensed-Bold.ttf");
 }
 
 .test {
@@ -29,18 +32,18 @@
   padding: 1px;
 }
 :root {
-  background-color: #F5F5F5;
+  background-color: #ecf0f1;
   font-family: Nunito_Sans_10pt_Condensed_Regular;
   font-size: 18;
   line-height: 1.5;
 }
 body {
-  margin: 0; /* Override user agent stylesheet*/
-} 
+  margin: 0;
+}
 
 /* Body Style */
 .body {
-  background-color: #F5F5F5;
+  background-color: #ecf0f1;
   margin: 10rem 8rem 5rem 8rem;
 }
 .screen-block {
@@ -181,6 +184,15 @@ body {
   justify-content: center;
 }
 
+.mbti-title {
+  color: white;
+  font-family: Nunito_Sans_10pt_Condensed_Bold;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
 /* App Name Style */
 .appName {
   font-family: Jomhuria;
@@ -195,7 +207,7 @@ body {
   z-index: 15;
   position: fixed;
   top: 0;
-  width: 90vw;
+  width: 100vw;
   background-color: #358bca;
   line-height: 2;
   display: flex;
@@ -254,7 +266,7 @@ body {
 }
 .card-group-col {
   display: table-cell;
-  border-left: 2px solid #F5F5F5;
+  border-left: 2px solid #f5f5f5;
 }
 .card-group-col:nth-of-type(2n - 1) {
   display: table-cell;
@@ -263,7 +275,7 @@ body {
 .card-group-ele {
   display: table-cell;
   width: 50%;
-  border-left: 2px solid #F5F5F5;
+  border-left: 2px solid #f5f5f5;
 }
 .card-group-ele:nth-of-type(2n - 1) {
   margin-right: 2px;
@@ -283,12 +295,34 @@ body {
   color: #888;
   margin-bottom: 1.5rem;
 }
+.red {
+  color: red;
+}
+.rounded-full {
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  object-fit: cover;
+}
+.button-oauth {
+  background-color: #b91c1c;
+  color: #ffffff;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  margin-top: 5px;
+  cursor: pointer;
+  height: 50px;
+}
 
+.button-oauth:hover {
+  opacity: 0.95;
+}
 /* Login Screen */
 .appName-block {
   flex: 3;
   height: 100vh;
-  background-image: linear-gradient(#DBF0FF, #358BCA);
+  background-image: linear-gradient(#dbf0ff, #358bca);
 }
 .img-login {
   width: 60%;
@@ -308,7 +342,7 @@ body {
   font-size: 1.5rem;
 }
 .login-title-txt {
-  color: #358BCA;
+  color: #358bca;
   font-family: Nunito_Sans_10pt_Condensed_Bold;
   font-size: 2rem;
   margin-bottom: 15%;
@@ -319,31 +353,30 @@ body {
   padding: 7rem 6rem;
 }
 .input-field {
-  color: #358BCA;
-  border: 1px solid #358BCA;
+  color: #358bca;
+  border: 1px solid #358bca;
   border-radius: 10px;
   padding: 1.5rem 0rem 1.5rem 1rem;
   margin-bottom: 2%;
 }
 .input-field:focus {
   outline: none !important;
-  border:1px solid #358BCA;
-  box-shadow: 0 0 5px #719ECE;
+  border: 1px solid #358bca;
+  box-shadow: 0 0 5px #719ece;
 }
 ::placeholder {
   font-family: Nunito_Sans_10pt_Condensed_Regular;
   font-size: 18px;
-  color: #358BCA;
+  color: #358bca;
   opacity: 1;
 }
 .login-checkbox {
   margin-left: 0px;
   vertical-align: middle;
-  accent-color: #358BCA;
+  accent-color: #358bca;
 }
 
 /* Register Screen */
-
 
 /* MBTI Screen */
 .question-card {
@@ -351,6 +384,26 @@ body {
   border-radius: 25px;
   padding: 2rem 4rem;
   margin-bottom: 2rem;
+  width: 100%;
+}
+
+.progress-card {
+  margin-top: 5px;
+  background: linear-gradient(to right, #3285c0, #89e0ff);
+  padding: 2rem 4rem;
+  width: 100%;
+  height: 12rem;
+  position: fixed;
+  z-index: 1;
+  top: 5rem;
+}
+.mbti-body {
+  top: 8rem;
+  position: relative;
+}
+.iq-body {
+  top: 8rem;
+  position: relative;
 }
 .question-card h1 {
   color: #358bca;
@@ -368,6 +421,9 @@ body {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  row-gap: 1rem;
 }
 .answer-item {
   width: 42.5%;
@@ -384,7 +440,32 @@ body {
   color: #358bca;
   font-family: Nunito_Sans_10pt_Condensed_Regular;
 }
-
+.answer-item input {
+  margin-right: 10px;
+}
+.answer-item-4 {
+  width: 42.5%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  text-align: left;
+  align-items: center;
+  border: 1px ridge #358bca;
+  border-radius: 50px;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  color: #358bca;
+  font-family: Nunito_Sans_10pt_Condensed_Regular;
+}
+.answer-item-4 input {
+  margin-right: 10px;
+}
+.answer-item-4:hover {
+  background-color: #eaeaea;
+  border-color: #142531;
+  color: #142531;
+}
 .answer-item:hover {
   background-color: #eaeaea;
   border-color: #142531;
@@ -403,10 +484,23 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* Màu đen với độ trong suốt 70% (0.7) */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Màu đen với độ trong suốt 70% (0.7) */
   justify-content: center;
   align-items: center;
   display: none;
+}
+.form_iq {
+  width: 500px;
+  height: 230px;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  display: block;
 }
 
 .result_form {
@@ -498,15 +592,15 @@ body {
 .res-block {
   margin-top: 4rem;
 }
-.rcm-card{
+.rcm-card {
   padding: 40px;
 }
-.rcm-card-container{
+.rcm-card-container {
   background-color: #d5e6f2;
   border: 1px solid #d5e6f2;
   border-radius: 50px;
 }
-.rcm-card-content{
+.rcm-card-content {
   color: #666;
 }
 
@@ -531,7 +625,7 @@ body {
   width: 50%;
   height: fit-content;
 }
-.img-major{
+.img-major {
   width: 35%;
   display: block;
   margin-left: auto;
@@ -615,7 +709,7 @@ body {
 }
 
 .primary-outline-btn:hover {
-  background-color: #358BCA;
+  background-color: #358bca;
   color: white;
 }
 
@@ -676,7 +770,7 @@ body {
 
 /* Footer */
 .footer {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   color: #888;
   display: flex;
   justify-content: center;
@@ -690,6 +784,7 @@ body {
 .footer-info {
   margin-bottom: 1rem;
 }
+<<<<<<< HEAD
 
 .rcm-card{
   padding: 40px;
@@ -704,3 +799,97 @@ body {
 .rcm-card-des{
   color:#34495E;
 }
+=======
+.screen-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.new {
+  width: 350px;
+  height: 500px;
+  box-shadow: 5px 5px 5px #aaa;
+  margin: 20px;
+  display: block;
+  overflow: hidden;
+  border-radius: 0px 0px 10px 0px;
+  text-decoration: none;
+  color: #000;
+  padding: 5px;
+  background-color: #ffffff;
+  position: relative;
+}
+.new-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #358bca;
+}
+.new img {
+  width: 100%;
+  height: 70%;
+}
+.background {
+  background-color: #f5f5f5;
+  padding: 3rem 4rem;
+}
+.new-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Số dòng muốn giới hạn */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Hiển thị dấu ba chấm nếu nội dung bị cắt */
+}
+.new-day {
+  font-size: 12px;
+  color: #888;
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.new-day span {
+  margin-right: 10px;
+}
+
+.paging {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0 5rem;
+}
+
+.paging li a {
+  border-radius: 7px;
+  padding: 0.1rem 1rem;
+  border: 1px solid transparent; /* Đặt viền mặc định là trong suốt */
+  cursor: pointer;
+  overflow: visible;
+}
+
+.paging li.previous a,
+.paging li.next a,
+.paging li.break a {
+  border-color: transparent;
+}
+
+.paging li.active a {
+  background-color: #0366d6;
+  color: white;
+  min-width: 32px;
+  border-color: #0366d6; /* Đổi màu viền theo màu nền */
+}
+
+.paging li.disabled a {
+  color: grey;
+  border-color: transparent; /* Đảm bảo viền không hiển thị */
+}
+
+.paging li.disable,
+.paging li.disabled a {
+  cursor: default;
+}
+>>>>>>> 6893290f6e21ddc192d6ee1d9a065d2722a141af

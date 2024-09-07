@@ -32,7 +32,8 @@ const Card = ({ Ques }) => {
               id={Ques.answers[0].answerId}
               className="input"
               onClick={() => onSelected(Ques.answers[0].answerId)}
-              key={Ques.answers[0].answerId} />
+              key={Ques.answers[0].answerId}
+            />
             <label htmlFor="answer1">{Ques.answers[0].answerContent}</label>
           </div>
           <div
@@ -45,13 +46,14 @@ const Card = ({ Ques }) => {
               id={Ques.answers[1].answerId}
               className="input"
               onClick={() => onSelected(Ques.answers[1].answerId)}
-              key={Ques.answers[1].answerId} />
+              key={Ques.answers[1].answerId}
+            />
             <label htmlFor="answer2">{Ques.answers[1].answerContent}</label>
           </div>
         </div>
       </div>
     </>
   );
-}
+};
 
 export default Card;

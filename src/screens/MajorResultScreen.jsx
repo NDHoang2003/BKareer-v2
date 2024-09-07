@@ -166,12 +166,13 @@ function MajorResult() {
       if (calcMethod === "Weighted Sum") {
         axios
           .get(
-            `https://ikigaihcmutv2-332ubqslia-as.a.run.app/cal_weight_sum?MBTI=${mbtiValue}&CC=${careerValue}`
+            `https://vikor-cal.vercel.app/cal_weight_sum?MBTI=${mbtiValue}&CC=${careerValue}`
           )
           .then((response) => {
             const data = response.data;
             setResult(data.result);
             setRecom(data.recom);
+            setLoading(false);
           })
           .catch((error) => {
             console.error("Error fetching data:", error);
@@ -179,7 +180,7 @@ function MajorResult() {
       } else if (calcMethod === "VIKOR") {
         axios
           .get(
-            `https://ikigaihcmutv2-332ubqslia-as.a.run.app/cal_vikor?MBTI=${mbtiValue}&CC=${careerValue}`
+            `https://vikor-cal.vercel.app/cal_vikor?MBTI=${mbtiValue}&CC=${careerValue}`
           )
           .then((response) => {
             const data = response.data;
