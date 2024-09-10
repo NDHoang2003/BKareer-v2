@@ -199,7 +199,7 @@ export default function Profile() {
           Delete account
         </span>
         <span onClick={handleSignOut} className="text-red-700 cursor-pointer">
-          Sign out
+          Đăng xuất
         </span>
       </div>
 
@@ -207,6 +207,9 @@ export default function Profile() {
       <p className="text-green-700 mt-5">
         {updateSuccess ? "User is updated successfully!" : ""}
       </p>
+      <Link to="/personal">
+        <span className="text-blue-400 cursor-pointer">Kết quả cá nhân</span>
+      </Link>
     </div>
   );
 }

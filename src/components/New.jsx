@@ -2,7 +2,7 @@ import React from "react";
 
 const ContentComponent = ({ content, title, link, img, day }) => {
   return (
-    <a className="new" href={link}>
+    <a className="new" href={link} target="_blank" rel="noopener noreferrer">
       <img src={img}></img>
       <div className="new-title">{title}</div>
       <div className="new-text">{content}</div>

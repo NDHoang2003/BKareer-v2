@@ -49,7 +49,7 @@ const Panel = ({ majorName, onClose, isOpen, loading }) => {
           ></img>
           <div className="panel_info">
             <div className="info">
-              <div className="hero">
+              <div className="hero hero-margin">
                 <img
                   src={majorData.img}
                   alt="img"
@@ -58,7 +58,7 @@ const Panel = ({ majorName, onClose, isOpen, loading }) => {
                 ></img>
                 <span>{majorData.name}</span>
               </div>
-              <p>{majorData.description}</p>
+              <h3>{majorData.description}</h3>
               {/* Phần này có thể thêm thông tin khác từ dữ liệu nếu cần */}
             </div>
           </div>
