@@ -188,7 +188,7 @@ body {
   color: white;
   font-family: Nunito_Sans_10pt_Condensed_Bold;
   font-size: 2rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
 }
@@ -397,6 +397,17 @@ body {
   z-index: 1;
   top: 5rem;
 }
+.time-clock {
+  color: #3285c0;
+}
+.text-bar {
+  color: white;
+  font-family: Nunito_Sans_10pt_Condensed_Bold;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
 .mbti-body {
   top: 8rem;
   position: relative;
@@ -496,7 +507,6 @@ body {
 }
 .form_iq {
   width: 500px;
-  height: 230px;
   background-color: white;
   border-radius: 20px;
   overflow: hidden;
@@ -558,11 +568,16 @@ body {
   height: 200px;
   border-left: 1px solid #888;
 }
+.CC-font {
+  align-items: center;
+  justify-content: center;
+}
 .CC-checkbox {
   margin-left: 0px;
-  margin-bottom: 7px;
   vertical-align: middle;
   accent-color: #358bca;
+  margin-right: 10px;
+  font-size: 20px;
 }
 .CC-activities-block {
   width: 40%;
@@ -654,7 +669,7 @@ body {
   text-decoration: none;
 }
 
-.dropdown-item{
+.dropdown-item {
   padding-left: 10px;
   border-radius: 5px;
 }
@@ -754,18 +769,18 @@ body {
 }
 
 /* Recommend card */
-.rcm-card{
+.rcm-card {
   padding: 40px;
 }
 
-.rcm-card-container{
-  background-color: #AED6F1;
-  border: 1px solid #AED6F1;
+.rcm-card-container {
+  background-color: #aed6f1;
+  border: 1px solid #aed6f1;
   border-radius: 50px;
 }
 
-.rcm-card-des{
-  color:#34495E;
+.rcm-card-des {
+  color: #34495e;
 }
 
 /* Footer */
@@ -784,22 +799,19 @@ body {
 .footer-info {
   margin-bottom: 1rem;
 }
-<<<<<<< HEAD
-
-.rcm-card{
+.rcm-card {
   padding: 40px;
 }
 
-.rcm-card-container{
-  background-color: #AED6F1;
-  border: 1px solid #AED6F1;
+.rcm-card-container {
+  background-color: #aed6f1;
+  border: 1px solid #aed6f1;
   border-radius: 50px;
 }
 
-.rcm-card-des{
-  color:#34495E;
+.rcm-card-des {
+  color: #34495e;
 }
-=======
 .screen-content {
   display: flex;
   justify-content: center;
@@ -892,4 +904,3 @@ body {
 .paging li.disabled a {
   cursor: default;
 }
->>>>>>> 6893290f6e21ddc192d6ee1d9a065d2722a141af

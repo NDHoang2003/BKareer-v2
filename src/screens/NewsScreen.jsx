@@ -62,9 +62,7 @@ function News() {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const response = await fetch(
-          "https://backend-datn-v2.vercel.app/api/news/"
-        );
+        const response = await fetch("http://localhost:3000/api/news/");
         const data = await response.json();
         if (data.length > 0) {
           console.log(data);

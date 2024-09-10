@@ -1,7 +1,7 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 import ProgressBar from "@ramonak/react-progress-bar";
 
 import Card from "../components/Card.jsx";
@@ -13,6 +13,8 @@ import Result from "../database/Result.js";
 function MBTITest() {
   const list = questions;
   // const perlist = require("../database/MBTIPersonality");
+  const { currentUser } = useSelector((state) => state.user);
+  const [loading, setLoading] = useState(true);
   const [per, setPer] = useState({});
   const Elist = ["1", "15", "29", "41", "57", "71", "85", "99", "113", "127"];
   const Ilist = ["2", "16", "30", "42", "58", "72", "86", "100", "114", "128"];
@@ -148,8 +150,7 @@ function MBTITest() {
     "126",
     "140",
   ];
-
-  const result = () => {
+  const result = async () => {
     let listAnswer = document.querySelectorAll('input[type="radio"]');
     let count = 0;
     let e = 0;
@@ -201,6 +202,9 @@ function MBTITest() {
       alert(`Bạn chưa hoàn thành bài kiểm tra ở các câu ${arr.join(", ")}`);
       return;
     } else {
+      const card = document.getElementById("progress-card");
+      setIsActive(false);
+      card.style.display = "none";
       if (e > ii) {
         data = data + "E";
       } else if (e <= ii) {
@@ -222,29 +226,44 @@ function MBTITest() {
         data = data + "P";
       }
       const re = perlist.getdata(data);
-
-      setPer(re);
       document.querySelector(".Panel").style.display = "flex";
-
+      try {
+        if (currentUser) {
+          const date = new Date().toLocaleString();
+          const res = await fetch("http://localhost:3000/api/score/mbti", {
+            method: "POST",
+            credentials: "include",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              time: time,
+              date: date,
+              score: data,
+            }),
+          });
+          const data2 = await res.json();
+          if (data2) {
+            setTimeout(() => {
+              setLoading(false);
+            }, 1000);
+          }
+        } else {
+          setTimeout(() => {
+            setLoading(false);
+          }, 2000);
+        }
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+        setLoading(false);
+      }
+      setPer(re);
       Result.setMbti(data);
     }
   };
+  const [countt, setCount] = useState(0);
   const [progress, setProgress] = useState(0);
-  const scrollToNext = (index) => {
-    console.log("scrollToNext", index);
-    const nextIndex = index + 1; // Lấy index kế tiếp
-    const nextElement = document.querySelector(`div[id='div-${nextIndex}']`); // Tìm thẻ div với id chính xác
-    console.log(nextElement);
-    if (nextElement) {
-      const rect = nextElement.getBoundingClientRect(); // Lấy vị trí của thẻ div so với viewport
-      const offset = window.pageYOffset + rect.top - 280; // Tính vị trí so với toàn bộ tài liệu (document)
-
-      // Cuộn tới vị trí chính xác, loại bỏ ảnh hưởng của padding/margin
-      window.scrollTo({
-        top: offset, // Cuộn đến vị trí chính xác của thẻ div
-        behavior: "smooth",
-      });
-    }
+  const scrollToNext = () => {
     let count = 0;
     let listAnswer = document.querySelectorAll('input[type="radio"]');
     for (let i = 0; i < listAnswer.length; i += 2) {
@@ -255,13 +274,35 @@ function MBTITest() {
         count++;
       }
     }
+    setCount(count);
     setProgress(Math.floor((count / 70) * 100));
   };
+  const [seconds, setSeconds] = useState(0);
+  const [isActive, setIsActive] = useState(true);
+  const [time, setTime] = useState("");
+  useEffect(() => {
+    let interval = null;
+    if (isActive) {
+      interval = setInterval(() => {
+        setSeconds((seconds) => seconds + 1);
+        const min = Math.floor(seconds / 60);
+        const sec = seconds % 60;
+        setTime(`${min}:${sec < 10 ? "0" + sec : sec}`);
+      }, 1000);
+    } else if (!isActive && seconds !== 0) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval); // Cleanup interval khi component bị unmount
+  }, [isActive, seconds]);
+
   return (
     <div>
-      <div className="progress-card">
+      <div className="progress-card" id="progress-card">
         <div className="mbti-title">Trắc nghiệm MBTI</div>
-
+        <div className="text-bar">
+          <span>- Bạn đã hoàn thành : {countt}/70 câu</span>
+          <span className="time-clock"> Thời gian {time}</span>
+        </div>
         <ProgressBar
           completed={progress}
           baseBgColor="white"
@@ -274,9 +315,9 @@ function MBTITest() {
           <div
             id={`div-${index}`}
             key={item.content}
-            onClick={() => scrollToNext(index)}
+            onClick={() => scrollToNext()}
           >
-            <Card Ques={item} key={item.content} />
+            <Card Ques={item} key={item.content} index={index} />
           </div>
         ))}
 
@@ -293,7 +334,7 @@ function MBTITest() {
         </div>
       </div>
 
-      <Panel Data={per} />
+      <Panel Data={per} loading={loading} />
     </div>
   );
 }

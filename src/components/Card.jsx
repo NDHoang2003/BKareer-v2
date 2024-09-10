@@ -1,4 +1,4 @@
-const Card = ({ Ques }) => {
+const Card = ({ Ques, index }) => {
   const onSelected = (answerId) => {
     var radioInput = document.getElementById(answerId);
     // Kiểm tra xem radio đã được chọn hay chưa
@@ -15,6 +15,18 @@ const Card = ({ Ques }) => {
         let answerItem = document.getElementById(list[i].id).parentElement;
         answerItem.classList.remove("selected");
       }
+    }
+    const nextIndex = index + 1; // Lấy index kế tiếp
+    const nextElement = document.querySelector(`div[id='div-${nextIndex}']`); // Tìm thẻ div với id chính xác
+    if (nextElement) {
+      const rect = nextElement.getBoundingClientRect(); // Lấy vị trí của thẻ div so với viewport
+      const offset = window.pageYOffset + rect.top - 280; // Tính vị trí so với toàn bộ tài liệu (document)
+
+      // Cuộn tới vị trí chính xác, loại bỏ ảnh hưởng của padding/margin
+      window.scrollTo({
+        top: offset, // Cuộn đến vị trí chính xác của thẻ div
+        behavior: "smooth",
+      });
     }
   };
   return (
