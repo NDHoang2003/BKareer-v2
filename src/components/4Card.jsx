@@ -1,4 +1,4 @@
-const Card4 = ({ Ques }) => {
+const Card4 = ({ Ques, index }) => {
   const onSelected = (answerId) => {
     let list = document.getElementsByName(Ques.content);
     for (let i = 0; i < list.length; i++) {
@@ -11,6 +11,19 @@ const Card4 = ({ Ques }) => {
         let answerItem = list[i].parentElement;
         answerItem.classList.remove("selected");
       }
+    }
+    const nextIndex = index + 1;
+    const nextElement = document.querySelector(`div[id='div-${nextIndex}']`);
+
+    if (nextElement) {
+      const rect = nextElement.getBoundingClientRect(); // Lấy vị trí của thẻ div so với viewport
+      const offset = window.pageYOffset + rect.top - 300; // Tính vị trí so với toàn bộ tài liệu (document)
+
+      // Cuộn tới vị trí chính xác, loại bỏ ảnh hưởng của padding/margin
+      window.scrollTo({
+        top: offset, // Cuộn đến vị trí chính xác của thẻ div
+        behavior: "smooth",
+      });
     }
   };
   return (

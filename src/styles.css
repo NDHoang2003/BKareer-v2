@@ -188,7 +188,7 @@ body {
   color: white;
   font-family: Nunito_Sans_10pt_Condensed_Bold;
   font-size: 2rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
 }
@@ -397,6 +397,17 @@ body {
   z-index: 1;
   top: 5rem;
 }
+.time-clock {
+  color: #3285c0;
+}
+.text-bar {
+  color: white;
+  font-family: Nunito_Sans_10pt_Condensed_Bold;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
 .mbti-body {
   top: 8rem;
   position: relative;
@@ -496,7 +507,6 @@ body {
 }
 .form_iq {
   width: 500px;
-  height: 230px;
   background-color: white;
   border-radius: 20px;
   overflow: hidden;
@@ -521,12 +531,16 @@ body {
   background-color: antiquewhite;
   padding: 10px;
   border-radius: 10px;
+  width: 50%;
 }
 .hero {
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: 20px;
+}
+.hero-margin {
+  margin-bottom: 10px;
 }
 
 .hero span {
@@ -558,11 +572,16 @@ body {
   height: 200px;
   border-left: 1px solid #888;
 }
+.CC-font {
+  align-items: center;
+  justify-content: center;
+}
 .CC-checkbox {
   margin-left: 0px;
-  margin-bottom: 7px;
   vertical-align: middle;
   accent-color: #358bca;
+  margin-right: 10px;
+  font-size: 20px;
 }
 .CC-activities-block {
   width: 40%;
@@ -654,7 +673,7 @@ body {
   text-decoration: none;
 }
 
-.dropdown-item{
+.dropdown-item {
   padding-left: 10px;
   border-radius: 5px;
 }
@@ -754,18 +773,18 @@ body {
 }
 
 /* Recommend card */
-.rcm-card{
+.rcm-card {
   padding: 40px;
 }
 
-.rcm-card-container{
-  background-color: #AED6F1;
-  border: 1px solid #AED6F1;
+.rcm-card-container {
+  background-color: #aed6f1;
+  border: 1px solid #aed6f1;
   border-radius: 50px;
 }
 
-.rcm-card-des{
-  color:#34495E;
+.rcm-card-des {
+  color: #34495e;
 }
 
 /* Footer */
@@ -784,22 +803,19 @@ body {
 .footer-info {
   margin-bottom: 1rem;
 }
-<<<<<<< HEAD
-
-.rcm-card{
+.rcm-card {
   padding: 40px;
 }
 
-.rcm-card-container{
-  background-color: #AED6F1;
-  border: 1px solid #AED6F1;
+.rcm-card-container {
+  background-color: #aed6f1;
+  border: 1px solid #aed6f1;
   border-radius: 50px;
 }
 
-.rcm-card-des{
-  color:#34495E;
+.rcm-card-des {
+  color: #34495e;
 }
-=======
 .screen-content {
   display: flex;
   justify-content: center;
@@ -892,4 +908,132 @@ body {
 .paging li.disabled a {
   cursor: default;
 }
->>>>>>> 6893290f6e21ddc192d6ee1d9a065d2722a141af
+
+.personal-header {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.personal-result-table {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem 4rem;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.personal-result-table div {
+  width: 25%;
+  padding: 1rem;
+  border: 1px solid #358bca;
+  text-align: center;
+  font-size: 1.3rem;
+  color: white;
+  z-index: 2;
+}
+
+.margin0 {
+  margin-top: 0px;
+}
+.dark-blue {
+  color: #fad7a0;
+}
+
+.img-per {
+  display: flex;
+}
+
+.img-per img {
+  margin-bottom: 2.7rem;
+  margin-right: 10px;
+}
+
+.background-img {
+  background-color: #071c39;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.background-img::before,
+.background-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Đảm bảo các chấm không can thiệp đến các phần tử khác */
+}
+
+.background-img::before {
+  background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.8) 1px,
+      transparent 2px
+    ),
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 2px);
+  background-size: 300px 300px; /* Kích thước và khoảng cách của các chấm */
+  background-position: 50% 10%, 80% 40%, 50% 70%, 20% 40%, 65% 25%, 35% 75%;
+  animation: rotate 40s linear infinite;
+}
+
+.background-img::after {
+  background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.4) 1px,
+      transparent 2px
+    ),
+    radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 2px);
+  background-size: 400px 400px; /* Kích thước và khoảng cách của các chấm */
+  background-position: 50% 10%, 80% 40%, 50% 70%, 20% 40%, 65% 25%, 35% 75%;
+
+  animation: rotate 40s linear infinite;
+}
+.gradient {
+  background-image: url("https://i1-vnexpress.vnecdn.net/2022/12/09/dai-ngan-ha-6665-1670582139.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=yKtbviyLmTsWK5FZeQ5KMg");
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  width: 400px;
+  margin: auto;
+  transform: rotateX(-40deg);
+  box-shadow: 0px 0px 100px;
+  animation: rotate 20s linear infinite;
+  border-radius: 100%;
+  left: 37.5%;
+  top: 15%;
+  z-index: 0;
+  filter: blur(4px);
+}

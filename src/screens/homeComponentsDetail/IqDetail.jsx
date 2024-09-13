@@ -2,18 +2,28 @@ import Card4 from "../../components/4Card";
 import question from "../../database/IQQues.js";
 import exit from "../../assets/remove.png";
 import iq from "../../assets/iq-icon.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
+import { BounceLoader } from "react-spinners";
+import { useSelector } from "react-redux";
 
 function IQ() {
+  const { currentUser } = useSelector((state) => state.user);
   const list = question;
   const [progress, setProgress] = useState(0);
   const closeform = () => {
     document.querySelector(".Panel").style.display = "none";
     window.scrollTo(0, 0);
   };
+  const override = {
+    display: "block",
+    margin: "0 auto",
+    borderColor: "#04BCFC",
+    padding: "20px",
+  };
+  const [loading, setLoading] = useState(true);
   const [score, setScore] = useState("");
-  const result = () => {
+  const result = async () => {
     let listAnswer = document.querySelectorAll('input[type="radio"]');
     let count = 0;
     let sum = 0;
@@ -32,25 +42,43 @@ function IQ() {
     if (count < list.length) {
       alert("Bạn chưa hoàn thành bài trắc nghiệm");
     } else {
+      setIsActive(false);
       setScore(`${sum}/${list.length}`);
       document.querySelector(".Panel").style.display = "flex";
+      try {
+        if (currentUser) {
+          const date = new Date().toLocaleString();
+          const res = await fetch("http://localhost:3000/api/score/iq", {
+            credentials: "include",
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              time: time,
+              date: date,
+              score: `${sum}/${list.length}`,
+            }),
+          });
+          const data2 = await res.json();
+          if (data2) {
+            setTimeout(() => {
+              setLoading(false);
+            }, 1000);
+          }
+        } else {
+          setTimeout(() => {
+            setLoading(false);
+          }, 2000);
+        }
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+        setLoading(false);
+      }
     }
   };
-  const scrollToNext = (index) => {
-    console.log("scrollToNext", index);
-    const nextIndex = index + 1; // Lấy index kế tiếp
-    const nextElement = document.querySelector(`div[id='div-${nextIndex}']`); // Tìm thẻ div với id chính xác
-
-    if (nextElement) {
-      const rect = nextElement.getBoundingClientRect(); // Lấy vị trí của thẻ div so với viewport
-      const offset = window.pageYOffset + rect.top - 300; // Tính vị trí so với toàn bộ tài liệu (document)
-
-      // Cuộn tới vị trí chính xác, loại bỏ ảnh hưởng của padding/margin
-      window.scrollTo({
-        top: offset, // Cuộn đến vị trí chính xác của thẻ div
-        behavior: "smooth",
-      });
-    }
+  const [countt, setCount] = useState(0);
+  const scrollToNext = () => {
     let count = 0;
     let listAnswer = document.querySelectorAll('input[type="radio"]');
     for (let i = 0; i < listAnswer.length; i += 4) {
@@ -63,13 +91,34 @@ function IQ() {
         count++;
       }
     }
+    setCount(count);
     setProgress(Math.floor((count / 20) * 100));
   };
+  const [seconds, setSeconds] = useState(0);
+  const [isActive, setIsActive] = useState(true);
+  const [time, setTime] = useState("");
+  useEffect(() => {
+    let interval = null;
+    if (isActive) {
+      interval = setInterval(() => {
+        setSeconds((seconds) => seconds + 1);
+        const min = Math.floor(seconds / 60);
+        const sec = seconds % 60;
+        setTime(`${min}:${sec < 10 ? "0" + sec : sec}`);
+      }, 1000);
+    } else if (!isActive && seconds !== 0) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval); // Cleanup interval khi component bị unmount
+  }, [isActive, seconds]);
   return (
     <>
-      <div className="progress-card">
+      <div className="progress-card" id="progress-card">
         <div className="mbti-title">Trắc nghiệm IQ</div>
-
+        <div className="text-bar">
+          <span>- Bạn đã hoàn thành : {countt}/20 câu</span>
+          <span className="time-clock"> Thời gian {time}</span>
+        </div>
         <ProgressBar
           completed={progress}
           baseBgColor="white"
@@ -82,9 +131,9 @@ function IQ() {
           <div
             id={`div-${index}`}
             key={item.content}
-            onClick={() => scrollToNext(index)}
+            onClick={() => scrollToNext()}
           >
-            <Card4 Ques={item} key={item.content} />
+            <Card4 Ques={item} key={item.content} index={index} />
           </div>
         ))}
         <div className="flex-row align-center width-fit-content">
@@ -94,27 +143,38 @@ function IQ() {
         </div>
       </body>
       <div className="Panel">
-        <div className="form_iq">
-          <img
-            src={exit}
-            alt="exit_icon"
-            width={30}
-            height={30}
-            className="img"
-            onClick={closeform}
-          ></img>
-          <div className="panel_info">
-            <div className="info">
-              <div className="hero">
-                <img src={iq} alt="img" width={100} height={100}></img>
-                <span>IQ Test</span>
+        <BounceLoader
+          loading={loading}
+          size={150}
+          color="#50d1ff"
+          aria-label="Loading Spinner"
+          data-testid="loader"
+          cssOverride={override}
+        />
+        {!loading && (
+          <div className="form_iq">
+            <img
+              src={exit}
+              alt="exit_icon"
+              width={30}
+              height={30}
+              className="img"
+              onClick={closeform}
+            ></img>
+            <div className="panel_info">
+              <div className="info">
+                <div className="hero">
+                  <img src={iq} alt="img" width={100} height={100}></img>
+                  <span>IQ Test</span>
+                </div>
+                <h3>
+                  Bạn đã hoàn thành bài trắc nghiệm IQ. Kết quả của bạn là{" "}
+                  {score}
+                </h3>
               </div>
-              <p>
-                Bạn đã hoàn thành bài trắc nghiệm IQ. Kết quả của bạn là {score}
-              </p>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </>
   );

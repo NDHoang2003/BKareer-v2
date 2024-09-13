@@ -7,6 +7,7 @@ import {
   signInFailure,
 } from "../redux/user/userSlice.js";
 import OAuth from "./OAuth.jsx";
+
 function LoginForm() {
   const [formData, setFormData] = useState({});
   const { loading, error } = useSelector((state) => state.user);
@@ -22,8 +23,9 @@ function LoginForm() {
     e.preventDefault();
     try {
       dispatch(signInStart());
-      const res = await fetch("/api/auth/signin", {
+      const res = await fetch("http://localhost:3000/api/auth/signin", {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },

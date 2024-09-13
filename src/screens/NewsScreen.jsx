@@ -61,11 +61,18 @@ function News() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     const fetchdata = async () => {
-      const response = await fetch("/api/news/");
-      const data = await response.json();
-      if (data.length > 0) {
-        setLoading(true);
-        setRssItems(data);
+      try {
+        const response = await fetch("http://localhost:3000/api/news/", {
+          credentials: "include", // This allows credentials to be sent with the request
+        });
+        const data = await response.json();
+        if (data.length > 0) {
+          console.log(data);
+          setLoading(true);
+          setRssItems(data);
+        }
+      } catch (error) {
+        console.error("Error fetching data: ", error);
       }
     };
     fetchdata();

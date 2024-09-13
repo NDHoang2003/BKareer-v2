@@ -19,6 +19,7 @@ import IQ from "./screens/homeComponentsDetail/IqDetail";
 import EQ from "./screens/homeComponentsDetail/EqDetail";
 import PrivateRoute from "./screens/authentication/PrivateRoute";
 import Profile from "./screens/Profile";
+import PersonalResult from "./screens/PersonalResult";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomeScreen />} />
+        <Route path="*" element={<p>Page not found</p>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/majorTest" element={<MajorTest />} />
@@ -42,6 +44,7 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
+          <Route path="/personal" element={<PersonalResult />} />
         </Route>
       </Routes>
       <Footer />
