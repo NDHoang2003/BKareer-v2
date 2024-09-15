@@ -7,13 +7,15 @@ import Login from "./screens/authentication/LoginScreen";
 import Register from "./screens/authentication/RegisterScreen";
 import MBTITest from "./screens/MBTIScreen";
 import CCTest from "./screens/CareerClusterScreen";
+import IQTest from "./screens/IQTest";
+import EQTest from "./screens/EQTest";
 import News from "./screens/NewsScreen";
 import MajorTest from "./screens/MajorTestScreen";
 import MajorResult from "./screens/MajorResultScreen";
 import Ikigai from "./screens/homeComponentsDetail/IkigaiDetail";
-import MBTI from "./screens/homeComponentsDetail/MBTIDetail";
 import Vikor from "./screens/homeComponentsDetail/VikorDetail";
 import WeightedSum from "./screens/homeComponentsDetail/WeightedSumDetail";
+import MBTI from "./screens/homeComponentsDetail/MBTIDetail";
 import CC from "./screens/homeComponentsDetail/CareerClusterDetail";
 import IQ from "./screens/homeComponentsDetail/IqDetail";
 import EQ from "./screens/homeComponentsDetail/EqDetail";
@@ -26,22 +28,30 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
+        {/* HomeScreen */}
         <Route path="/" element={<HomeScreen />} />
         <Route path="*" element={<p>Page not found</p>} />
+        {/* Authentication */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        {/* Main Test */}
         <Route path="/majorTest" element={<MajorTest />} />
         <Route path="/majorResult" element={<MajorResult />} />
+        {/* Informations */}
         <Route path="/ikigai" element={<Ikigai />} />
         <Route path="/mbtiDetail" element={<MBTI />} />
         <Route path="/ccDetail" element={<CC />} />
-        <Route path="/iq" element={<IQ />} />
-        <Route path="/eq" element={<EQ />} />
+        <Route path="/iqDetail" element={<IQ />} />
+        <Route path="/eqDetail" element={<EQ />} />
         <Route path="/weightedSum" element={<WeightedSum />} />
         <Route path="/vikor" element={<Vikor />} />
+        {/* Other Tests */}
         <Route path="/mbti" element={<MBTITest />} />
         <Route path="/career" element={<CCTest />} />
+        <Route path="/iq" element={<IQTest/>} />
+        <Route path="/eq" element={<EQTest />} />
         <Route path="/news" element={<News />} />
+        {/* Private Route */}
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/personal" element={<PersonalResult />} />

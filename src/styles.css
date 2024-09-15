@@ -41,17 +41,25 @@ body {
   margin: 0;
 }
 
-/* Body Style */
+/******************* Body Style *******************/
 .body {
   background-color: #ecf0f1;
   margin: 10rem 8rem 5rem 8rem;
+}
+.mbti-body {
+  top: 8rem;
+  position: relative;
+}
+.iq-body {
+  top: 9rem;
+  position: relative;
 }
 .screen-block {
   background-color: white;
   padding: 3rem 4rem;
 }
 
-/* Font Weight */
+/******************* Font Weight *******************/
 .bold-txt {
   font-family: Nunito_Sans_10pt_Condensed_Bold;
 }
@@ -62,7 +70,7 @@ body {
   font-family: Nunito_Sans_10pt_Condensed_Light;
 }
 
-/* Font Size */
+/******************* Font Size *******************/
 .font-20 {
   font-size: 20px;
 }
@@ -73,7 +81,7 @@ body {
   font-size: 16px;
 }
 
-/* Single Special Style */
+/******************* Single Special Style *******************/
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -121,6 +129,9 @@ body {
 .text-decor-none {
   text-decoration: none;
 }
+.text-color-primary {
+  color: #358bca;
+}
 
 .margin-top-0 {
   margin-top: 0;
@@ -131,6 +142,12 @@ body {
 .margin-top-2rem {
   margin-top: 2rem;
 }
+.margin-top-2 {
+  margin-top: 2%;
+} /* components/OAuth */
+.margin-top-8 {
+  margin-top: 8%;
+} /* components/LoginForm */
 .margin-top-10 {
   margin-top: 10%;
 }
@@ -164,6 +181,9 @@ body {
 .width-45 {
   width: 45%;
 }
+.width-50 {
+  width: 50%;
+}
 .width-100 {
   width: 100%;
 }
@@ -193,7 +213,7 @@ body {
   justify-content: center;
 }
 
-/* App Name Style */
+/******************* App Name Style *******************/
 .appName {
   font-family: Jomhuria;
   font-size: 3rem;
@@ -202,7 +222,7 @@ body {
   letter-spacing: 1px;
 }
 
-/* Navbar */
+/******************* Navbar *******************/
 #nav {
   z-index: 15;
   position: fixed;
@@ -222,7 +242,10 @@ body {
   padding: 0;
   display: flex;
   align-items: center;
-  gap: 1rem;
+}
+#nav li {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 #nav li:hover {
   background-color: #4596cf;
@@ -241,7 +264,7 @@ body {
   padding: 0.25rem;
 }
 
-/* Card */
+/******************* Card *******************/
 .card {
   background-color: white;
   padding: 3rem 4rem;
@@ -254,23 +277,15 @@ body {
 }
 .card-left {
   display: flex;
-  flex: 9;
+  flex: 60%;
 }
 .card-right {
   display: flex;
-  flex: 6;
+  flex: 5;
 }
 .card-group-container {
   display: table;
   width: 100%;
-}
-.card-group-col {
-  display: table-cell;
-  border-left: 2px solid #f5f5f5;
-}
-.card-group-col:nth-of-type(2n - 1) {
-  display: table-cell;
-  border-left: 0px solid transparent;
 }
 .card-group-ele {
   display: table-cell;
@@ -304,21 +319,8 @@ body {
   width: 2rem;
   object-fit: cover;
 }
-.button-oauth {
-  background-color: #b91c1c;
-  color: #ffffff;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  text-transform: uppercase;
-  margin-top: 5px;
-  cursor: pointer;
-  height: 50px;
-}
 
-.button-oauth:hover {
-  opacity: 0.95;
-}
-/* Login Screen */
+/******************* Login Screen *******************/
 .appName-block {
   flex: 3;
   height: 100vh;
@@ -345,12 +347,12 @@ body {
   color: #358bca;
   font-family: Nunito_Sans_10pt_Condensed_Bold;
   font-size: 2rem;
-  margin-bottom: 15%;
+  margin-bottom: 10%;
 }
 .form-block {
   flex: 2;
   background-color: white;
-  padding: 7rem 6rem;
+  padding: 6rem 5rem 1rem 5rem;
 }
 .input-field {
   color: #358bca;
@@ -370,15 +372,10 @@ body {
   color: #358bca;
   opacity: 1;
 }
-.login-checkbox {
-  margin-left: 0px;
-  vertical-align: middle;
-  accent-color: #358bca;
-}
 
-/* Register Screen */
+/******************* Register Screen *******************/
 
-/* MBTI Screen */
+/******************* MBTI Screen *******************/
 .question-card {
   background-color: white;
   border-radius: 25px;
@@ -387,9 +384,10 @@ body {
   width: 100%;
 }
 
+/******************* IQ Screen *******************/
 .progress-card {
-  margin-top: 5px;
-  background: linear-gradient(to right, #3285c0, #89e0ff);
+  /* margin-top: 5px; */
+  background: linear-gradient(to bottom, #358bca, #89e0ff);
   padding: 2rem 4rem;
   width: 100%;
   height: 12rem;
@@ -398,7 +396,7 @@ body {
   top: 5rem;
 }
 .time-clock {
-  color: #3285c0;
+  color: white;
 }
 .text-bar {
   color: white;
@@ -407,14 +405,6 @@ body {
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
-}
-.mbti-body {
-  top: 8rem;
-  position: relative;
-}
-.iq-body {
-  top: 8rem;
-  position: relative;
 }
 .question-card h1 {
   color: #358bca;
@@ -451,6 +441,11 @@ body {
   color: #358bca;
   font-family: Nunito_Sans_10pt_Condensed_Regular;
 }
+.answer-item:not(.selected):hover {
+  background-color: #eef8ff;
+  border-color: #358bca;
+  color: #358bca;
+}
 .answer-item input {
   margin-right: 10px;
 }
@@ -472,15 +467,10 @@ body {
 .answer-item-4 input {
   margin-right: 10px;
 }
-.answer-item-4:hover {
-  background-color: #eaeaea;
-  border-color: #142531;
-  color: #142531;
-}
-.answer-item:hover {
-  background-color: #eaeaea;
-  border-color: #142531;
-  color: #142531;
+.answer-item-4:not(.selected):hover {
+  background-color: #eef8ff;
+  border-color: #358bca;
+  color: #358bca;
 }
 
 .selected {
@@ -548,7 +538,7 @@ body {
   font-size: 20px;
 }
 
-/* Career Cluster Screen */
+/******************* Career Cluster Screen *******************/
 .CC-instruction-txt {
   font-family: Nunito_Sans_10pt_Condensed_Regular;
   color: #666;
@@ -598,7 +588,7 @@ body {
   margin-left: 1rem;
 }
 
-/* Major Result Screen */
+/******************* Major Result Screen *******************/
 .left-res-block {
   display: flex;
   flex: 1;
@@ -623,7 +613,7 @@ body {
   color: #666;
 }
 
-/* Detail Screens */
+/******************* Detail Screens *******************/
 .detail-txt {
   color: #444;
   margin-bottom: 1rem;
@@ -634,7 +624,7 @@ body {
   padding-left: 20px;
 }
 
-/* Images */
+/******************* Images *******************/
 .img-home-1 {
   width: 45%;
   height: fit-content;
@@ -652,13 +642,25 @@ body {
   margin-top: -2rem;
   margin-bottom: 1rem;
 }
+.img-detail {
+  width: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+/* .img-loginWithGoogle {
+  width: 8%;
+  height: fit-content;
+} */
 
 .img {
   float: right;
   cursor: pointer;
 }
 
-/* Dropdown */
+/******************* Dropdown *******************/
 .dropdown {
   width: 45%;
   background-color: white;
@@ -683,7 +685,7 @@ body {
   color: #fff;
 }
 
-/* Buttons */
+/******************* Buttons *******************/
 .primary-btn {
   background-color: #358bca;
   color: white;
@@ -726,7 +728,6 @@ body {
   text-decoration: none;
   text-align: center;
 }
-
 .primary-outline-btn:hover {
   background-color: #358bca;
   color: white;
@@ -735,7 +736,7 @@ body {
 .white-outline-btn {
   background-color: #358bca;
   color: white;
-  padding: 0.5rem 1.5rem;
+  padding: 0.25rem 1.5rem;
   border-width: 1px;
   border-color: white;
   border-radius: 30px;
@@ -772,7 +773,24 @@ body {
   color: white;
 }
 
-/* Recommend card */
+.oauth-btn {
+  background-color: #cc3e2f;
+  color: white;
+  padding: 1rem 2rem;
+  border-width: 1px;
+  border-color: #cc3e2f;
+  border-radius: 10px;
+  border-style: ridge;
+  font-family: Nunito_Sans_10pt_Condensed_Bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+.oauth-btn:hover {
+  background-color: #c0392a;
+}
+
+/******************* Recommend card *******************/
 .rcm-card {
   padding: 40px;
 }
@@ -787,7 +805,7 @@ body {
   color: #34495e;
 }
 
-/* Footer */
+/******************* Footer *******************/
 .footer {
   background-color: #f5f5f5;
   color: #888;
@@ -803,19 +821,7 @@ body {
 .footer-info {
   margin-bottom: 1rem;
 }
-.rcm-card {
-  padding: 40px;
-}
 
-.rcm-card-container {
-  background-color: #aed6f1;
-  border: 1px solid #aed6f1;
-  border-radius: 50px;
-}
-
-.rcm-card-des {
-  color: #34495e;
-}
 .screen-content {
   display: flex;
   justify-content: center;

@@ -40,7 +40,7 @@ function Footer() {
 
       <div className="card card-margin-top">
         <div>&copy; BKareer</div>
-        <div>Đồ án chuyên ngành ngành HCMUT 2024</div>
+        <div>Đồ án tốt nghiệp HCMUT 2024</div>
       </div>
     </footer>
   );
