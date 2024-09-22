@@ -44,7 +44,7 @@ const Panel = ({ majorName, onClose, isOpen, loading }) => {
             alt="exit_icon"
             width={30}
             height={30}
-            className="img"
+            className="img margin-top-2rem margin-right-2rem"
             onClick={onClose}
           ></img>
           <div className="panel_info">
@@ -53,8 +53,8 @@ const Panel = ({ majorName, onClose, isOpen, loading }) => {
                 <img
                   src={majorData.img}
                   alt="img"
-                  width={100}
-                  height={100}
+                  width={150}
+                  height={150}
                 ></img>
                 <span>{majorData.name}</span>
               </div>

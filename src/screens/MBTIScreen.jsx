@@ -10,9 +10,8 @@ import questions from "../database/MBTIQuest";
 import perlist from "../database/MBTIPersonality";
 import Result from "../database/Result.js";
 
-function MBTITest() {
+export default function MBTITest() {
   const list = questions;
-  // const perlist = require("../database/MBTIPersonality");
   const { currentUser } = useSelector((state) => state.user);
   const [loading, setLoading] = useState(true);
   const [per, setPer] = useState({});
@@ -150,6 +149,7 @@ function MBTITest() {
     "126",
     "140",
   ];
+  
   const result = async () => {
     let listAnswer = document.querySelectorAll('input[type="radio"]');
     let count = 0;
@@ -302,10 +302,10 @@ function MBTITest() {
   return (
     <div>
       <div className="progress-card" id="progress-card">
-        <div className="mbti-title">Trắc nghiệm MBTI</div>
+        <div className="progress-card-title">Trắc nghiệm MBTI</div>
         <div className="text-bar">
           <span>Đã hoàn thành: {countt}/70 câu</span>
-          <span className="time-clock"> Thời gian {time}</span>
+          <span className="time-clock">Thời gian: {time}</span>
         </div>
         <ProgressBar
           completed={progress}
@@ -314,7 +314,8 @@ function MBTITest() {
           className="progress-bar"
         />
       </div>
-      <div className="body mbti-body">
+
+      <div className="body shorten-top-body">
         {list.map((item, index) => (
           <div
             id={`div-${index}`}
@@ -341,6 +342,4 @@ function MBTITest() {
       <Panel Data={per} loading={loading} />
     </div>
   );
-}
-
-export default MBTITest;
+};

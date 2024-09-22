@@ -6,19 +6,19 @@ const question = [
     answers: [
       {
         answerId: "1",
-        answerContent: "a. 18",
+        answerContent: "A. 18",
       },
       {
         answerId: "2",
-        answerContent: "b. 22",
+        answerContent: "B. 22",
       },
       {
         answerId: "3",
-        answerContent: "c. 24",
+        answerContent: "C. 24",
       },
       {
         answerId: "4",
-        answerContent: "d. 20",
+        answerContent: "D. 20",
       },
     ],
     key: "2",
@@ -26,23 +26,23 @@ const question = [
   {
     index: 2,
     content:
-      "Cho dãy số: 2 8 18 32 50 ? Số nào có thể thay vào chỗ có dấu hỏi chấm ?",
+      "Cho dãy số: 2 8 18 32 50 ? Số nào có thể thay vào chỗ có dấu hỏi chấm?",
     answers: [
       {
         answerId: "1",
-        answerContent: "a. 60",
+        answerContent: "A. 60",
       },
       {
         answerId: "2",
-        answerContent: "b. 70",
+        answerContent: "B. 70",
       },
       {
         answerId: "3",
-        answerContent: "c. 64",
+        answerContent: "C. 64",
       },
       {
         answerId: "4",
-        answerContent: "d. 72",
+        answerContent: "D. 72",
       },
     ],
     key: "4",
@@ -54,19 +54,19 @@ const question = [
     answers: [
       {
         answerId: "1",
-        answerContent: "a. 2",
+        answerContent: "A. 2",
       },
       {
         answerId: "2",
-        answerContent: "b. 4",
+        answerContent: "B. 4",
       },
       {
         answerId: "3",
-        answerContent: "c. 3",
+        answerContent: "C. 3",
       },
       {
         answerId: "4",
-        answerContent: "d. 5",
+        answerContent: "D. 5",
       },
     ],
     key: "3",
@@ -77,19 +77,19 @@ const question = [
     answers: [
       {
         answerId: "1",
-        answerContent: "a. S",
+        answerContent: "A. S",
       },
       {
         answerId: "2",
-        answerContent: "b. T",
+        answerContent: "B. T",
       },
       {
         answerId: "3",
-        answerContent: "c. U",
+        answerContent: "C. U",
       },
       {
         answerId: "4",
-        answerContent: "d. V",
+        answerContent: "D. V",
       },
     ],
     key: "3",
@@ -101,19 +101,19 @@ const question = [
     answers: [
       {
         answerId: "1",
-        answerContent: "a. Cha mẹ",
+        answerContent: "A. Cha mẹ",
       },
       {
         answerId: "2",
-        answerContent: "b. Chị em gái",
+        answerContent: "B. Chị em gái",
       },
       {
         answerId: "3",
-        answerContent: "c. Anh em họ",
+        answerContent: "C. Anh em họ",
       },
       {
         answerId: "4",
-        answerContent: "d. Chị em họ",
+        answerContent: "D. Chị em họ",
       },
     ],
     key: "2",
@@ -125,19 +125,19 @@ const question = [
     answers: [
       {
         answerId: "1",
-        answerContent: "a. 15",
+        answerContent: "A. 15",
       },
       {
         answerId: "2",
-        answerContent: "b. 20",
+        answerContent: "B. 20",
       },
       {
         answerId: "3",
-        answerContent: "c. 25",
+        answerContent: "C. 25",
       },
       {
         answerId: "4",
-        answerContent: "d. 30",
+        answerContent: "D. 30",
       },
     ],
     key: "4",
@@ -145,23 +145,23 @@ const question = [
   {
     index: 7,
     content:
-      "Số tiếp theo trong dãy số sau đây là số nào: 144 121 ...100 81 64 ?",
+      "Số tiếp theo trong dãy số sau đây là số nào: 144 121 ...100 81 64?",
     answers: [
       {
         answerId: "1",
-        answerContent: "a. 45",
+        answerContent: "A. 45",
       },
       {
         answerId: "2",
-        answerContent: "b. 49",
+        answerContent: "B. 49",
       },
       {
         answerId: "3",
-        answerContent: "c. 53",
+        answerContent: "C. 53",
       },
       {
         answerId: "4",
-        answerContent: "d. 57",
+        answerContent: "D. 57",
       },
     ],
     key: "2",
@@ -173,19 +173,19 @@ const question = [
     answers: [
       {
         answerId: "1",
-        answerContent: "a. 2856",
+        answerContent: "A. 2856",
       },
       {
         answerId: "2",
-        answerContent: "b. 6258",
+        answerContent: "B. 6258",
       },
       {
         answerId: "3",
-        answerContent: "c. 5862",
+        answerContent: "C. 5862",
       },
       {
         answerId: "4",
-        answerContent: "d. 6852",
+        answerContent: "D. 6852",
       },
     ],
     key: "2",
@@ -197,19 +197,19 @@ const question = [
     answers: [
       {
         answerId: "1",
-        answerContent: "a. 30.000",
+        answerContent: "A. 30.000",
       },
       {
         answerId: "2",
-        answerContent: "b. 40.000",
+        answerContent: "B. 40.000",
       },
       {
         answerId: "3",
-        answerContent: "c. 33.000",
+        answerContent: "C. 33.000",
       },
       {
         answerId: "4",
-        answerContent: "d. 50.000",
+        answerContent: "D. 50.000",
       },
     ],
     key: "1",
@@ -221,19 +221,19 @@ const question = [
     answers: [
       {
         answerId: "1",
-        answerContent: "a. Ít nhất 20 học sinh mặc cả áo lẫn quần màu trắng.",
+        answerContent: "A. Ít nhất 20 học sinh mặc cả áo lẫn quần màu trắng.",
       },
       {
         answerId: "2",
-        answerContent: "b.  Ít nhất 20 học sinh mặc cả áo lẫn quần màu xanh.",
+        answerContent: "B.  Ít nhất 20 học sinh mặc cả áo lẫn quần màu xanh.",
       },
       {
         answerId: "3",
-        answerContent: "c. Ít nhất 10 học sinh mặc cả áo lẫn quần màu trắng.",
+        answerContent: "C. Ít nhất 10 học sinh mặc cả áo lẫn quần màu trắng.",
       },
       {
         answerId: "4",
-        answerContent: "d. Ít nhất 10 học sinh mặc cả áo lẫn quần màu xanh",
+        answerContent: "D. Ít nhất 10 học sinh mặc cả áo lẫn quần màu xanh",
       },
     ],
     key: "3",
@@ -245,19 +245,19 @@ const question = [
     answers: [
       {
         answerId: "1",
-        answerContent: "a. 1",
+        answerContent: "A. 1",
       },
       {
         answerId: "2",
-        answerContent: "b. 0,7",
+        answerContent: "B. 0,7",
       },
       {
         answerId: "3",
-        answerContent: "c. 0,42",
+        answerContent: "C. 0,42",
       },
       {
         answerId: "4",
-        answerContent: "d. 0,21",
+        answerContent: "D. 0,21",
       },
     ],
     key: "3",
@@ -269,19 +269,19 @@ const question = [
     answers: [
       {
         answerId: "1",
-        answerContent: "a. 100.000$",
+        answerContent: "A. 100.000$",
       },
       {
         answerId: "2",
-        answerContent: "b. 150.000$",
+        answerContent: "B. 150.000$",
       },
       {
         answerId: "3",
-        answerContent: "c. 200.000$",
+        answerContent: "C. 200.000$",
       },
       {
         answerId: "4",
-        answerContent: "d. 250.000$",
+        answerContent: "D. 250.000$",
       },
     ],
     key: "3",
@@ -293,19 +293,19 @@ const question = [
     answers: [
       {
         answerId: "1",
-        answerContent: "a. Nếu không biết bơi thì là bạn của Tuấn.",
+        answerContent: "A. Nếu không biết bơi thì là bạn của Tuấn.",
       },
       {
         answerId: "2",
-        answerContent: "b. Nếu không biết bơi thì không là bạn của Tuấn.",
+        answerContent: "B. Nếu không biết bơi thì không là bạn của Tuấn.",
       },
       {
         answerId: "3",
-        answerContent: "c. Nếu không là bạn của Tuấn thì biết bơi.",
+        answerContent: "C. Nếu không là bạn của Tuấn thì biết bơi.",
       },
       {
         answerId: "4",
-        answerContent: "d. Nếu biết bơi thì là không là bạn của Tuấn.",
+        answerContent: "D. Nếu biết bơi thì là không là bạn của Tuấn.",
       },
     ],
     key: "1",
@@ -313,46 +313,46 @@ const question = [
   {
     index: 14,
     content:
-      "An cao hơn Tuấn, Bình không cao bằng An, Đức thấp hơn Tuấn hỏi phát biểu nào sau đây là đúng nhất?  ",
+      "An cao hơn Tuấn, Bình không cao bằng An, Đức thấp hơn Tuấn hỏi phát biểu nào sau đây là đúng nhất?",
     answers: [
       {
         answerId: "1",
-        answerContent: "a. Tuấn cao hơn Bình ",
+        answerContent: "A. Tuấn cao hơn Bình ",
       },
       {
         answerId: "2",
-        answerContent: "b. Bình cao hơn Tuấn ",
+        answerContent: "B. Bình cao hơn Tuấn ",
       },
       {
         answerId: "3",
-        answerContent: "c. Đức cao hơn An ",
+        answerContent: "C. Đức cao hơn An ",
       },
       {
         answerId: "4",
-        answerContent: "d. Chưa đủ cơ sở để kết luận Tuấn hay Bình cao hơn ",
+        answerContent: "D. Chưa đủ cơ sở để kết luận Tuấn hay Bình cao hơn ",
       },
     ],
     key: "4",
   },
   {
     index: 15,
-    content: "Tìm số tiếp theo của dãy sau: 5 25 29 85 89 ?",
+    content: "Tìm số tiếp theo của dãy sau: 5 25 29 85 89?",
     answers: [
       {
         answerId: "1",
-        answerContent: "a. 135",
+        answerContent: "A. 135",
       },
       {
         answerId: "2",
-        answerContent: "b. 145",
+        answerContent: "B. 145",
       },
       {
         answerId: "3",
-        answerContent: "c. 120",
+        answerContent: "C. 120",
       },
       {
         answerId: "4",
-        answerContent: "d. 133",
+        answerContent: "D. 133",
       },
     ],
     key: "2",
@@ -364,19 +364,19 @@ const question = [
     answers: [
       {
         answerId: "1",
-        answerContent: "a. Ngày thứ 19",
+        answerContent: "A. Ngày thứ 19",
       },
       {
         answerId: "2",
-        answerContent: "b. Ngày thứ 20",
+        answerContent: "B. Ngày thứ 20",
       },
       {
         answerId: "3",
-        answerContent: "c. Ngày thứ 21",
+        answerContent: "C. Ngày thứ 21",
       },
       {
         answerId: "4",
-        answerContent: "d. Ngày thứ 22",
+        answerContent: "D. Ngày thứ 22",
       },
     ],
     key: "1",
@@ -387,19 +387,19 @@ const question = [
     answers: [
       {
         answerId: "1",
-        answerContent: "a. 6",
+        answerContent: "A. 6",
       },
       {
         answerId: "2",
-        answerContent: "b. 7",
+        answerContent: "B. 7",
       },
       {
         answerId: "3",
-        answerContent: "c. 8",
+        answerContent: "C. 8",
       },
       {
         answerId: "4",
-        answerContent: "d. 9",
+        answerContent: "D. 9",
       },
     ],
     key: "3",
@@ -410,19 +410,19 @@ const question = [
     answers: [
       {
         answerId: "1",
-        answerContent: "a. HBL",
+        answerContent: "A. HBL",
       },
       {
         answerId: "2",
-        answerContent: "b. HBK",
+        answerContent: "B. HBK",
       },
       {
         answerId: "3",
-        answerContent: "c. JBK",
+        answerContent: "C. JBK",
       },
       {
         answerId: "4",
-        answerContent: "d. JBI",
+        answerContent: "D. JBI",
       },
     ],
     key: "3",
@@ -433,19 +433,19 @@ const question = [
     answers: [
       {
         answerId: "1",
-        answerContent: "a. 18",
+        answerContent: "A. 18",
       },
       {
         answerId: "2",
-        answerContent: "b. 20",
+        answerContent: "B. 20",
       },
       {
         answerId: "3",
-        answerContent: "c. 22",
+        answerContent: "C. 22",
       },
       {
         answerId: "4",
-        answerContent: "d. 24",
+        answerContent: "D. 24",
       },
     ],
     key: "2",
@@ -457,19 +457,19 @@ const question = [
     answers: [
       {
         answerId: "1",
-        answerContent: "a. 9678",
+        answerContent: "A. 9678",
       },
       {
         answerId: "2",
-        answerContent: "b. 4572",
+        answerContent: "B. 4572",
       },
       {
         answerId: "3",
-        answerContent: "c. 3527",
+        answerContent: "C. 3527",
       },
       {
         answerId: "4",
-        answerContent: "d. 7768",
+        answerContent: "D. 7768",
       },
     ],
     key: "3",

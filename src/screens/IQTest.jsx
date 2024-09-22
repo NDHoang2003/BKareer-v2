@@ -124,7 +124,7 @@ export default function IQTest() {
   return (
     <>
       <div className="progress-card" id="progress-card">
-        <div className="mbti-title">Trắc nghiệm IQ</div>
+        <div className="progress-card-title">Trắc nghiệm IQ</div>
         <div className="text-bar">
           <span>Đã hoàn thành: {countt}/20 câu</span>
           <span className="time-clock">Thời gian: {time}</span>
@@ -137,7 +137,7 @@ export default function IQTest() {
         />
       </div>
 
-      <body className="body iq-body">
+      <body className="body shorten-top-body">
         {list.map((item, index) => (
           <div
             id={`div-${index}`}
@@ -147,6 +147,7 @@ export default function IQTest() {
             <Card4 Ques={item} key={item.content} index={index} />
           </div>
         ))}
+
         <div className="flex-row align-center width-fit-content">
           <button className="primary-btn font-18" onClick={result}>
             Xem kết quả
@@ -164,25 +165,26 @@ export default function IQTest() {
           cssOverride={override}
         />
         {!loading && (
-          <div className="form_iq">
+          <div className="result_form margin-top-panel">
             <img
               src={exit}
               alt="exit_icon"
               width={30}
               height={30}
-              className="img"
+              className="img margin-top-2rem margin-right-2rem"
               onClick={closeform}
-            ></img>
+            />
+
             <div className="panel_info">
               <div className="info">
                 <div className="hero">
                   <img src={iq} alt="img" width={100} height={100}></img>
                   <span>IQ Test</span>
                 </div>
-                <h3>
+                <p>
                   Bạn đã hoàn thành bài trắc nghiệm IQ. Kết quả của bạn là{" "}
                   {score}
-                </h3>
+                </p>
               </div>
             </div>
           </div>
