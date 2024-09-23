@@ -17,7 +17,7 @@ function Items({ currentItems, loading }) {
           />
         ))
       ) : (
-        <div className="text-center">Loading...</div>
+        <div className="text-center">Đang tải...</div>
       )}
     </div>
   );
@@ -86,4 +86,5 @@ function News() {
     </body>
   );
 }
+
 export default News;

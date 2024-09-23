@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { signInSuccess } from "../redux/user/userSlice";
 import { useNavigate } from "react-router-dom";
 
+// import image from "../assets/images/google.png"
+
 export default function OAuth() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -30,16 +32,24 @@ export default function OAuth() {
       dispatch(signInSuccess(data));
       navigate("/");
     } catch (error) {
-      alert("could not sign in with google", error);
+      alert("Không thể đăng nhập với Google", error);
     }
   };
+
   return (
-    <button
-      onClick={handleGoogleClick}
-      type="button"
-      className="button-oauth font-18 align-center width-100"
-    >
-      Continue with google
-    </button>
+    <div className="margin-top-2">
+      <button
+        onClick={handleGoogleClick}
+        type="button"
+        className="oauth-btn font-18 align-center width-100"
+      >
+        <div className="">
+          {/* <img src={image} className="img-loginWithGoogle"/> */}
+          Đăng nhập với Google
+        </div>
+        
+      </button>
+    </div>
+    
   );
 }

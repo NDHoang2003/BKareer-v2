@@ -20,12 +20,12 @@ function Navbar() {
           <li className="font-18">
             <Link to="/career">Khám phá năng lực nghề nghiệp</Link>
           </li>
+          {/* <li className="font-18">
+            <Link to="/iq">Trắc nghiệm IQ</Link>
+          </li> */}
           <li className="font-18">
             <Link to="/news">Tin tức</Link>
-          </li>
-          <li className="font-18">
-            <Link to="/iq">IQ TEST</Link>
-          </li>
+          </li>          
           <Link to="/profile">
             {currentUser ? (
               <img

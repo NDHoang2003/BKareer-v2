@@ -261,8 +261,10 @@ function MBTITest() {
       Result.setMbti(data);
     }
   };
+
   const [countt, setCount] = useState(0);
   const [progress, setProgress] = useState(0);
+
   const scrollToNext = () => {
     let count = 0;
     let listAnswer = document.querySelectorAll('input[type="radio"]');
@@ -277,9 +279,11 @@ function MBTITest() {
     setCount(count);
     setProgress(Math.floor((count / 70) * 100));
   };
+
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(true);
   const [time, setTime] = useState("");
+
   useEffect(() => {
     let interval = null;
     if (isActive) {
@@ -300,7 +304,7 @@ function MBTITest() {
       <div className="progress-card" id="progress-card">
         <div className="mbti-title">Trắc nghiệm MBTI</div>
         <div className="text-bar">
-          <span>- Bạn đã hoàn thành : {countt}/70 câu</span>
+          <span>Đã hoàn thành: {countt}/70 câu</span>
           <span className="time-clock"> Thời gian {time}</span>
         </div>
         <ProgressBar

@@ -13,12 +13,14 @@ function LoginForm() {
   const { loading, error } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.id]: e.target.value,
     });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -43,6 +45,12 @@ function LoginForm() {
       dispatch(signInFailure(error.message));
     }
   };
+
+  const [val, setVal] = useState(false); //initializes checkbox to false 
+  const Checkbox = (props) => {
+    return <input type="checkbox" checked={props.val} onClick={() => {props.setValue(!props.val)}}/>
+  }
+
   return (
     <div className="form-block">
       <form onSubmit={handleSubmit}>
@@ -70,22 +78,30 @@ function LoginForm() {
           />
         </div>
 
+        <div className="flex-space-between">
+          <div></div>
+          <div>Quên mật khẩu?</div>
+        </div>
+
         {/* Login Button */}
         <button
-          className="primary-btn margin-top-10 font-18 align-center width-100"
+          className="primary-btn margin-top-8 font-18 align-center width-100"
           disabled={loading}
         >
           {loading ? "Loading..." : "Đăng nhập"}
         </button>
       </form>
+      
       {error && <p className="red">{error}</p>}
 
-      {/* Register Now */}
+      {/* Sign in with Google */}
       <OAuth />
-      <div className="align-center width-fit-content font-18">
-        <p>
+
+      {/* Register Now */}
+      <div className="margin-top-8 align-center width-fit-content font-18">
+        <p className="text-color-primary">
           Chưa có tài khoản?{" "}
-          <a className="text-decor-none" href="/register">
+          <a className="text-decor-none bold-txt" href="/register">
             Đăng ký ngay
           </a>
         </p>

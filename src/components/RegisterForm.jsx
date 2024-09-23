@@ -81,12 +81,17 @@ function RegisterForm() {
           {loading ? "Loading..." : "Đăng ký"}
         </button>
       </form>
-      <OAuth />
+
       {error && <p className="red">{error}</p>}
-      <div className="align-center width-fit-content font-18">
-        <p>
+
+      {/* Sign in with Google */}
+      <OAuth />
+
+      {/* Login Now */}
+      <div className="margin-top-8 align-center width-fit-content font-18">
+        <p className="text-color-primary">
           Đã có tài khoản?{" "}
-          <a className="text-decor-none" href="/login">
+          <a className="text-decor-none bold-txt" href="/register">
             Đăng nhập ngay
           </a>
         </p>

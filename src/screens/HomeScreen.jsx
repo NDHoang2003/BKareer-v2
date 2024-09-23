@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import image1 from "../assets/images/graduationOrCareerChoice.jpg"
 import image2 from "../assets/images/ikigai.jpg"
 
-function HomeScreen() {
+function HomeScreen() {  
   return (
     <>
       <body className="body">
@@ -16,13 +16,12 @@ function HomeScreen() {
             <Link className="secondary-outline-btn" to="/majorTest">Kiểm tra ngay</Link>
           </div>
         </div>
-
-        {/* Divide Cols*/}
-        <div className="card-margin-top flex-row card-group-container">
-          {/* Left Col */}
-          <div className="card-left card-margin-right flex-col card-group-col">
-            {/* Ikigai Card */}
-            <div className="home-card flex-row flex-space-between flex-items-center">
+        
+        {/* Rows Below */}
+        <div className="card-group-container">
+          {/* Ikigai */}
+          <div className="flex-row card-margin-top">
+            <div className="home-card flex-row flex-space-between flex-items-center card-left card-margin-right">
               <div className="width-45 flex-col flex-self-start">
                 <div className="card-title">Ikigai</div>
                 <div className="card-content">Ikigai là một khái niệm sống gắn liền với niềm đam mê, mục tiêu, giá trị và sự hài lòng. Đây cũng chính là bí quyết sống trường thọ và hạnh phúc của người Nhật Bản.</div>
@@ -31,45 +30,72 @@ function HomeScreen() {
               <img src={image2} className="img-home-2"/>
             </div>
 
-            {/* 4 Cards */}
-            <div className="card-margin-top flex-row flex-space-between flex-items-center card-group-container">
-              <div className="home-card width-fit-content card-group-ele">
-                <div className="card-title">Trắc nghiệm tính cách MBTI</div>
-                <div className="card-content">Trắc nghiệm tính cách MBTI (Myers-Briggs Type Indicator) là một phương pháp sử dụng hàng loạt các câu hỏi trắc nghiệm để phân tích tính cách con người.</div>
-                <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/mbtiDetail">Tìm hiểu thêm</Link></div>
-              </div>
-
-              <div className="home-card width-fit-content card-group-ele">
-                <div className="card-title">Khám phá năng lực nghề nghiệp</div>
-                <div className="card-content">Bài trắc nghiệm khám phá năng lực nghề nghiệp – Career Clusters Interest Survey được Ivy Global School xây dựng dựa trên tư liệu của tổ chức Advance CTE (Mỹ).</div>
-                <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/ccDetail">Tìm hiểu thêm</Link></div>
-              </div>
-            </div>
-
-            <div className="card-margin-top flex-row flex-space-between flex-items-center card-group-container">
-              <div className="home-card width-fit-content card-group-ele">
-                <div className="card-title"><Link to="/" className="card-title text-decor-none">Trắc nghiệm IQ</Link></div>
-                <div className="card-content">Bài test IQ gồm một loạt các câu hỏi trắc nghiệm được thiết kế nhằm mục đích đánh giá khả năng tư duy của não bộ. Đây là phương pháp đo lường chỉ số IQ chính xác và phổ biến nhất hiện nay.</div>
-                <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/iq">Tìm hiểu thêm</Link></div>
-              </div>
-
-              <div className="home-card width-fit-content card-group-ele">
-                <div className="card-title"><Link to="/" className="card-title text-decor-none">Trắc nghiệm EQ</Link></div>
-                <div className="card-content">Đa số các dạng bài kiểm tra EQ hiện nay đều là bộ câu hỏi dựa trên hai dạng mô hình cảm xúc là: Mô hình cảm xúc năng lực và Mô hình cảm xúc đặc điểm, hướng đến đo lường và đánh giá trí tuệ cảm xúc.</div>
-                <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/eq">Tìm hiểu thêm</Link></div>
-              </div>
+            <div className="home-card card-right flex-col">
+              <div className="card-title">Tin tức</div>
+              <div className="card-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </div>
+              <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/weightedSum">Tìm hiểu thêm</Link></div>
             </div>
           </div>
 
-          {/* Right Col */}
-          <div className="card-right card-group-col">
-            <div className="home-card">
+          {/* MBTI, CC, 3 thiên hướng học tập */}
+          <div className="flex-row card-margin-top">
+            <div className="card-left card-margin-right">
+              <div className="flex-row flex-space-between flex-items-center card-group-container">
+                <div className="home-card width-fit-content card-group-ele">
+                  <div className="card-title">Trắc nghiệm tính cách MBTI</div>
+                  <div className="card-content">Trắc nghiệm tính cách MBTI (Myers-Briggs Type Indicator) là một phương pháp sử dụng hàng loạt các câu hỏi trắc nghiệm để phân tích tính cách con người.</div>
+                  <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/mbtiDetail">Tìm hiểu thêm</Link></div>
+                </div>
+
+                <div className="home-card width-fit-content card-group-ele">
+                  <div className="card-title">Khám phá năng lực nghề nghiệp</div>
+                  <div className="card-content">Bài trắc nghiệm khám phá năng lực nghề nghiệp – Career Clusters Interest Survey được Ivy Global School xây dựng dựa trên tư liệu của tổ chức Advance CTE (Mỹ).</div>
+                  <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/ccDetail">Tìm hiểu thêm</Link></div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="home-card card-right flex-col">
+              <div className="card-title">Trắc nghiệm 3 thiên hướng học tập</div>
+              <div className="card-content">Trắc nghiệm 3 thiên hướng học tập Vak là bài tập trắc nghiệm xác định thiên hướng học tập. Mô hình này cho rằng mỗi cá nhân sẽ có một cách học tập lý tưởng và đạt được các hiệu quả khác nhau.</div>
+              <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/weightedSum">Tìm hiểu thêm</Link></div>
+            </div>
+          </div>
+
+          {/* IQ, EQ, não trái - não phải */}
+          <div className="flex-row card-margin-top">
+            <div className="card-left card-margin-right">
+              <div className="flex-row flex-space-between flex-items-center card-group-container">
+                <div className="home-card width-fit-content card-group-ele">
+                  <div className="card-title"><Link to="/" className="card-title text-decor-none">Trắc nghiệm IQ</Link></div>
+                  <div className="card-content">Bài test IQ gồm một loạt các câu hỏi trắc nghiệm được thiết kế nhằm mục đích đánh giá khả năng tư duy của não bộ. Đây là phương pháp đo lường chỉ số IQ chính xác và phổ biến nhất hiện nay.</div>
+                  <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/iqDetail">Tìm hiểu thêm</Link></div>
+                </div>
+
+                <div className="home-card width-fit-content card-group-ele">
+                  <div className="card-title"><Link to="/" className="card-title text-decor-none">Trắc nghiệm EQ</Link></div>
+                  <div className="card-content">Đa số các dạng bài kiểm tra EQ hiện nay đều là bộ câu hỏi dựa trên hai dạng mô hình cảm xúc là: Mô hình cảm xúc năng lực và Mô hình cảm xúc đặc điểm, hướng đến đo lường và đánh giá trí tuệ cảm xúc.</div>
+                  <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/eqDetail">Tìm hiểu thêm</Link></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="home-card card-right flex-col">
+              <div className="card-title">Trắc nghiệm não trái - não phải</div>
+              <div className="card-content">Thông qua bài trắc nghiệm đơn giản này, bạn sẽ biết được tuổi não trái và não phải, đâu là thế mạnh nên phát huy của bản thân.</div>
+              <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/vikor">Tìm hiểu thêm</Link></div>
+            </div>
+          </div>
+
+          {/* Weight-sum, VIKOR */}
+          <div className="flex-row card-margin-top">
+            <div className="home-card width-50 card-margin-right flex-col">
               <div className="card-title">Weight-sum</div>
               <div className="card-content">Dựa trên dữ liệu đầu vào từ người dùng và dữ liệu của tổ chức lao động thế giới ILOSTAT, phương pháp Weight-sum gán trọng số cho từng tiêu chí dựa trên tầm quan trọng tương đối của chúng.</div>
               <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/weightedSum">Tìm hiểu thêm</Link></div>
             </div>
 
-            <div className="home-card card-margin-top">
+            <div className="home-card width-50 flex-col">
               <div className="card-title">VIKOR</div>
               <div className="card-content">Dựa trên dữ liệu đầu vào từ người dùng và dữ liệu của tổ chức lao động thế giới ILOSTAT, phương pháp VIKOR xác định các nghiệm lý tưởng và phản lý tưởng</div>
               <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/vikor">Tìm hiểu thêm</Link></div>
