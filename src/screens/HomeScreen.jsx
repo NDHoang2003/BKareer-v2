@@ -74,6 +74,19 @@ function HomeScreen() {
               <div className="card-content">Dựa trên dữ liệu đầu vào từ người dùng và dữ liệu của tổ chức lao động thế giới ILOSTAT, phương pháp VIKOR xác định các nghiệm lý tưởng và phản lý tưởng</div>
               <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/vikor">Tìm hiểu thêm</Link></div>
             </div>
+
+            {/* New Learning Style Test Card */}
+            <div className="home-card card-margin-top">
+              <div className="card-title">Kiểm tra phong cách học tập</div>
+              <div className="card-content">
+                Bài kiểm tra phong cách học tập giúp bạn hiểu rõ hơn về phương pháp học tập tối ưu nhất cho bạn, dựa
+                trên các phong cách: Thị giác, Thính giác, và Xúc giác.
+              </div>
+              <div className="margin-bottom-2rem">
+                <Link className="secondary-outline-btn" to="/learningStyle">Bắt đầu kiểm tra</Link>
+              </div>
+            </div>
+
           </div>
         </div>
       </body>

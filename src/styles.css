@@ -1037,3 +1037,89 @@ body {
   z-index: 0;
   filter: blur(4px);
 }
+
+.mbti-page .card {
+  background-color: white;
+  padding: 3rem 4rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mbti-page .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.mbti-page .card-title {
+  font-family: Nunito_Sans_10pt_Condensed_Bold;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: #358bca;
+}
+
+.mbti-page .screen-title {
+  color: #358bca;
+  font-family: Nunito_Sans_10pt_Condensed_Bold;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+.mbti-page .cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .mbti-page .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mbti-page .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.career-clusters-table {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cluster-card {
+  flex: 1;
+  background-color: #f4f4f4;
+  padding: 2rem;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.cluster-card:hover {
+  background-color: #e0e0e0;
+}
+
+/* Add specific styling for the CareerClusterDetail page */
+body.screen-block .cluster-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+body.screen-block .cluster-card:hover {
+  background-color: #f0f8ff;
+  cursor: pointer;
+}

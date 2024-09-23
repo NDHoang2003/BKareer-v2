@@ -20,6 +20,7 @@ import EQ from "./screens/homeComponentsDetail/EqDetail";
 import PrivateRoute from "./screens/authentication/PrivateRoute";
 import Profile from "./screens/Profile";
 import PersonalResult from "./screens/PersonalResult";
+import LearningStyleScreen from "./screens/homeComponentsDetail/LearningStyleScreen"; 
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/mbti" element={<MBTITest />} />
         <Route path="/career" element={<CCTest />} />
         <Route path="/news" element={<News />} />
+        <Route path="/learningStyle" element={<LearningStyleScreen />} />
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/personal" element={<PersonalResult />} />
