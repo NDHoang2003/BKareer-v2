@@ -8,16 +8,14 @@ const Panel = ({ Data, loading }) => {
     window.scrollTo(0, 0);
     document.getElementById("progress-card").style.display = "block";
   };
-  // const handleReturnClick = () => {
-  //   // Chuyển hướng người dùng về trang Major Result và truyền dữ liệu qua URL
-  //   window.location.replace('/majorResult');
-  // };
+
   const override = {
     display: "block",
     margin: "0 auto",
     borderColor: "#04BCFC",
     padding: "20px",
   };
+  
   return (
     <div className="Panel">
       <BounceLoader
@@ -35,16 +33,17 @@ const Panel = ({ Data, loading }) => {
             alt="exit_icon"
             width={30}
             height={30}
-            className="img"
+            className="img margin-top-2rem margin-right-2rem"
             onClick={closeform}
-          ></img>
+          />
+          
           <div className="panel_info">
             <div className="info">
               <div className="hero">
-                <img src={Data.img} alt="img" width={100} height={100}></img>
+                <img src={Data.img} alt="img" width={125} height={125} className="margin-bottom-1rem"/>
                 <span>{Data.description}</span>
               </div>
-              <p>{Data.content}</p>
+              <p className="hero">{Data.content}</p>
               <p>
                 Có thể bạn chưa biết: {Data.people} và nhiều nhân vật tiêu biểu
                 khác có cùng nhòm tính cách với bạn

@@ -9,6 +9,7 @@ import MBTITest from "./screens/MBTIScreen";
 import CCTest from "./screens/CareerClusterScreen";
 import IQTest from "./screens/IQTest";
 import EQTest from "./screens/EQTest";
+import LeftRightBrainTest from "./screens/LeftRightBrainTest";
 import News from "./screens/NewsScreen";
 import MajorTest from "./screens/MajorTestScreen";
 import MajorResult from "./screens/MajorResultScreen";
@@ -19,6 +20,7 @@ import MBTI from "./screens/homeComponentsDetail/MBTIDetail";
 import CC from "./screens/homeComponentsDetail/CareerClusterDetail";
 import IQ from "./screens/homeComponentsDetail/IqDetail";
 import EQ from "./screens/homeComponentsDetail/EqDetail";
+import LeftRightBrain from "./screens/homeComponentsDetail/LeftRightBrainDetail";
 import PrivateRoute from "./screens/authentication/PrivateRoute";
 import Profile from "./screens/Profile";
 import PersonalResult from "./screens/PersonalResult";
@@ -44,6 +46,7 @@ function App() {
         <Route path="/ccDetail" element={<CC />} />
         <Route path="/iqDetail" element={<IQ />} />
         <Route path="/eqDetail" element={<EQ />} />
+        <Route path="/lrBrainDetail" element={<LeftRightBrain />} />
         <Route path="/weightedSum" element={<WeightedSum />} />
         <Route path="/vikor" element={<Vikor />} />
         {/* Other Tests */}
@@ -51,6 +54,7 @@ function App() {
         <Route path="/career" element={<CCTest />} />
         <Route path="/iq" element={<IQTest/>} />
         <Route path="/eq" element={<EQTest />} />
+        <Route path="/lrBrain" element={<LeftRightBrainTest />} />
         <Route path="/news" element={<News />} />
         <Route path="/learningStyle" element={<LearningStyleScreen />} />
         <Route element={<PrivateRoute />}>

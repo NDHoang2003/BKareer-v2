@@ -6,7 +6,7 @@ import React, { useState, useEffect } from "react";
 import Result from "../database/Result.js";
 import { Link } from "react-router-dom";
 
-function CCTest() {
+export default function CCTest() {
   // const [cluster, setCluster] = useState({});
   // const [showPanel, setShowPanel] = useState(false);
 
@@ -99,6 +99,7 @@ function CCTest() {
 
   Result.setCc(highestScoredMajor);
   const [loading, setLoading] = useState(true);
+
   const handleOpenPanel = async () => {
     setIsPanelOpen(true);
     setIsActive(false);
@@ -139,9 +140,11 @@ function CCTest() {
     window.scrollTo(0, 0);
     console.log(isPanelOpen);
   };
+
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(true);
   const [time, setTime] = useState("");
+  
   useEffect(() => {
     let interval = null;
     if (isActive) {
@@ -156,6 +159,7 @@ function CCTest() {
     }
     return () => clearInterval(interval); // Cleanup interval khi component bị unmount
   }, [isActive, seconds]);
+  
   return (
     <>
       <body className="body">
@@ -261,6 +265,4 @@ function CCTest() {
       </body>
     </>
   );
-}
-
-export default CCTest;
+};

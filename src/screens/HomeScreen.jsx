@@ -84,7 +84,7 @@ function HomeScreen() {
             <div className="home-card card-right flex-col">
               <div className="card-title">Trắc nghiệm não trái - não phải</div>
               <div className="card-content">Thông qua bài trắc nghiệm đơn giản này, bạn sẽ biết được tuổi não trái và não phải, đâu là thế mạnh nên phát huy của bản thân.</div>
-              <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/vikor">Tìm hiểu thêm</Link></div>
+              <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/lrBrainDetail">Tìm hiểu thêm</Link></div>
             </div>
           </div>
 
