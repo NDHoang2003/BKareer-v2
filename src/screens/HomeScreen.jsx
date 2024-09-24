@@ -32,8 +32,9 @@ function HomeScreen() {
 
             <div className="home-card card-right flex-col">
               <div className="card-title">Tin tức</div>
-              <div className="card-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </div>
-              <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/weightedSum">Tìm hiểu thêm</Link></div>
+              <div className="card-content">Cập nhật những tin tức mới nhất về giáo dục, hướng nghiệp và thị trường lao động. Chúng tôi cung cấp thông tin về các chương trình đào tạo, cơ hội học bổng, và những xu hướng nghề nghiệp nổi bật, giúp bạn nắm bắt kịp thời những thay đổi quan trọng trong lĩnh vực này.
+              </div>
+              <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/news">Tìm hiểu thêm</Link></div>
             </div>
           </div>
 
@@ -58,7 +59,7 @@ function HomeScreen() {
             <div className="home-card card-right flex-col">
               <div className="card-title">Trắc nghiệm 3 thiên hướng học tập</div>
               <div className="card-content">Trắc nghiệm 3 thiên hướng học tập Vak là bài tập trắc nghiệm xác định thiên hướng học tập. Mô hình này cho rằng mỗi cá nhân sẽ có một cách học tập lý tưởng và đạt được các hiệu quả khác nhau.</div>
-              <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/weightedSum">Tìm hiểu thêm</Link></div>
+              <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/learningStyle">Tìm hiểu thêm</Link></div>
             </div>
           </div>
 
@@ -100,19 +101,6 @@ function HomeScreen() {
               <div className="card-content">Dựa trên dữ liệu đầu vào từ người dùng và dữ liệu của tổ chức lao động thế giới ILOSTAT, phương pháp VIKOR xác định các nghiệm lý tưởng và phản lý tưởng</div>
               <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/vikor">Tìm hiểu thêm</Link></div>
             </div>
-
-            {/* New Learning Style Test Card */}
-            <div className="home-card card-margin-top">
-              <div className="card-title">Kiểm tra phong cách học tập</div>
-              <div className="card-content">
-                Bài kiểm tra phong cách học tập giúp bạn hiểu rõ hơn về phương pháp học tập tối ưu nhất cho bạn, dựa
-                trên các phong cách: Thị giác, Thính giác, và Xúc giác.
-              </div>
-              <div className="margin-bottom-2rem">
-                <Link className="secondary-outline-btn" to="/learningStyle">Bắt đầu kiểm tra</Link>
-              </div>
-            </div>
-
           </div>
         </div>
       </body>

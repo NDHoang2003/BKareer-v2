@@ -1,7 +1,7 @@
 const Visual = {
   name: "Visual",
   description: "Người học qua thị giác",
-  img: "https://www.workreadytraining.com.au/Content/Images/uploaded/Blog/WRT%20Visual%20Learner%20Infographic.pdf",
+  img: "https://www.showmeimages.com/images/blog/visual_learning.jpg",
   content: `
     Là một người học qua thị giác, bạn tiếp thu thông tin chủ yếu qua hình ảnh và có xu hướng ghi nhớ bằng mắt. Bạn thích sử dụng các công cụ học tập trực quan như hình ảnh, biểu đồ, và màu sắc. Hình dung các khái niệm là điều tự nhiên với bạn, và bạn thường tạo ra các hình ảnh hoặc sơ đồ trong tâm trí để nhớ thông tin.
     
@@ -21,7 +21,7 @@ const Visual = {
 const Auditory = {
   name: "Auditory",
   description: "Người học qua thính giác",
-  img: "https://www.workreadytraining.com.au/Content/Images/uploaded/Blog/WRT%20Auditory%20Learner%20Infographic.pdf",
+  img: "https://www.showmeimages.com/images/blog/auditory.jpg",
   content: `
     Là một người học qua thính giác, bạn tiếp thu thông tin tốt nhất thông qua âm thanh và lời nói. Bạn có xu hướng nhớ lại những gì đã nghe, và các phương pháp học qua thính giác giúp bạn hiểu sâu hơn. Bạn thường thích nghe giảng, tham gia thảo luận, và sử dụng âm thanh để hỗ trợ việc học.
 
@@ -41,7 +41,7 @@ const Auditory = {
 const Tactile = {
   name: "Tactile",
   description: "Người học qua xúc giác",
-  img: "https://www.workreadytraining.com.au/Content/Images/uploaded/Blog/WRT%20Tactile%20Learner%20Infographic.pdf",
+  img: "https://www.showmeimages.com/images/blog/tactile.jpg",
   content: `
     Nếu bạn là người học qua xúc giác, bạn học tốt nhất thông qua hoạt động thực hành và vận động cơ thể. Bạn thích tham gia vào các hoạt động thể chất như vẽ, xây dựng, hoặc mô phỏng các bài học. Bạn có xu hướng học qua việc làm thay vì chỉ đọc hoặc nghe.
 

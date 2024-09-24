@@ -763,7 +763,13 @@ body {
   font-family: Nunito_Sans_10pt_Condensed_Regular;
   text-decoration: none;
   width: fit-content;
+  white-space: nowrap; /* Prevents the button text from wrapping */
 }
+
+.secondary-outline-btn {
+  max-width: 100%; /* Ensures button doesn't overflow the container */
+}
+
 .secondary-outline-btn:hover {
   background-color: #888;
   color: white;
@@ -1044,3 +1050,9 @@ body {
   filter: blur(4px);
 }
 
+@media (max-width: 768px) {
+  .secondary-outline-btn {
+    padding: 0.3rem 1rem; /* Smaller padding for smaller screens */
+    font-size: 0.9rem;    /* Adjust font size for mobile */
+  }
+}
