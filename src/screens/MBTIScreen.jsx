@@ -10,8 +10,9 @@ import questions from "../database/MBTIQuest";
 import perlist from "../database/MBTIPersonality";
 import Result from "../database/Result.js";
 
-export default function MBTITest() {
+function MBTITest() {
   const list = questions;
+  // const perlist = require("../database/MBTIPersonality");
   const { currentUser } = useSelector((state) => state.user);
   const [loading, setLoading] = useState(true);
   const [per, setPer] = useState({});
@@ -149,7 +150,6 @@ export default function MBTITest() {
     "126",
     "140",
   ];
-  
   const result = async () => {
     let listAnswer = document.querySelectorAll('input[type="radio"]');
     let count = 0;
@@ -261,10 +261,8 @@ export default function MBTITest() {
       Result.setMbti(data);
     }
   };
-
   const [countt, setCount] = useState(0);
   const [progress, setProgress] = useState(0);
-
   const scrollToNext = () => {
     let count = 0;
     let listAnswer = document.querySelectorAll('input[type="radio"]');
@@ -279,11 +277,9 @@ export default function MBTITest() {
     setCount(count);
     setProgress(Math.floor((count / 70) * 100));
   };
-
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(true);
   const [time, setTime] = useState("");
-
   useEffect(() => {
     let interval = null;
     if (isActive) {
@@ -302,10 +298,10 @@ export default function MBTITest() {
   return (
     <div>
       <div className="progress-card" id="progress-card">
-        <div className="progress-card-title">Trắc nghiệm MBTI</div>
+        <div className="mbti-title">Trắc nghiệm MBTI</div>
         <div className="text-bar">
-          <span>Đã hoàn thành: {countt}/70 câu</span>
-          <span className="time-clock">Thời gian: {time}</span>
+          <span>- Bạn đã hoàn thành : {countt}/70 câu</span>
+          <span className="time-clock"> Thời gian {time}</span>
         </div>
         <ProgressBar
           completed={progress}
@@ -314,8 +310,7 @@ export default function MBTITest() {
           className="progress-bar"
         />
       </div>
-
-      <div className="body shorten-top-body">
+      <div className="body mbti-body">
         {list.map((item, index) => (
           <div
             id={`div-${index}`}
