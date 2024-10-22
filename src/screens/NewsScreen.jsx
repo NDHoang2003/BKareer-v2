@@ -11,7 +11,10 @@ function Items({ currentItems, loading }) {
             key={index}
             title={item.title}
             link={item.link}
-            img={item.enclosure.url || item.link}
+            img={
+              item.enclosure?.url ||
+              "https://cdn.britannica.com/25/93825-050-D1300547/collection-newspapers.jpg"
+            }
             content={item.contentSnippet}
             day={item.pubDate}
           />
@@ -33,9 +36,6 @@ function PaginatedItems({ rssItems, loading }) {
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % items.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
     setItemOffset(newOffset);
   };
 
@@ -67,8 +67,8 @@ function News() {
         });
         const data = await response.json();
         if (data.length > 0) {
-          console.log(data);
           setLoading(true);
+          console.log(data[0].enclosure.url);
           setRssItems(data);
         }
       } catch (error) {

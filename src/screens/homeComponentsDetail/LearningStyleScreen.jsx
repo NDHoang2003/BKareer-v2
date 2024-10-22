@@ -10,17 +10,79 @@ import questions from "../../database/StyleQuest.js";
 // import perlist from "../database/MBTIPersonality";
 import { Visual, Auditory, Tactile } from "../../database/Styles.js";
 
-
 function StyleTest() {
-    const list = questions;
-    const { currentUser } = useSelector((state) => state.user);
-    const [loading, setLoading] = useState(true);
-    const [styleData, setStyleData] = useState(null);
-  
-    const VisualList = ["1", "4", "7", "10", "13", "16", "19", "22", "25", "28", "31", "34", "37", "40", "43", "46", "49", "52", "55", "58"];
-    const AuditoryList = ["2", "5", "8", "11", "14", "17", "20", "23", "26", "29", "32", "35", "38", "41", "44", "47", "50", "53", "56", "59"];
-    const TactileList = ["3", "6", "9", "12", "15", "18", "21", "24", "27", "30", "33", "36", "39", "42", "45", "48", "51", "54", "57", "60"];
-  
+  const list = questions;
+  const { currentUser } = useSelector((state) => state.user);
+  const [loading, setLoading] = useState(true);
+  const [styleData, setStyleData] = useState(null);
+
+  const VisualList = [
+    "1",
+    "4",
+    "7",
+    "10",
+    "13",
+    "16",
+    "19",
+    "22",
+    "25",
+    "28",
+    "31",
+    "34",
+    "37",
+    "40",
+    "43",
+    "46",
+    "49",
+    "52",
+    "55",
+    "58",
+  ];
+  const AuditoryList = [
+    "2",
+    "5",
+    "8",
+    "11",
+    "14",
+    "17",
+    "20",
+    "23",
+    "26",
+    "29",
+    "32",
+    "35",
+    "38",
+    "41",
+    "44",
+    "47",
+    "50",
+    "53",
+    "56",
+    "59",
+  ];
+  const TactileList = [
+    "3",
+    "6",
+    "9",
+    "12",
+    "15",
+    "18",
+    "21",
+    "24",
+    "27",
+    "30",
+    "33",
+    "36",
+    "39",
+    "42",
+    "45",
+    "48",
+    "51",
+    "54",
+    "57",
+    "60",
+  ];
+
   const result = async () => {
     let listAnswer = document.querySelectorAll('input[type="radio"]');
     let count = 0;
@@ -42,13 +104,13 @@ function StyleTest() {
       }
     }
     for (let i = 0; i < listAnswer.length; i += 3) {
-        if (
-          listAnswer[i].checked === false &&
-          listAnswer[i + 1].checked === false &&
-          listAnswer[i + 2].checked === false
-        ) {
-          arr.push(i / 3 + 1);
-        }
+      if (
+        listAnswer[i].checked === false &&
+        listAnswer[i + 1].checked === false &&
+        listAnswer[i + 2].checked === false
+      ) {
+        arr.push(i / 3 + 1);
+      }
     }
     if (count < 20) {
       alert(`Please complete all questions. You missed: ${arr.join(", ")}`);
@@ -57,9 +119,9 @@ function StyleTest() {
       const card = document.getElementById("progress-card");
       setIsActive(false);
       card.style.display = "none";
-    
+
       // Hide progress card and display the result panel with the determined learning style
-      let resultStyle ;
+      let resultStyle;
       if (visual > auditory && visual > tactile) {
         resultStyle = Visual;
       } else if (auditory > visual && auditory > tactile) {
@@ -67,27 +129,30 @@ function StyleTest() {
       } else {
         resultStyle = Tactile;
       }
-    
+
       setStyleData(resultStyle); // Set the result style
       document.querySelector(".Panel").style.display = "flex";
-    
+
       try {
         // Save the result to the server if the user is logged in
         if (currentUser) {
           const date = new Date().toLocaleString();
-          const res = await fetch("http://localhost:3000/api/score/learningStyle", {
-            method: "POST",
-            credentials: "include",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              time: time,
-              date: date,
-              score: resultStyle,
-            }),
-          });
-    
+          const res = await fetch(
+            "http://localhost:3000/api/score/learningStyle",
+            {
+              method: "POST",
+              credentials: "include",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                time: time,
+                date: date,
+                score: resultStyle,
+              }),
+            }
+          );
+
           const data2 = await res.json();
           if (data2) {
             setTimeout(() => {
@@ -104,7 +169,7 @@ function StyleTest() {
         console.error("Error fetching data: ", error);
         setLoading(false);
       }
-    
+
       // Simulate setting the result in the panel
       // Result.setLearningStyle(resultStyle);
     }
@@ -147,7 +212,7 @@ function StyleTest() {
   return (
     <div>
       <div className="progress-card" id="progress-card">
-        <div className="mbti-title">Trắc nghiệm Learning Style</div>
+        <div className="progress-card-title">Trắc nghiệm Learning Style</div>
         <div className="text-bar">
           <span>- Bạn đã hoàn thành : {countt}/20 câu</span>
           <span className="time-clock"> Thời gian {time}</span>

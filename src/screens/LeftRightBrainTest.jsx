@@ -5,11 +5,13 @@ import Card from "../components/Card";
 import Panel from "../components/lrBrainPanel";
 import questions from "../database/LrBrainQuest";
 import lrList from "../database/LrCharacteristic";
+import { useSelector } from "react-redux";
 
 export default function LeftRightBrainTest() {
   const list = questions;
   const [brain, setBrain] = useState({});
-  // const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const { currentUser } = useSelector((state) => state.user);
 
   const result = async () => {
     let listAnswer = document.querySelectorAll('input[type="radio"]');
@@ -55,48 +57,50 @@ export default function LeftRightBrainTest() {
         data = "right";
       }
 
-      const res = lrList.getdata(data);
-      document.querySelector(".Panel").style.display = "flex";
-      setBrain(res);
-
-      // try {
-      //   if (currentUser) {
-      //     const date = new Date().toLocaleString();
-      //     const res = await fetch("http://localhost:3000/api/score/lrBrain", {
-      //       method: "POST",
-      //       credentials: "include",
-      //       headers: {
-      //         "Content-Type": "application/json",
-      //       },
-      //       body: JSON.stringify({
-      //         time: time,
-      //         date: date,
-      //         score: data,
-      //       }),
-      //     });
-      //     const data2 = await res.json();
-      //     if (data2) {
-      //       setTimeout(() => {
-      //         setLoading(false);
-      //       }, 1000);
-      //     }
-      //   } else {
-      //     setTimeout(() => {
-      //       setLoading(false);
-      //     }, 2000);
-      //   }
-      // } catch (error) {
-      //   console.error("Error fetching data: ", error);
-      //   setLoading(false);
-      // }
+      const data1 = lrList.getdata(data);
+      try {
+        if (currentUser) {
+          console.log("currentUser");
+          const date = new Date().toLocaleString();
+          const res = await fetch("http://localhost:3000/api/score/lr", {
+            method: "POST",
+            credentials: "include",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              time: "ss:ss",
+              date: date,
+              score: data1,
+            }),
+          });
+          const data2 = await res.json();
+          if (data2) {
+            setTimeout(() => {
+              setLoading(false);
+              document.querySelector(".Panel").style.display = "flex";
+              setBrain(data1);
+            }, 1000);
+          }
+        } else {
+          setTimeout(() => {
+            setLoading(false);
+            document.querySelector(".Panel").style.display = "flex";
+            setBrain(data1);
+          }, 2000);
+        }
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+        setLoading(false);
+      }
     }
   };
-  
+
   return (
     <>
       <body className="body">
         <div className="screen-title">Trắc nghiệm não trái - não phải</div>
-        
+
         {list.map((item, index) => (
           <div
             id={`div-${index}`}

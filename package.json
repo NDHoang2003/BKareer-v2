@@ -10,12 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.5",
+    "@material-tailwind/react": "^2.1.10",
     "@ramonak/react-progress-bar": "^5.2.0",
     "@reduxjs/toolkit": "^2.2.7",
     "axios": "^1.7.7",
     "bkareer": "file:",
     "bootstrap": "^5.3.3",
     "firebase": "^10.13.1",
+    "heroicons": "^2.1.5",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-bootstrap-buttons": "^1.0.0",

@@ -244,6 +244,7 @@ body {
   height: 100%;
   display: flex;
   align-items: center;
+  border-radius: 20px;
 }
 #nav li:active {
   background-color: #4596cf;
@@ -829,7 +830,7 @@ body {
 .new {
   width: 350px;
   height: 500px;
-  box-shadow: 5px 5px 5px #aaa;
+  box-shadow: 5px 5px 5px #cacfd2;
   margin: 20px;
   display: block;
   overflow: hidden;
@@ -859,6 +860,7 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis; /* Hiển thị dấu ba chấm nếu nội dung bị cắt */
+  height: 10%;
 }
 .new-day {
   font-size: 12px;
@@ -1041,6 +1043,10 @@ body {
 @media (max-width: 768px) {
   .secondary-outline-btn {
     padding: 0.3rem 1rem; /* Smaller padding for smaller screens */
-    font-size: 0.9rem;    /* Adjust font size for mobile */
+    font-size: 0.9rem; /* Adjust font size for mobile */
   }
+}
+
+.menu {
+  color: white;
 }
