@@ -10,29 +10,28 @@ import { BounceLoader } from "react-spinners";
 import { Alert } from "bootstrap";
 
 function MajorResult() {
-
   const mbtiOptions = [
     // "ESTP - Người thực thi", "ESFP - Người nghệ sĩ", "ENFP - Người truyền cảm hứng", "ENTP - Người nhìn xa",
     // "ESTJ - Người giám hộ", "ESFJ - Người quan tâm", "ENFJ - Người cho đi", "ENTJ - Người lãnh đạo",
     // "ISTJ - Người trách nhiệm", "ISFJ - Người nuôi dưỡng", "INFJ - Nhà tư vấn", "INTJ - Nhà khoa học",
     // "ISTP - Nhà kỹ thuật", "ISFP - Người nghệ sĩ", "INFP - Người lý tưởng hóa", "INTP - Nhà triết học",
-    {value:"ESTP", className:"dropdown-item", label:"ESTP"},
-    {value:"ENFP", className:"dropdown-item", label:"ENFP"},
-    {value:"ENTP", className:"dropdown-item", label:"ENTP"},
-    {value:"ESTJ", className:"dropdown-item", label:"ESTJ"},
-    {value:"ESFP", className:"dropdown-item", label:"ESFP"},
-    {value:"ESFJ", className:"dropdown-item", label:"ESFJ"},
-    {value:"ENTJ", className:"dropdown-item", label:"ENTJ"},
-    {value:"ENFJ", className:"dropdown-item", label:"ENFJ"},
-    {value:"INTP", className:"dropdown-item", label:"INTP"},
-    {value:"ISTJ", className:"dropdown-item", label:"ISTJ"},
-    {value:"ISFJ", className:"dropdown-item", label:"ISFJ"},
-    {value:"INFJ", className:"dropdown-item", label:"INFJ"},
-    {value:"INTJ", className:"dropdown-item", label:"INTJ"},
-    {value:"ISTP", className:"dropdown-item", label:"ISTP"},
-    {value:"ISFP", className:"dropdown-item", label:"ISFP"},
-    {value:"INFP", className:"dropdown-item", label:"INFP"},
-  ]; 
+    { value: "ESTP", className: "dropdown-item", label: "ESTP" },
+    { value: "ENFP", className: "dropdown-item", label: "ENFP" },
+    { value: "ENTP", className: "dropdown-item", label: "ENTP" },
+    { value: "ESTJ", className: "dropdown-item", label: "ESTJ" },
+    { value: "ESFP", className: "dropdown-item", label: "ESFP" },
+    { value: "ESFJ", className: "dropdown-item", label: "ESFJ" },
+    { value: "ENTJ", className: "dropdown-item", label: "ENTJ" },
+    { value: "ENFJ", className: "dropdown-item", label: "ENFJ" },
+    { value: "INTP", className: "dropdown-item", label: "INTP" },
+    { value: "ISTJ", className: "dropdown-item", label: "ISTJ" },
+    { value: "ISFJ", className: "dropdown-item", label: "ISFJ" },
+    { value: "INFJ", className: "dropdown-item", label: "INFJ" },
+    { value: "INTJ", className: "dropdown-item", label: "INTJ" },
+    { value: "ISTP", className: "dropdown-item", label: "ISTP" },
+    { value: "ISFP", className: "dropdown-item", label: "ISFP" },
+    { value: "INFP", className: "dropdown-item", label: "INFP" },
+  ];
 
   const careerOptions = [
     // "Nông nghiệp, Thực phẩm và Tài nguyên thiên nhiên",
@@ -51,22 +50,58 @@ function MajorResult() {
     // "Thương mại",
     // "Khoa học",
     // "Phân phối và hậu cần",
-    {value: "Nông nghiệp, Thực phẩm và Tài nguyên thiên nhiên",className:"dropdown-item",label: "Nông nghiệp, Thực phẩm và Tài nguyên thiên nhiên"},
-    {value:"Kiến trúc và xây dựng",className:"dropdown-item",label:"Kiến trúc và xây dựng"},
-    {value:"Nghệ thuật, Công nghệ A/V và Truyền thông",className:"dropdown-item",label:"Nghệ thuật, Công nghệ A/V và Truyền thông"},
-    {value:"Kinh doanh, quản lí và quản trị",className:"dropdown-item",label:"Kinh doanh, quản lí và quản trị"},
-    {value:"Giáo dục và đào tạo",className:"dropdown-item",label:"Giáo dục và đào tạo"},
-    {value:"Tài chính",className:"dropdown-item",label:"Tài chính"},
-    {value:"Chính phủ và hành chính công",className:"dropdown-item",label:"Chính phủ và hành chính công"},
-    {value:"Y tế",className:"dropdown-item",label:"Y tế"},
-    {value:"Du lịch",className:"dropdown-item",label:"Du lịch"},
-    {value:"Dịch vụ con người",className:"dropdown-item",label:"Dịch vụ con người"},
-    {value: "Luật, An toàn công cộng,Sửa chữa và bảo mật",className:"dropdown-item",label: "Luật, An toàn công cộng,Sửa chữa và bảo mật"},
-    {value:"Kỹ thuật",className:"dropdown-item",label:"Kỹ thuật"},
-    {value: "Thương mại",className:"dropdown-item",label:"Thương mại"},
-    {value:"Khoa học",className:"dropdown-item",label:"Khoa học"},
-    {value: "Công nghệ",className:"dropdown-item",label:"Công nghệ"},
-    {value:"Phân phối và hậu cần",className:"dropdown-item",label:"Phân phối và hậu cần"},
+    {
+      value: "Nông nghiệp, Thực phẩm và Tài nguyên thiên nhiên",
+      className: "dropdown-item",
+      label: "Nông nghiệp, Thực phẩm và Tài nguyên thiên nhiên",
+    },
+    {
+      value: "Kiến trúc và xây dựng",
+      className: "dropdown-item",
+      label: "Kiến trúc và xây dựng",
+    },
+    {
+      value: "Nghệ thuật, Công nghệ A/V và Truyền thông",
+      className: "dropdown-item",
+      label: "Nghệ thuật, Công nghệ A/V và Truyền thông",
+    },
+    {
+      value: "Kinh doanh, quản lí và quản trị",
+      className: "dropdown-item",
+      label: "Kinh doanh, quản lí và quản trị",
+    },
+    {
+      value: "Giáo dục và đào tạo",
+      className: "dropdown-item",
+      label: "Giáo dục và đào tạo",
+    },
+    { value: "Tài chính", className: "dropdown-item", label: "Tài chính" },
+    {
+      value: "Chính phủ và hành chính công",
+      className: "dropdown-item",
+      label: "Chính phủ và hành chính công",
+    },
+    { value: "Y tế", className: "dropdown-item", label: "Y tế" },
+    { value: "Du lịch", className: "dropdown-item", label: "Du lịch" },
+    {
+      value: "Dịch vụ con người",
+      className: "dropdown-item",
+      label: "Dịch vụ con người",
+    },
+    {
+      value: "Luật, An toàn công cộng,Sửa chữa và bảo mật",
+      className: "dropdown-item",
+      label: "Luật, An toàn công cộng,Sửa chữa và bảo mật",
+    },
+    { value: "Kỹ thuật", className: "dropdown-item", label: "Kỹ thuật" },
+    { value: "Thương mại", className: "dropdown-item", label: "Thương mại" },
+    { value: "Khoa học", className: "dropdown-item", label: "Khoa học" },
+    { value: "Công nghệ", className: "dropdown-item", label: "Công nghệ" },
+    {
+      value: "Phân phối và hậu cần",
+      className: "dropdown-item",
+      label: "Phân phối và hậu cần",
+    },
   ];
 
   const calcOptions = [
@@ -110,7 +145,7 @@ function MajorResult() {
     const mbti = selectedOption.value.substring(0, 4);
     setMbtiValue(selectedOption.value);
     console.log(mbtiValue);
-  }
+  };
 
   const handleCareerChange = (selectedOption) => {
     setCareerValue(selectedOption.value);
@@ -345,21 +380,45 @@ function MajorResult() {
         {result.length > 0 &&
           calcMethod === "Weighted Sum" &&
           loading === false && (
-            <DataTable
-              title="Weighted Sum"
-              columns={WeightsumColumns}
-              data={result}
-              striped
-            />
+            <>
+              <DataTable
+                title="Weighted Sum"
+                columns={WeightsumColumns}
+                data={result}
+                striped
+              />
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfxtbFBhLIpAgWnCihUAXB9RQvJh648DCszzbyqTv04kpP73A/viewform?embedded=true"
+                width="100%"
+                height="1522"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+              >
+                Đang tải…
+              </iframe>
+            </>
           )}
 
         {result.length > 0 && calcMethod === "VIKOR" && loading === false && (
-          <DataTable
-            title="VIKOR"
-            columns={VikorColumns}
-            data={result}
-            striped
-          />
+          <>
+            <DataTable
+              title="VIKOR"
+              columns={VikorColumns}
+              data={result}
+              striped
+            />
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSfxtbFBhLIpAgWnCihUAXB9RQvJh648DCszzbyqTv04kpP73A/viewform?embedded=true"
+              width="100%"
+              height="1522"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+            >
+              Đang tải…
+            </iframe>
+          </>
         )}
       </div>
     </body>
