@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import ProgressBar from "@ramonak/react-progress-bar";
 
-import Card from "../../components/Card3.jsx";
-import Panel from "../../components/stylePanel.jsx";
-import questions from "../../database/StyleQuest.js";
-import { Visual, Auditory, Tactile } from "../../database/Styles.js";
+import Card from "../components/Card3.jsx";
+import Panel from "../components/stylePanel.jsx";
+import questions from "../database/StyleQuest.js";
+import { Visual, Auditory, Tactile } from "../database/Styles.js";
 
 function StyleTest() {
   const list = questions;

@@ -58,7 +58,7 @@ function HomeScreen() {
             <div className="home-card card-right flex-col">
               <div className="card-title">Trắc nghiệm 3 thiên hướng học tập</div>
               <div className="card-content">Trắc nghiệm 3 thiên hướng học tập Vak là bài tập trắc nghiệm xác định thiên hướng học tập. Mô hình này cho rằng mỗi cá nhân sẽ có một cách học tập lý tưởng và đạt được các hiệu quả khác nhau.</div>
-              <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/learningStyle">Tìm hiểu thêm</Link></div>
+              <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/learningStyleDetail">Tìm hiểu thêm</Link></div>
             </div>
           </div>
 

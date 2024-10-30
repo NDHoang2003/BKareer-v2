@@ -17,7 +17,7 @@ function Vikor() {
       </div>
 
       <div className="detail-txt font-20">
-        <span className="semi-bold-txt">Ưu điểm:</span> Phương pháp VIKOR có nhiều ưu điểm đáng kể so với các phương pháp MCDM khác:
+        <span className="bold-txt">Ưu điểm:</span> Phương pháp VIKOR có nhiều ưu điểm đáng kể so với các phương pháp MCDM khác:
         <ul>
           <li>Dễ hiểu và sử dụng cho người dùng không có chuyên môn sâu về MCDM.</li>
           <li>Cân nhắc đồng thời độ chênh lệch so với giá trị lý tưởng và độ hối tiếc, đảm bảo giải pháp không chỉ lý thuyết tốt mà còn ít gây hối tiếc nhất.</li>
@@ -27,7 +27,7 @@ function Vikor() {
       </div>
 
       <div className="detail-txt font-20">
-        <span className="semi-bold-txt">Nhược điểm:</span> Tuy nhiên, phương pháp VIKOR cũng có một số nhược điểm:
+        <span className="bold-txt">Nhược điểm:</span> Tuy nhiên, phương pháp VIKOR cũng có một số nhược điểm:
         <ul>
           <li>Nhạy cảm với sự thay đổi của trọng số tiêu chí, đòi hỏi phải lựa chọn trọng số cẩn thận.</li>
           <li>Không cung cấp quy trình rõ ràng để xác định trọng số, điều này có thể dẫn đến kết quả khác nhau tùy theo người sử dụng.</li>

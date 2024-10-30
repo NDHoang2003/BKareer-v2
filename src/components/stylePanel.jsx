@@ -45,9 +45,9 @@ const LearningStylePanel = ({ Data, loading }) => {
               <p className="">{Data.content}</p>
               <p className="margin-top-1rem">
                 <span className="bold-txt">Một số gợi ý để cải thiện cách học của bạn:</span>
-                <ul>
-                  {Data.tips.map((tip, index) => (
-                    <li key={index}>{tip}</li>
+                <ul className="list-style={none}">
+                  {Data.tips.map((tip) => (
+                    <li>{tip}</li>
                   ))}
                 </ul>
               </p>

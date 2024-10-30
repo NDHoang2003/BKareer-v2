@@ -10,10 +10,10 @@ function WeightedSum() {
       <div className="detail-txt font-20">
         Các bước thực hiện phương pháp Tổng Trọng Số bao gồm:
         <ul>
-          <li><span className="semi-bold-txt">Bước 1: Xác định tiêu chí:</span> Đầu tiên, xác định các tiêu chí quan trọng cần đánh giá, ví dụ như hiệu suất, chi phí, rủi ro.</li>
-          <li><span className="semi-bold-txt">Bước 2: Gán trọng số cho tiêu chí:</span> Mỗi tiêu chí được gán một trọng số tương ứng, thể hiện mức độ quan trọng của nó.</li>
-          <li><span className="semi-bold-txt">Bước 3: Đánh giá phương án:</span> Đánh giá từng phương án theo các tiêu chí đã đề ra dựa trên dữ liệu thực tế hoặc đánh giá chủ quan.</li>
-          <li><span className="semi-bold-txt">Bước 4: Tính toán tổng trọng số:</span> Nhân hiệu suất của từng phương án với trọng số tương ứng và tổng hợp lại để có điểm cuối cùng cho mỗi phương án.</li>
+          <li><span className="bold-txt">Bước 1 - Xác định tiêu chí:</span> Đầu tiên, xác định các tiêu chí quan trọng cần đánh giá, ví dụ như hiệu suất, chi phí, rủi ro.</li>
+          <li><span className="bold-txt">Bước 2 - Gán trọng số cho tiêu chí:</span> Mỗi tiêu chí được gán một trọng số tương ứng, thể hiện mức độ quan trọng của nó.</li>
+          <li><span className="bold-txt">Bước 3 - Đánh giá phương án:</span> Đánh giá từng phương án theo các tiêu chí đã đề ra dựa trên dữ liệu thực tế hoặc đánh giá chủ quan.</li>
+          <li><span className="bold-txt">Bước 4 - Tính toán tổng trọng số:</span> Nhân hiệu suất của từng phương án với trọng số tương ứng và tổng hợp lại để có điểm cuối cùng cho mỗi phương án.</li>
         </ul>
       </div>
 

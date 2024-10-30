@@ -312,7 +312,7 @@ body {
   object-fit: cover;
 }
 
-/******************* Login Screen *******************/
+/******************* Authentication Screen *******************/
 .appName-block {
   flex: 3;
   height: 100vh;
@@ -364,8 +364,6 @@ body {
   color: #358bca;
   opacity: 1;
 }
-
-/******************* Register Screen *******************/
 
 /******************* MBTI Screen *******************/
 .question-card {
@@ -510,6 +508,9 @@ body {
 .panel_info p {
   font-size: 16px;
 }
+.panel_info p ul {
+  list-style: inside;
+}
 
 .info {
   /* background-color: antiquewhite; */
@@ -615,8 +616,7 @@ body {
 }
 
 .detail-txt ul {
-  margin: 0;
-  padding-left: 20px;
+  list-style: inside;
 }
 
 /******************* Images *******************/

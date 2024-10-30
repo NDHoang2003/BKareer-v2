@@ -13,11 +13,11 @@ function Ikigai() {
 
       <div className="detail-txt font-20">
         Ikigai bao gồm 4 khía cạnh:
-        <ul>
-          <li><span className="semi-bold-txt">Điều bạn yêu thích (passion):</span> Đây là điểm mạnh, niềm đam mê và sự hứng thú trong công việc hoặc hoạt động mà bạn thực sự thích.</li>
-          <li><span className="semi-bold-txt">Điều bạn giỏi (profession):</span> Đây là những kỹ năng, năng lực và kinh nghiệm mà bạn đã phát triển trong lĩnh vực công việc hoặc sở trường của mình.</li>
-          <li><span className="semi-bold-txt">Điều mà thế giới cần (mission):</span> Đây là những việc bạn tin tưởng và cho rằng có thể đóng góp vào cộng đồng hoặc thế giới xung quanh, tạo nên giá trị cho người khác.</li>
-          <li><span className="semi-bold-txt">Điều mà bạn có thể kiếm sống (vocation):</span> Đây là những việc mà bạn làm để kiếm sống và đáp ứng nhu cầu cơ bản của bản thân, gia đình.</li>
+        <ul className="">
+          <li><span className="bold-txt">Điều bạn yêu thích (passion):</span> Đây là điểm mạnh, niềm đam mê và sự hứng thú trong công việc hoặc hoạt động mà bạn thực sự thích.</li>
+          <li><span className="bold-txt">Điều bạn giỏi (profession):</span> Đây là những kỹ năng, năng lực và kinh nghiệm mà bạn đã phát triển trong lĩnh vực công việc hoặc sở trường của mình.</li>
+          <li><span className="bold-txt">Điều mà thế giới cần (mission):</span> Đây là những việc bạn tin tưởng và cho rằng có thể đóng góp vào cộng đồng hoặc thế giới xung quanh, tạo nên giá trị cho người khác.</li>
+          <li><span className="bold-txt">Điều mà bạn có thể kiếm sống (vocation):</span> Đây là những việc mà bạn làm để kiếm sống và đáp ứng nhu cầu cơ bản của bản thân, gia đình.</li>
         </ul>
       </div>
 
