@@ -32,8 +32,7 @@ function HomeScreen() {
 
             <div className="home-card card-right flex-col">
               <div className="card-title">Tin tức</div>
-              <div className="card-content">Cập nhật những tin tức mới nhất về giáo dục, hướng nghiệp và thị trường lao động. Chúng tôi cung cấp thông tin về các chương trình đào tạo, cơ hội học bổng, và những xu hướng nghề nghiệp nổi bật, giúp bạn nắm bắt kịp thời những thay đổi quan trọng trong lĩnh vực này.
-              </div>
+              <div className="card-content">Cập nhật những tin tức mới nhất về giáo dục, hướng nghiệp và thị trường lao động, cung cấp thông tin về các chương trình đào tạo, cơ hội học bổng và những xu hướng nghề nghiệp nổi bật.</div>
               <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/news">Tìm hiểu thêm</Link></div>
             </div>
           </div>
@@ -98,7 +97,7 @@ function HomeScreen() {
 
             <div className="home-card width-50 flex-col">
               <div className="card-title">VIKOR</div>
-              <div className="card-content">Dựa trên dữ liệu đầu vào từ người dùng và dữ liệu của tổ chức lao động thế giới ILOSTAT, phương pháp VIKOR xác định các nghiệm lý tưởng và phản lý tưởng</div>
+              <div className="card-content">Dựa trên dữ liệu đầu vào từ người dùng và dữ liệu của tổ chức lao động thế giới ILOSTAT, phương pháp VIKOR xác định các nghiệm lý tưởng và phản lý tưởng.</div>
               <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/vikor">Tìm hiểu thêm</Link></div>
             </div>
           </div>

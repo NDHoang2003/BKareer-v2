@@ -20,9 +20,7 @@ function Navbar() {
           </li>
 
           <Dropdown />
-          <li className="font-18">
-            <Link to="/career">Khám phá năng lực nghề nghiệp</Link>
-          </li>
+
           <li className="font-18">
             <Link to="/news">Tin tức</Link>
           </li>

@@ -26,10 +26,12 @@ import Profile from "./screens/Profile";
 import PersonalResult from "./screens/PersonalResult";
 import LearningStyleScreen from "./screens/homeComponentsDetail/LearningStyleScreen"; 
 
-function App() {
+export default function App() {
+  const excludedRoutes = ['/login', '/register'];
+
   return (
     <Router>
-      <Navbar />
+      {!excludedRoutes.includes(location.pathname)  && <Navbar />}
       <Routes>
         {/* HomeScreen */}
         <Route path="/" element={<HomeScreen />} />
@@ -62,9 +64,7 @@ function App() {
           <Route path="/personal" element={<PersonalResult />} />
         </Route>
       </Routes>
-      <Footer />
+      {!excludedRoutes.includes(location.pathname) && <Footer />}
     </Router>
   );
-}
-
-export default App;
+};
