@@ -1,13 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProgressBar from "@ramonak/react-progress-bar";
 
 import Card from "../../components/Card3.jsx";
 import Panel from "../../components/stylePanel.jsx";
 import questions from "../../database/StyleQuest.js";
-// import perlist from "../database/MBTIPersonality";
 import { Visual, Auditory, Tactile } from "../../database/Styles.js";
 
 function StyleTest() {

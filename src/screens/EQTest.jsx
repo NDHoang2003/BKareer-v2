@@ -180,9 +180,9 @@ export default function EQTest() {
               onClick={closeform}
             />
 
-            <div className="panel_info">
+            <div className="panel_info z-50">
               <div className="info">
-                <div className="hero">
+                <div className="hero hero-margin">
                   <img src={eq} alt="img" width={100} height={100}></img>
                   <span>EQ Test</span>
                 </div>

@@ -175,7 +175,7 @@ export default function IQTest() {
               onClick={closeform}
             />
 
-            <div className="panel_info">
+            <div className="panel_info z-50">
               <div className="info">
                 <div className="hero">
                   <img src={iq} alt="img" width={100} height={100}></img>
@@ -183,7 +183,7 @@ export default function IQTest() {
                 </div>
                 <p>
                   Bạn đã hoàn thành bài trắc nghiệm IQ. Kết quả của bạn là{" "}
-                  {score}
+                  {score}.
                 </p>
               </div>
             </div>

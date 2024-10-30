@@ -16,7 +16,6 @@ const LearningStylePanel = ({ Data, loading }) => {
     padding: "20px",
   };
 
-
   return (
     <div className="Panel">
       <BounceLoader
@@ -34,18 +33,18 @@ const LearningStylePanel = ({ Data, loading }) => {
             alt="exit_icon"
             width={30}
             height={30}
-            className="img"
+            className="img margin-top-2rem margin-right-2rem"
             onClick={closeform}
-          ></img>
+          />
           <div className="panel_info">
             <div className="info">
-              <div className="hero">
+              <div className="hero margin-bottom-1rem">
                 <img src={Data.img} alt="img" width={100} height={100}></img>
                 <span>{Data.description}</span>
               </div>
-              <p>{Data.content}</p>
-              <p>
-                Một số gợi ý để cải thiện cách học của bạn:
+              <p className="">{Data.content}</p>
+              <p className="margin-top-1rem">
+                <span className="bold-txt">Một số gợi ý để cải thiện cách học của bạn:</span>
                 <ul>
                   {Data.tips.map((tip, index) => (
                     <li key={index}>{tip}</li>

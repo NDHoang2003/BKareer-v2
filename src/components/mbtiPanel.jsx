@@ -41,11 +41,11 @@ const Panel = ({ Data, loading }) => {
             <div className="info">
               <div className="hero">
                 <img src={Data.img} alt="img" width={125} height={125} className="margin-bottom-1rem"/>
-                <span>{Data.description}</span>
+                <span>{Data.name} - {Data.description}</span>
               </div>
-              <p className="hero">{Data.content}</p>
+              <p className="hero margin-bottom-1rem">{Data.content}</p>
               <p>
-                Có thể bạn chưa biết: {Data.people} và nhiều nhân vật tiêu biểu
+                <span className="bold-txt">Có thể bạn chưa biết:</span> {Data.people} và nhiều nhân vật tiêu biểu
                 khác có cùng nhòm tính cách với bạn
               </p>
             </div>
