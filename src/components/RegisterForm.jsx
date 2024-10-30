@@ -42,7 +42,7 @@ function RegisterForm() {
   return (
     <div className="form-block flex-col test">
       <form onSubmit={handleSubmit}>
-        <div className="login-title-txt flex-self-start">Đăng ký</div>
+        <div className="authen-title-txt flex-self-start">Đăng ký</div>
 
         <div className="answer-form">
           <input
@@ -75,7 +75,7 @@ function RegisterForm() {
           />
         </div>
         <button
-          className="primary-btn margin-top-10 font-18 align-center width-100"
+          className="primary-btn margin-top-2rem font-18 align-center width-100"
           disabled={loading}
         >
           {loading ? "Loading..." : "Đăng ký"}
@@ -88,7 +88,7 @@ function RegisterForm() {
       <OAuth />
 
       {/* Login Now */}
-      <div className="margin-top-8 align-center width-fit-content font-18">
+      <div className="margin-top-2rem align-center width-fit-content font-18">
         <p className="text-color-primary">
           Đã có tài khoản?{" "}
           <a className="text-decor-none bold-txt" href="/register">

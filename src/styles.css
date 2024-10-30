@@ -318,11 +318,11 @@ body {
   height: 100vh;
   background-image: linear-gradient(#dbf0ff, #358bca);
 }
-.img-login {
+.img-authen {
   width: 60%;
   height: fit-content;
 }
-.appName-login {
+.appName-authen {
   font-family: Jomhuria;
   font-size: 6.5rem;
   color: white;
@@ -335,22 +335,22 @@ body {
   font-family: Nunito_Sans_10pt_Condensed_Light;
   font-size: 1.5rem;
 }
-.login-title-txt {
+.authen-title-txt {
   color: #358bca;
   font-family: Nunito_Sans_10pt_Condensed_Bold;
   font-size: 2rem;
-  margin-bottom: 10%;
+  margin-bottom: 8%;
 }
 .form-block {
   flex: 2;
   background-color: white;
-  padding: 6rem 5rem 1rem 5rem;
+  padding: 4rem 5rem 1rem 5rem;
 }
 .input-field {
   color: #358bca;
   border: 1px solid #358bca;
   border-radius: 10px;
-  padding: 1.5rem 0rem 1.5rem 1rem;
+  padding: 1.25rem 0rem 1.25rem 1rem;
   margin-bottom: 2%;
 }
 .input-field:focus {

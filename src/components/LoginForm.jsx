@@ -54,7 +54,7 @@ function LoginForm() {
   return (
     <div className="form-block">
       <form onSubmit={handleSubmit}>
-        <div className="login-title-txt flex-self-start">Đăng nhập</div>
+        <div className="authen-title-txt flex-self-start">Đăng nhập</div>
 
         <div className="answer-form">
           <input
@@ -80,12 +80,12 @@ function LoginForm() {
 
         <div className="flex-space-between">
           <div></div>
-          <div>Quên mật khẩu?</div>
+          <div className="text-color-primary">Quên mật khẩu?</div>
         </div>
 
         {/* Login Button */}
         <button
-          className="primary-btn margin-top-8 font-18 align-center width-100"
+          className="primary-btn margin-top-2rem font-18 align-center width-100"
           disabled={loading}
         >
           {loading ? "Loading..." : "Đăng nhập"}
@@ -98,7 +98,7 @@ function LoginForm() {
       <OAuth />
 
       {/* Register Now */}
-      <div className="margin-top-8 align-center width-fit-content font-18">
+      <div className="margin-top-2rem align-center width-fit-content font-18">
         <p className="text-color-primary">
           Chưa có tài khoản?{" "}
           <a className="text-decor-none bold-txt" href="/register">

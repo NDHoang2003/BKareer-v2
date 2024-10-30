@@ -6,8 +6,8 @@ function Register() {
     <div className="flex-row">
       <RegisterForm />
       <div className="appName-block flex-col flex-items-center flex-content-center">
-        <img src={image} className="img-login"/>
-        <div className="appName-login">BKareer</div>
+        <img src={image} className="img-authen"/>
+        <div className="appName-authen">BKareer</div>
         <div className="app-slogan-txt">Ignite your future</div>
       </div>
     </div>
