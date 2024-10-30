@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -24,14 +24,15 @@ import LeftRightBrain from "./screens/homeComponentsDetail/LeftRightBrainDetail"
 import PrivateRoute from "./screens/authentication/PrivateRoute";
 import Profile from "./screens/Profile";
 import PersonalResult from "./screens/PersonalResult";
-import LearningStyleScreen from "./screens/homeComponentsDetail/LearningStyleScreen"; 
+import LearningStyleScreen from "./screens/homeComponentsDetail/LearningStyleScreen";
 
-export default function App() {
+function App() {
+  const location = useLocation();
   const excludedRoutes = ['/login', '/register'];
 
   return (
-    <Router>
-      {!excludedRoutes.includes(location.pathname)  && <Navbar />}
+    <>
+      {!excludedRoutes.includes(location.pathname) && <Navbar />}
       <Routes>
         {/* HomeScreen */}
         <Route path="/" element={<HomeScreen />} />
@@ -54,7 +55,7 @@ export default function App() {
         {/* Other Tests */}
         <Route path="/mbti" element={<MBTITest />} />
         <Route path="/career" element={<CCTest />} />
-        <Route path="/iq" element={<IQTest/>} />
+        <Route path="/iq" element={<IQTest />} />
         <Route path="/eq" element={<EQTest />} />
         <Route path="/lrBrain" element={<LeftRightBrainTest />} />
         <Route path="/news" element={<News />} />
@@ -65,6 +66,14 @@ export default function App() {
         </Route>
       </Routes>
       {!excludedRoutes.includes(location.pathname) && <Footer />}
+    </>
+  );
+}
+
+export default function AppWrapper() {
+  return (
+    <Router>
+      <App />
     </Router>
   );
-};
+}
