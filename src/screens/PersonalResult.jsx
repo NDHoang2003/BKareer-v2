@@ -15,7 +15,22 @@ export default function PersonalResult() {
     time: "Chưa làm",
     date: "Chưa làm",
   });
+  const [eq, setEq] = useState({
+    score: "Chưa làm",
+    time: "Chưa làm",
+    date: "Chưa làm",
+  });
   const [cc, setCc] = useState({
+    score: "Chưa làm",
+    time: "Chưa làm",
+    date: "Chưa làm",
+  });
+  const [lr, setLr] = useState({
+    score: "Chưa làm",
+    time: "Chưa làm",
+    date: "Chưa làm",
+  });
+  const [learn, setLearn] = useState({
     score: "Chưa làm",
     time: "Chưa làm",
     date: "Chưa làm",
@@ -61,6 +76,48 @@ export default function PersonalResult() {
       console.error("Error fetching data: ", error);
     }
   };
+  const getEQ = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/api/score/eq", {
+        credentials: "include",
+      });
+      const data = await response.json();
+      if (data) {
+        setEq(data);
+      }
+    } catch (error) {
+      console.error("Error fetching data: ", error);
+    }
+  };
+  const getLR = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/api/score/lr", {
+        credentials: "include",
+      });
+      const data = await response.json();
+      if (data) {
+        setLr(data);
+      }
+    } catch (error) {
+      console.error("Error fetching data: ", error);
+    }
+  };
+  const getLearn = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:3000/api/score/learningStyle",
+        {
+          credentials: "include",
+        }
+      );
+      const data = await response.json();
+      if (data) {
+        setLearn(data);
+      }
+    } catch (error) {
+      console.error("Error fetching data: ", error);
+    }
+  };
   useEffect(() => {
     document.getElementById("result-id").style.display = "flex";
     document.getElementById("result-id-body").style.display = "none";
@@ -68,6 +125,9 @@ export default function PersonalResult() {
       getMbti();
       getCC();
       getIQ();
+      getEQ();
+      getLR();
+      getLearn();
     }, 1000);
     setTimeout(() => {
       setLoading(false);
@@ -125,6 +185,18 @@ export default function PersonalResult() {
           <div>{iq.score}</div>
           <div>{iq.time}</div>
           <div>{iq.date}</div>
+          <div>- EQ TEST -</div>
+          <div>{eq.score}</div>
+          <div>{eq.time}</div>
+          <div>{eq.date}</div>
+          <div>- LeftRight Brain TEST -</div>
+          <div>{lr.score}</div>
+          <div>{lr.time}</div>
+          <div>{lr.date}</div>
+          <div>- Learning Style -</div>
+          <div>{learn.score}</div>
+          <div>{learn.time}</div>
+          <div>{learn.date}</div>
         </div>
       </body>
     </>

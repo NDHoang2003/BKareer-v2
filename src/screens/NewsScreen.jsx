@@ -35,7 +35,7 @@ function PaginatedItems({ rssItems, loading }) {
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % items.length;
+    const newOffset = (event.selected * itemsPerPage) % rssItems.length;
     setItemOffset(newOffset);
   };
 
@@ -78,7 +78,7 @@ function News() {
     fetchdata();
   }, []);
   return (
-    <body className="body background ">
+    <body className="body background rounded-xl ">
       <div className="">
         <div className="screen-title">Tin tức</div>
         <PaginatedItems rssItems={rssItems} loading={loading} />
