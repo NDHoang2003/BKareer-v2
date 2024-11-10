@@ -471,6 +471,32 @@ body {
   color: #358bca;
 }
 
+.answer-item-5 {
+  width: 18%; 
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  text-align: left;
+  align-items: center;
+  border: 1px ridge #358bca;
+  border-radius: 50px;
+  cursor: pointer;
+  padding: 0.5rem 1.5rem; 
+  color: #358bca;
+  font-family: Nunito_Sans_10pt_Condensed_Regular;
+}
+
+.answer-item-5 input {
+  margin-right: 10px; /* Keep spacing between input and label */
+}
+
+.answer-item-5:not(.selected):hover {
+  background-color: #eef8ff;
+  border-color: #358bca;
+  color: #358bca;
+}
+
 .selected {
   background-color: #358bca;
   color: white;
@@ -1043,6 +1069,10 @@ body {
   .secondary-outline-btn {
     padding: 0.3rem 1rem; /* Smaller padding for smaller screens */
     font-size: 0.9rem; /* Adjust font size for mobile */
+  }
+  .answer-item-5 {
+    width: 100%; /* Stack the items vertically for smaller screens */
+    margin-bottom: 1rem; /* Space between answers */
   }
 }
 

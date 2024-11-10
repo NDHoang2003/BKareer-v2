@@ -26,6 +26,8 @@ import LearningStyle from "./screens/homeComponentsDetail/LearningStyleDetail";
 import PrivateRoute from "./screens/authentication/PrivateRoute";
 import Profile from "./screens/Profile";
 import PersonalResult from "./screens/PersonalResult";
+import FivePerTest from "./screens/5PerTest";
+import FivePer from "./screens/homeComponentsDetail/5PerDetail";
 
 function App() {
   const location = useLocation();
@@ -54,6 +56,7 @@ function App() {
         <Route path="/learningStyleDetail" element={<LearningStyle />} />
         <Route path="/weightedSum" element={<WeightedSum />} />
         <Route path="/vikor" element={<Vikor />} />
+        <Route path="/fivePerDetail" element={<FivePer />} />
         {/* Other Tests */}
         <Route path="/mbti" element={<MBTITest />} />
         <Route path="/career" element={<CCTest />} />
@@ -61,6 +64,7 @@ function App() {
         <Route path="/eq" element={<EQTest />} />
         <Route path="/lrBrain" element={<LeftRightBrainTest />} />
         <Route path="/learningStyle" element={<LearningStyleTest />} />
+        <Route path="/fivePer" element={<FivePerTest />} />
         <Route path="/news" element={<News />} />
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />

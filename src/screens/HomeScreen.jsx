@@ -87,6 +87,23 @@ function HomeScreen() {
             </div>
           </div>
 
+          {/* Big Five, Color Test */}
+          <div className="flex-row card-margin-top">
+            <div className="home-card width-50 card-margin-right flex-col">
+              <div className="card-title">Trắc nghiệm tính cách Big Five</div>
+              <div className="card-content">Trắc nghiệm Big Five đo lường 5 yếu tố tính cách chính của con người: Extraversion, Agreeableness, Conscientiousness, Neuroticism và Openness to Experience.</div>
+              <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/fivePerDetail">Tìm hiểu thêm</Link></div>
+            </div>
+
+            <div className="home-card width-50 flex-col">
+              <div className="card-title">VIKOR</div>
+              <div className="card-content">Dựa trên dữ liệu đầu vào từ người dùng và dữ liệu của tổ chức lao động thế giới ILOSTAT, phương pháp VIKOR xác định các nghiệm lý tưởng và phản lý tưởng.</div>
+              <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/vikor">Tìm hiểu thêm</Link></div>
+            </div>
+            
+          </div>
+
+
           {/* Weight-sum, VIKOR */}
           <div className="flex-row card-margin-top">
             <div className="home-card width-50 card-margin-right flex-col">
@@ -100,7 +117,10 @@ function HomeScreen() {
               <div className="card-content">Dựa trên dữ liệu đầu vào từ người dùng và dữ liệu của tổ chức lao động thế giới ILOSTAT, phương pháp VIKOR xác định các nghiệm lý tưởng và phản lý tưởng.</div>
               <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/vikor">Tìm hiểu thêm</Link></div>
             </div>
+
           </div>
+
+
         </div>
       </body>
     </>
