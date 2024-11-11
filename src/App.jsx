@@ -28,6 +28,10 @@ import Profile from "./screens/Profile";
 import PersonalResult from "./screens/PersonalResult";
 import FivePerTest from "./screens/5PerTest";
 import FivePer from "./screens/homeComponentsDetail/5PerDetail";
+import WorkStyles from "./screens/WorkStylesTest";
+import WorkStylesDetail from "./screens/homeComponentsDetail/WorkStylesDetail";
+import GritDetail from "./screens/homeComponentsDetail/GritDetail";
+import GritTest from "./screens/GritTest";
 
 function App() {
   const location = useLocation();
@@ -57,6 +61,8 @@ function App() {
         <Route path="/weightedSum" element={<WeightedSum />} />
         <Route path="/vikor" element={<Vikor />} />
         <Route path="/fivePerDetail" element={<FivePer />} />
+        <Route path="/workStyleDetail" element={<WorkStylesDetail />} />
+        <Route path="/gritDetail" element={<GritDetail />} />
         {/* Other Tests */}
         <Route path="/mbti" element={<MBTITest />} />
         <Route path="/career" element={<CCTest />} />
@@ -65,6 +71,8 @@ function App() {
         <Route path="/lrBrain" element={<LeftRightBrainTest />} />
         <Route path="/learningStyle" element={<LearningStyleTest />} />
         <Route path="/fivePer" element={<FivePerTest />} />
+        <Route path="/workStyle" element={<WorkStyles />} />
+        <Route path="/gritTest" element={<GritTest />} />
         <Route path="/news" element={<News />} />
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />

@@ -100,9 +100,31 @@ function HomeScreen() {
               <div className="card-content">Dựa trên dữ liệu đầu vào từ người dùng và dữ liệu của tổ chức lao động thế giới ILOSTAT, phương pháp VIKOR xác định các nghiệm lý tưởng và phản lý tưởng.</div>
               <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/vikor">Tìm hiểu thêm</Link></div>
             </div>
-            
           </div>
 
+          {/* Work Styles, IQ2 */}
+          <div className="flex-row card-margin-top">
+            <div className="home-card width-50 card-margin-right flex-col">
+              <div className="card-title">Trắc nghiệm Phong Cách Làm Việc</div>
+              <div className="card-content">
+                Khám phá phong cách làm việc của bạn để hiểu rõ hơn về cách bạn tiếp cận công việc và tương tác với đồng nghiệp, từ đó phát huy tối đa hiệu quả làm việc.
+              </div>
+              <div className="margin-bottom-2rem">
+                <Link className="secondary-outline-btn" to="/workStyleDetail">Tìm hiểu thêm</Link>
+              </div>
+            </div>
+
+            <div className="home-card width-50 card-margin-right flex-col">
+              <div className="card-title">Trắc nghiệm Grit Scale</div>
+              <div className="card-content">
+                Đo lường độ kiên trì và đam mê của bạn đối với các mục tiêu dài hạn bằng trắc nghiệm Grit Scale, giúp bạn hiểu rõ hơn về khả năng vượt qua thử thách và kiên trì với mục tiêu.
+              </div>
+              <div className="margin-bottom-2rem">
+                <Link className="secondary-outline-btn" to="/gritDetail">Tìm hiểu thêm</Link>
+              </div>
+            </div>
+
+          </div>
 
           {/* Weight-sum, VIKOR */}
           <div className="flex-row card-margin-top">

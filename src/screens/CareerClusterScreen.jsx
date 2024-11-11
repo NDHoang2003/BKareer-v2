@@ -1,5 +1,4 @@
 import CC from "../database/CCQuest";
-// import clusterList from "../database/CCMajor.js"
 import CCPanel from "../components/ccPanel.jsx";
 import { useSelector } from "react-redux";
 import React, { useState, useEffect } from "react";
@@ -7,11 +6,9 @@ import Result from "../database/Result.js";
 import { Link } from "react-router-dom";
 
 export default function CCTest() {
-  // const [cluster, setCluster] = useState({});
-  // const [showPanel, setShowPanel] = useState(false);
-
-  const [isPanelOpen, setIsPanelOpen] = useState(false); // State để điều khiển việc hiển thị panel
-
+  const { currentUser } = useSelector((state) => state.user);
+  
+  const [isPanelOpen, setIsPanelOpen] = useState(false); // Controls panel visibility
   const [checkboxStates, setCheckboxStates] = useState(
     CC.map(() => ({
       activities: Array(7).fill(false),
@@ -19,7 +16,28 @@ export default function CCTest() {
       subjects: Array(5).fill(false),
     }))
   );
-  const { currentUser } = useSelector((state) => state.user);
+
+  // Timer state
+  const [seconds, setSeconds] = useState(0);
+  const [isActive, setIsActive] = useState(true);
+  const [time, setTime] = useState("");
+
+  // Timer effect to count time
+  useEffect(() => {
+    let interval = null;
+    if (isActive) {
+      interval = setInterval(() => {
+        setSeconds((seconds) => seconds + 1);
+        const min = Math.floor(seconds / 60);
+        const sec = seconds % 60;
+        setTime(`${min}:${sec < 10 ? "0" + sec : sec}`);
+      }, 1000);
+    } else if (!isActive && seconds !== 0) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval); // Cleanup interval when component unmounts
+  }, [isActive, seconds]);
+
   const handleCheckboxChange = (questionIndex, type, subIndex) => {
     setCheckboxStates((prevCheckboxStates) => {
       const newState = prevCheckboxStates.map((item, index) => {
@@ -82,7 +100,7 @@ export default function CCTest() {
       "Du lịch",
       "Dịch vụ con người",
       "Công nghệ",
-      "Luật, An toàn công cộng,Sửa chữa và bảo mật",
+      "Luật, An toàn công cộng, Sửa chữa và bảo mật",
       "Kỹ thuật",
       "Thương mại",
       "Khoa học",
@@ -91,18 +109,16 @@ export default function CCTest() {
     return majors[highestIndex];
   };
 
-  const scores = calculateScore(); // Tính điểm cho từng ô
-  const highestScoredItemIndex = findHighestScoredItem(scores); // Xác định ô có điểm cao nhất
-  const highestScoredMajor = mapHighestScoredItemToMajor(
-    highestScoredItemIndex
-  ); // Ánh xạ ô có điểm cao nhất vào nhóm ngành tương ứng
+  const scores = calculateScore(); 
+  const highestScoredItemIndex = findHighestScoredItem(scores); 
+  const highestScoredMajor = mapHighestScoredItemToMajor(highestScoredItemIndex);
 
   Result.setCc(highestScoredMajor);
   const [loading, setLoading] = useState(true);
 
   const handleOpenPanel = async () => {
     setIsPanelOpen(true);
-    setIsActive(false);
+    setIsActive(false); // Stop the timer when the panel opens
     try {
       if (currentUser) {
         const date = new Date().toLocaleString();
@@ -138,49 +154,35 @@ export default function CCTest() {
   const handleClosePanel = () => {
     setIsPanelOpen(false);
     window.scrollTo(0, 0);
-    console.log(isPanelOpen);
   };
 
-  const [seconds, setSeconds] = useState(0);
-  const [isActive, setIsActive] = useState(true);
-  const [time, setTime] = useState("");
-  
-  useEffect(() => {
-    let interval = null;
-    if (isActive) {
-      interval = setInterval(() => {
-        setSeconds((seconds) => seconds + 1);
-        const min = Math.floor(seconds / 60);
-        const sec = seconds % 60;
-        setTime(`${min}:${sec < 10 ? "0" + sec : sec}`);
-      }, 1000);
-    } else if (!isActive && seconds !== 0) {
-      clearInterval(interval);
-    }
-    return () => clearInterval(interval); // Cleanup interval khi component bị unmount
-  }, [isActive, seconds]);
-  
   return (
     <>
       <body className="body">
-        <div className="screen-title">Khám phá năng lực nghề nghiệp</div>
+      <div className="progress-card" id="progress-card">
+        <div className="progress-card-title">Trắc nghiệm khám phá năng lực nghề nghiệp</div>
+        <div className="text-bar">
+          <span className="time-clock">Thời gian: {time}</span>
+        </div>
+      </div>
+
         <div className="CC-instruction-txt font-18">
           <span className="bold-txt">Hướng dẫn: </span>
           <span>
-            Đánh dấu các mục trong mỗi ô mô tả chính xác nhất về bạn. Bạn có thể
-            chọn một hoặc nhiều mục trong mỗi ô. Sau khi hoàn thành, hệ thống sẽ
-            hiển thị kết quả ô có số điểm cao nhất và nhóm ngành tương ứng. Bạn
-            cũng có thể xem thêm các nhóm ngành khác để xem bạn có thể muốn khám
-            phá những nhóm ngành nào.
+            Đánh dấu các mục trong mỗi ô mô tả chính xác nhất về bạn. Bạn có thể
+            chọn một hoặc nhiều mục trong mỗi ô. Sau khi hoàn thành, hệ thống sẽ
+            hiển thị kết quả ô có số điểm cao nhất và nhóm ngành tương ứng. Bạn
+            cũng có thể xem thêm các nhóm ngành khác để khám phá.
           </span>
         </div>
+
         {CC.map((item, index) => (
           <div className="CC-card flex-row flex-items-center" key={index}>
             <div className="CC-card-title-txt">{item.title}</div>
 
             <div className="CC-activities-block flex-col flex-self-start">
               <div className="bold-txt font-20">
-                Những hoạt động miêu tả những điều tôi thích làm:
+                Những hoạt động miêu tả những điều tôi thích làm:
               </div>
               {Object.keys(item.activities[0]).map((key, subIndex) => (
                 <div className="font-18" key={subIndex}>
@@ -256,8 +258,8 @@ export default function CCTest() {
 
         {isPanelOpen && (
           <CCPanel
-            majorName={highestScoredMajor} // Truyền tên ngành đã chọn vào prop majorName của Panel
-            onClose={handleClosePanel} // Truyền hàm handleClosePanel vào prop onClose của Panel
+            majorName={highestScoredMajor}
+            onClose={handleClosePanel}
             isOpen={isPanelOpen}
             loading={loading}
           />
