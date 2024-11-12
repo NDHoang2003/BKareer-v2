@@ -396,6 +396,21 @@ body {
 .time-clock {
   color: white;
 }
+
+.workstyle-progress-card {
+  background: linear-gradient(to bottom, #358bca, #89e0ff);
+  padding: 1rem 2rem; /* Adjust padding to fit content */
+  width: 100%;
+  height: auto;
+  position: sticky;
+  z-index: 1;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+
 .text-bar {
   color: white;
   font-family: Nunito_Sans_10pt_Condensed_Bold;
@@ -585,7 +600,7 @@ body {
 /******************* Career Cluster Screen *******************/
 .CC-instruction-txt {
   font-family: Nunito_Sans_10pt_Condensed_Regular;
-  color: #666;
+  color: #f4efef;
   margin-bottom: 2rem;
 }
 .CC-card {

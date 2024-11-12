@@ -56,6 +56,22 @@ export default function GritScaleTest() {
       const averageScore = (totalScore / 12).toFixed(2); // Calculate the average score (total points divided by 12)
       setScore(averageScore); // Set the final score
       document.querySelector(".Panel").style.display = "flex"; // Show the result panel
+  
+      // Determine the evaluation message based on the score
+      let evaluationMessage = "";
+      if (averageScore < 1) {
+        evaluationMessage = "Điểm của bạn cho thấy bạn là một người chưa bền chí, dễ dàng bỏ cuộc. Hãy cố gắng cải thiện bằng cách đặt ra những mục tiêu nhỏ và kiên trì thực hiện từng bước một. Học cách đối mặt với khó khăn và giữ vững quyết tâm sẽ giúp bạn phát triển tính bền chí.";
+      } else if (averageScore < 2 && averageScore>=1) {
+        evaluationMessage = "Điểm của bạn thể hiện rằng bạn có thể cải thiện sự bền chí của mình hơn nữa. Hãy tập trung vào việc kiên nhẫn vượt qua các thử thách và xem mỗi thất bại là một cơ hội để học hỏi. Dần dần, bạn sẽ thấy mình ngày càng kiên cường hơn.";
+      } else if (averageScore < 3 && averageScore>=2) {
+        evaluationMessage = "Bạn đã có nền tảng tốt về sự bền chí. Tiếp tục giữ vững tinh thần này, và cố gắng đẩy mạnh hơn nữa sự kiên trì của mình trong những lúc khó khăn. Đừng ngần ngại thử thách bản thân với những mục tiêu lớn hơn để phát triển khả năng chịu đựng.";
+      } else if (averageScore < 4 && averageScore>=3) {
+        evaluationMessage = "Bạn đang làm rất tốt! Sự bền chí của bạn giúp bạn vượt qua khó khăn một cách hiệu quả. Hãy tiếp tục phát huy và cố gắng giữ vững tinh thần này trong cả những tình huống căng thẳng nhất.";
+      } else {
+        evaluationMessage = "Tuyệt vời, bạn có mức độ bền chí cao nhất! Không có gì có thể ngăn cản bước bạn. Hãy giữ vững sự kiên cường này và giúp truyền cảm hứng cho những người xung quanh bạn để họ cũng có thể phát triển sự bền chí.";
+      }
+  
+      setLoading(false); 
 
       // If the user is logged in, send the results to the backend
       try {
@@ -88,6 +104,9 @@ export default function GritScaleTest() {
       console.error("Error fetching data: ", error);
       setLoading(false);
     }
+
+    // Display the evaluation message
+    document.querySelector(".evaluation-message").textContent = evaluationMessage;
   }
 };
 
@@ -178,8 +197,10 @@ export default function GritScaleTest() {
                 <p>
                   Bạn đã hoàn thành bài kiểm tra Grit Scale. Kết quả của bạn là {score}.
                 </p>
+                <p className="evaluation-message"></p> {/* Placeholder for evaluation message */}
               </div>
             </div>
+
           </div>
         )}
       </div>

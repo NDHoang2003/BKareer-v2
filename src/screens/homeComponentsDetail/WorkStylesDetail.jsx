@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import image from "../../assets/images/workstyles.png"; // Replace with the actual path to the image
+import image from "../../assets/images/workstyles.webp"; // Replace with the actual path to the image
 
 export default function WorkStylesDetail() {
   return (
