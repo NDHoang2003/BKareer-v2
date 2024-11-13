@@ -2,37 +2,27 @@ import { useState, useEffect } from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { BounceLoader } from "react-spinners";
 import { useSelector } from "react-redux";
-import Card5 from "../components/Card5"; // The new 5-point card component for Big Five test
-import question from "../database/5PerQuest.js"; // The Big Five test questions data
+import Card5 from "../components/Card5"; // Reuse the 5-point card component for Grit Scale test
+import gritQuestions from "../database/GritQuest.js"; // The Grit Scale test questions data
 import exit from "../assets/remove.png";
-import bigFiveIcon from "../assets/iq-icon.png"; // An icon for Big Five test
+import gritIcon from "../assets/images/grit-icon.png"; // An icon for Grit Scale test
 
-export default function BigFiveTest() {
+export default function GritScaleTest() {
   const { currentUser } = useSelector((state) => state.user);
-  const list = question; // List of Big Five test questions
+  const list = gritQuestions;
   const [progress, setProgress] = useState(0);
   const [loading, setLoading] = useState(true);
   const [score, setScore] = useState("");
-  const [countt, setCount] = useState(0); // Number of answered questions
+  const [countt, setCount] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(true);
   const [time, setTime] = useState("");
 
-  const queryName = (name, list) => {
-    for (let i = 0; i < list.length; i++) {
-      if (list[i].content === name) {
-        return parseInt(list[i].index);
-      }
-    }
-    return 0;
-  };
-  // Handle closing the results panel
   const closeform = () => {
     document.querySelector(".Panel").style.display = "none";
     window.scrollTo(0, 0);
   };
 
-  // Timer logic for time spent on the test
   useEffect(() => {
     let interval = null;
     if (isActive) {
@@ -45,109 +35,49 @@ export default function BigFiveTest() {
     } else if (!isActive && seconds !== 0) {
       clearInterval(interval);
     }
-    return () => clearInterval(interval); // Cleanup interval when component is unmounted
+    return () => clearInterval(interval);
   }, [isActive, seconds]);
 
-  // Calculate and display the test result
   const result = async () => {
     let listAnswer = document.querySelectorAll('input[type="radio"]:checked');
     let count = listAnswer.length; // Number of answers checked
-    let sum = 0;
-
-    // Initialize the Big Five dimensions
-    let scores = {
-      E: 20, // Extroversion starts at 20
-      A: 14, // Agreeableness starts at 14
-      C: 14, // Conscientiousness starts at 14
-      N: 38, // Neuroticism starts at 38
-      O: 8, // Openness starts at 8
-    };
-
-    // Map the answers and apply the Big Five scoring formula
+    let totalScore = 0;
+  
+    // Loop through all checked answers and sum up their points
     listAnswer.forEach((answer) => {
-      const index = queryName(answer.name, question);
-      const value = parseInt(answer.id); // Get the value (1-5) from the answer id
-      // Apply the scoring for each dimension based on the index of the question
-      switch (true) {
-        case index === 1 ||
-          index === 6 ||
-          index === 11 ||
-          index === 16 ||
-          index === 21 ||
-          index === 26 ||
-          index === 31 ||
-          index === 36 ||
-          index === 41 ||
-          index === 46:
-          scores.E += (index % 2 === 0 ? -1 : 1) * value;
-          break;
-        case index === 2 ||
-          index === 7 ||
-          index === 12 ||
-          index === 17 ||
-          index === 22 ||
-          index === 27 ||
-          index === 32 ||
-          index === 37 ||
-          index === 42 ||
-          index === 47:
-          scores.A += (index % 2 === 0 ? -1 : 1) * value;
-          break;
-        case index === 3 ||
-          index === 8 ||
-          index === 13 ||
-          index === 18 ||
-          index === 23 ||
-          index === 28 ||
-          index === 33 ||
-          index === 38 ||
-          index === 43 ||
-          index === 48:
-          scores.C += (index % 2 === 0 ? -1 : 1) * value;
-          break;
-        case index === 4 ||
-          index === 9 ||
-          index === 14 ||
-          index === 19 ||
-          index === 24 ||
-          index === 29 ||
-          index === 34 ||
-          index === 39 ||
-          index === 44 ||
-          index === 49:
-          scores.N += (index % 2 === 0 ? -1 : 1) * value;
-          break;
-        case index === 5 ||
-          index === 10 ||
-          index === 15 ||
-          index === 20 ||
-          index === 25 ||
-          index === 30 ||
-          index === 35 ||
-          index === 40 ||
-          index === 45 ||
-          index === 50:
-          scores.O += (index % 2 === 0 ? -1 : 1) * value;
-          break;
-        default:
-          break;
-      }
+      totalScore += parseInt(answer.id); // Sum up the points from the answerId (1-5 scale)
     });
-    // If any question is unanswered, show an alert
+  
+    // If not all questions have been answered, show an alert
     if (count < list.length) {
       alert("Bạn chưa hoàn thành bài trắc nghiệm");
     } else {
       setIsActive(false); // Stop the timer
-      setScore(
-        `E: ${scores.E}, A: ${scores.A}, C: ${scores.C}, N: ${scores.N}, O: ${scores.O}`
-      ); // Show the Big Five scores
+      const averageScore = (totalScore / 12).toFixed(2); // Calculate the average score (total points divided by 12)
+      setScore(averageScore); // Set the final score
       document.querySelector(".Panel").style.display = "flex"; // Show the result panel
+  
+      // Determine the evaluation message based on the score
+      let evaluationMessage = "";
+      if (averageScore < 1) {
+        evaluationMessage = "Điểm của bạn cho thấy bạn là một người chưa bền chí, dễ dàng bỏ cuộc. Hãy cố gắng cải thiện bằng cách đặt ra những mục tiêu nhỏ và kiên trì thực hiện từng bước một. Học cách đối mặt với khó khăn và giữ vững quyết tâm sẽ giúp bạn phát triển tính bền chí.";
+      } else if (averageScore < 2 && averageScore>=1) {
+        evaluationMessage = "Điểm của bạn thể hiện rằng bạn có thể cải thiện sự bền chí của mình hơn nữa. Hãy tập trung vào việc kiên nhẫn vượt qua các thử thách và xem mỗi thất bại là một cơ hội để học hỏi. Dần dần, bạn sẽ thấy mình ngày càng kiên cường hơn.";
+      } else if (averageScore < 3 && averageScore>=2) {
+        evaluationMessage = "Bạn đã có nền tảng tốt về sự bền chí. Tiếp tục giữ vững tinh thần này, và cố gắng đẩy mạnh hơn nữa sự kiên trì của mình trong những lúc khó khăn. Đừng ngần ngại thử thách bản thân với những mục tiêu lớn hơn để phát triển khả năng chịu đựng.";
+      } else if (averageScore < 4 && averageScore>=3) {
+        evaluationMessage = "Bạn đang làm rất tốt! Sự bền chí của bạn giúp bạn vượt qua khó khăn một cách hiệu quả. Hãy tiếp tục phát huy và cố gắng giữ vững tinh thần này trong cả những tình huống căng thẳng nhất.";
+      } else {
+        evaluationMessage = "Tuyệt vời, bạn có mức độ bền chí cao nhất! Không có gì có thể ngăn cản bước bạn. Hãy giữ vững sự kiên cường này và giúp truyền cảm hứng cho những người xung quanh bạn để họ cũng có thể phát triển sự bền chí.";
+      }
+  
+      setLoading(false); 
 
       // If the user is logged in, send the results to the backend
       try {
         if (currentUser) {
           const date = new Date().toLocaleString();
-          const res = await fetch("http://localhost:3000/api/score/bigfive", {
+          const res = await fetch("http://localhost:3000/api/score/grit", {
             credentials: "include",
             method: "POST",
             headers: {
@@ -156,28 +86,31 @@ export default function BigFiveTest() {
             body: JSON.stringify({
               time: time,
               date: date,
-              scores: scores,
+              score: averageScore,
             }),
           });
-          const data2 = await res.json();
-          if (data2) {
-            setTimeout(() => {
-              setLoading(false); // Hide loader
-            }, 1000);
-          }
-        } else {
+        const data2 = await res.json();
+        if (data2) {
           setTimeout(() => {
-            setLoading(false); // Hide loader
-          }, 2000);
+            setLoading(false);
+          }, 1000);
         }
-      } catch (error) {
-        console.error("Error fetching data: ", error);
-        setLoading(false);
+      } else {
+        setTimeout(() => {
+          setLoading(false);
+        }, 2000);
       }
+    } catch (error) {
+      console.error("Error fetching data: ", error);
+      setLoading(false);
     }
-  };
 
-  // Handle scrolling to next question
+    // Display the evaluation message
+    document.querySelector(".evaluation-message").textContent = evaluationMessage;
+  }
+};
+
+
   const scrollToNext = () => {
     let count = 0;
     let listAnswer = document.querySelectorAll('input[type="radio"]');
@@ -199,11 +132,9 @@ export default function BigFiveTest() {
   return (
     <>
       <div className="progress-card" id="progress-card">
-        <div className="progress-card-title">Bài Kiểm Tra Big Five</div>
+        <div className="progress-card-title">Bài Kiểm Tra Grit Scale</div>
         <div className="text-bar">
-          <span>
-            Đã hoàn thành: {countt}/{list.length} câu
-          </span>
+          <span>Đã hoàn thành: {countt}/{list.length} câu</span>
           <span className="time-clock">Thời gian: {time}</span>
         </div>
         <ProgressBar
@@ -260,15 +191,16 @@ export default function BigFiveTest() {
             <div className="panel_info z-50">
               <div className="info">
                 <div className="hero">
-                  <img src={bigFiveIcon} alt="img" width={100} height={100} />
-                  <span>Bài Kiểm Tra Big Five</span>
+                  <img src={gritIcon} alt="img" width={100} height={100} />
+                  <span>Bài Kiểm Tra Grit Scale</span>
                 </div>
                 <p>
-                  Bạn đã hoàn thành bài kiểm tra Big Five. Kết quả của bạn là{" "}
-                  {score}.
+                  Bạn đã hoàn thành bài kiểm tra Grit Scale. Kết quả của bạn là {score}.
                 </p>
+                <p className="evaluation-message"></p> {/* Placeholder for evaluation message */}
               </div>
             </div>
+
           </div>
         )}
       </div>

@@ -12,6 +12,8 @@ import EQTest from "./screens/EQTest";
 import LeftRightBrainTest from "./screens/LeftRightBrainTest";
 import LearningStyleTest from "./screens/LearningStyleTest";
 import FivePerTest from "./screens/5PerTest";
+import WorkStyles from "./screens/WorkStylesTest";
+import GritTest from "./screens/GritTest";
 import TrueColorsTest from "./screens/TrueColorsTest";
 import News from "./screens/NewsScreen";
 import MajorTest from "./screens/MajorTestScreen";
@@ -27,9 +29,12 @@ import LeftRightBrain from "./screens/homeComponentsDetail/LeftRightBrainDetail"
 import LearningStyle from "./screens/homeComponentsDetail/LearningStyleDetail";
 import FivePer from "./screens/homeComponentsDetail/5PerDetail";
 import TrueColors from "./screens/homeComponentsDetail/TrueColorsDetail";
+import WorkStylesDetail from "./screens/homeComponentsDetail/WorkStylesDetail";
+import GritDetail from "./screens/homeComponentsDetail/GritDetail";
 import PrivateRoute from "./screens/authentication/PrivateRoute";
 import Profile from "./screens/Profile";
 import PersonalResult from "./screens/PersonalResult";
+import FivePerTest from "./screens/5PerTest";
 
 function App() {
   const location = useLocation();
@@ -59,7 +64,8 @@ function App() {
         <Route path="/weightedSum" element={<WeightedSum />} />
         <Route path="/vikor" element={<Vikor />} />
         <Route path="/fivePerDetail" element={<FivePer />} />
-        <Route path="/trueColorsDetail" element={<TrueColors />} />
+        <Route path="/workStyleDetail" element={<WorkStylesDetail />} />
+        <Route path="/gritDetail" element={<GritDetail />} />
         {/* Other Tests */}
         <Route path="/mbti" element={<MBTITest />} />
         <Route path="/career" element={<CCTest />} />
@@ -69,6 +75,8 @@ function App() {
         <Route path="/learningStyle" element={<LearningStyleTest />} />
         <Route path="/fivePer" element={<FivePerTest />} />
         <Route path="/trueColors" element={<TrueColorsTest />} />
+        <Route path="/workStyle" element={<WorkStyles />} />
+        <Route path="/gritTest" element={<GritTest />} />
         <Route path="/news" element={<News />} />
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />

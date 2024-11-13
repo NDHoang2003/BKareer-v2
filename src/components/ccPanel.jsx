@@ -4,23 +4,11 @@ import clusterList from "../database/CCMajor.js";
 import { BounceLoader } from "react-spinners";
 
 const Panel = ({ majorName, onClose, isOpen, loading }) => {
-  // const closeForm = () => {
-  //   document.querySelector(".CCPanel").style.display = "none";
-  //   window.scrollTo(0, 0);
-  // };
-
-  // Lấy dữ liệu từ file CCMajor.js dựa trên tên ngành
+  
 
   const majorData = clusterList.getdata(majorName);
 
-  // if (!majorData || typeof majorData !== 'object') {
-  //   return <div>Loading...</div>; // Hoặc thông báo lỗi khác tùy thuộc vào trường hợp của bạn
-  // }
-
-  // // Kiểm tra nếu majorData không chứa thuộc tính 'img'
-  // if (!majorData.img) {
-  //   return <div>Không có hình ảnh cho ngành này</div>; // Hoặc thông báo lỗi khác tùy thuộc vào trường hợp của bạn
-  // }
+  
   const override = {
     display: "block",
     margin: "0 auto",
