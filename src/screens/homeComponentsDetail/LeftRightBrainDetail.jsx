@@ -5,7 +5,7 @@ import image from "../../assets/images/left-right-brain.png"
 export default function LeftRightBrain() {
   return (
     <body className="body screen-block">
-      <div className="screen-title">Trắc nghiệm não trái - não phải</div>
+      <div className="screen-title">Trắc nghiệm Não Trái - Não Phải</div>
       
       <img src={image} className="img-detail align-center" />
 

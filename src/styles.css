@@ -598,7 +598,7 @@ body {
 
 
 /******************* Career Cluster Screen *******************/
-.CC-instruction-txt {
+.test-instruction-txt {
   font-family: Nunito_Sans_10pt_Condensed_Regular;
   color: #f4efef;
   margin-bottom: 2rem;
@@ -645,6 +645,26 @@ body {
 .CC-subjects-block {
   width: 25%;
   margin-left: 1rem;
+}
+
+/******************* True Colors Test Screen *******************/
+.TC-card {
+  background-color: white;
+  border-radius: 25px;
+  padding: 2rem 1.5rem 2rem 1.5rem; /* top right bottom left*/
+  margin-bottom: 2rem;
+}
+.TC-input {
+  border-color: #222;
+  border-width: 0.5px;
+  border-radius: 10%;
+  width: 1rem;
+  text-align: center;
+  margin-right: 1rem;
+  margin-bottom: 0.25rem;
+}
+.TC-input:focus{
+  border-width: 0.1px;
 }
 
 .WS-card {

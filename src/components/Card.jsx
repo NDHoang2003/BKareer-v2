@@ -29,6 +29,7 @@ const Card = ({ Ques, index }) => {
       });
     }
   };
+
   return (
     <>
       <div className="question-card">
@@ -48,6 +49,7 @@ const Card = ({ Ques, index }) => {
             />
             <label htmlFor="answer1">{Ques.answers[0].answerContent}</label>
           </div>
+          
           <div
             className="answer-item"
             onClick={() => onSelected(Ques.answers[1].answerId)}

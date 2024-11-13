@@ -7,8 +7,9 @@ import { Link } from "react-router-dom";
 
 export default function CCTest() {
   const { currentUser } = useSelector((state) => state.user);
-  
+
   const [isPanelOpen, setIsPanelOpen] = useState(false); // Controls panel visibility
+
   const [checkboxStates, setCheckboxStates] = useState(
     CC.map(() => ({
       activities: Array(7).fill(false),
@@ -164,7 +165,7 @@ export default function CCTest() {
         <div className="text-bar">
           <span className="time-clock">Thời gian: {time}</span>
         </div>
-        <div className="CC-instruction-txt font-18">
+        <div className="test-instruction-txt font-18">
           <span className="bold-txt">Hướng dẫn: </span>
           <span>
             Đánh dấu các mục trong mỗi ô mô tả chính xác nhất về bạn. Bạn có thể

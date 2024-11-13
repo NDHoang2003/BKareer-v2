@@ -310,6 +310,7 @@ function MBTITest() {
           className="progress-bar"
         />
       </div>
+      
       <div className="body mbti-body">
         {list.map((item, index) => (
           <div

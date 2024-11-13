@@ -3,7 +3,7 @@ import ProgressBar from "@ramonak/react-progress-bar";
 import { BounceLoader } from "react-spinners";
 import { useSelector } from "react-redux";
 
-import Card4 from "../components/4Card";
+import Card4 from "../components/Card4.jsx";
 import question from "../database/IQQues.js";
 import exit from "../assets/remove.png";
 import iq from "../assets/iq-icon.png";

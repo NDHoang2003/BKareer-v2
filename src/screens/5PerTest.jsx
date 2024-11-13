@@ -164,8 +164,6 @@ export default function BigFiveTest() {
   
     return personalityMessage; // Return the message to use in the UI
   };
-  
-  
 
   // Handle scrolling to next question
   const scrollToNext = () => {
@@ -191,7 +189,9 @@ export default function BigFiveTest() {
       <div className="progress-card" id="progress-card">
         <div className="progress-card-title">Bài Kiểm Tra Big Five</div>
         <div className="text-bar">
-          <span>Đã hoàn thành: {countt}/{list.length} câu</span>
+          <span>
+            Đã hoàn thành: {countt}/{list.length} câu
+          </span>
           <span className="time-clock">Thời gian: {time}</span>
         </div>
         <ProgressBar
