@@ -38,6 +38,8 @@ export default function GritScaleTest() {
     return () => clearInterval(interval);
   }, [isActive, seconds]);
 
+  const [evaluationMessage, setEvaluationMessage] = useState("");
+
   const result = async () => {
     let listAnswer = document.querySelectorAll('input[type="radio"]:checked');
     let count = listAnswer.length; // Number of answers checked
@@ -58,18 +60,32 @@ export default function GritScaleTest() {
       document.querySelector(".Panel").style.display = "flex"; // Show the result panel
   
       // Determine the evaluation message based on the score
-      let evaluationMessage = "";
+      let message = "";
       if (averageScore < 1) {
-        evaluationMessage = "Điểm của bạn cho thấy bạn là một người chưa bền chí, dễ dàng bỏ cuộc. Hãy cố gắng cải thiện bằng cách đặt ra những mục tiêu nhỏ và kiên trì thực hiện từng bước một. Học cách đối mặt với khó khăn và giữ vững quyết tâm sẽ giúp bạn phát triển tính bền chí.";
-      } else if (averageScore < 2 && averageScore>=1) {
-        evaluationMessage = "Điểm của bạn thể hiện rằng bạn có thể cải thiện sự bền chí của mình hơn nữa. Hãy tập trung vào việc kiên nhẫn vượt qua các thử thách và xem mỗi thất bại là một cơ hội để học hỏi. Dần dần, bạn sẽ thấy mình ngày càng kiên cường hơn.";
-      } else if (averageScore < 3 && averageScore>=2) {
-        evaluationMessage = "Bạn đã có nền tảng tốt về sự bền chí. Tiếp tục giữ vững tinh thần này, và cố gắng đẩy mạnh hơn nữa sự kiên trì của mình trong những lúc khó khăn. Đừng ngần ngại thử thách bản thân với những mục tiêu lớn hơn để phát triển khả năng chịu đựng.";
-      } else if (averageScore < 4 && averageScore>=3) {
-        evaluationMessage = "Bạn đang làm rất tốt! Sự bền chí của bạn giúp bạn vượt qua khó khăn một cách hiệu quả. Hãy tiếp tục phát huy và cố gắng giữ vững tinh thần này trong cả những tình huống căng thẳng nhất.";
-      } else {
-        evaluationMessage = "Tuyệt vời, bạn có mức độ bền chí cao nhất! Không có gì có thể ngăn cản bước bạn. Hãy giữ vững sự kiên cường này và giúp truyền cảm hứng cho những người xung quanh bạn để họ cũng có thể phát triển sự bền chí.";
-      }
+  message = `
+    Điểm của bạn cho thấy bạn là một người thiếu bền chí và dễ dàng bỏ cuộc. Có thể bạn gặp khó khăn trong việc duy trì động lực và hay cảm thấy nản lòng khi đối diện với thử thách hoặc khi mọi thứ không diễn ra theo ý muốn. Hãy cố gắng cải thiện bằng cách đặt ra những mục tiêu nhỏ, kiên trì thực hiện từng bước, học cách đón nhận khó khăn và giữ vững quyết tâm. Nhớ rằng, người kiên trì không phải là người không bao giờ thất bại, mà là người không bỏ cuộc sau mỗi thất bại. Bắt đầu với những thay đổi nhỏ và giữ vững sự cam kết sẽ giúp bạn phát triển sự bền chí từng bước một.
+  `;
+} else if (averageScore < 2 && averageScore >= 1) {
+  message = `
+    Điểm của bạn cho thấy bạn có thể phát triển thêm sự bền chí của mình. Đôi khi bạn có thể cảm thấy chùn bước trước những khó khăn hoặc khi mục tiêu trở nên quá thách thức, nhưng bạn có thể thay đổi điều này. Hãy tập trung kiên nhẫn vượt qua các thử thách và xem mỗi thất bại là cơ hội để học hỏi. Đặt ra các mục tiêu nhỏ, kiên trì hoàn thành từng bước và bạn sẽ dần thấy sự tiến bộ của mình. Với sự nỗ lực và kiên nhẫn, bạn sẽ ngày càng kiên cường và có động lực để đạt được những mục tiêu lớn hơn.
+  `;
+} else if (averageScore < 3 && averageScore >= 2) {
+  message = `
+    Bạn đã có nền tảng vững vàng về sự bền chí, cho thấy khả năng đối mặt với các thách thức một cách kiên cường. Bạn có thể vượt qua nhiều khó khăn và tiếp tục tiến bước ngay cả khi mọi việc trở nên khó khăn. Tuy nhiên, bạn vẫn còn nhiều tiềm năng phát triển. Hãy giữ vững tinh thần này và cố gắng đẩy mạnh hơn nữa sự kiên trì của mình khi gặp phải thử thách lớn. Đừng ngần ngại thử sức với những mục tiêu cao hơn để rèn luyện khả năng chịu đựng. Với mỗi thử thách vượt qua, bạn sẽ càng mạnh mẽ hơn.
+  `;
+} else if (averageScore < 4 && averageScore >= 3) {
+  message = `
+    Bạn đang làm rất tốt! Sự bền chí của bạn là một điểm mạnh giúp bạn vượt qua khó khăn hiệu quả. Bạn không dễ dàng bỏ cuộc và luôn có động lực để hoàn thành mục tiêu bất chấp trở ngại. Hãy tiếp tục phát huy tinh thần này, cố gắng duy trì sự kiên cường trong những tình huống căng thẳng. Đặt ra những thử thách mới và mở rộng giới hạn bản thân, điều này sẽ giúp bạn phát triển hơn nữa. Sự bền chí của bạn là phẩm chất đáng quý giúp bạn đối mặt và chinh phục mọi khó khăn.
+  `;
+} else {
+  message = `
+    Tuyệt vời, bạn sở hữu một mức độ bền chí cao nhất! Không có gì có thể ngăn cản bạn trên con đường chinh phục mục tiêu. Bạn là một người kiên cường, không dễ bị đánh bại trước khó khăn, và luôn sẵn sàng vượt qua thử thách. Hãy giữ vững sự kiên định này và thử sức với những mục tiêu lớn hơn để phát huy tối đa tiềm năng của mình. Không chỉ là một người mạnh mẽ, bạn còn là nguồn cảm hứng cho mọi người xung quanh. Hãy tiếp tục chia sẻ kinh nghiệm và truyền động lực cho những người khác để giúp họ cũng phát triển sự bền chí.
+  `;
+}
+
+
+      setEvaluationMessage(message);
+      
   
       setLoading(false); 
 
@@ -197,7 +213,7 @@ export default function GritScaleTest() {
                 <p>
                   Bạn đã hoàn thành bài kiểm tra Grit Scale. Kết quả của bạn là {score}.
                 </p>
-                <p className="evaluation-message"></p> {/* Placeholder for evaluation message */}
+                <p className="evaluation-message" >{evaluationMessage}</p> {/* Placeholder for evaluation message */}
               </div>
             </div>
 

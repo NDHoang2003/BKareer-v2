@@ -34,6 +34,7 @@ const WorkStylesPanel = ({ selectedStyle, onClose, isOpen, loading }) => {
             <div className="panel_info">
               <div className="info">
                 <div className="hero hero-margin">
+                <img src={selectedStyle.img} alt="img" width={100} height={100} />
                   <span>{selectedStyle.style}</span>
                 </div>
                 <p>{selectedStyle.description}</p>
