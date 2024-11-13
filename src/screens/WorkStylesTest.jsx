@@ -112,21 +112,22 @@ export default function WorkStylesTest() {
   return (
     <>
       <body className="body">
-      <div className="progress-card" id="progress-card">
+      <div className="workstyle-progress-card" id="workstyle-progress-card">
         <div className="progress-card-title">Trắc nghiệm Phong Cách Làm Việc</div>
         <div className="text-bar">
           <span className="time-clock">Thời gian: {time}</span>
         </div>
+        <div className="CC-instruction-txt font-18">
+          <span className="bold-txt">Hướng dẫn: </span>
+          <span>
+            Đánh dấu các đặc điểm trong mỗi ô miêu tả chính xác nhất về bạn. Bạn có thể
+            chọn một hoặc nhiều đặc điểm trong mỗi ô. Sau khi hoàn thành, hệ thống sẽ
+            hiển thị kết quả phong cách có số điểm cao nhất.
+          </span>
+        </div>
       </div>
 
-      <div className="CC-instruction-txt font-18">
-        <span className="bold-txt">Hướng dẫn: </span>
-        <span>
-          Đánh dấu các đặc điểm trong mỗi ô miêu tả chính xác nhất về bạn. Bạn có thể
-          chọn một hoặc nhiều đặc điểm trong mỗi ô. Sau khi hoàn thành, hệ thống sẽ
-          hiển thị kết quả phong cách có số điểm cao nhất.
-        </span>
-      </div>
+      
 
       {WorkStylesQuest.map((quadrant, quadrantIndex) => (
             <div className="WS-card flex-row flex-items-center" key={quadrantIndex}>

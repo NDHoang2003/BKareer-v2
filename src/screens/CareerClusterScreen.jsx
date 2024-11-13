@@ -159,13 +159,11 @@ export default function CCTest() {
   return (
     <>
       <body className="body">
-      <div className="progress-card" id="progress-card">
+      <div className="workstyle-progress-card" id="workstyle-progress-card">
         <div className="progress-card-title">Trắc nghiệm khám phá năng lực nghề nghiệp</div>
         <div className="text-bar">
           <span className="time-clock">Thời gian: {time}</span>
         </div>
-      </div>
-
         <div className="CC-instruction-txt font-18">
           <span className="bold-txt">Hướng dẫn: </span>
           <span>
@@ -175,6 +173,9 @@ export default function CCTest() {
             cũng có thể xem thêm các nhóm ngành khác để khám phá.
           </span>
         </div>
+      </div>
+
+        
 
         {CC.map((item, index) => (
           <div className="CC-card flex-row flex-items-center" key={index}>
