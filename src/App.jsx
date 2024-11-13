@@ -34,7 +34,7 @@ import GritDetail from "./screens/homeComponentsDetail/GritDetail";
 import PrivateRoute from "./screens/authentication/PrivateRoute";
 import Profile from "./screens/Profile";
 import PersonalResult from "./screens/PersonalResult";
-import FivePerTest from "./screens/5PerTest";
+
 
 function App() {
   const location = useLocation();
@@ -66,6 +66,7 @@ function App() {
         <Route path="/fivePerDetail" element={<FivePer />} />
         <Route path="/workStyleDetail" element={<WorkStylesDetail />} />
         <Route path="/gritDetail" element={<GritDetail />} />
+        <Route path="/colorsDetail" element={<TrueColors />} />
         {/* Other Tests */}
         <Route path="/mbti" element={<MBTITest />} />
         <Route path="/career" element={<CCTest />} />
