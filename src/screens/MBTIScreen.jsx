@@ -300,7 +300,7 @@ function MBTITest() {
       <div className="progress-card" id="progress-card">
         <div className="progress-card-title">Trắc nghiệm MBTI</div>
         <div className="text-bar">
-          <span>- Bạn đã hoàn thành : {countt}/70 câu</span>
+          <span>Đã hoàn thành : {countt}/70 câu</span>
           <span className="time-clock"> Thời gian {time}</span>
         </div>
         <ProgressBar

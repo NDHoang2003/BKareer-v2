@@ -159,8 +159,7 @@ export default function CCTest() {
 
   return (
     <>
-      <body className="body">
-      <div className="workstyle-progress-card" id="workstyle-progress-card">
+      <div className="progress-card flex-col flex-content-center flex-items-center" id="progress-card">
         <div className="progress-card-title">Trắc nghiệm khám phá năng lực nghề nghiệp</div>
         <div className="text-bar">
           <span className="time-clock">Thời gian: {time}</span>
@@ -176,8 +175,7 @@ export default function CCTest() {
         </div>
       </div>
 
-        
-
+      <body className="body shorten-top-body">
         {CC.map((item, index) => (
           <div className="CC-card flex-row flex-items-center" key={index}>
             <div className="CC-card-title-txt">{item.title}</div>

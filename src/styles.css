@@ -47,7 +47,7 @@ body {
   margin: 10rem 8rem 5rem 8rem;
 }
 .shorten-top-body {
-  margin-top: 7rem;
+  margin-top: 8rem;
 }
 .screen-block {
   background-color: white;
@@ -108,6 +108,10 @@ body {
 .flex-self-start {
   display: flex;
   align-self: flex-start;
+}
+.flex-self-center {
+  display: flex;
+  align-self: center;
 }
 .flex-self-end {
   display: flex;
@@ -376,11 +380,10 @@ body {
 
 /******************* IQ Screen *******************/
 .progress-card {
-  /* margin-top: 5px; */
   background: linear-gradient(to bottom, #358bca, #89e0ff);
   padding: 2rem 4rem;
   width: 100%;
-  height: 12rem;
+  height: auto;
   position: sticky;
   z-index: 1;
   top: 5rem;
@@ -403,8 +406,6 @@ body {
   width: 100%;
   height: auto;
   position: sticky;
-  z-index: 1;
-  top: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -601,7 +602,7 @@ body {
 .test-instruction-txt {
   font-family: Nunito_Sans_10pt_Condensed_Regular;
   color: #f4efef;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
 }
 .CC-card {
   background-color: white;
@@ -684,8 +685,8 @@ body {
   font-family: Nunito_Sans_10pt_Condensed_Bold;
   font-size: 1.25rem;
   position: absolute;
-  left: -2.5rem;
-  top: 50%;
+  left: -6rem;
+  top: 45%;
   transform-origin: center;
 }
 
@@ -702,7 +703,7 @@ body {
   gap: 1rem;
   width: 100%;
   padding-top: 1rem;
-  padding-left: 10rem; 
+  padding-left: 8rem; 
 }
 
 .WS-trait {

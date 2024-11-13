@@ -210,9 +210,9 @@ function StyleTest() {
   return (
     <div>
       <div className="progress-card" id="progress-card">
-        <div className="progress-card-title">Trắc nghiệm Learning Style</div>
+        <div className="progress-card-title">Trắc nghiệm 3 thiên hướng học tập</div>
         <div className="text-bar">
-          <span>- Bạn đã hoàn thành : {countt}/20 câu</span>
+          <span>Đã hoàn thành: {countt}/20 câu</span>
           <span className="time-clock"> Thời gian {time}</span>
         </div>
         <ProgressBar
