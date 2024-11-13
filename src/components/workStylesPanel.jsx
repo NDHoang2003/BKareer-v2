@@ -1,6 +1,6 @@
 import React from "react";
 import exit from "../assets/remove.png";
-import WorkStyles from "../database/WorkStyles.js";
+// import WorkStyles from "../database/WorkStyles.js";
 import { BounceLoader } from "react-spinners";
 
 const WorkStylesPanel = ({ selectedStyle, onClose, isOpen, loading }) => {

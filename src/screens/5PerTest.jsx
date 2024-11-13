@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import Card5 from "../components/Card5"; 
 import question from "../database/5PerQuest.js"; 
 import exit from "../assets/remove.png";
-import bigFiveIcon from "../assets/iq-icon.png"; 
 import personalityData from "../database/5Per.js"; 
 
 export default function BigFiveTest() {
@@ -247,16 +246,25 @@ export default function BigFiveTest() {
             <div className="panel_info z-50">
               <div className="info">
                 <div className="hero">
-                  <img src={bigFiveIcon} alt="img" width={100} height={100} />
-                  <span>Bài Kiểm Tra Big Five</span>
+                  <img src={personalityMessage.img} alt="img" width={100} height={100} />
+                  <span>{personalityMessage.title}</span>
                 </div>
-                <p>
-                  Bạn đã hoàn thành bài kiểm tra Big Five. Kết quả của bạn là {score}.
-                </p>
-                <h3>{personalityMessage.title}</h3>
-                <p><strong>Điểm mạnh:</strong> {personalityMessage.strengths}</p>
-                <p><strong>Điểm yếu:</strong> {personalityMessage.weaknesses}</p>
-                <p><strong>Lời khuyên:</strong> {personalityMessage.advice}</p>
+                <table className="style-table">
+                  <tbody>
+                    <tr>
+                      <th className="table-heading">Điểm mạnh</th>
+                      <td>{personalityMessage.strengths}</td>
+                    </tr>
+                    <tr>
+                      <th className="table-heading">Điểm yếu</th>
+                      <td>{personalityMessage.weaknesses}</td>
+                    </tr>
+                    <tr>
+                      <th className="table-heading">Lời khuyên</th>
+                      <td>{personalityMessage.advice}</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
