@@ -96,9 +96,9 @@ function HomeScreen() {
             </div>
 
             <div className="home-card width-50 flex-col">
-              <div className="card-title">VIKOR</div>
-              <div className="card-content">Dựa trên dữ liệu đầu vào từ người dùng và dữ liệu của tổ chức lao động thế giới ILOSTAT, phương pháp VIKOR xác định các nghiệm lý tưởng và phản lý tưởng.</div>
-              <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/vikor">Tìm hiểu thêm</Link></div>
+              <div className="card-title">Bài kiểm tra tính cách True Colors</div>
+              <div className="card-content">Hệ thống True Colors được hỗ trợ bởi các nhà tâm lý học nổi tiếng và chuyên gia trong lĩnh vực này, cho rằng mỗi người trên hành tinh này đều có một kiểu màu sắc phù hợp với tính cách thật, bên trong của họ.</div>
+              <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/trueColorsDetail">Tìm hiểu thêm</Link></div>
             </div>
             
           </div>

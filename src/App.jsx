@@ -11,6 +11,8 @@ import IQTest from "./screens/IQTest";
 import EQTest from "./screens/EQTest";
 import LeftRightBrainTest from "./screens/LeftRightBrainTest";
 import LearningStyleTest from "./screens/LearningStyleTest";
+import FivePerTest from "./screens/5PerTest";
+import TrueColorsTest from "./screens/TrueColorsTest";
 import News from "./screens/NewsScreen";
 import MajorTest from "./screens/MajorTestScreen";
 import MajorResult from "./screens/MajorResultScreen";
@@ -23,11 +25,11 @@ import IQ from "./screens/homeComponentsDetail/IqDetail";
 import EQ from "./screens/homeComponentsDetail/EqDetail";
 import LeftRightBrain from "./screens/homeComponentsDetail/LeftRightBrainDetail";
 import LearningStyle from "./screens/homeComponentsDetail/LearningStyleDetail";
+import FivePer from "./screens/homeComponentsDetail/5PerDetail";
+import TrueColors from "./screens/homeComponentsDetail/TrueColorsDetail";
 import PrivateRoute from "./screens/authentication/PrivateRoute";
 import Profile from "./screens/Profile";
 import PersonalResult from "./screens/PersonalResult";
-import FivePerTest from "./screens/5PerTest";
-import FivePer from "./screens/homeComponentsDetail/5PerDetail";
 
 function App() {
   const location = useLocation();
@@ -57,6 +59,7 @@ function App() {
         <Route path="/weightedSum" element={<WeightedSum />} />
         <Route path="/vikor" element={<Vikor />} />
         <Route path="/fivePerDetail" element={<FivePer />} />
+        <Route path="/trueColorsDetail" element={<TrueColors />} />
         {/* Other Tests */}
         <Route path="/mbti" element={<MBTITest />} />
         <Route path="/career" element={<CCTest />} />
@@ -65,6 +68,7 @@ function App() {
         <Route path="/lrBrain" element={<LeftRightBrainTest />} />
         <Route path="/learningStyle" element={<LearningStyleTest />} />
         <Route path="/fivePer" element={<FivePerTest />} />
+        <Route path="/trueColors" element={<TrueColorsTest />} />
         <Route path="/news" element={<News />} />
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />

@@ -7,9 +7,6 @@ import Result from "../database/Result.js";
 import { Link } from "react-router-dom";
 
 export default function CCTest() {
-  // const [cluster, setCluster] = useState({});
-  // const [showPanel, setShowPanel] = useState(false);
-
   const [isPanelOpen, setIsPanelOpen] = useState(false); // State để điều khiển việc hiển thị panel
 
   const [checkboxStates, setCheckboxStates] = useState(
@@ -164,7 +161,7 @@ export default function CCTest() {
     <>
       <body className="body">
         <div className="screen-title">Khám phá năng lực nghề nghiệp</div>
-        <div className="CC-instruction-txt font-18">
+        <div className="test-instruction-txt font-18">
           <span className="bold-txt">Hướng dẫn: </span>
           <span>
             Đánh dấu các mục trong mỗi ô mô tả chính xác nhất về bạn. Bạn có thể
