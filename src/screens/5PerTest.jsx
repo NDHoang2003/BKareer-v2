@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { BounceLoader } from "react-spinners";
 import { useSelector } from "react-redux";
-import Card5 from "../components/Card5"; // The new 5-point card component for Big Five test
-import question from "../database/5PerQuest.js"; // The Big Five test questions data
+import Card5 from "../components/Card5"; 
+import question from "../database/5PerQuest.js"; 
 import exit from "../assets/remove.png";
-import bigFiveIcon from "../assets/iq-icon.png"; // An icon for Big Five test
+import bigFiveIcon from "../assets/iq-icon.png"; 
+import personalityData from "../database/5Per.js"; 
 
 export default function BigFiveTest() {
   const { currentUser } = useSelector((state) => state.user);
@@ -17,6 +18,15 @@ export default function BigFiveTest() {
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(true);
   const [time, setTime] = useState("");
+
+  const queryName = (name, list) => {
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].content === name) {
+        return parseInt(list[i].index);
+      }
+    }
+    return 0;
+  };
 
   // Handle closing the results panel
   const closeform = () => {
@@ -40,41 +50,77 @@ export default function BigFiveTest() {
     return () => clearInterval(interval); // Cleanup interval when component is unmounted
   }, [isActive, seconds]);
 
+  const [personalityMessage, setPersonalityMessage] = useState("");
+
   // Calculate and display the test result
   const result = async () => {
     let listAnswer = document.querySelectorAll('input[type="radio"]:checked');
-    let count = listAnswer.length; // Number of answers checked
-    let sum = 0;
+    let count = listAnswer.length; 
+    let scores = { E: 0, A: 0, C: 0, N: 0, O: 0 }; 
   
-    // Initialize the Big Five dimensions
-    let scores = {
-      E: 20, // Extroversion starts at 20
-      A: 14, // Agreeableness starts at 14
-      C: 14, // Conscientiousness starts at 14
-      N: 38, // Neuroticism starts at 38
-      O: 8,  // Openness starts at 8
-    };
-  
-    // Map the answers and apply the Big Five scoring formula
     listAnswer.forEach((answer) => {
-      const index = parseInt(answer.name); // Get the question index from the answer's name
-      const value = parseInt(answer.id);  // Get the value (1-5) from the answer id
-  
+      const index = queryName(answer.name, question);
+      const value = parseInt(answer.id); // Get the value (1-5) from the answer id
       // Apply the scoring for each dimension based on the index of the question
       switch (true) {
-        case index === 1 || index === 6 || index === 11 || index === 16 || index === 21 || index === 26 || index === 31 || index === 36 || index === 41 || index === 46:
+        case index === 1 ||
+          index === 6 ||
+          index === 11 ||
+          index === 16 ||
+          index === 21 ||
+          index === 26 ||
+          index === 31 ||
+          index === 36 ||
+          index === 41 ||
+          index === 46:
           scores.E += (index % 2 === 0 ? -1 : 1) * value;
           break;
-        case index === 2 || index === 7 || index === 12 || index === 17 || index === 22 || index === 27 || index === 32 || index === 37 || index === 42 || index === 47:
+        case index === 2 ||
+          index === 7 ||
+          index === 12 ||
+          index === 17 ||
+          index === 22 ||
+          index === 27 ||
+          index === 32 ||
+          index === 37 ||
+          index === 42 ||
+          index === 47:
           scores.A += (index % 2 === 0 ? -1 : 1) * value;
           break;
-        case index === 3 || index === 8 || index === 13 || index === 18 || index === 23 || index === 28 || index === 33 || index === 38 || index === 43 || index === 48:
+        case index === 3 ||
+          index === 8 ||
+          index === 13 ||
+          index === 18 ||
+          index === 23 ||
+          index === 28 ||
+          index === 33 ||
+          index === 38 ||
+          index === 43 ||
+          index === 48:
           scores.C += (index % 2 === 0 ? -1 : 1) * value;
           break;
-        case index === 4 || index === 9 || index === 14 || index === 19 || index === 24 || index === 29 || index === 34 || index === 39 || index === 44 || index === 49:
+        case index === 4 ||
+          index === 9 ||
+          index === 14 ||
+          index === 19 ||
+          index === 24 ||
+          index === 29 ||
+          index === 34 ||
+          index === 39 ||
+          index === 44 ||
+          index === 49:
           scores.N += (index % 2 === 0 ? -1 : 1) * value;
           break;
-        case index === 5 || index === 10 || index === 15 || index === 20 || index === 25 || index === 30 || index === 35 || index === 40 || index === 45 || index === 50:
+        case index === 5 ||
+          index === 10 ||
+          index === 15 ||
+          index === 20 ||
+          index === 25 ||
+          index === 30 ||
+          index === 35 ||
+          index === 40 ||
+          index === 45 ||
+          index === 50:
           scores.O += (index % 2 === 0 ? -1 : 1) * value;
           break;
         default:
@@ -82,46 +128,41 @@ export default function BigFiveTest() {
       }
     });
   
-    // If any question is unanswered, show an alert
-    if (count < list.length) {
+    if (count < question.length) {
       alert("Bạn chưa hoàn thành bài trắc nghiệm");
     } else {
-      setIsActive(false); // Stop the timer
-      setScore(`E: ${scores.E}, A: ${scores.A}, C: ${scores.C}, N: ${scores.N}, O: ${scores.O}`); // Show the Big Five scores
-      document.querySelector(".Panel").style.display = "flex"; // Show the result panel
+      setIsActive(false);
+      setScore(`E: ${scores.E}, A: ${scores.A}, C: ${scores.C}, N: ${scores.N}, O: ${scores.O}`);
   
-      // If the user is logged in, send the results to the backend
+      // Find the highest scoring trait
+      const highestScoreKey = Object.keys(scores).reduce((a, b) =>
+        scores[a] > scores[b] ? a : b
+      );
+      setPersonalityMessage(personalityData[highestScoreKey]);
+  
+      document.querySelector(".Panel").style.display = "flex";
+  
       try {
         if (currentUser) {
           const date = new Date().toLocaleString();
           const res = await fetch("http://localhost:3000/api/score/bigfive", {
             credentials: "include",
             method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              time: time,
-              date: date,
-              scores: scores,
-            }),
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ time, date, scores }),
           });
           const data2 = await res.json();
-          if (data2) {
-            setTimeout(() => {
-              setLoading(false); // Hide loader
-            }, 1000);
-          }
+          if (data2) setLoading(false);
         } else {
-          setTimeout(() => {
-            setLoading(false); // Hide loader
-          }, 2000);
+          setLoading(false);
         }
       } catch (error) {
         console.error("Error fetching data: ", error);
         setLoading(false);
       }
     }
+  
+    return personalityMessage; // Return the message to use in the UI
   };
   
   
@@ -203,7 +244,6 @@ export default function BigFiveTest() {
               className="img margin-top-2rem margin-right-2rem"
               onClick={closeform}
             />
-
             <div className="panel_info z-50">
               <div className="info">
                 <div className="hero">
@@ -211,14 +251,18 @@ export default function BigFiveTest() {
                   <span>Bài Kiểm Tra Big Five</span>
                 </div>
                 <p>
-                  Bạn đã hoàn thành bài kiểm tra Big Five. Kết quả của bạn là{" "}
-                  {score}.
+                  Bạn đã hoàn thành bài kiểm tra Big Five. Kết quả của bạn là {score}.
                 </p>
+                <h3>{personalityMessage.title}</h3>
+                <p><strong>Điểm mạnh:</strong> {personalityMessage.strengths}</p>
+                <p><strong>Điểm yếu:</strong> {personalityMessage.weaknesses}</p>
+                <p><strong>Lời khuyên:</strong> {personalityMessage.advice}</p>
               </div>
             </div>
           </div>
         )}
       </div>
+
     </>
   );
 }

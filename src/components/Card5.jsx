@@ -41,10 +41,10 @@ const Card5 = ({ Ques, index }) => {
               <input
                 type="radio"
                 className="input"
+                index={Ques.index}
                 name={Ques.content}
                 id={Ques.answers[0].answerId}
                 onClick={() => onSelected(Ques.answers[0].answerId)}
-                key={Ques.answers[0].answerId}
               />
               <label htmlFor="answer1">{Ques.answers[0].answerContent}</label>
             </div>
@@ -58,10 +58,10 @@ const Card5 = ({ Ques, index }) => {
               <input
                 type="radio"
                 className="input"
+                index={Ques.index}
                 name={Ques.content}
                 id={Ques.answers[1].answerId}
                 onClick={() => onSelected(Ques.answers[1].answerId)}
-                key={Ques.answers[1].answerId}
               />
               <label htmlFor="answer2">{Ques.answers[1].answerContent}</label>
             </div>
@@ -75,10 +75,10 @@ const Card5 = ({ Ques, index }) => {
               <input
                 type="radio"
                 className="input"
+                index={Ques.index}
                 name={Ques.content}
                 id={Ques.answers[2].answerId}
                 onClick={() => onSelected(Ques.answers[2].answerId)}
-                key={Ques.answers[2].answerId}
               />
               <label htmlFor="answer3">{Ques.answers[2].answerContent}</label>
             </div>
@@ -92,10 +92,10 @@ const Card5 = ({ Ques, index }) => {
               <input
                 type="radio"
                 className="input"
+                index={Ques.index}
                 name={Ques.content}
                 id={Ques.answers[3].answerId}
                 onClick={() => onSelected(Ques.answers[3].answerId)}
-                key={Ques.answers[3].answerId}
               />
               <label htmlFor="answer4">{Ques.answers[3].answerContent}</label>
             </div>
@@ -109,10 +109,11 @@ const Card5 = ({ Ques, index }) => {
               <input
                 type="radio"
                 className="input"
+                index={Ques.index}
                 name={Ques.content}
                 id={Ques.answers[4].answerId}
                 onClick={() => onSelected(Ques.answers[4].answerId)}
-                key={Ques.answers[4].answerId}
+      
               />
               <label htmlFor="answer5">{Ques.answers[4].answerContent}</label>
             </div>
