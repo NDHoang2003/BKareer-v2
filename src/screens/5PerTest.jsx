@@ -18,6 +18,14 @@ export default function BigFiveTest() {
   const [isActive, setIsActive] = useState(true);
   const [time, setTime] = useState("");
 
+  const queryName = (name, list) => {
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].content === name) {
+        return parseInt(list[i].index);
+      }
+    }
+    return 0;
+  };
   // Handle closing the results panel
   const closeform = () => {
     document.querySelector(".Panel").style.display = "none";
@@ -45,51 +53,96 @@ export default function BigFiveTest() {
     let listAnswer = document.querySelectorAll('input[type="radio"]:checked');
     let count = listAnswer.length; // Number of answers checked
     let sum = 0;
-  
+
     // Initialize the Big Five dimensions
     let scores = {
       E: 20, // Extroversion starts at 20
       A: 14, // Agreeableness starts at 14
       C: 14, // Conscientiousness starts at 14
       N: 38, // Neuroticism starts at 38
-      O: 8,  // Openness starts at 8
+      O: 8, // Openness starts at 8
     };
-  
+
     // Map the answers and apply the Big Five scoring formula
     listAnswer.forEach((answer) => {
-      const index = parseInt(answer.name); // Get the question index from the answer's name
-      const value = parseInt(answer.id);  // Get the value (1-5) from the answer id
-  
+      const index = queryName(answer.name, question);
+      const value = parseInt(answer.id); // Get the value (1-5) from the answer id
       // Apply the scoring for each dimension based on the index of the question
       switch (true) {
-        case index === 1 || index === 6 || index === 11 || index === 16 || index === 21 || index === 26 || index === 31 || index === 36 || index === 41 || index === 46:
+        case index === 1 ||
+          index === 6 ||
+          index === 11 ||
+          index === 16 ||
+          index === 21 ||
+          index === 26 ||
+          index === 31 ||
+          index === 36 ||
+          index === 41 ||
+          index === 46:
           scores.E += (index % 2 === 0 ? -1 : 1) * value;
           break;
-        case index === 2 || index === 7 || index === 12 || index === 17 || index === 22 || index === 27 || index === 32 || index === 37 || index === 42 || index === 47:
+        case index === 2 ||
+          index === 7 ||
+          index === 12 ||
+          index === 17 ||
+          index === 22 ||
+          index === 27 ||
+          index === 32 ||
+          index === 37 ||
+          index === 42 ||
+          index === 47:
           scores.A += (index % 2 === 0 ? -1 : 1) * value;
           break;
-        case index === 3 || index === 8 || index === 13 || index === 18 || index === 23 || index === 28 || index === 33 || index === 38 || index === 43 || index === 48:
+        case index === 3 ||
+          index === 8 ||
+          index === 13 ||
+          index === 18 ||
+          index === 23 ||
+          index === 28 ||
+          index === 33 ||
+          index === 38 ||
+          index === 43 ||
+          index === 48:
           scores.C += (index % 2 === 0 ? -1 : 1) * value;
           break;
-        case index === 4 || index === 9 || index === 14 || index === 19 || index === 24 || index === 29 || index === 34 || index === 39 || index === 44 || index === 49:
+        case index === 4 ||
+          index === 9 ||
+          index === 14 ||
+          index === 19 ||
+          index === 24 ||
+          index === 29 ||
+          index === 34 ||
+          index === 39 ||
+          index === 44 ||
+          index === 49:
           scores.N += (index % 2 === 0 ? -1 : 1) * value;
           break;
-        case index === 5 || index === 10 || index === 15 || index === 20 || index === 25 || index === 30 || index === 35 || index === 40 || index === 45 || index === 50:
+        case index === 5 ||
+          index === 10 ||
+          index === 15 ||
+          index === 20 ||
+          index === 25 ||
+          index === 30 ||
+          index === 35 ||
+          index === 40 ||
+          index === 45 ||
+          index === 50:
           scores.O += (index % 2 === 0 ? -1 : 1) * value;
           break;
         default:
           break;
       }
     });
-  
     // If any question is unanswered, show an alert
     if (count < list.length) {
       alert("Bạn chưa hoàn thành bài trắc nghiệm");
     } else {
       setIsActive(false); // Stop the timer
-      setScore(`E: ${scores.E}, A: ${scores.A}, C: ${scores.C}, N: ${scores.N}, O: ${scores.O}`); // Show the Big Five scores
+      setScore(
+        `E: ${scores.E}, A: ${scores.A}, C: ${scores.C}, N: ${scores.N}, O: ${scores.O}`
+      ); // Show the Big Five scores
       document.querySelector(".Panel").style.display = "flex"; // Show the result panel
-  
+
       // If the user is logged in, send the results to the backend
       try {
         if (currentUser) {
@@ -123,8 +176,6 @@ export default function BigFiveTest() {
       }
     }
   };
-  
-  
 
   // Handle scrolling to next question
   const scrollToNext = () => {
@@ -150,7 +201,9 @@ export default function BigFiveTest() {
       <div className="progress-card" id="progress-card">
         <div className="progress-card-title">Bài Kiểm Tra Big Five</div>
         <div className="text-bar">
-          <span>Đã hoàn thành: {countt}/{list.length} câu</span>
+          <span>
+            Đã hoàn thành: {countt}/{list.length} câu
+          </span>
           <span className="time-clock">Thời gian: {time}</span>
         </div>
         <ProgressBar
