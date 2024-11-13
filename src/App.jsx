@@ -34,7 +34,7 @@ import GritDetail from "./screens/homeComponentsDetail/GritDetail";
 import PrivateRoute from "./screens/authentication/PrivateRoute";
 import Profile from "./screens/Profile";
 import PersonalResult from "./screens/PersonalResult";
-import FivePerTest from "./screens/5PerTest";
+import BigFiveTest from "./screens/5PerTest";
 
 function App() {
   const location = useLocation();
@@ -73,7 +73,7 @@ function App() {
         <Route path="/eq" element={<EQTest />} />
         <Route path="/lrBrain" element={<LeftRightBrainTest />} />
         <Route path="/learningStyle" element={<LearningStyleTest />} />
-        <Route path="/fivePer" element={<FivePerTest />} />
+        <Route path="/fivePer" element={<BigFiveTest />} />
         <Route path="/trueColors" element={<TrueColorsTest />} />
         <Route path="/workStyle" element={<WorkStyles />} />
         <Route path="/gritTest" element={<GritTest />} />

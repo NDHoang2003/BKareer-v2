@@ -72,10 +72,12 @@ export default function TrueColorsTest() {
   
   return (
     <>
-      <body className="body">
-        <div className="screen-title">Bài kiểm tra tính cách True Colors</div>
-
-        <div className="test-instruction-txt font-18 margin-bottom-2rem">
+      <div className="progress-card flex-col flex-content-center flex-items-center" id="progress-card">
+        <div className="progress-card-title">Bài kiểm tra tính cách True Colors</div>
+        <div className="text-bar">
+          <span className="time-clock">Thời gian: time here</span>
+        </div>
+        <div className="test-instruction-txt font-18">
           <span className="bold-txt">Hướng dẫn: </span>
           <span>
             Dưới đây là 11 câu chưa hoàn chỉnh mô tả về con người. Mỗi câu có
@@ -84,7 +86,9 @@ export default function TrueColorsTest() {
             theo và 1 điểm cho cụm từ "không giống bạn nhất".
           </span>
         </div>
+      </div>
 
+      <body className="body shorten-top-body">
         <div>
           {TCQuests.map((item, index) => (
             <div className="question-card">

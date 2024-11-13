@@ -111,62 +111,63 @@ export default function WorkStylesTest() {
 
   return (
     <>
-      <body className="body">
-      <div className="workstyle-progress-card" id="workstyle-progress-card">
-        <div className="progress-card-title">Trắc nghiệm Phong Cách Làm Việc</div>
-        <div className="text-bar">
-          <span className="time-clock">Thời gian: {time}</span>
+      <div className="progress-card flex-col flex-content-center flex-items-center" id="progress-card">
+        <div className="progress-card-title">
+          Trắc nghiệm Phong Cách Làm Việc
         </div>
-        <div className="CC-instruction-txt font-18">
-          <span className="bold-txt">Hướng dẫn: </span>
-          <span>
-            Đánh dấu các đặc điểm trong mỗi ô miêu tả chính xác nhất về bạn. Bạn có thể
-            chọn một hoặc nhiều đặc điểm trong mỗi ô. Sau khi hoàn thành, hệ thống sẽ
-            hiển thị kết quả phong cách có số điểm cao nhất.
-          </span>
+        <div className="text-bar">
+          <span className="time-clock flex-content-center">Thời gian: {time}</span>
+        </div>
+        <div className="test-instruction-txt font-18">
+          <span className="bold-txt">Hướng dẫn: </span>Đánh dấu các đặc điểm
+          trong mỗi ô miêu tả chính xác nhất về bạn. Bạn có thể chọn một hoặc
+          nhiều đặc điểm trong mỗi ô. Sau khi hoàn thành, hệ thống sẽ hiển thị
+          kết quả phong cách có số điểm cao nhất.
         </div>
       </div>
 
-      
+      <body className="body shorten-top-body">
+        {WorkStylesQuest.map((quadrant, quadrantIndex) => (
+          <div
+            className="WS-card flex-row flex-items-center"
+            key={quadrantIndex}
+          >
+            <div className="WS-card-title-txt">{quadrant.title}</div>
+            <div className="WS-card-description">{quadrant.description}</div>
 
-      {WorkStylesQuest.map((quadrant, quadrantIndex) => (
-            <div className="WS-card flex-row flex-items-center" key={quadrantIndex}>
-                <div className="WS-card-title-txt">{quadrant.title}</div>
-                <div className="WS-card-description">{quadrant.description}</div>
-                
-                <div className="WS-traits-container">
-                    {quadrant.traits.map((trait, traitIndex) => (
-                        <div className="WS-trait" key={traitIndex}>
-                            <input
-                                type="checkbox"
-                                className="WS-checkbox"
-                                checked={checkboxStates[quadrantIndex][traitIndex]}
-                                onChange={() => handleCheckboxChange(quadrantIndex, traitIndex)}
-                            />
-                            {trait.trait}
-                        </div>
-                    ))}
+            <div className="WS-traits-container">
+              {quadrant.traits.map((trait, traitIndex) => (
+                <div className="WS-trait" key={traitIndex}>
+                  <input
+                    type="checkbox"
+                    className="WS-checkbox"
+                    checked={checkboxStates[quadrantIndex][traitIndex]}
+                    onChange={() =>
+                      handleCheckboxChange(quadrantIndex, traitIndex)
+                    }
+                  />
+                  {trait.trait}
                 </div>
+              ))}
             </div>
+          </div>
         ))}
 
+        <div className="flex-row align-center width-fit-content">
+          <button className="primary-btn font-18" onClick={handleOpenPanel}>
+            Xem kết quả
+          </button>
+        </div>
 
-
-      <div className="flex-row align-center width-fit-content">
-        <button className="primary-btn font-18" onClick={handleOpenPanel}>
-          Xem kết quả
-        </button>
-      </div>
-
-    {isPanelOpen && (
-       <WorkStylesPanel
-        selectedStyle={selectedStyle}
-        isOpen={isPanelOpen}
-        loading={loading}
-        onClose={handleClosePanel}
-      />
-    )}
-      </body>  
+        {isPanelOpen && (
+          <WorkStylesPanel
+            selectedStyle={selectedStyle}
+            isOpen={isPanelOpen}
+            loading={loading}
+            onClose={handleClosePanel}
+          />
+        )}
+      </body>
     </>
   );
 }

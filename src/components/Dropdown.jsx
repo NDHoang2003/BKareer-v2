@@ -35,6 +35,22 @@ const profileMenuUser = [
     label: "Trắc nghiệm 3 thiên hướng học tập",
     to: "/learningStyle",
   },
+  {
+    label: "Trắc nghiệm tính cách Big Five",
+    to: "/fivePer",
+  },
+  {
+    label: "Trắc nghiệm Phong Cách Làm Việc",
+    to: "/workStyle",
+  },
+  {
+    label: "Bài kiểm tra tính cách True Colors",
+    to: "/trueColors",
+  },
+  {
+    label: "Bài kiểm tra Grit Scale",
+    to: "/gritTest",
+  },
 ];
 
 export default function Dropdown() {

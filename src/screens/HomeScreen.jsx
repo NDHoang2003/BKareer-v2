@@ -87,7 +87,7 @@ function HomeScreen() {
             </div>
           </div>
 
-          {/* Big Five, Color Test */}
+          {/* Big Five, Work Styles */}
           <div className="flex-row card-margin-top">
             <div className="home-card width-50 card-margin-right flex-col">
               <div className="card-title">Trắc nghiệm tính cách Big Five</div>
@@ -96,15 +96,6 @@ function HomeScreen() {
             </div>
 
             <div className="home-card width-50 flex-col">
-              <div className="card-title">Bài kiểm tra tính cách True Colors</div>
-              <div className="card-content">Hệ thống True Colors được hỗ trợ bởi các nhà tâm lý học nổi tiếng và chuyên gia trong lĩnh vực này, cho rằng mỗi người trên hành tinh này đều có một kiểu màu sắc phù hợp với tính cách thật, bên trong của họ.</div>
-              <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/trueColorsDetail">Tìm hiểu thêm</Link></div>
-            </div>
-          </div>
-
-          {/* Work Styles, IQ2 */}
-          <div className="flex-row card-margin-top">
-            <div className="home-card width-50 card-margin-right flex-col">
               <div className="card-title">Trắc nghiệm Phong Cách Làm Việc</div>
               <div className="card-content">
                 Khám phá phong cách làm việc của bạn để hiểu rõ hơn về cách bạn tiếp cận công việc và tương tác với đồng nghiệp, từ đó phát huy tối đa hiệu quả làm việc.
@@ -113,9 +104,19 @@ function HomeScreen() {
                 <Link className="secondary-outline-btn" to="/workStyleDetail">Tìm hiểu thêm</Link>
               </div>
             </div>
+          </div>
+
+          {/* Color Test, Grit Scale */}
+          <div className="flex-row card-margin-top">
+            <div className="home-card width-50 card-margin-right flex-col">
+              <div className="card-title">Bài kiểm tra tính cách True Colors</div>
+              <div className="card-content">Hệ thống True Colors được hỗ trợ bởi các nhà tâm lý học nổi tiếng và chuyên gia trong lĩnh vực này, cho rằng mỗi người trên hành tinh này đều có một kiểu màu sắc phù hợp với tính cách thật, bên trong của họ.</div>
+              <div className="margin-bottom-2rem"><Link className="secondary-outline-btn" to="/trueColorsDetail">Tìm hiểu thêm</Link></div>
+            </div>
+            
 
             <div className="home-card width-50 card-margin-right flex-col">
-              <div className="card-title">Trắc nghiệm Grit Scale</div>
+              <div className="card-title">Bài kiểm tra Grit Scale</div>
               <div className="card-content">
                 Đo lường độ kiên trì và đam mê của bạn đối với các mục tiêu dài hạn bằng trắc nghiệm Grit Scale, giúp bạn hiểu rõ hơn về khả năng vượt qua thử thách và kiên trì với mục tiêu.
               </div>
