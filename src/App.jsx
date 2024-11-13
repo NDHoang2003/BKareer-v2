@@ -74,7 +74,7 @@ function App() {
         <Route path="/eq" element={<EQTest />} />
         <Route path="/lrBrain" element={<LeftRightBrainTest />} />
         <Route path="/learningStyle" element={<LearningStyleTest />} />
-        <Route path="/fivePer" element={<BigFiveTest />} />
+        <Route path="/fivePer" element={<FivePerTest />} />
         <Route path="/trueColors" element={<TrueColorsTest />} />
         <Route path="/workStyle" element={<WorkStyles />} />
         <Route path="/gritTest" element={<GritTest />} />
