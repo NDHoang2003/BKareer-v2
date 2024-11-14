@@ -8,8 +8,10 @@ import "react-slideshow-image/dist/styles.css";
 import Result from "../database/Result.js";
 import { BounceLoader } from "react-spinners";
 import { Alert } from "bootstrap";
+import { useSelector } from "react-redux";
 
 function MajorResult() {
+  const { currentUser } = useSelector((state) => state.user);
   const mbtiOptions = [
     // "ESTP - Người thực thi", "ESFP - Người nghệ sĩ", "ENFP - Người truyền cảm hứng", "ENTP - Người nhìn xa",
     // "ESTJ - Người giám hộ", "ESFJ - Người quan tâm", "ENFJ - Người cho đi", "ENTJ - Người lãnh đạo",
@@ -34,22 +36,6 @@ function MajorResult() {
   ];
 
   const careerOptions = [
-    // "Nông nghiệp, Thực phẩm và Tài nguyên thiên nhiên",
-    // "Kiến trúc và xây dựng",
-    // "Nghệ thuật, Công nghệ A/V và Truyền thông",
-    // "Kinh doanh, quản lí và quản trị",
-    // "Giáo dục và đào tạo",
-    // "Tài chính",
-    // "Chính phủ và hành chính công",
-    // "Y tế",
-    // "Du lịch",
-    // "Dịch vụ con người",
-    // "Công nghệ",
-    // "Luật, An toàn công cộng,Sửa chữa và bảo mật",
-    // "Kỹ thuật",
-    // "Thương mại",
-    // "Khoa học",
-    // "Phân phối và hậu cần",
     {
       value: "Nông nghiệp, Thực phẩm và Tài nguyên thiên nhiên",
       className: "dropdown-item",
@@ -129,14 +115,46 @@ function MajorResult() {
   const [result, setResult] = useState([]);
   const [recom, setRecom] = useState([]);
   const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    const mbtiResult = Result.getMbti(); // Lấy giá trị MBTI từ result.js
-    if (mbtiResult) {
-      setMbtiValue(mbtiResult);
+  const getMbti = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/api/score/mbti", {
+        credentials: "include", // This allows credentials to be sent with the request
+      });
+      const data = await response.json();
+      if (data) {
+        setMbtiValue(data.score);
+      }
+    } catch (error) {
+      console.error("Error fetching data: ", error);
     }
-    const ccResult = Result.getCc(); // Lấy giá trị CC từ result.js
-    if (ccResult) {
-      setCareerValue(ccResult);
+  };
+  const getCC = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/api/score/cc", {
+        credentials: "include",
+      });
+      const data = await response.json();
+      if (data) {
+        setCareerValue(data.score);
+      }
+    } catch (error) {
+      console.error("Error fetching data: ", error);
+    }
+  };
+  useEffect(() => {
+    if (currentUser) {
+      console.log(currentUser);
+      getMbti();
+      getCC();
+    } else {
+      const mbtiResult = Result.getMbti(); // Lấy giá trị MBTI từ result.js
+      if (mbtiResult) {
+        setMbtiValue(mbtiResult);
+      }
+      const ccResult = Result.getCc(); // Lấy giá trị CC từ result.js
+      if (ccResult) {
+        setCareerValue(ccResult);
+      }
     }
   }, []);
 
@@ -180,12 +198,6 @@ function MajorResult() {
     { name: "major_score", selector: (row) => row.major_score },
     { name: "ikigai_score", selector: (row) => row.ikigai_score },
   ];
-
-  // const recomColumns = [
-  //   { name: 'Jobs', selector: row=>row.Jobs},
-  //   { name: 'Description', selector: row=>row.Description},
-  //   { name: 'Major', selector: row=>row.Major},
-  // ];
 
   const handleCalcMethodChange = (method) => {
     setCalcMethod(method);

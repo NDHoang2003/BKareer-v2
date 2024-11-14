@@ -132,7 +132,7 @@ export default function IQTest() {
         <ProgressBar
           completed={progress}
           baseBgColor="white"
-          bgColor="linear-gradient(to right, #003366, #66ccff)"
+          bgColor="linear-gradient(to right, #00bdfc, #a3e8ff)"
           className="progress-bar"
         />
       </div>
@@ -192,4 +192,4 @@ export default function IQTest() {
       </div>
     </>
   );
-};
+}

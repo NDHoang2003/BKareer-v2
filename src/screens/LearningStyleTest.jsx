@@ -210,7 +210,9 @@ function StyleTest() {
   return (
     <div>
       <div className="progress-card" id="progress-card">
-        <div className="progress-card-title">Trắc nghiệm 3 thiên hướng học tập</div>
+        <div className="progress-card-title">
+          Trắc nghiệm 3 thiên hướng học tập
+        </div>
         <div className="text-bar">
           <span>Đã hoàn thành: {countt}/20 câu</span>
           <span className="time-clock"> Thời gian {time}</span>
@@ -218,7 +220,7 @@ function StyleTest() {
         <ProgressBar
           completed={progress}
           baseBgColor="white"
-          bgColor="linear-gradient(to right, #003366, #66ccff)"
+          bgColor="linear-gradient(to right, #00bdfc, #a3e8ff)"
           className="progress-bar"
         />
       </div>

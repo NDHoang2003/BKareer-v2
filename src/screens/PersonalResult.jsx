@@ -35,6 +35,26 @@ export default function PersonalResult() {
     time: "Chưa làm",
     date: "Chưa làm",
   });
+  const [color, setColor] = useState({
+    score: "Chưa làm",
+    time: "Chưa làm",
+    date: "Chưa làm",
+  });
+  const [grit, setGrit] = useState({
+    score: "Chưa làm",
+    time: "Chưa làm",
+    date: "Chưa làm",
+  });
+  const [big5, setBig5] = useState({
+    score: "Chưa làm",
+    time: "Chưa làm",
+    date: "Chưa làm",
+  });
+  const [work, setWork] = useState({
+    score: "Chưa làm",
+    time: "Chưa làm",
+    date: "Chưa làm",
+  });
   const [loading, setLoading] = useState(true);
   const getMbti = async () => {
     try {
@@ -118,6 +138,61 @@ export default function PersonalResult() {
       console.error("Error fetching data: ", error);
     }
   };
+  const getColor = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/api/score/color", {
+        credentials: "include",
+      });
+      const data = await response.json();
+      if (data) {
+        setColor(data);
+      }
+    } catch (error) {
+      console.error("Error fetching data: ", error);
+    }
+  };
+  const getGrit = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/api/score/grit", {
+        credentials: "include",
+      });
+      const data = await response.json();
+      if (data) {
+        setGrit(data);
+      }
+    } catch (error) {
+      console.error("Error fetching data: ", error);
+    }
+  };
+  const getBigFive = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/api/score/bigfive", {
+        credentials: "include",
+      });
+      const data = await response.json();
+      if (data) {
+        setBig5(data);
+      }
+    } catch (error) {
+      console.error("Error fetching data: ", error);
+    }
+  };
+  const getWork = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:3000/api/score/workstyle",
+        {
+          credentials: "include",
+        }
+      );
+      const data = await response.json();
+      if (data) {
+        setWork(data);
+      }
+    } catch (error) {
+      console.error("Error fetching data: ", error);
+    }
+  };
   useEffect(() => {
     document.getElementById("result-id").style.display = "flex";
     document.getElementById("result-id-body").style.display = "none";
@@ -128,6 +203,10 @@ export default function PersonalResult() {
       getEQ();
       getLR();
       getLearn();
+      getColor();
+      getGrit();
+      getBigFive();
+      getWork();
     }, 1000);
     setTimeout(() => {
       setLoading(false);
@@ -197,6 +276,22 @@ export default function PersonalResult() {
           <div>{learn.score}</div>
           <div>{learn.time}</div>
           <div>{learn.date}</div>
+          <div>- Color -</div>
+          <div>{color.score}</div>
+          <div>{color.time}</div>
+          <div>{color.date}</div>
+          <div>- Grit -</div>
+          <div>{grit.score}</div>
+          <div>{grit.time}</div>
+          <div>{grit.date}</div>
+          <div>- Big Five -</div>
+          <div>{big5.score}</div>
+          <div>{big5.time}</div>
+          <div>{big5.date}</div>
+          <div>- Work Style -</div>
+          <div>{work.score}</div>
+          <div>{work.time}</div>
+          <div>{work.date}</div>
         </div>
       </body>
     </>

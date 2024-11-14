@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import WorkStylesPanel from "../components/workStylesPanel"
+import WorkStylesPanel from "../components/workStylesPanel";
 import WorkStylesQuest from "../database/WorkStylesQuest";
 import WorkStyles from "../database/WorkStyles";
 
@@ -39,7 +39,8 @@ export default function WorkStylesTest() {
   const handleCheckboxChange = (quadrantIndex, traitIndex) => {
     setCheckboxStates((prevCheckboxStates) => {
       const newState = [...prevCheckboxStates];
-      newState[quadrantIndex][traitIndex] = !newState[quadrantIndex][traitIndex];
+      newState[quadrantIndex][traitIndex] =
+        !newState[quadrantIndex][traitIndex];
       return newState;
     });
   };
@@ -49,7 +50,9 @@ export default function WorkStylesTest() {
     return checkboxStates.map((quadrantStates, quadrantIndex) =>
       quadrantStates.reduce(
         (total, isChecked, traitIndex) =>
-          isChecked ? total + WorkStylesQuest[quadrantIndex].traits[traitIndex].score : total,
+          isChecked
+            ? total + WorkStylesQuest[quadrantIndex].traits[traitIndex].score
+            : total,
         0
       )
     );
@@ -67,7 +70,9 @@ export default function WorkStylesTest() {
     const highestScoredStyleIndex = findHighestScoredStyle(scores);
 
     // Ensure the selected style exists before setting it
-    const style = WorkStyles.find((item) => item.quadrant === highestScoredStyleIndex + 1);
+    const style = WorkStyles.find(
+      (item) => item.quadrant === highestScoredStyleIndex + 1
+    );
     setSelectedStyle(style);
     setIsPanelOpen(true);
     setIsActive(false);
@@ -75,7 +80,7 @@ export default function WorkStylesTest() {
     if (currentUser) {
       try {
         const date = new Date().toLocaleString();
-        const res = await fetch("http://localhost:3000/api/score/WS", {
+        const res = await fetch("http://localhost:3000/api/score/workstyle", {
           method: "POST",
           credentials: "include",
           headers: {
@@ -111,12 +116,17 @@ export default function WorkStylesTest() {
 
   return (
     <>
-      <div className="progress-card flex-col flex-content-center flex-items-center" id="progress-card">
+      <div
+        className="progress-card flex-col flex-content-center flex-items-center"
+        id="progress-card"
+      >
         <div className="progress-card-title">
           Trắc nghiệm Phong Cách Làm Việc
         </div>
         <div className="text-bar">
-          <span className="time-clock flex-content-center">Thời gian: {time}</span>
+          <span className="time-clock flex-content-center">
+            Thời gian: {time}
+          </span>
         </div>
         <div className="test-instruction-txt font-18">
           <span className="bold-txt">Hướng dẫn: </span>Đánh dấu các đặc điểm

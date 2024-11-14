@@ -131,13 +131,15 @@ export default function EQTest() {
       <div className="progress-card" id="progress-card">
         <div className="progress-card-title">Trắc nghiệm EQ</div>
         <div className="text-bar">
-          <span>Đã hoàn thành: {countt}/{list.length} câu</span>
+          <span>
+            Đã hoàn thành: {countt}/{list.length} câu
+          </span>
           <span className="time-clock">Thời gian: {time}</span>
         </div>
         <ProgressBar
           completed={progress}
           baseBgColor="white"
-          bgColor="linear-gradient(to right, #003366, #66ccff)"
+          bgColor="linear-gradient(to right, #00bdfc, #a3e8ff)"
           className="progress-bar"
         />
       </div>

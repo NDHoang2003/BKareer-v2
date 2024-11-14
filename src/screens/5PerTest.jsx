@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { BounceLoader } from "react-spinners";
 import { useSelector } from "react-redux";
-import Card5 from "../components/Card5"; 
-import question from "../database/5PerQuest.js"; 
+import Card5 from "../components/Card5";
+import question from "../database/5PerQuest.js";
 import exit from "../assets/remove.png";
-import personalityData from "../database/5Per.js"; 
+import personalityData from "../database/5Per.js";
 
 export default function BigFiveTest() {
   const { currentUser } = useSelector((state) => state.user);
@@ -54,9 +54,9 @@ export default function BigFiveTest() {
   // Calculate and display the test result
   const result = async () => {
     let listAnswer = document.querySelectorAll('input[type="radio"]:checked');
-    let count = listAnswer.length; 
-    let scores = { E: 0, A: 0, C: 0, N: 0, O: 0 }; 
-  
+    let count = listAnswer.length;
+    let scores = { E: 0, A: 0, C: 0, N: 0, O: 0 };
+
     listAnswer.forEach((answer) => {
       const index = queryName(answer.name, question);
       const value = parseInt(answer.id); // Get the value (1-5) from the answer id
@@ -126,21 +126,23 @@ export default function BigFiveTest() {
           break;
       }
     });
-  
+
     if (count < question.length) {
       alert("Bạn chưa hoàn thành bài trắc nghiệm");
     } else {
       setIsActive(false);
-      setScore(`E: ${scores.E}, A: ${scores.A}, C: ${scores.C}, N: ${scores.N}, O: ${scores.O}`);
-  
+      setScore(
+        `E: ${scores.E}, A: ${scores.A}, C: ${scores.C}, N: ${scores.N}, O: ${scores.O}`
+      );
+
       // Find the highest scoring trait
       const highestScoreKey = Object.keys(scores).reduce((a, b) =>
         scores[a] > scores[b] ? a : b
       );
       setPersonalityMessage(personalityData[highestScoreKey]);
-  
+
       document.querySelector(".Panel").style.display = "flex";
-  
+
       try {
         if (currentUser) {
           const date = new Date().toLocaleString();
@@ -148,19 +150,29 @@ export default function BigFiveTest() {
             credentials: "include",
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ time, date, scores }),
+            body: JSON.stringify({
+              time: time,
+              date: date,
+              score: `E: ${scores.E}, A: ${scores.A}, C: ${scores.C}, N: ${scores.N}, O: ${scores.O}`,
+            }),
           });
           const data2 = await res.json();
-          if (data2) setLoading(false);
+          if (data2) {
+            setTimeout(() => {
+              setLoading(false);
+            }, 1000);
+          }
         } else {
-          setLoading(false);
+          setTimeout(() => {
+            setLoading(false);
+          }, 1000);
         }
       } catch (error) {
         console.error("Error fetching data: ", error);
         setLoading(false);
       }
     }
-  
+
     return personalityMessage; // Return the message to use in the UI
   };
 
@@ -196,7 +208,7 @@ export default function BigFiveTest() {
         <ProgressBar
           completed={progress}
           baseBgColor="white"
-          bgColor="linear-gradient(to right, #003366, #66ccff)"
+          bgColor="linear-gradient(to right, #00bdfc, #a3e8ff)"
           className="progress-bar"
         />
       </div>
@@ -246,7 +258,12 @@ export default function BigFiveTest() {
             <div className="panel_info z-50">
               <div className="info">
                 <div className="hero">
-                  <img src={personalityMessage.img} alt="img" width={100} height={100} />
+                  <img
+                    src={personalityMessage.img}
+                    alt="img"
+                    width={100}
+                    height={100}
+                  />
                   <span>{personalityMessage.title}</span>
                 </div>
                 <table className="style-table">
@@ -270,7 +287,6 @@ export default function BigFiveTest() {
           </div>
         )}
       </div>
-
     </>
   );
 }

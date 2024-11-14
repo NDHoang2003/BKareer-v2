@@ -136,7 +136,7 @@ export default function LeftRightBrainTest() {
     for (let i = 0; i < listAnswer.length; i += 2) {
       if (
         listAnswer[i].checked === true ||
-        listAnswer[i + 1].checked === true 
+        listAnswer[i + 1].checked === true
       ) {
         count++;
       }
@@ -167,19 +167,23 @@ export default function LeftRightBrainTest() {
   return (
     <>
       <div className="progress-card" id="progress-card">
-        <div className="progress-card-title">Trắc nghiệm não trái - não phải</div>
+        <div className="progress-card-title">
+          Trắc nghiệm não trái - não phải
+        </div>
         <div className="text-bar">
-          <span>Đã hoàn thành: {countt}/{list.length} câu</span>
+          <span>
+            Đã hoàn thành: {countt}/{list.length} câu
+          </span>
           <span className="time-clock">Thời gian: {time}</span>
         </div>
         <ProgressBar
           completed={progress}
           baseBgColor="white"
-          bgColor="linear-gradient(to right, #003366, #66ccff)"
+          bgColor="linear-gradient(to right, #00bdfc, #a3e8ff)"
           className="progress-bar"
         />
       </div>
-    
+
       <body className="body shorten-top-body">
         {list.map((item, index) => (
           <div
@@ -196,7 +200,6 @@ export default function LeftRightBrainTest() {
             Xem kết quả
           </button>
         </div>
-
       </body>
 
       <div className="Panel">
@@ -222,18 +225,21 @@ export default function LeftRightBrainTest() {
             <div className="panel_info z-50">
               <div className="info">
                 <div className="hero hero-margin">
-                  <img src={brain.img} alt="img" width={150} height={125} className="margin-bottom-1rem"/>
+                  <img
+                    src={brain.img}
+                    alt="img"
+                    width={150}
+                    height={125}
+                    className="margin-bottom-1rem"
+                  />
                   <span>{brain.content}</span>
                 </div>
-                <p>
-                  {brain.description}
-                </p>
+                <p>{brain.description}</p>
               </div>
             </div>
           </div>
         )}
       </div>
-
     </>
   );
 }
