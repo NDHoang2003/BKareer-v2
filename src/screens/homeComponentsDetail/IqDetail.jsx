@@ -10,7 +10,7 @@ export default function MBTI() {
       <img src={image} className="img-detail align-center" />
 
       <div className="detail-txt font-20 margin-top-2rem">
-        Chỉ số thông minh IQ là từ viết tắt của từ <span className="bold-txt">Intelligence Quotient</span> thường được xem là có liên quan mật thiết tới thành công của một người trong cuộc sống, trong công việc và trong vấn đề học tập của mỗi con người.
+      <span className="bold-txt">Chỉ số thông minh IQ</span> là từ viết tắt của từ <span className="bold-txt">Intelligence Quotient</span> thường được xem là có liên quan mật thiết tới thành công của một người trong cuộc sống, trong công việc và trong vấn đề học tập của mỗi con người.
       </div>
 
       <div className="detail-txt font-20">

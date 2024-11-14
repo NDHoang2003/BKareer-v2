@@ -36,7 +36,7 @@ const profileMenuUser = [
     to: "/learningStyle",
   },
   {
-    label: "Trắc nghiệm tính cách Big Five",
+    label: "Trắc nghiệm 5 yếu tố tính cách",
     to: "/fivePer",
   },
   {

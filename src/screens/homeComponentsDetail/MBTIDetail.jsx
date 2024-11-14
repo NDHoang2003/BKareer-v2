@@ -10,11 +10,13 @@ export default function MBTI() {
       <img src={image} className="img-detail align-center" />
 
       <div className="detail-txt font-20 margin-top-2rem">
-        Trắc nghiệm MBTI (Myers-Briggs Type Indication) là một hệ thống phân
-        loại tính cách được phát triển từ những nghiên cứu về nhận thức và tính
-        cách của nhà tâm lý học Carl Jung - bác sĩ tâm thần học người Thụy Sĩ,
-        được hai nhà khoa học Katharine Cook Briggs và Isabel Briggs Myers hoàn
-        thiện vào năm 1962.
+        <span className="bold-txt">
+          Trắc nghiệm MBTI (Myers-Briggs Type Indication)
+        </span>{" "}
+        là một hệ thống phân loại tính cách được phát triển từ những nghiên cứu
+        về nhận thức và tính cách của nhà tâm lý học Carl Jung - bác sĩ tâm thần
+        học người Thụy Sĩ, được hai nhà khoa học Katharine Cook Briggs và Isabel
+        Briggs Myers hoàn thiện vào năm 1962.
       </div>
 
       <div className="detail-txt font-20">
@@ -54,8 +56,13 @@ export default function MBTI() {
         và đào tạo, đối phó với căng thẳng, giải quyết xung đột, đàm phán, hướng
         dẫn nghề nghiệp, xây dựng các mối quan hệ cá nhân tốt hơn.
       </div>
-      
-      <Link to="/mbti" className="primary-btn font-18 align-center margin-top-2rem">Kiểm tra ngay</Link>
+
+      <Link
+        to="/mbti"
+        className="primary-btn font-18 align-center margin-top-2rem"
+      >
+        Kiểm tra ngay
+      </Link>
     </body>
   );
 }

@@ -10,7 +10,7 @@ export default function EQ() {
       <img src={image} className="img-detail align-center" />
 
       <div className="detail-txt font-20 margin-top-2rem">
-      EQ hay trí tuệ cảm xúc, được dùng để đo lường khả năng sáng tạo, trí tưởng tượng của một người. Chỉ số EQ thể hiện khả năng nhận định, quản lý và điều chỉnh cảm xúc cá nhân và người khác. Thông thường, chỉ số cảm xúc sẽ được đo lường thông qua các bài test EQ.
+        <span className="bold-txt">EQ hay trí tuệ cảm xúc</span>, được dùng để đo lường khả năng sáng tạo, trí tưởng tượng của một người. Chỉ số EQ thể hiện khả năng nhận định, quản lý và điều chỉnh cảm xúc cá nhân và người khác. Thông thường, chỉ số cảm xúc sẽ được đo lường thông qua các bài test EQ.
       </div>
 
       <div className="detail-txt font-20">
@@ -18,7 +18,7 @@ export default function EQ() {
       </div>
 
       <div className="detail-txt font-20">
-      Chỉ số EQ bao nhiêu là cao? Chỉ số EQ 80 là cao hay thấp? Chỉ số EQ 120 là cao hay thấp? Vậy chỉ số EQ trung bình của một người là bao nhiêu? Đối với bài test EQ của trang web sẽ có thang điểm như sau:
+      Đối với bài test EQ của trang web sẽ có thang điểm như sau:
         <ul>
           <li>
             <span className="bold-txt">

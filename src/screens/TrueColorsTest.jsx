@@ -36,6 +36,7 @@ export default function TrueColorsTest() {
   const result = async () => {
     let unfinished = 0;
     let answer = document.querySelectorAll('input[type="radio"]');
+    
     // Check if all questions are answered
     for (let i = 0; i < answer.length; i++) {
       if (answer[i].checked === true) {
@@ -150,8 +151,11 @@ export default function TrueColorsTest() {
   return (
     <>
       <div className="progress-card" id="progress-card">
-        <div className="progress-card-title">Trắc nghiệm Màu sắc</div>
+        <div className="progress-card-title">Bài kiểm tra tính cách True Colors</div>
         <div className="text-bar">
+          <span>
+            Đã hoàn thành: {countt}/{answer.length / 4} câu
+          </span>
           <span className="time-clock">Thời gian: {time}</span>
         </div>
         <ProgressBar
