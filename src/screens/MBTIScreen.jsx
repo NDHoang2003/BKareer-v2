@@ -230,13 +230,14 @@ function MBTITest() {
       try {
         if (currentUser) {
           const date = new Date().toLocaleString();
-          const res = await fetch("http://localhost:3000/api/score/mbti", {
+          const res = await fetch("http://103.15.51.131:3000/api/score/mbti", {
             method: "POST",
             credentials: "include",
             headers: {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
+              id: currentUser._id,
               time: time,
               date: date,
               score: data,
@@ -310,7 +311,7 @@ function MBTITest() {
           className="progress-bar"
         />
       </div>
-      
+
       <div className="body mbti-body">
         {list.map((item, index) => (
           <div

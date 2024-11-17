@@ -25,7 +25,7 @@ function LoginForm() {
     e.preventDefault();
     try {
       dispatch(signInStart());
-      const res = await fetch("http://localhost:3000/api/auth/signin", {
+      const res = await fetch("http://103.15.51.131:3000/api/auth/signin", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -46,10 +46,18 @@ function LoginForm() {
     }
   };
 
-  const [val, setVal] = useState(false); //initializes checkbox to false 
+  const [val, setVal] = useState(false); //initializes checkbox to false
   const Checkbox = (props) => {
-    return <input type="checkbox" checked={props.val} onClick={() => {props.setValue(!props.val)}}/>
-  }
+    return (
+      <input
+        type="checkbox"
+        checked={props.val}
+        onClick={() => {
+          props.setValue(!props.val);
+        }}
+      />
+    );
+  };
 
   return (
     <div className="form-block">
@@ -91,7 +99,7 @@ function LoginForm() {
           {loading ? "Loading..." : "Đăng nhập"}
         </button>
       </form>
-      
+
       {error && <p className="red">{error}</p>}
 
       {/* Sign in with Google */}

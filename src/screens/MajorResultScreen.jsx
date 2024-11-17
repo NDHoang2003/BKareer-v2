@@ -117,9 +117,12 @@ function MajorResult() {
   const [loading, setLoading] = useState(false);
   const getMbti = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/score/mbti", {
-        credentials: "include", // This allows credentials to be sent with the request
-      });
+      const response = await fetch(
+        `http://103.15.51.131:3000/api/score/mbti/${currentUser._id}`,
+        {
+          credentials: "include", // This allows credentials to be sent with the request
+        }
+      );
       const data = await response.json();
       if (data) {
         setMbtiValue(data.score);
@@ -130,9 +133,12 @@ function MajorResult() {
   };
   const getCC = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/score/cc", {
-        credentials: "include",
-      });
+      const response = await fetch(
+        `http://103.15.51.131:3000/api/score/cc/${currentUser._id}`,
+        {
+          credentials: "include",
+        }
+      );
       const data = await response.json();
       if (data) {
         setCareerValue(data.score);

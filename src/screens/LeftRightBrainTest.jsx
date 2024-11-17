@@ -94,13 +94,14 @@ export default function LeftRightBrainTest() {
         if (currentUser) {
           console.log("currentUser");
           const date = new Date().toLocaleString();
-          const res = await fetch("http://localhost:3000/api/score/lr", {
+          const res = await fetch("http://103.15.51.131:3000/api/score/lr", {
             method: "POST",
             credentials: "include",
             headers: {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
+              id: currentUser._id,
               time: "ss:ss",
               date: date,
               score: data1,
