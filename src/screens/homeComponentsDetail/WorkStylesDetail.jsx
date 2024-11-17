@@ -9,7 +9,7 @@ export default function WorkStylesDetail() {
       <img src={image} className="img-detail align-center" alt="Work Styles" />
 
       <div className="detail-txt font-20 margin-top-2rem">
-        Bài kiểm tra Phong Cách Làm Việc giúp bạn nhận biết phong cách làm việc chủ đạo của bản thân, cách bạn tiếp cận công việc và tương tác với đồng nghiệp. Qua đó, bạn sẽ hiểu rõ hơn về điểm mạnh và cách tối ưu hóa hiệu quả làm việc của mình.
+        <span className="bold-txt">Bài kiểm tra Phong Cách Làm Việc</span> giúp bạn nhận biết phong cách làm việc chủ đạo của bản thân, cách bạn tiếp cận công việc và tương tác với đồng nghiệp. Qua đó, bạn sẽ hiểu rõ hơn về điểm mạnh và cách tối ưu hóa hiệu quả làm việc của mình.
       </div>
 
       <div className="detail-txt font-20">

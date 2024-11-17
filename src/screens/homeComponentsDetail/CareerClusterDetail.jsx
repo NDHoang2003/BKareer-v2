@@ -10,7 +10,7 @@ export default function CC() {
       <img src={image} className="img-detail align-center" />
 
       <div className="detail-txt font-20 margin-top-2rem">
-        Bài trắc nghiệm khám phá năng lực nghề nghiệp – Career Clusters Interest Survey được Trung tâm hướng nghiệp và công nghệ Oklahama Hoa Kỳ (Career Clusters Interest Survey, Oklahoma Department of Career and Technology Education) xây dựng dựa trên tư liệu của tổ chức Advance CTE (Mỹ).
+        <span className="bold-txt">Bài trắc nghiệm khám phá năng lực nghề nghiệp – Career Clusters Interest Survey</span> được Trung tâm hướng nghiệp và công nghệ Oklahama Hoa Kỳ (Career Clusters Interest Survey, Oklahoma Department of Career and Technology Education) xây dựng dựa trên tư liệu của tổ chức Advance CTE (Mỹ).
       </div>
 
       <div className="detail-txt font-20">

@@ -202,7 +202,7 @@ export default function BigFiveTest() {
   return (
     <>
       <div className="progress-card" id="progress-card">
-        <div className="progress-card-title">Bài Kiểm Tra Big Five</div>
+        <div className="progress-card-title">Trắc nghiệm 5 yếu tố tính cách</div>
         <div className="text-bar">
           <span>
             Đã hoàn thành: {countt}/{list.length} câu

@@ -5,12 +5,12 @@ import image from "../../assets/images/5per.png"
 export default function MBTI() {
   return (
     <body className="body screen-block">
-      <div className="screen-title">Trắc nghiệm tính cách Big 5</div>
+      <div className="screen-title">Trắc nghiệm 5 yếu tố tính cách</div>
 
       <img src={image} className="img-detail align-center" />
 
       <div className="detail-txt font-20 margin-top-2rem">
-        Trắc nghiệm Big Five Personality (hay còn gọi là trắc nghiệm năm yếu tố tính cách) là một phương pháp được sử dụng rộng rãi trong tâm lý học để đo lường 5 đặc điểm tính cách chủ yếu của một cá nhân. Những đặc điểm này bao gồm:
+        <span className="bold-txt">Trắc nghiệm Big Five Personality (hay còn gọi là trắc nghiệm 5 yếu tố tính cách)</span> là một phương pháp được sử dụng rộng rãi trong tâm lý học để đo lường 5 đặc điểm tính cách chủ yếu của một cá nhân. Những đặc điểm này bao gồm:
       </div>
 
       <div className="detail-txt font-20">
@@ -34,7 +34,7 @@ export default function MBTI() {
       </div>
 
       <div className="detail-txt font-20">
-        Bài kiểm tra Big Five Personality được thiết kế để giúp bạn hiểu rõ hơn về những đặc điểm tính cách của mình và cách chúng ảnh hưởng đến hành vi, mối quan hệ và cách bạn tương tác với thế giới xung quanh. 
+        Trắc nghiệm năm yếu tố tính cách được thiết kế để giúp bạn hiểu rõ hơn về những đặc điểm tính cách của mình và cách chúng ảnh hưởng đến hành vi, mối quan hệ và cách bạn tương tác với thế giới xung quanh. 
         Sau khi hoàn thành bài kiểm tra, bạn sẽ nhận được điểm số cho từng yếu tố và đánh giá mức độ của các đặc điểm tính cách này.
       </div>
 
