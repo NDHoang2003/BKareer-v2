@@ -632,20 +632,24 @@ body {
   accent-color: #358bca;
   margin-right: 10px;
   font-size: 20px;
+  transform:scale(1.5);
 }
 .CC-activities-block {
   width: 40%;
   margin-left: 0.5rem;
   margin-right: 1rem;
+  line-height: 2rem;
 }
 .CC-qualities-block {
   width: 25%;
   margin-left: 1rem;
   margin-right: 1rem;
+  line-height: 2rem;
 }
 .CC-subjects-block {
   width: 25%;
   margin-left: 1rem;
+  line-height: 2rem;
 }
 
 /******************* True Colors Test Screen *******************/
@@ -710,14 +714,14 @@ body {
   display: flex;
   align-items: center;
   font-size: 1rem;
+  /* line-height: 2rem; */
 }
 
 .WS-checkbox {
   margin-right: 10px;
   accent-color: #358bca;
+  transform: scale(1.5);
 }
-
-
 
 /******************* Major Result Screen *******************/
 .left-res-block {

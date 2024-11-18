@@ -176,16 +176,17 @@ export default function CCTest() {
       </div>
 
       <body className="body shorten-top-body">
-        {CC.map((item, index) => (
-          <div className="CC-card flex-row flex-items-center" key={index}>
-            <div className="CC-card-title-txt">{item.title}</div>
+      {CC.map((item, index) => (
+        <div className="CC-card flex-row flex-items-center" key={index}>
+          <div className="CC-card-title-txt">{item.title}</div>
 
-            <div className="CC-activities-block flex-col flex-self-start">
-              <div className="bold-txt font-20">
-                Những hoạt động miêu tả những điều tôi thích làm:
-              </div>
-              {Object.keys(item.activities[0]).map((key, subIndex) => (
-                <div className="font-18" key={subIndex}>
+          <div className="CC-activities-block flex-col flex-self-start">
+            <div className="bold-txt font-20">
+              Những hoạt động miêu tả những điều tôi thích làm:
+            </div>
+            {Object.keys(item.activities[0]).map((key, subIndex) => (
+              <div className="font-18" key={subIndex}>
+                <label className="CC-label">
                   <input
                     type="checkbox"
                     className="CC-checkbox"
@@ -195,18 +196,20 @@ export default function CCTest() {
                     }
                   />
                   {item.activities[0][key]}
-                </div>
-              ))}
-            </div>
-
-            <div className="CC-separate-line"></div>
-
-            <div className="CC-qualities-block flex-col flex-self-start">
-              <div className="bold-txt font-20">
-                Các phẩm chất cá nhân miêu tả về tôi:
+                </label>
               </div>
-              {Object.keys(item.qualities[0]).map((key, subIndex) => (
-                <div className="font-18" key={subIndex}>
+            ))}
+          </div>
+
+          <div className="CC-separate-line"></div>
+
+          <div className="CC-qualities-block flex-col flex-self-start">
+            <div className="bold-txt font-20">
+              Các phẩm chất cá nhân miêu tả về tôi:
+            </div>
+            {Object.keys(item.qualities[0]).map((key, subIndex) => (
+              <div className="font-18" key={subIndex}>
+                <label className="CC-label">
                   <input
                     type="checkbox"
                     className="CC-checkbox"
@@ -216,16 +219,18 @@ export default function CCTest() {
                     }
                   />
                   {item.qualities[0][key]}
-                </div>
-              ))}
-            </div>
+                </label>
+              </div>
+            ))}
+          </div>
 
-            <div className="CC-separate-line"></div>
+          <div className="CC-separate-line"></div>
 
-            <div className="CC-subjects-block flex-col flex-self-start">
-              <div className="bold-txt font-20">Môn học yêu thích của tôi:</div>
-              {Object.keys(item.subjects[0]).map((key, subIndex) => (
-                <div className="font-18" key={subIndex}>
+          <div className="CC-subjects-block flex-col flex-self-start">
+            <div className="bold-txt font-20">Môn học yêu thích của tôi:</div>
+            {Object.keys(item.subjects[0]).map((key, subIndex) => (
+              <div className="font-18" key={subIndex}>
+                <label className="CC-label">
                   <input
                     type="checkbox"
                     className="CC-checkbox CC-font"
@@ -235,11 +240,13 @@ export default function CCTest() {
                     }
                   />
                   {item.subjects[0][key]}
-                </div>
-              ))}
-            </div>
+                </label>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+      ))}
+
 
         <div className="flex-row align-center width-fit-content">
           <Link
