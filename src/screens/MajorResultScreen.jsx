@@ -242,7 +242,7 @@ function MajorResult() {
             setLoading(false);
           })
           .catch((error) => {
-            Alert("Error fetching data:", error);
+            console.log("Error fetching data:", error);
           });
       }
     }, 1000);
