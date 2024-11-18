@@ -39,30 +39,11 @@ import GritDetail from "./screens/homeComponentsDetail/GritDetail";
 import PrivateRoute from "./screens/authentication/PrivateRoute";
 import Profile from "./screens/Profile";
 import PersonalResult from "./screens/PersonalResult";
-import { useSelector } from "react-redux";
-import { useEffect } from "react";
 
 function App() {
   const location = useLocation();
   const excludedRoutes = ["/login", "/register"];
-  const { currentUser } = useSelector((state) => state.user);
-  const getCookies = async () => {
-    if (currentUser) {
-      const res = await fetch("http://localhost:3000/api/auth/cookie", {
-        credentials: "include",
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          _id: currentUser._id,
-        }),
-      });
-    }
-  };
-  useEffect(() => {
-    getCookies();
-  }, []);
+
   return (
     <>
       {!excludedRoutes.includes(location.pathname) && <Navbar />}

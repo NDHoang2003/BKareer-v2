@@ -136,7 +136,7 @@ function StyleTest() {
         if (currentUser) {
           const date = new Date().toLocaleString();
           const res = await fetch(
-            "http://localhost:3000/api/score/learningStyle",
+            "http://103.15.51.131:3000/api/score/learningStyle",
             {
               method: "POST",
               credentials: "include",
@@ -144,6 +144,7 @@ function StyleTest() {
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
+                id: currentUser._id,
                 time: time,
                 date: date,
                 score: resultStyle,

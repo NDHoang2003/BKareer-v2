@@ -110,9 +110,11 @@ export default function CCTest() {
     return majors[highestIndex];
   };
 
-  const scores = calculateScore(); 
-  const highestScoredItemIndex = findHighestScoredItem(scores); 
-  const highestScoredMajor = mapHighestScoredItemToMajor(highestScoredItemIndex);
+  const scores = calculateScore();
+  const highestScoredItemIndex = findHighestScoredItem(scores);
+  const highestScoredMajor = mapHighestScoredItemToMajor(
+    highestScoredItemIndex
+  );
 
   Result.setCc(highestScoredMajor);
   const [loading, setLoading] = useState(true);
@@ -123,13 +125,14 @@ export default function CCTest() {
     try {
       if (currentUser) {
         const date = new Date().toLocaleString();
-        const res = await fetch("http://localhost:3000/api/score/CC", {
+        const res = await fetch("http://103.15.51.131:3000/api/score/CC", {
           method: "POST",
           credentials: "include",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
+            id: currentUser._id,
             time: time,
             date: date,
             score: highestScoredMajor,
@@ -159,8 +162,13 @@ export default function CCTest() {
 
   return (
     <>
-      <div className="progress-card flex-col flex-content-center flex-items-center" id="progress-card">
-        <div className="progress-card-title">Trắc nghiệm khám phá năng lực nghề nghiệp</div>
+      <div
+        className="progress-card flex-col flex-content-center flex-items-center"
+        id="progress-card"
+      >
+        <div className="progress-card-title">
+          Trắc nghiệm khám phá năng lực nghề nghiệp
+        </div>
         <div className="text-bar">
           <span className="time-clock">Thời gian: {time}</span>
         </div>
@@ -274,4 +282,4 @@ export default function CCTest() {
       </body>
     </>
   );
-};
+}

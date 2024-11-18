@@ -74,7 +74,7 @@ export default function Profile() {
     try {
       dispatch(updateUserStart());
       const res = await fetch(
-        `http://localhost:3000/api/user/update/${currentUser._id}`,
+        `http://103.15.51.131:3000/api/user/update/${currentUser._id}`,
         {
           method: "POST",
           headers: {
@@ -100,7 +100,7 @@ export default function Profile() {
     try {
       dispatch(deleteUserStart());
       const res = await fetch(
-        `http://localhost:3000/api/user/delete/${currentUser._id}`,
+        `http://103.15.51.131:3000/api/user/delete/${currentUser._id}`,
         {
           method: "DELETE",
         }
@@ -119,7 +119,7 @@ export default function Profile() {
   const handleSignOut = async () => {
     try {
       dispatch(signOutUserStart());
-      const res = await fetch("http://localhost:3000/api/auth/signout");
+      const res = await fetch("http://103.15.51.131:3000/api/auth/signout");
       const data = await res.json();
       if (data.success === "false") {
         dispatch(deleteUserFailure(data.message));

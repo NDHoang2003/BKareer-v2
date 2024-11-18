@@ -16,7 +16,7 @@ export default function OAuth() {
 
       const result = await signInWithPopup(auth, provider);
 
-      const res = await fetch("http://localhost:3000/api/auth/google", {
+      const res = await fetch("http://103.15.51.131:3000/api/auth/google", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -47,9 +47,7 @@ export default function OAuth() {
           {/* <img src={image} className="img-loginWithGoogle"/> */}
           Đăng nhập với Google
         </div>
-        
       </button>
     </div>
-    
   );
 }

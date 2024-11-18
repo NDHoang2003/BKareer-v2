@@ -62,7 +62,7 @@ function News() {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/news/", {
+        const response = await fetch("http://103.15.51.131:3000/api/news/", {
           credentials: "include", // This allows credentials to be sent with the request
         });
         const data = await response.json();

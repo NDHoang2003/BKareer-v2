@@ -80,18 +80,22 @@ export default function WorkStylesTest() {
     if (currentUser) {
       try {
         const date = new Date().toLocaleString();
-        const res = await fetch("http://localhost:3000/api/score/workstyle", {
-          method: "POST",
-          credentials: "include",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            time: time,
-            date: date,
-            score: style ? style.style : "N/A",
-          }),
-        });
+        const res = await fetch(
+          "http://103.15.51.131:3000/api/score/workstyle",
+          {
+            method: "POST",
+            credentials: "include",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              id: currentUser._id,
+              time: time,
+              date: date,
+              score: style ? style.style : "N/A",
+            }),
+          }
+        );
         const data = await res.json();
         if (data) {
           setTimeout(() => {
