@@ -219,7 +219,7 @@ function MajorResult() {
       if (calcMethod === "Weighted Sum") {
         axios
           .get(
-            `https://vikor-cal.vercel.app/cal_weight_sum?MBTI=${mbtiValue}&CC=${careerValue}`
+            `http://103.15.51.131:9082/cal_weight_sum?MBTI=${mbtiValue}&CC=${careerValue}`
           )
           .then((response) => {
             const data = response.data;
@@ -233,7 +233,7 @@ function MajorResult() {
       } else if (calcMethod === "VIKOR") {
         axios
           .get(
-            `https://vikor-cal.vercel.app/cal_vikor?MBTI=${mbtiValue}&CC=${careerValue}`
+            `http://103.15.51.131:9082/cal_vikor?MBTI=${mbtiValue}&CC=${careerValue}`
           )
           .then((response) => {
             const data = response.data;
