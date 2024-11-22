@@ -117,9 +117,12 @@ function MajorResult() {
   const [loading, setLoading] = useState(false);
   const getMbti = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/score/mbti", {
-        credentials: "include", // This allows credentials to be sent with the request
-      });
+      const response = await fetch(
+        `http://103.15.51.131:3000/api/score/mbti/${currentUser._id}`,
+        {
+          credentials: "include", // This allows credentials to be sent with the request
+        }
+      );
       const data = await response.json();
       if (data) {
         setMbtiValue(data.score);
@@ -130,9 +133,12 @@ function MajorResult() {
   };
   const getCC = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/score/cc", {
-        credentials: "include",
-      });
+      const response = await fetch(
+        `http://103.15.51.131:3000/api/score/cc/${currentUser._id}`,
+        {
+          credentials: "include",
+        }
+      );
       const data = await response.json();
       if (data) {
         setCareerValue(data.score);
@@ -213,7 +219,7 @@ function MajorResult() {
       if (calcMethod === "Weighted Sum") {
         axios
           .get(
-            `https://vikor-cal.vercel.app/cal_weight_sum?MBTI=${mbtiValue}&CC=${careerValue}`
+            `http://103.15.51.131:9082/cal_weight_sum?MBTI=${mbtiValue}&CC=${careerValue}`
           )
           .then((response) => {
             const data = response.data;
@@ -227,7 +233,7 @@ function MajorResult() {
       } else if (calcMethod === "VIKOR") {
         axios
           .get(
-            `https://vikor-cal.vercel.app/cal_vikor?MBTI=${mbtiValue}&CC=${careerValue}`
+            `http://103.15.51.131:9082/cal_vikor?MBTI=${mbtiValue}&CC=${careerValue}`
           )
           .then((response) => {
             const data = response.data;
@@ -236,7 +242,7 @@ function MajorResult() {
             setLoading(false);
           })
           .catch((error) => {
-            Alert("Error fetching data:", error);
+            console.log("Error fetching data:", error);
           });
       }
     }, 1000);

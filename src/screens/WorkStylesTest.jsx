@@ -80,18 +80,22 @@ export default function WorkStylesTest() {
     if (currentUser) {
       try {
         const date = new Date().toLocaleString();
-        const res = await fetch("http://localhost:3000/api/score/workstyle", {
-          method: "POST",
-          credentials: "include",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            time: time,
-            date: date,
-            score: style ? style.style : "N/A",
-          }),
-        });
+        const res = await fetch(
+          "http://103.15.51.131:3000/api/score/workstyle",
+          {
+            method: "POST",
+            credentials: "include",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              id: currentUser._id,
+              time: time,
+              date: date,
+              score: style ? style.style : "N/A",
+            }),
+          }
+        );
         const data = await res.json();
         if (data) {
           setTimeout(() => {
@@ -137,31 +141,29 @@ export default function WorkStylesTest() {
       </div>
 
       <body className="body shorten-top-body">
-        {WorkStylesQuest.map((quadrant, quadrantIndex) => (
-          <div
-            className="WS-card flex-row flex-items-center"
-            key={quadrantIndex}
-          >
-            <div className="WS-card-title-txt">{quadrant.title}</div>
-            <div className="WS-card-description">{quadrant.description}</div>
+      {WorkStylesQuest.map((quadrant, quadrantIndex) => (
+        <div className="WS-card flex-row flex-items-center" key={quadrantIndex}>
+          <div className="WS-card-title-txt">{quadrant.title}</div>
+          <div className="WS-card-description">{quadrant.description}</div>
 
-            <div className="WS-traits-container">
-              {quadrant.traits.map((trait, traitIndex) => (
-                <div className="WS-trait" key={traitIndex}>
+          <div className="WS-traits-container">
+            {quadrant.traits.map((trait, traitIndex) => (
+              <div className="WS-trait" key={traitIndex}>
+                <label className="WS-label">
                   <input
                     type="checkbox"
                     className="WS-checkbox"
                     checked={checkboxStates[quadrantIndex][traitIndex]}
-                    onChange={() =>
-                      handleCheckboxChange(quadrantIndex, traitIndex)
-                    }
+                    onChange={() => handleCheckboxChange(quadrantIndex, traitIndex)}
                   />
                   {trait.trait}
-                </div>
-              ))}
-            </div>
+                </label>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+      ))}
+
 
         <div className="flex-row align-center width-fit-content">
           <button className="primary-btn font-18" onClick={handleOpenPanel}>

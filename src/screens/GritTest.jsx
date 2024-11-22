@@ -90,13 +90,14 @@ export default function GritScaleTest() {
       try {
         if (currentUser) {
           const date = new Date().toLocaleString();
-          const res = await fetch("http://localhost:3000/api/score/grit", {
+          const res = await fetch("http://103.15.51.131:3000/api/score/grit", {
             credentials: "include",
             method: "POST",
             headers: {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
+              id: currentUser._id,
               time: time,
               date: date,
               score: averageScore,

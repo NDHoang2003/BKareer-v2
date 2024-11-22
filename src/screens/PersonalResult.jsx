@@ -58,9 +58,12 @@ export default function PersonalResult() {
   const [loading, setLoading] = useState(true);
   const getMbti = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/score/mbti", {
-        credentials: "include", // This allows credentials to be sent with the request
-      });
+      const response = await fetch(
+        `http://103.15.51.131:3000/api/score/mbti/${currentUser._id}`,
+        {
+          credentials: "include", // This allows credentials to be sent with the request
+        }
+      );
       const data = await response.json();
       if (data) {
         setMbti(data);
@@ -71,9 +74,12 @@ export default function PersonalResult() {
   };
   const getIQ = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/score/iq", {
-        credentials: "include",
-      });
+      const response = await fetch(
+        `http://103.15.51.131:3000/api/score/iq/${currentUser._id}`,
+        {
+          credentials: "include",
+        }
+      );
       const data = await response.json();
       if (data) {
         setIq(data);
@@ -85,9 +91,12 @@ export default function PersonalResult() {
   };
   const getCC = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/score/cc", {
-        credentials: "include",
-      });
+      const response = await fetch(
+        `http://103.15.51.131:3000/api/score/cc/${currentUser._id}`,
+        {
+          credentials: "include",
+        }
+      );
       const data = await response.json();
       if (data) {
         setCc(data);
@@ -98,9 +107,12 @@ export default function PersonalResult() {
   };
   const getEQ = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/score/eq", {
-        credentials: "include",
-      });
+      const response = await fetch(
+        `http://103.15.51.131:3000/api/score/eq/${currentUser._id}`,
+        {
+          credentials: "include",
+        }
+      );
       const data = await response.json();
       if (data) {
         setEq(data);
@@ -111,9 +123,12 @@ export default function PersonalResult() {
   };
   const getLR = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/score/lr", {
-        credentials: "include",
-      });
+      const response = await fetch(
+        `http://103.15.51.131:3000/api/score/lr/${currentUser._id}`,
+        {
+          credentials: "include",
+        }
+      );
       const data = await response.json();
       if (data) {
         setLr(data);
@@ -125,7 +140,7 @@ export default function PersonalResult() {
   const getLearn = async () => {
     try {
       const response = await fetch(
-        "http://localhost:3000/api/score/learningStyle",
+        `http://103.15.51.131:3000/api/score/learningStyle/${currentUser._id}`,
         {
           credentials: "include",
         }
@@ -140,9 +155,12 @@ export default function PersonalResult() {
   };
   const getColor = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/score/color", {
-        credentials: "include",
-      });
+      const response = await fetch(
+        `http://103.15.51.131:3000/api/score/color/${currentUser._id}`,
+        {
+          credentials: "include",
+        }
+      );
       const data = await response.json();
       if (data) {
         setColor(data);
@@ -153,9 +171,12 @@ export default function PersonalResult() {
   };
   const getGrit = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/score/grit", {
-        credentials: "include",
-      });
+      const response = await fetch(
+        `http://103.15.51.131:3000/api/score/grit/${currentUser._id}`,
+        {
+          credentials: "include",
+        }
+      );
       const data = await response.json();
       if (data) {
         setGrit(data);
@@ -166,9 +187,12 @@ export default function PersonalResult() {
   };
   const getBigFive = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/score/bigfive", {
-        credentials: "include",
-      });
+      const response = await fetch(
+        `http://103.15.51.131:3000/api/score/bigfive/${currentUser._id}`,
+        {
+          credentials: "include",
+        }
+      );
       const data = await response.json();
       if (data) {
         setBig5(data);
@@ -180,7 +204,7 @@ export default function PersonalResult() {
   const getWork = async () => {
     try {
       const response = await fetch(
-        "http://localhost:3000/api/score/workstyle",
+        `http://103.15.51.131:3000/api/score/workstyle/${currentUser._id}`,
         {
           credentials: "include",
         }
