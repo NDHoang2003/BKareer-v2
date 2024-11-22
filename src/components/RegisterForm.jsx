@@ -91,7 +91,7 @@ function RegisterForm() {
       <div className="margin-top-2rem align-center width-fit-content font-18">
         <p className="text-color-primary">
           Đã có tài khoản?{" "}
-          <a className="text-decor-none bold-txt" href="/register">
+          <a className="text-decor-none bold-txt" href="/login">
             Đăng nhập ngay
           </a>
         </p>
