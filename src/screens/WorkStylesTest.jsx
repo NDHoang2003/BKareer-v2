@@ -141,31 +141,29 @@ export default function WorkStylesTest() {
       </div>
 
       <body className="body shorten-top-body">
-        {WorkStylesQuest.map((quadrant, quadrantIndex) => (
-          <div
-            className="WS-card flex-row flex-items-center"
-            key={quadrantIndex}
-          >
-            <div className="WS-card-title-txt">{quadrant.title}</div>
-            <div className="WS-card-description">{quadrant.description}</div>
+      {WorkStylesQuest.map((quadrant, quadrantIndex) => (
+        <div className="WS-card flex-row flex-items-center" key={quadrantIndex}>
+          <div className="WS-card-title-txt">{quadrant.title}</div>
+          <div className="WS-card-description">{quadrant.description}</div>
 
-            <div className="WS-traits-container">
-              {quadrant.traits.map((trait, traitIndex) => (
-                <div className="WS-trait" key={traitIndex}>
+          <div className="WS-traits-container">
+            {quadrant.traits.map((trait, traitIndex) => (
+              <div className="WS-trait" key={traitIndex}>
+                <label className="WS-label">
                   <input
                     type="checkbox"
                     className="WS-checkbox"
                     checked={checkboxStates[quadrantIndex][traitIndex]}
-                    onChange={() =>
-                      handleCheckboxChange(quadrantIndex, traitIndex)
-                    }
+                    onChange={() => handleCheckboxChange(quadrantIndex, traitIndex)}
                   />
                   {trait.trait}
-                </div>
-              ))}
-            </div>
+                </label>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+      ))}
+
 
         <div className="flex-row align-center width-fit-content">
           <button className="primary-btn font-18" onClick={handleOpenPanel}>

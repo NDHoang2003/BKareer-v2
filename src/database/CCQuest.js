@@ -15,11 +15,11 @@ const CC = [
     ],
     qualities: [
       {
-        num1: "Self-reliant",
+        num1: "Tự lực",
         num2: "Yêu thiên nhiên",
-        num3: "Physically active",
-        num4: "Planner",
-        num5: "Creative problem solver",
+        num3: "Năng động",
+        num4: "Người lên kế hoạch",
+        num5: "Sáng tạo trong giải quyết vấn đề",
       },
     ],
     subjects: [
@@ -28,7 +28,7 @@ const CC = [
         num2: "Khoa học sự sống",
         num3: "Khoa học Trái Đất",
         num4: "Hóa học",
-        num5: "Agriculture",
+        num5: "Nông nghiệp",
       },
     ],
   },
@@ -61,7 +61,7 @@ const CC = [
         num2: "Vẽ kỹ thuật",
         num3: "Khoa học tự nhiên",
         num4: "Ngành xây dựng",
-        num5: "Electrical Trades/Heat, Air Conditioning and Refrigeration/ Technology Education",
+        num5: "Kỹ thuật Điện/ Kỹ thuật Nhiệt, Điều hòa không khí và Làm lạnh",
       },
     ],
   },
@@ -92,7 +92,7 @@ const CC = [
       {
         num1: "Nghệ thuật/Thiết kế đồ họa",
         num2: "Âm nhạc",
-        num3: "Speech and Drama",
+        num3: "Ngôn ngữ và Nghệ thuật Sân khấu.",
         num4: "Báo chí/Văn học",
         num5: "Công nghệ nghe nhìn (thính giác - hình ảnh)",
       },
@@ -156,7 +156,7 @@ const CC = [
     ],
     subjects: [
       {
-        num1: "Language Arts",
+        num1: "Ngữ văn",
         num2: "Nghiên cứu Xã hội",
         num3: "Toán học",
         num4: "Khoa học",
@@ -223,7 +223,7 @@ const CC = [
     subjects: [
       {
         num1: "Chính trị học",
-        num2: "Language Arts",
+        num2: "Ngữ văn",
         num3: "Lịch sử",
         num4: "Toán học",
         num5: "Ngoại ngữ",
@@ -258,8 +258,8 @@ const CC = [
         num1: "Khoa học Sinh học",
         num2: "Hóa học",
         num3: "Toán học",
-        num4: "Occupational Health classes",
-        num5: "Language Arts",
+        num4: "Sức khỏe Nghề nghiệp",
+        num5: "Ngữ văn",
       },
     ],
   },
@@ -288,7 +288,7 @@ const CC = [
     ],
     subjects: [
       {
-        num1: "Language Arts/Speech",
+        num1: "Ngữ văn/ Diễn thuyết",
         num2: "Ngoại ngữ",
         num3: "Khoa học Xã hội",
         num4: "Tiếp thị",
@@ -321,7 +321,7 @@ const CC = [
     ],
     subjects: [
       {
-        num1: "Language Arts",
+        num1: "Ngữ văn",
         num2: "Tâm lý học/Xã hội học",
         num3: "Khoa học Gia đình và Tiêu dùng",
         num4: "Tài chính",
@@ -387,7 +387,7 @@ const CC = [
     ],
     subjects: [
       {
-        num1: "Language Arts",
+        num1: "Ngữ văn",
         num2: "Tâm lý học/Xã hội học",
         num3: "Chính trị học/Lịch sử",
         num4: "Thực thi pháp luật",
@@ -424,7 +424,7 @@ const CC = [
         num2: "Hóa học",
         num3: "Các khóa học Thương mại và Công nghiệp",
         num4: "Vật lý",
-        num5: "Language Arts",
+        num5: "Ngữ văn",
       },
     ],
   },
@@ -453,7 +453,7 @@ const CC = [
     ],
     subjects: [
       {
-        num1: "Language Arts",
+        num1: "Ngữ văn",
         num2: "Toán học",
         num3: "Giáo dục Thương mại/Tiếp thị",
         num4: "Kinh tế học",
@@ -511,7 +511,7 @@ const CC = [
     qualities: [
       {
         num1: "Thực tế",
-        num2: "Mechanical",
+        num2: "Thích máy móc",
         num3: "Khéo léo, phối hợp",
         num4: "Giác quan nhạy bén",
         num5: "Người lập kế hoạch",
