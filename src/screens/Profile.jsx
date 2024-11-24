@@ -177,13 +177,6 @@ export default function Profile() {
           className="border p-3 rounded-lg"
           onChange={handleChange}
         />
-        <input
-          type="password"
-          placeholder="password"
-          onChange={handleChange}
-          id="password"
-          className="border p-3 rounded-lg"
-        />
         <button
           disabled={loading}
           className="bg-green-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"
@@ -192,24 +185,30 @@ export default function Profile() {
         </button>
       </form>
       <div className="flex justify-between mt-5">
-        <span
-          onClick={handleDeleteUser}
-          className="text-red-700 cursor-pointer"
-        >
-          Delete account
-        </span>
-        <span onClick={handleSignOut} className="text-red-700 cursor-pointer">
-          Đăng xuất
-        </span>
+        <Link to="/personal">
+          <span className="text-blue-400 cursor-pointer">Kết quả cá nhân</span>
+        </Link>
+        <Link to="/changepassword">
+          <span className="text-blue-400 cursor-pointer">Đổi mật khẩu</span>
+        </Link>
       </div>
 
       <p className="text-red-700 mt-5">{error ? error : ""}</p>
       <p className="text-green-700 mt-5">
         {updateSuccess ? "User is updated successfully!" : ""}
       </p>
-      <Link to="/personal">
-        <span className="text-blue-400 cursor-pointer">Kết quả cá nhân</span>
-      </Link>
+      <div className="flex flex-row justify-between">
+        <span
+          onClick={handleDeleteUser}
+          className="text-red-700 cursor-pointer"
+        >
+          Xóa tài khoản
+        </span>
+
+        <span onClick={handleSignOut} className="text-red-700 cursor-pointer ">
+          Đăng xuất
+        </span>
+      </div>
     </div>
   );
 }
