@@ -123,7 +123,7 @@ export default function MyAccount() {
           placeholder="Tên người dùng"
           defaultValue={currentUser.username}
           id="username"
-          className="border p-3 rounded-lg"
+          className="border p-3 rounded-lg text-color-444"
           onChange={handleChange}
         />
         <input
@@ -131,7 +131,7 @@ export default function MyAccount() {
           placeholder="Email"
           id="email"
           defaultValue={currentUser.email}
-          className="border p-3 rounded-lg"
+          className="border p-3 rounded-lg text-color-444"
           onChange={handleChange}
         />
         
@@ -141,7 +141,7 @@ export default function MyAccount() {
           </Link>
         </div>
 
-        <button disabled={loading} className="primary-btn">
+        <button disabled={loading} className="primary-btn font-18">
           {loading ? "Đang tải..." : "Cập nhật"}
         </button>
       </form>

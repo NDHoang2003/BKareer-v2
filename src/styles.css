@@ -69,6 +69,9 @@ body {
 }
 
 /******************* Font Size *******************/
+.font-24 {
+  font-size: 24px;
+}
 .font-20 {
   font-size: 20px;
 }
@@ -133,6 +136,12 @@ body {
 }
 .text-color-primary {
   color: #358bca;
+}
+.text-color-444 {
+  color: #444;
+}
+.text-color-666 {
+  color: #666;
 }
 
 .margin-top-0 {
@@ -271,9 +280,6 @@ body {
   width: 2.5rem;
   object-fit: cover;
 }
-.nav-rounded-full-img:hover {
-
-}
 
 /******************* Card *******************/
 .card {
@@ -334,7 +340,7 @@ body {
 .tabs {
   display: flex;
   flex-direction: column;
-  margin-top: 2.75rem;
+  margin-top: 3rem;
 }
 .tabs button {
   display: flex;
@@ -359,6 +365,7 @@ body {
 
 .tab-content-block {
   flex: 4;
+  margin-bottom: 1rem;
 }
 .tab-title-txt {
   color: #358bca;
@@ -968,7 +975,7 @@ body {
   color: white;
 }
 
-.oauth-btn {
+.red-btn {
   background-color: #cc3e2f;
   color: white;
   padding: 1rem 2rem;
@@ -981,7 +988,7 @@ body {
   text-decoration: none;
 }
 
-.oauth-btn:hover {
+.red-btn:hover {
   background-color: #c0392a;
 }
 

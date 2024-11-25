@@ -46,11 +46,11 @@ function PaginatedItems({ rssItems, loading }) {
         breakLabel="..."
         nextLabel="next >"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
+        pageRangeDisplayed={4}
         pageCount={pageCount}
         previousLabel="< previous"
         renderOnZeroPageCount={null}
-        className="paging"
+        className="paging mt-6"
       />
     </>
   );
@@ -78,7 +78,7 @@ function News() {
     fetchdata();
   }, []);
   return (
-    <body className="body background rounded-xl ">
+    <body className="body screen-block ">
       <div className="">
         <div className="screen-title">Tin tức</div>
         <PaginatedItems rssItems={rssItems} loading={loading} />

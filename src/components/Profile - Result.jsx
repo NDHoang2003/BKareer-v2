@@ -261,7 +261,7 @@ export default function Result() {
         />
       </div>
       
-      <body className="mt-3" id="result-id-body">
+      <body className="mt-4" id="result-id-body">
         <div className="personal-result-table">
           <div className="bold-txt">Bài kiểm tra</div>
           <div className="bold-txt">Kết quả</div>

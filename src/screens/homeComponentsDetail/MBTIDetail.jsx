@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import image from "../../assets/images/mbti.jpg"
+import image from "../../assets/images/mbti.jpg";
 
 export default function MBTI() {
   return (
@@ -20,8 +20,9 @@ export default function MBTI() {
       </div>
 
       <div className="detail-txt font-20">
-        Trắc nghiệm này xác định và phân loại tính cách thành 16 tính cách MBTI,
-        dựa trên bốn chiều yếu tố như sau:
+        Trắc nghiệm này bao gồm 70 câu, mỗi câu có 2 lựa chọn, có thể được hoàn
+        thành trong 10 phút. Kết quả sẽ được xác định và phân loại tính cách
+        thành 16 tính cách MBTI, dựa trên bốn chiều yếu tố như sau:
         <ul>
           <li>
             <span className="bold-txt">
@@ -55,6 +56,16 @@ export default function MBTI() {
         MBTI được ứng dụng nhiều trong việc: Xây dựng đội ngũ nhân viên, quản lý
         và đào tạo, đối phó với căng thẳng, giải quyết xung đột, đàm phán, hướng
         dẫn nghề nghiệp, xây dựng các mối quan hệ cá nhân tốt hơn.
+      </div>
+
+      <div className="detail-txt font-20">
+        Mẹo để nhận kết quả đúng nhất: Hãy chọn kết quả bạn cảm thấy đúng nhất
+        so với thực tế, dù bạn không thích lựa chọn đó cho lắm. Ví dụ: Bạn không
+        thích giao tiếp với người lạ, hãy chọn phương án này thay vì nghĩ rằng
+        người quảng giao mới là người có năng lực, bạn nhé! Một mẹo khác là bài
+        kiểm tra này càng nhanh càng tốt. Nếu dành thời gian lâu để cân nhắc,
+        bạn sẽ có xu hướng lựa chọn theo hình mẫu bạn muốn trở thành thay vì bản
+        thân mình.
       </div>
 
       <Link

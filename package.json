@@ -12,6 +12,7 @@
   "dependencies": {
     "@heroicons/react": "^2.1.5",
     "@material-tailwind/react": "^2.1.10",
+    "@mui/material": "^6.1.8",
     "@ramonak/react-progress-bar": "^5.2.0",
     "@reduxjs/toolkit": "^2.2.7",
     "axios": "^1.7.7",
@@ -31,6 +32,7 @@
     "react-router-dom": "^6.22.3",
     "react-slideshow-image": "^4.3.1",
     "react-spinners": "^0.13.8",
+    "react-switch": "^7.0.0",
     "redux-persist": "^6.0.0",
     "styled-components": "^6.1.9"
   },

@@ -41,7 +41,7 @@ export default function OAuth() {
       <button
         onClick={handleGoogleClick}
         type="button"
-        className="oauth-btn font-18 align-center width-100"
+        className="red-btn font-18 align-center width-100"
       >
         <div className="">
           {/* <img src={image} className="img-loginWithGoogle"/> */}
