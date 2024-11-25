@@ -1,5 +1,5 @@
+import React from "react";
 import { useSelector } from "react-redux";
-import { useRef, useState, useEffect } from "react";
 import {
   getDownloadURL,
   getStorage,
@@ -7,41 +7,25 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import { app } from "../firebase";
-import {
-  updateUserStart,
-  updateUserSuccess,
-  updateUserFailure,
-  deleteUserFailure,
-  deleteUserStart,
-  deleteUserSuccess,
-  signOutUserStart,
-} from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 
 export default function Changepassword() {
-  const fileRef = useRef(null);
   const { currentUser, loading, error } = useSelector((state) => state.user);
-  const [file, setFile] = useState(undefined);
-  const [filePerc, setFilePerc] = useState(0);
-  const [fileUploadError, setFileUploadError] = useState(false);
-  const [formData, setFormData] = useState({});
-  const [updateSuccess, setUpdateSuccess] = useState(false);
+  const [file, setFile] = React.useState(undefined);
+  const [filePerc, setFilePerc] = React.useState(0);
+  const [fileUploadError, setFileUploadError] = React.useState(false);
+  const [formData, setFormData] = React.useState({});
+  const [updateSuccess, setUpdateSuccess] = React.useState(false);
   const dispatch = useDispatch();
 
-  // firebase storage
-  // allow read;
-  // allow write: if
-  // request.resource.size < 2 * 1024 * 1024 &&
-  // request.resource.contentType.matches('image/.*')
-
-  useEffect(() => {
+  React.useEffect(() => {
     if (file) {
       handleFileUpload(file);
     }
   }, [file]);
-  const [message, setMessage] = useState("");
-  const [flag, setFlag] = useState(true);
+  
+  const [message, setMessage] = React.useState("");
+  const [flag, setFlag] = React.useState(true);
   const handleFileUpload = (file) => {
     const storage = getStorage(app);
     const fileName = new Date().getTime() + file.name;
@@ -112,7 +96,7 @@ export default function Changepassword() {
       <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <h2 className="text-center font-bold text-blue-800">Đổi mật khẩu</h2>
-        <span>Mật khẩu :</span>
+        <span>Mật khẩu:</span>
         <input
           type="password"
           placeholder="Mật khẩu cũ"

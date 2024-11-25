@@ -3,6 +3,7 @@ import Tab from "./Tab";
 import tabs from "../database/Profile";
 import MyAccount from "./Profile - MyAccount";
 import Result from "./Profile - Result";
+import Setting from "./Profile - Setting";
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = React.useState("1");
@@ -31,7 +32,7 @@ const Tabs = () => {
         
         {activeTab == 1 ? <MyAccount/> : ""}
         {activeTab == 2 ? <Result/> : ""}
-        {activeTab == 3 ? "" : ""}
+        {activeTab == 3 ? <Setting/> : ""}
       </div>
     </>
   );

@@ -11,10 +11,6 @@ import {
   updateUserStart,
   updateUserSuccess,
   updateUserFailure,
-  deleteUserFailure,
-  deleteUserStart,
-  deleteUserSuccess,
-  signOutUserStart,
 } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -91,41 +87,6 @@ export default function MyAccount() {
     }
   };
 
-  const handleDeleteUser = async () => {
-    try {
-      dispatch(deleteUserStart());
-      const res = await fetch(
-        `http://103.15.51.131:3000/api/user/delete/${currentUser._id}`,
-        {
-          method: "DELETE",
-        }
-      );
-      const data = await res.json();
-      if (data.success === false) {
-        dispatch(deleteUserFailure(data.message));
-        return;
-      }
-      dispatch(deleteUserSuccess(data));
-    } catch (error) {
-      dispatch(deleteUserFailure(error.message));
-    }
-  };
-
-  const handleSignOut = async () => {
-    try {
-      dispatch(signOutUserStart());
-      const res = await fetch("http://103.15.51.131:3000/api/auth/signout");
-      const data = await res.json();
-      if (data.success === "false") {
-        dispatch(deleteUserFailure(data.message));
-        return;
-      }
-      dispatch(deleteUserSuccess(data));
-    } catch (error) {
-      dispatch(deleteUserFailure(error.message));
-    }
-  };
-
   return (
     <>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -140,7 +101,7 @@ export default function MyAccount() {
           onClick={() => fileRef.current.click()}
           src={formData.avatar || currentUser.avatar}
           alt="profile"
-          className="profile-img-rounded object-cover cursor-pointer self-center"
+          className="profile-img-rounded object-cover cursor-pointer self-center mt-2"
         />
         <p className="text-sm self-center">
           {fileUploadError ? (
@@ -173,29 +134,17 @@ export default function MyAccount() {
           className="border p-3 rounded-lg"
           onChange={handleChange}
         />
-        <input
-          type="password"
-          placeholder="Mật khẩu"
-          onChange={handleChange}
-          id="password"
-          className="border p-3 rounded-lg"
-        />
+        
+        <div className="flex-self-end mt-0">
+          <Link to="/changepassword">
+            <span className="text-blue-400 cursor-pointer">Đổi mật khẩu</span>
+          </Link>
+        </div>
+
         <button disabled={loading} className="primary-btn">
           {loading ? "Đang tải..." : "Cập nhật"}
         </button>
       </form>
-
-      <div className="flex justify-between mt-5">
-        <span
-          onClick={handleDeleteUser}
-          className="text-red-700 cursor-pointer"
-        >
-          Xóa tài khoản
-        </span>
-        <span onClick={handleSignOut} className="text-red-700 cursor-pointer">
-          Đăng xuất
-        </span>
-      </div>
 
       <p className="text-red-700 mt-5">{error ? error : ""}</p>
       <p className="text-green-700 mt-5">

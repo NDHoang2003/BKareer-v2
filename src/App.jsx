@@ -85,7 +85,6 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
-          <Route path="/personal" element={<PersonalResult />} />
           <Route path="/changepassword" element={<Changepassword />} />
         </Route>
       </Routes>

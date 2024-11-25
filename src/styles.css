@@ -61,6 +61,9 @@ body {
 .semi-bold-txt {
   font-family: Nunito_Sans_10pt_Condensed_SemiBold;
 }
+.normal-txt {
+  font-family: Nunito_Sans_10pt_Condensed_Regular;
+}
 .light-txt {
   font-family: Nunito_Sans_10pt_Condensed_Light;
 }
@@ -339,6 +342,7 @@ body {
   margin-bottom: 0.5rem;
   font-size: 1.125rem;
   color: #444;
+  justify-self: flex-start;
 }
 .tabs-btn-active {
   font-family: Nunito_Sans_10pt_Condensed_Bold;
