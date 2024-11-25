@@ -1,5 +1,5 @@
+import React from "react";
 import { useSelector } from "react-redux";
-import { useRef, useState, useEffect } from "react";
 import {
   getDownloadURL,
   getStorage,
@@ -18,19 +18,18 @@ import {
 } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import Tabs from "../components/Tabs";
 
-export default function Profile() {
-  const fileRef = useRef(null);
+export default function MyAccount() {
+  const fileRef = React.useRef(null);
   const { currentUser, loading, error } = useSelector((state) => state.user);
-  const [file, setFile] = useState(undefined);
-  const [filePerc, setFilePerc] = useState(0);
-  const [fileUploadError, setFileUploadError] = useState(false);
-  const [formData, setFormData] = useState({});
-  const [updateSuccess, setUpdateSuccess] = useState(false);
+  const [file, setFile] = React.useState(undefined);
+  const [filePerc, setFilePerc] = React.useState(0);
+  const [fileUploadError, setFileUploadError] = React.useState(false);
+  const [formData, setFormData] = React.useState({});
+  const [updateSuccess, setUpdateSuccess] = React.useState(false);
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (file) {
       handleFileUpload(file);
     }
@@ -129,9 +128,79 @@ export default function Profile() {
 
   return (
     <>
-      <div className="body screen-block flex-row">
-        <Tabs/>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <input
+          onChange={(e) => setFile(e.target.files[0])}
+          type="file"
+          ref={fileRef}
+          hidden
+          accept="image/*"
+        />
+        <img
+          onClick={() => fileRef.current.click()}
+          src={formData.avatar || currentUser.avatar}
+          alt="profile"
+          className="profile-img-rounded object-cover cursor-pointer self-center"
+        />
+        <p className="text-sm self-center">
+          {fileUploadError ? (
+            <span className="text-red-700">
+              Lỗi tải ảnh lên: Kích thước hình ảnh không được vượt quá 2MB
+            </span>
+          ) : filePerc > 0 && filePerc < 100 ? (
+            <span className="text-slate-700">{`Uploading ${filePerc}%`}</span>
+          ) : filePerc === 100 ? (
+            <span className="text-green-700">
+              Ảnh đại diện đã cập nhật thành công!
+            </span>
+          ) : (
+            ""
+          )}
+        </p>
+        <input
+          type="text"
+          placeholder="Tên người dùng"
+          defaultValue={currentUser.username}
+          id="username"
+          className="border p-3 rounded-lg"
+          onChange={handleChange}
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          id="email"
+          defaultValue={currentUser.email}
+          className="border p-3 rounded-lg"
+          onChange={handleChange}
+        />
+        <input
+          type="password"
+          placeholder="Mật khẩu"
+          onChange={handleChange}
+          id="password"
+          className="border p-3 rounded-lg"
+        />
+        <button disabled={loading} className="primary-btn">
+          {loading ? "Đang tải..." : "Cập nhật"}
+        </button>
+      </form>
+
+      <div className="flex justify-between mt-5">
+        <span
+          onClick={handleDeleteUser}
+          className="text-red-700 cursor-pointer"
+        >
+          Xóa tài khoản
+        </span>
+        <span onClick={handleSignOut} className="text-red-700 cursor-pointer">
+          Đăng xuất
+        </span>
       </div>
+
+      <p className="text-red-700 mt-5">{error ? error : ""}</p>
+      <p className="text-green-700 mt-5">
+        {updateSuccess ? "Cập nhật thông tin thành công!" : ""}
+      </p>
     </>
   );
 }

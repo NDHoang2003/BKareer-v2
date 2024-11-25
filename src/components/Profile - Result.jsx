@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { BounceLoader } from "react-spinners";
 
-export default function PersonalResult() {
+export default function Result() {
   const { currentUser } = useSelector((state) => state.user);
   const [mbti, setMbti] = React.useState({
     score: "Chưa làm",
@@ -260,65 +260,53 @@ export default function PersonalResult() {
           cssOverride={override}
         />
       </div>
-      <body className="body screen-block background-img" id="result-id-body">
-        <div className="personal-header flex-items-center">
-          <span className="screen-title">Kết quả cá nhân: </span>
-          <div className="img-per flex-items-center">
-            <img
-              src={currentUser.avatar}
-              alt="profile"
-              className="nav-rounded-full-img self-center"
-            />
-            <span className="screen-title menu">
-              {currentUser.username}
-            </span>
-          </div>
-        </div>
+      
+      <body className="margin-top-1rem" id="result-id-body">
         <div className="personal-result-table">
-          <div>Loại bài kiểm tra</div>
-          <div>Kết quả</div>
-          <div>Thời gian làm (phút)</div>
-          <div>Ngày thực hiện</div>
-          <div>- MBTI -</div>
+          <div className="bold-txt">Bài kiểm tra</div>
+          <div className="bold-txt">Kết quả</div>
+          <div className="bold-txt">Thời gian (phút)</div>
+          <div className="bold-txt">Ngày thực hiện</div>
+          <div>Trắc nghiệm tính cách MBTI</div>
           <div>{mbti.score}</div>
           <div>{mbti.time}</div>
           <div>{mbti.date}</div>
-          <div>- Career Clustering -</div>
+          <div>Khám phá năng lực nghề nghiệp</div>
           <div>{cc.score}</div>
           <div>{cc.time}</div>
           <div>{cc.date}</div>
-          <div>- IQ TEST -</div>
+          <div>Trắc nghiệm IQ</div>
           <div>{iq.score}</div>
           <div>{iq.time}</div>
           <div>{iq.date}</div>
-          <div>- EQ TEST -</div>
+          <div>Trắc nghiệm EQ</div>
           <div>{eq.score}</div>
           <div>{eq.time}</div>
           <div>{eq.date}</div>
-          <div>- LeftRight Brain TEST -</div>
+          <div>Trắc nghiệm não trái - não phải</div>
           <div>{lr.score}</div>
           <div>{lr.time}</div>
           <div>{lr.date}</div>
-          <div>- Learning Style -</div>
+          <div>Trắc nghiệm 3 thiên hướng học tập</div>
           <div>{learn.score}</div>
           <div>{learn.time}</div>
           <div>{learn.date}</div>
-          <div>- Color -</div>
-          <div>{color.score}</div>
-          <div>{color.time}</div>
-          <div>{color.date}</div>
-          <div>- Grit -</div>
-          <div>{grit.score}</div>
-          <div>{grit.time}</div>
-          <div>{grit.date}</div>
-          <div>- Big Five -</div>
+          <div>Trắc nghiệm 5 yếu tố tính cách</div>
           <div>{big5.score}</div>
           <div>{big5.time}</div>
           <div>{big5.date}</div>
-          <div>- Work Style -</div>
+          <div>Trắc nghiệm Phong Cách Làm Việc</div>
           <div>{work.score}</div>
           <div>{work.time}</div>
           <div>{work.date}</div>
+          <div>Bài kiểm tra tính cách True Colors</div>
+          <div>{color.score}</div>
+          <div>{color.time}</div>
+          <div>{color.date}</div>
+          <div>Bài kiểm tra Grit Scale</div>
+          <div>{grit.score}</div>
+          <div>{grit.time}</div>
+          <div>{grit.date}</div>
         </div>
       </body>
     </>

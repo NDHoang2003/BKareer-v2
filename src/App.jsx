@@ -38,7 +38,6 @@ import WorkStylesDetail from "./screens/homeComponentsDetail/WorkStylesDetail";
 import GritDetail from "./screens/homeComponentsDetail/GritDetail";
 import PrivateRoute from "./screens/authentication/PrivateRoute";
 import Profile from "./screens/Profile";
-import PersonalResult from "./screens/PersonalResult";
 
 function App() {
   const location = useLocation();
@@ -85,7 +84,6 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
-          <Route path="/personal" element={<PersonalResult />} />
         </Route>
       </Routes>
       {!excludedRoutes.includes(location.pathname) && <Footer />}

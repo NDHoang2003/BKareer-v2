@@ -96,7 +96,7 @@ function LoginForm() {
           className="primary-btn margin-top-2rem font-18 align-center width-100"
           disabled={loading}
         >
-          {loading ? "Loading..." : "Đăng nhập"}
+          {loading ? "Đang tải..." : "Đăng nhập"}
         </button>
       </form>
 

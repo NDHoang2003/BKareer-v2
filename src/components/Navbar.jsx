@@ -21,15 +21,15 @@ function Navbar() {
 
           <Dropdown />
 
-          <li className="font-18">
+          <li className="font-18 margin-right-1rem">
             <Link to="/news">Tin tức</Link>
           </li>
           <Link to="/profile">
             {currentUser ? (
               <img
-                className="rounded-full"
+                className="nav-rounded-full-img"
                 src={currentUser.avatar}
-                alt="profile"
+                alt="profile margin-left-10"
               />
             ) : (
               <Link to="/login">

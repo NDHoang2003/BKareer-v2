@@ -157,6 +157,9 @@ body {
   margin-top: 5rem;
 }
 
+.margin-right-1rem {
+  margin-right: 1rem;
+}
 .margin-right-2rem {
   margin-right: 2rem;
 }
@@ -259,6 +262,15 @@ body {
   align-items: center;
   padding: 0.25rem;
 }
+.nav-rounded-full-img {
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  object-fit: cover;
+}
+.nav-rounded-full-img:hover {
+
+}
 
 /******************* Card *******************/
 .card {
@@ -309,10 +321,54 @@ body {
 .red {
   color: red;
 }
-.rounded-full {
+
+/* Profile Screen */
+.tabs-title-block {
+  flex: 1;
+  padding-right: 3rem;
+  /* padding-right: 4rem; */
+}
+.tabs {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.75rem;
+}
+.tabs button {
+  display: flex;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  color: #444;
+}
+.tabs-btn-active {
+  font-family: Nunito_Sans_10pt_Condensed_Bold;
+  color: #358bca !important;
+}
+.tab {
+  cursor: pointer;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  background-color: #f1f1f1;
+}
+
+.tab-content-block {
+  flex: 4;
+}
+.tab-title-txt {
+  color: #358bca;
+  font-family: Nunito_Sans_10pt_Condensed_Bold;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: start;
+}
+
+.profile-img-rounded {
   border-radius: 50%;
-  height: 2rem;
-  width: 2rem;
+  height: 5rem;
+  width: 5rem;
   object-fit: cover;
 }
 
@@ -1052,43 +1108,23 @@ body {
   cursor: default;
 }
 
-.personal-header {
-  display: flex;
-  justify-content: space-evenly;
-}
-
 .personal-result-table {
   display: flex;
   justify-content: space-evenly;
-  padding: 2rem 4rem;
-  margin-top: 10px;
   flex-wrap: wrap;
 }
 .personal-result-table div {
   width: 25%;
   padding: 1rem;
-  border: 1px solid #358bca;
+  border: 1px solid #888;
   text-align: center;
   font-size: 1.3rem;
-  color: white;
+  color: #444;
   z-index: 2;
 }
 
-.dark-blue {
-  color: #fad7a0;
-}
-
-.img-per {
-  display: flex;
-}
-
-.img-per img {
-  margin-bottom: 2.7rem;
-  margin-right: 10px;
-}
-
 .background-img {
-  background-color: #071c39;
+  background-color: #132134;
   position: relative;
   border-radius: 20px;
   overflow: hidden;
