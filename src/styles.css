@@ -465,7 +465,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 
 .text-bar {
@@ -544,7 +544,7 @@ body {
 }
 
 .answer-item-5 {
-  width: 18%; 
+  width: 18%;
   height: 70px;
   display: flex;
   flex-direction: row;
@@ -554,7 +554,7 @@ body {
   border: 1px ridge #358bca;
   border-radius: 50px;
   cursor: pointer;
-  padding: 0.5rem 1.5rem; 
+  padding: 0.5rem 1.5rem;
   color: #358bca;
   font-family: Nunito_Sans_10pt_Condensed_Regular;
 }
@@ -653,7 +653,6 @@ body {
   border: 1px solid #ddd;
 }
 
-
 /******************* Career Cluster Screen *******************/
 .test-instruction-txt {
   font-family: Nunito_Sans_10pt_Condensed_Regular;
@@ -688,7 +687,7 @@ body {
   accent-color: #358bca;
   margin-right: 10px;
   font-size: 20px;
-  transform:scale(1.5);
+  transform: scale(1.5);
 }
 .CC-activities-block {
   width: 40%;
@@ -724,7 +723,7 @@ body {
   margin-right: 1rem;
   margin-bottom: 0.25rem;
 }
-.TC-input:focus{
+.TC-input:focus {
   border-width: 0.1px;
 }
 
@@ -763,7 +762,7 @@ body {
   gap: 1rem;
   width: 100%;
   padding-top: 1rem;
-  padding-left: 8rem; 
+  padding-left: 8rem;
 }
 
 .WS-trait {
@@ -1227,4 +1226,50 @@ body {
 
 .menu {
   color: white;
+}
+
+.over-noti {
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 100000;
+}
+
+.phone {
+  height: 50px;
+  width: 100px;
+  border: 3px solid white;
+  border-radius: 10px;
+  animation: rotate 1.5s ease-in-out infinite alternate;
+  /* display: none; */
+}
+
+.message {
+  color: white;
+  font-size: 1em;
+  margin-top: 40px;
+  /* display: none; */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+@media only screen and (max-device-width: 812px) and (orientation: landscape) {
+  .phone,
+  .message {
+    display: block;
+  }
 }

@@ -66,7 +66,7 @@ export default function EQTest() {
             },
             body: JSON.stringify({
               id: currentUser._id,
-              time: time,
+              time: elapsedTime,
               date: date,
               score: `${sum}/${list.length * 20}`,
             }),
@@ -108,34 +108,47 @@ export default function EQTest() {
     setProgress(Math.floor((count / list.length) * 100));
   };
 
-  const [seconds, setSeconds] = useState(0);
+  const [seconds, setSeconds] = useState(10 * 60); // 20 phút = 20 * 60 giây
+  const [elapsedSeconds, setElapsedSeconds] = useState(0); // Thời gian đã trôi qua
   const [isActive, setIsActive] = useState(true);
   const [time, setTime] = useState("");
+  const [elapsedTime, setElapsedTime] = useState("");
 
   useEffect(() => {
     let interval = null;
-    if (isActive) {
+    if (isActive && seconds > 0) {
       interval = setInterval(() => {
-        setSeconds((seconds) => seconds + 1);
-        const min = Math.floor(seconds / 60);
-        const sec = seconds % 60;
-        setTime(`${min}:${sec < 10 ? "0" + sec : sec}`);
+        setSeconds((prevSeconds) => prevSeconds - 1);
+        setElapsedSeconds((prevElapsed) => prevElapsed + 1);
       }, 1000);
-    } else if (!isActive && seconds !== 0) {
+    } else if (!isActive || seconds === 0) {
       clearInterval(interval);
     }
-    return () => clearInterval(interval); // Cleanup interval when component unmounts
-  }, [isActive, seconds]);
+
+    // Cập nhật thời gian hiển thị cho đếm ngược
+    const min = Math.floor(seconds / 60);
+    const sec = seconds % 60;
+    setTime(`${min}:${sec < 10 ? "0" + sec : sec}`);
+
+    // Cập nhật thời gian hiển thị cho thời gian đã trôi qua
+    const elapsedMin = Math.floor(elapsedSeconds / 60);
+    const elapsedSec = elapsedSeconds % 60;
+    setElapsedTime(
+      `${elapsedMin}:${elapsedSec < 10 ? "0" + elapsedSec : elapsedSec}`
+    );
+
+    return () => clearInterval(interval); // Cleanup interval khi component bị unmount
+  }, [isActive, seconds, elapsedSeconds]);
 
   return (
     <>
       <div className="progress-card" id="progress-card">
-        <div className="progress-card-title">Trắc nghiệm EQ</div>
+        <div className="progress-card-title">Trắc nghiệm EQ - 10ph</div>
         <div className="text-bar">
           <span>
             Đã hoàn thành: {countt}/{list.length} câu
           </span>
-          <span className="time-clock">Thời gian: {time}</span>
+          <span className="time-clock">Thời gian còn lại: {time}</span>
         </div>
         <ProgressBar
           completed={progress}
