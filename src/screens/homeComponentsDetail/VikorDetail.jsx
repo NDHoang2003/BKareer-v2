@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Vikor() {
   return (
     <body className="body screen-block">
@@ -37,6 +39,13 @@ function Vikor() {
       <div className="detail-txt font-20">
         VIKOR là một phương pháp hiệu quả trong việc ra quyết định đa tiêu chí, đặc biệt là trong các hệ thống phức tạp, giúp giảm thiểu tối đa sự hối tiếc khi lựa chọn phương án.
       </div>
+
+      <Link
+        to="/"
+        className="primary-btn font-18 align-center margin-top-2rem"
+      >
+        Trở về trang chủ
+      </Link>
     </body>
   );
 }

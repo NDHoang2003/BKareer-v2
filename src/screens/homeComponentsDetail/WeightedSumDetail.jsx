@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function WeightedSum() {
   return (
     <body className="body screen-block">
@@ -24,6 +26,13 @@ function WeightedSum() {
       <div className="detail-txt font-20">
         Ví dụ, khi đánh giá ứng viên cho một công việc, có thể sử dụng các tiêu chí như kinh nghiệm, kỹ năng và học vấn, sau đó áp dụng trọng số để tìm ra ứng viên phù hợp nhất.
       </div>
+
+      <Link
+        to="/"
+        className="primary-btn font-18 align-center margin-top-2rem"
+      >
+        Trở về trang chủ
+      </Link>
     </body>
   );
 }
