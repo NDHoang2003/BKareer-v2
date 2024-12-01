@@ -96,7 +96,7 @@ export default function Changepassword() {
       <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <h2 className="text-center font-bold text-blue-800">Đổi mật khẩu</h2>
-        <span>Mật khẩu:</span>
+        <span>Mật khẩu hiện tại:</span>
         <input
           type="password"
           placeholder="Mật khẩu cũ"

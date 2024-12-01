@@ -65,7 +65,7 @@ export default function Dropdown() {
           color="blue-gray"
           className="flex items-center gap-1 py-0.5 pr-2 pl-2.5 lg:ml-auto rounded-none menu font-18 hover:bg-[#4596cf] h-[100%]"
         >
-          <div className="normal-case normal-txt">Bài kiểm tra</div>
+          <div className="normal-case normal-txt font-normal">Bài kiểm tra</div>
           <ChevronDownIcon
             strokeWidth={2.5}
             className={`h-3 w-3 transition-transform ${
