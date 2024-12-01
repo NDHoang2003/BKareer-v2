@@ -79,6 +79,7 @@ export default function Setting() {
               onColor="#358bca"
               checkedIcon={false}
               uncheckedIcon={false}
+              handleDiameter={20}
             />
           </div>
         </div>
@@ -107,6 +108,7 @@ export default function Setting() {
               onColor="#358bca"
               checkedIcon={false}
               uncheckedIcon={false}
+              handleDiameter={20}
             />
           </div>
         </div>
