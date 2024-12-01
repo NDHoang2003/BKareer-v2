@@ -5,10 +5,13 @@ import {
   deleteUserSuccess,
   signOutUserStart,
 } from "../redux/user/userSlice";
+import { useDispatch } from "react-redux";
 
 import Switch from "react-switch";
 
 export default function Setting() {
+  const dispatch = useDispatch();
+
   const handleDeleteUser = async () => {
     try {
       dispatch(deleteUserStart());
@@ -43,7 +46,6 @@ export default function Setting() {
       dispatch(deleteUserFailure(error.message));
     }
   };
-
 
   const [notiChecked, setNotiChecked] = React.useState(false);
   const handleNotiChange = (checked) => {
@@ -83,7 +85,9 @@ export default function Setting() {
       </div>
 
       <div className="mt-6">
-        <div className="bold-txt font-20 text-color-444 mb-1">Cài đặt chung</div>
+        <div className="bold-txt font-20 text-color-444 mb-1">
+          Cài đặt chung
+        </div>
 
         <div className="flex-row">
           <div className="flex-col flex-1">
@@ -109,15 +113,17 @@ export default function Setting() {
 
         <div className="flex-row">
           <div className="flex-col flex-1">
-            <div className="text-color-666 font-18 bold-txt">
-              Xóa tài khoản
-            </div>
+            <div className="text-color-666 font-18 bold-txt">Xóa tài khoản</div>
             <div className="text-color-666 font-16">
-              Loại bỏ hoàn toàn thông tin cá nhân và dữ liệu liên quan của tài khoản khỏi hệ thống
+              Loại bỏ hoàn toàn thông tin cá nhân và dữ liệu liên quan của tài
+              khoản khỏi hệ thống
             </div>
           </div>
 
-          <span onClick={handleDeleteUser} className="text-red-700 cursor-pointer font-18">
+          <span
+            onClick={handleDeleteUser}
+            className="text-red-700 cursor-pointer font-18"
+          >
             Xóa tài khoản
           </span>
         </div>
@@ -130,4 +136,4 @@ export default function Setting() {
       </div>
     </>
   );
-};
+}

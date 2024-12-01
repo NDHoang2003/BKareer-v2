@@ -1284,3 +1284,9 @@ body {
     display: block;
   }
 }
+
+.nav_custom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

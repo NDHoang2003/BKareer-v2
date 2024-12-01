@@ -22,7 +22,10 @@ const OrientationPrompt = ({ children }) => {
   return showPrompt ? (
     <div className="over-noti">
       <div class="phone"></div>
-      <div class="message">Vui lòng xoay ngang để có trải nghiệm tốt nhất!</div>
+      <div class="message">
+        Vui lòng xoay ngang ! Để có trải nghiệm tốt nhất, dùng trên máy tính ở
+        chế độ toàn màn hình
+      </div>
     </div>
   ) : (
     children
