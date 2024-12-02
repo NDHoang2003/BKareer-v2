@@ -143,7 +143,7 @@ export default function EQTest() {
   return (
     <>
       <div className="progress-card" id="progress-card">
-        <div className="progress-card-title">Trắc nghiệm EQ - 10ph</div>
+        <div className="progress-card-title">Trắc nghiệm EQ</div>
         <div className="text-bar">
           <span>
             Đã hoàn thành: {countt}/{list.length} câu

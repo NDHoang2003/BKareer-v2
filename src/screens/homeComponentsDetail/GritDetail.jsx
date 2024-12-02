@@ -5,7 +5,7 @@ import image from "../../assets/images/grit.jpg";
 export default function GritScale() {
   return (
     <body className="body screen-block">
-      <div className="screen-title">Bài kiểm tra Grit Scale</div>
+      <div className="screen-title">Trắc nghiệm Thang đo Bền chí</div>
 
       <img src={image} className="img-detail align-center" />
 

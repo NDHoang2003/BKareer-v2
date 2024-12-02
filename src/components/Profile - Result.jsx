@@ -299,11 +299,11 @@ export default function Result() {
           <div>{work.score}</div>
           <div>{work.time}</div>
           <div>{work.date}</div>
-          <div>Bài kiểm tra tính cách True Colors</div>
+          <div>Trắc nghiệm tính cách True Colors</div>
           <div>{color.score}</div>
           <div>{color.time}</div>
           <div>{color.date}</div>
-          <div>Bài kiểm tra Grit Scale</div>
+          <div>Trắc nghiệm Thang đo Bền chí</div>
           <div>{grit.score}</div>
           <div>{grit.time}</div>
           <div>{grit.date}</div>

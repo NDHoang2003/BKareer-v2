@@ -5,16 +5,16 @@ import image from "../../assets/images/trueColors.jpeg";
 export default function TrueColors() {
   return (
     <body className="body screen-block">
-      <div className="screen-title">Bài kiểm tra tính cách True Colors</div>
+      <div className="screen-title">Trắc nghiệm tính cách True Colors</div>
       
       <img src={image} className="img-detail align-center" />
 
       <div className="detail-txt font-20 margin-top-2rem">
-        <span className="bold-txt">Bài kiểm tra tính cách True Colors</span> - được Don Lowry phát triển vào năm 1978 dựa trên công trình của David Keirsey và Chỉ số loại hình Myers-Briggs (MBTI) - là một công cụ đánh giá tính cách nhằm giúp mọi người hiểu rõ hơn về bản thân và người khác bằng cách phân loại tính cách thành bốn màu chính: Xanh Lam, Xanh Lá, Cam và Vàng. Mỗi màu đại diện cho một tập hợp riêng biệt các đặc điểm, giá trị và sở thích.
+        <span className="bold-txt">Trắc nghiệm tính cách True Colors</span> - được Don Lowry phát triển vào năm 1978 dựa trên công trình của David Keirsey và Chỉ số loại hình Myers-Briggs (MBTI) - là một công cụ đánh giá tính cách nhằm giúp mọi người hiểu rõ hơn về bản thân và người khác bằng cách phân loại tính cách thành bốn màu chính: Xanh Lam, Xanh Lá, Cam và Vàng. Mỗi màu đại diện cho một tập hợp riêng biệt các đặc điểm, giá trị và sở thích.
       </div>
 
       <div className="detail-txt font-20">
-        Bài kiểm tra tính cách True Colors thường được sử dụng để phát triển bản thân và tự nhận thức, giúp mọi người hiểu rõ hơn về điểm mạnh, điểm yếu và sở thích giao tiếp của chính mình. Bằng cách xác định màu sắc chủ đạo của mình, mọi người có thể đưa ra quyết định sáng suốt hơn trong nhiều khía cạnh của cuộc sống, chẳng hạn như lựa chọn nghề nghiệp, mối quan hệ và đặt mục tiêu.
+        Trắc nghiệm tính cách True Colors thường được sử dụng để phát triển bản thân và tự nhận thức, giúp mọi người hiểu rõ hơn về điểm mạnh, điểm yếu và sở thích giao tiếp của chính mình. Bằng cách xác định màu sắc chủ đạo của mình, mọi người có thể đưa ra quyết định sáng suốt hơn trong nhiều khía cạnh của cuộc sống, chẳng hạn như lựa chọn nghề nghiệp, mối quan hệ và đặt mục tiêu.
       </div>
 
       <div className="detail-txt font-20">

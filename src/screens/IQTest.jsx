@@ -138,7 +138,7 @@ export default function IQTest() {
   return (
     <>
       <div className="progress-card" id="progress-card">
-        <div className="progress-card-title">Trắc nghiệm IQ - 20ph</div>
+        <div className="progress-card-title">Trắc nghiệm IQ</div>
         <div className="text-bar">
           <span>Đã hoàn thành: {countt}/20 câu</span>
           <span className="time-clock">Thời gian còn lại: {time}</span>

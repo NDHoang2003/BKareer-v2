@@ -44,11 +44,11 @@ const profileMenuUser = [
     to: "/workStyle",
   },
   {
-    label: "Bài kiểm tra tính cách True Colors",
+    label: "Trắc nghiệm tính cách True Colors",
     to: "/trueColors",
   },
   {
-    label: "Bài kiểm tra Grit Scale",
+    label: "Trắc nghiệm Thang đo Bền chí",
     to: "/gritTest",
   },
 ];

@@ -144,7 +144,7 @@ export default function GritScaleTest() {
   return (
     <>
       <div className="progress-card" id="progress-card">
-        <div className="progress-card-title">Bài kiểm tra Grit Scale</div>
+        <div className="progress-card-title">Trắc nghiệm Thang đo Bền chí</div>
         <div className="text-bar">
           <span>
             Đã hoàn thành: {countt}/{list.length} câu
