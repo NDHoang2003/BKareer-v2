@@ -16,7 +16,7 @@ export default function Setting() {
     try {
       dispatch(deleteUserStart());
       const res = await fetch(
-        `http://localhost:3000/api/user/delete/${currentUser._id}`,
+        `http://103.15.51.131:3000/api/user/delete/${currentUser._id}`,
         {
           method: "DELETE",
         }
