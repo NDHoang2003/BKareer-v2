@@ -6,17 +6,17 @@ import {
   signOutUserStart,
 } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
-
+import { useSelector } from "react-redux";
 import Switch from "react-switch";
 
 export default function Setting() {
   const dispatch = useDispatch();
-
+  const { currentUser } = useSelector((state) => state.user);
   const handleDeleteUser = async () => {
     try {
       dispatch(deleteUserStart());
       const res = await fetch(
-        `http://103.15.51.131:3000/api/user/delete/${currentUser._id}`,
+        `http://localhost:3000/api/user/delete/${currentUser._id}`,
         {
           method: "DELETE",
         }

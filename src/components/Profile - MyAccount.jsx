@@ -92,12 +92,24 @@ export default function MyAccount() {
     <>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
-          onChange={(e) => setFile(e.target.files[0])}
+          onChange={(e) => {
+            const file = e.target.files[0];
+            const maxSize = 2 * 1024 * 1024; // 2MB
+
+            if (file && file.size > maxSize) {
+              alert("Kích thước tệp vượt quá 2MB. Vui lòng chọn tệp khác.");
+              e.target.value = ""; // Reset input
+              return;
+            }
+
+            setFile(file);
+          }}
           type="file"
           ref={fileRef}
           hidden
           accept="image/*"
         />
+
         <img
           onClick={() => fileRef.current.click()}
           src={formData.avatar || currentUser.avatar}
