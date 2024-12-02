@@ -92,7 +92,7 @@ export default function Changepassword() {
   };
 
   return (
-    <div className="body p-3 max-w-lg mx-auto align-center width-30">
+    <div className="body p-3 max-w-lg mx-auto align-center width-45">
       <div className="screen-title">Đổi mật khẩu</div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-0.5">
         <span className="text-color-444">Mật khẩu cũ:</span>
