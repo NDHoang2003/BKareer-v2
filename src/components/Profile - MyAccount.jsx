@@ -135,9 +135,9 @@ export default function MyAccount() {
           onChange={handleChange}
         />
         
-        <div className="flex-self-end mt-0">
+        <div className="flex-self-end">
           <Link to="/changepassword">
-            <span className="text-blue-400 cursor-pointer">Đổi mật khẩu</span>
+            <span className="text-color-primary cursor-pointer">Đổi mật khẩu</span>
           </Link>
         </div>
 
