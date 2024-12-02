@@ -15,7 +15,6 @@ import {
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Checkmark } from "react-checkmark";
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 export default function MyAccount() {
   const fileRef = React.useRef(null);
