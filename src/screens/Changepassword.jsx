@@ -92,19 +92,19 @@ export default function Changepassword() {
   };
 
   return (
-    <div className="p-3 max-w-lg mx-auto">
-      <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <h2 className="text-center font-bold text-blue-800">Đổi mật khẩu</h2>
-        <span>Mật khẩu hiện tại:</span>
+    <div className="body p-3 max-w-lg mx-auto align-center width-30">
+      <div className="screen-title">Đổi mật khẩu</div>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-0.5">
+        <span className="text-color-444">Mật khẩu cũ:</span>
         <input
           type="password"
           placeholder="Mật khẩu cũ"
           id="oldpassword"
-          className="border p-3 rounded-lg"
+          className="mb-4 border p-3 rounded-lg"
           onChange={handleChange}
         />
-        <span>Mật khẩu mới:</span>
+
+        <span className="text-color-444">Mật khẩu mới:</span>
         <input
           type="password"
           placeholder="Mật khẩu mới"
@@ -112,11 +112,12 @@ export default function Changepassword() {
           className="border p-3 rounded-lg"
           onChange={handleChange}
         />
+
         <button
           disabled={loading}
-          className="bg-green-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"
+          className="primary-btn font-18 mt-8"
         >
-          {loading ? "Loading..." : "Thay đổi"}
+          {loading ? "Loading..." : "Đổi mật khẩu"}
         </button>
       </form>
 
