@@ -86,6 +86,8 @@ function LoginForm() {
           />
         </div>
 
+        {error && <p className="red">{error}</p>}
+
         <div className="flex-space-between ">
           <div></div>
           <Link to="/forgotpassword">
@@ -103,8 +105,6 @@ function LoginForm() {
           {loading ? "Đang tải..." : "Đăng nhập"}
         </button>
       </form>
-
-      {error && <p className="red">{error}</p>}
 
       {/* Sign in with Google */}
       <OAuth />
