@@ -27,7 +27,7 @@ function Items({ currentItems, loading }) {
 }
 
 function PaginatedItems({ rssItems, loading }) {
-  const itemsPerPage = 9;
+  const itemsPerPage = 12;
   const [itemOffset, setItemOffset] = useState(0);
   const endOffset = itemOffset + itemsPerPage;
   const currentItems = rssItems.slice(itemOffset, endOffset);
