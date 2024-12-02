@@ -23,7 +23,7 @@ export default function Changepassword() {
       handleFileUpload(file);
     }
   }, [file]);
-  
+
   const [message, setMessage] = React.useState("");
   const [flag, setFlag] = React.useState(true);
   const handleFileUpload = (file) => {
@@ -60,7 +60,7 @@ export default function Changepassword() {
     try {
       if (currentUser) {
         const res = await fetch(
-          "http://localhost:3000/api/user/changepassword",
+          "http://103.15.51.131:3000/api/user/changepassword",
           {
             credentials: "include",
             method: "POST",
@@ -94,6 +94,7 @@ export default function Changepassword() {
   return (
     <div className="body p-3 max-w-lg mx-auto align-center width-45">
       <div className="screen-title">Đổi mật khẩu</div>
+      <div className="mb-5">Chú ý: Không dành cho đăng nhập với google</div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-0.5">
         <span className="text-color-444">Mật khẩu cũ:</span>
         <input
@@ -113,10 +114,7 @@ export default function Changepassword() {
           onChange={handleChange}
         />
 
-        <button
-          disabled={loading}
-          className="primary-btn font-18 mt-8"
-        >
+        <button disabled={loading} className="primary-btn font-18 mt-8">
           {loading ? "Loading..." : "Đổi mật khẩu"}
         </button>
       </form>

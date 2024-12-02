@@ -39,6 +39,7 @@ import GritDetail from "./screens/homeComponentsDetail/GritDetail";
 import PrivateRoute from "./screens/authentication/PrivateRoute";
 import Profile from "./screens/Profile";
 import Changepassword from "./screens/Changepassword";
+import ForgotPass from "./screens/ForgotPass";
 
 function App() {
   const location = useLocation();
@@ -83,6 +84,8 @@ function App() {
         <Route path="/workStyle" element={<WorkStyles />} />
         <Route path="/gritTest" element={<GritTest />} />
         <Route path="/news" element={<News />} />
+        <Route path="/forgotpassword" element={<ForgotPass />} />
+        {/* Profile */}
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/changepassword" element={<Changepassword />} />

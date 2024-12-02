@@ -88,7 +88,11 @@ function LoginForm() {
 
         <div className="flex-space-between ">
           <div></div>
-          <div className="text-color-primary cursor-pointer">Quên mật khẩu?</div>
+          <Link to="/forgotpassword">
+            <div className="text-color-primary cursor-pointer">
+              Quên mật khẩu?
+            </div>
+          </Link>
         </div>
 
         {/* Login Button */}
