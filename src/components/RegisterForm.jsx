@@ -64,6 +64,7 @@ function RegisterForm() {
             required
           />
         </div>
+
         <div className="answer-form">
           <input
             className="input-field width-100"
@@ -74,6 +75,9 @@ function RegisterForm() {
             id="password"
           />
         </div>
+
+        {error && <p className="red">{error}</p>}
+
         <button
           className="primary-btn margin-top-2rem font-18 align-center width-100"
           disabled={loading}
@@ -82,7 +86,6 @@ function RegisterForm() {
         </button>
       </form>
 
-      {error && <p className="red">{error}</p>}
 
       {/* Sign in with Google */}
       <OAuth />

@@ -95,7 +95,7 @@ export default function Changepassword() {
   return (
     <div className="body p-3 max-w-lg mx-auto align-center width-45">
       <div className="screen-title">Đổi mật khẩu</div>
-      <div className="mb-5">Chú ý: Không dành cho đăng nhập với google</div>
+      <div className="mb-4 text-red-700 ">Chú ý: Không hỗ trợ cho tài khoản Đăng nhập với Google</div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-0.5">
         <span className="text-color-444">Mật khẩu cũ:</span>
         <input
@@ -124,7 +124,7 @@ export default function Changepassword() {
 
       <p>
         {updateSuccess ? (
-          <div className="success-noti width-100">
+          <div className="success-noti width-100 mt-4">
             <div className="flex-row flex-items-center width-fit-content">
               <Checkmark size="small" color="#007e5e" className="ml-0 mr-0" />
               <span className="ml-1.5">Đổi mật khẩu thành công!</span>
