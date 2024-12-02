@@ -881,6 +881,20 @@ body {
   color: #fff;
 }
 
+/******************* Notification *******************/
+.success-noti {
+  color: #444;
+  background-color: #f2f8f6;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #9dc3b7;
+}
+.checkmark {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /******************* Buttons *******************/
 .primary-btn {
   background-color: #358bca;

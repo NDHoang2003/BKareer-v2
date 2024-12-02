@@ -14,6 +14,8 @@ import {
 } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { Checkmark } from "react-checkmark";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 export default function MyAccount() {
   const fileRef = React.useRef(null);
@@ -109,11 +111,12 @@ export default function MyAccount() {
               Lỗi tải ảnh lên: Kích thước hình ảnh không được vượt quá 2MB
             </span>
           ) : filePerc > 0 && filePerc < 100 ? (
-            <span className="text-slate-700">{`Uploading ${filePerc}%`}</span>
+            <span className="text-color-444">{`Uploading ${filePerc}%`}</span>
           ) : filePerc === 100 ? (
-            <span className="text-green-700">
-              Ảnh đại diện đã cập nhật thành công!
-            </span>
+            <div className="success-noti flex-row flex-items-center">
+              <Checkmark size="small" color="#007e5e" />
+              <span className="ml-2">Ảnh đại diện tải lên thành công!</span>
+            </div>
           ) : (
             ""
           )}
@@ -134,10 +137,12 @@ export default function MyAccount() {
           className="border p-3 rounded-lg text-color-444"
           onChange={handleChange}
         />
-        
+
         <div className="flex-self-end">
           <Link to="/changepassword">
-            <span className="text-color-primary cursor-pointer">Đổi mật khẩu</span>
+            <span className="text-color-primary cursor-pointer">
+              Đổi mật khẩu
+            </span>
           </Link>
         </div>
 
@@ -147,8 +152,17 @@ export default function MyAccount() {
       </form>
 
       <p className="text-red-700 mt-5">{error ? error : ""}</p>
-      <p className="text-green-700 mt-5">
-        {updateSuccess ? "Cập nhật thông tin thành công!" : ""}
+      <p>
+        {updateSuccess ? (
+          <div className="success-noti width-100">
+            <div className="flex-row flex-items-center width-fit-content">
+              <Checkmark size="small" color="#007e5e" className="ml-0 mr-0"/>
+              <span className="ml-1.5">Cập nhật thông tin thành công!</span>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
       </p>
     </>
   );
