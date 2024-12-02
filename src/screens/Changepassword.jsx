@@ -8,6 +8,7 @@ import {
 } from "firebase/storage";
 import { app } from "../firebase";
 import { useDispatch } from "react-redux";
+import { Checkmark } from "react-checkmark";
 
 export default function Changepassword() {
   const { currentUser, loading, error } = useSelector((state) => state.user);
@@ -114,14 +115,24 @@ export default function Changepassword() {
           onChange={handleChange}
         />
 
+        <p className="text-red-700 mt-5">{flag ? "" : message}</p>
+
         <button disabled={loading} className="primary-btn font-18 mt-8">
           {loading ? "Loading..." : "Đổi mật khẩu"}
         </button>
       </form>
 
-      <p className="text-red-700 mt-5">{flag ? "" : message}</p>
-      <p className="text-green-700 mt-5">
-        {updateSuccess ? "Đổi mật khẩu thành công!" : ""}
+      <p>
+        {updateSuccess ? (
+          <div className="success-noti width-100">
+            <div className="flex-row flex-items-center width-fit-content">
+              <Checkmark size="small" color="#007e5e" className="ml-0 mr-0" />
+              <span className="ml-1.5">Đổi mật khẩu thành công!</span>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
       </p>
     </div>
   );
