@@ -35,6 +35,7 @@ function PaginatedItems({ rssItems, loading }) {
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
+    window.scrollTo(0, 0);
     const newOffset = (event.selected * itemsPerPage) % rssItems.length;
     setItemOffset(newOffset);
   };
@@ -59,6 +60,7 @@ function PaginatedItems({ rssItems, loading }) {
 function News() {
   const [rssItems, setRssItems] = useState([]);
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     const fetchdata = async () => {
       try {
@@ -77,8 +79,9 @@ function News() {
     };
     fetchdata();
   }, []);
+
   return (
-    <body className="body screen-block ">
+    <body className="body screen-block">
       <div className="">
         <div className="screen-title">Tin tức</div>
         <PaginatedItems rssItems={rssItems} loading={loading} />
