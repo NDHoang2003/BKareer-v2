@@ -4,10 +4,7 @@ import clusterList from "../database/CCMajor.js";
 import { BounceLoader } from "react-spinners";
 
 const Panel = ({ majorName, onClose, isOpen, loading }) => {
-  
-
   const majorData = clusterList.getdata(majorName);
-
   
   const override = {
     display: "block",
@@ -15,6 +12,7 @@ const Panel = ({ majorName, onClose, isOpen, loading }) => {
     borderColor: "#04BCFC",
     padding: "20px",
   };
+
   return (
     <div className="Panel" style={{ display: isOpen ? "flex" : "none" }}>
       <BounceLoader

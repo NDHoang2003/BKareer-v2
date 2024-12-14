@@ -6,7 +6,7 @@ import exit from "../assets/remove.png";
 const Panel = ({ Data }) => {
   const closeform = () => {
     document.querySelector(".Panel").style.display = "none";
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     document.getElementById("progress-card").style.display = "block";
   };
 
