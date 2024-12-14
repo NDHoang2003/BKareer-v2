@@ -13,43 +13,43 @@ import { Link } from "react-router-dom";
 const profileMenuUser = [
   {
     label: "Trắc nghiệm tính cách MBTI",
-    to: "/mbti",
+    to: "/mbtiDetail",
   },
   {
     label: "Khám phá năng lực nghề nghiệp",
-    to: "/career",
+    to: "/ccDetail",
   },
   {
     label: "Trắc nghiệm IQ",
-    to: "/iq",
+    to: "/iqDetail",
   },
   {
     label: "Trắc nghiệm EQ",
-    to: "/eq",
+    to: "/eqDetail",
   },
   {
     label: "Trắc nghiệm não trái - não phải",
-    to: "/lrBrain",
+    to: "/lrBrainDetail",
   },
   {
     label: "Trắc nghiệm 3 thiên hướng học tập",
-    to: "/learningStyle",
+    to: "/learningStyleDetail",
   },
   {
     label: "Trắc nghiệm 5 yếu tố tính cách",
-    to: "/fivePer",
+    to: "/fivePerDetail",
   },
   {
     label: "Trắc nghiệm Phong Cách Làm Việc",
-    to: "/workStyle",
+    to: "/workStyleDetail",
   },
   {
     label: "Trắc nghiệm tính cách True Colors",
-    to: "/trueColors",
+    to: "/colorsDetail",
   },
   {
     label: "Trắc nghiệm Thang đo Bền chí",
-    to: "/gritTest",
+    to: "/gritDetail",
   },
 ];
 
