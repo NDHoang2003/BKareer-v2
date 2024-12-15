@@ -212,6 +212,7 @@ export default function LeftRightBrainTest() {
           data-testid="loader"
           cssOverride={override}
         />
+
         {!loading && (
           <div className="result_form margin-top-panel">
             <img
@@ -235,7 +236,16 @@ export default function LeftRightBrainTest() {
                   />
                   <span>{brain.content}</span>
                 </div>
+
                 <p>{brain.description}</p>
+
+                <p className="mt-2">
+                  {brain.char}
+                </p>
+
+                <p className="mt-2">
+                  {brain.job}
+                </p>
               </div>
             </div>
           </div>

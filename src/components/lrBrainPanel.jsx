@@ -34,6 +34,7 @@ const Panel = ({ Data }) => {
               />
               <span>{Data.content}</span>
             </div>
+
             <p>{Data.description}</p>
           </div>
         </div>
