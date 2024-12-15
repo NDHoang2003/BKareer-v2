@@ -7,7 +7,7 @@ function MajorTest() {
       <div className="screen-title">Bài kiểm tra định hướng ngành nghề</div>
       <img src={image} className="img-major"/>
       <div className="font-20 mb-6">Bài kiểm tra định hướng ngành nghề BKareer bao gồm 2 phần: Bài trắc nghiệm tính cách MBTI và Bài trắc nghiệm khám phá năng lực nghề nghiệp. Sau khi hoàn thành cả 2 phần trên, bạn sẽ khám phá được những điểm nổi trội của mình và nhận được gợi ý các thông tin ngành nghề - nghề nghiệp bạn nên ưu tiên tìm hiểu.</div>
-      <Link className="primary-btn font-18 align-center" to="/mbti">Bắt đầu ngay</Link>
+      <Link className="primary-btn font-18 align-center" to="/mbtiDetail">Bắt đầu ngay</Link>
       <div className="align-center width-fit-content margin-top-1rem">
         <span className="font-18">Đã thực hiện kiểm tra? </span>
         <Link className="primary-txt-btn font-18" to="/majorResult">Nhập kết quả ngay</Link>

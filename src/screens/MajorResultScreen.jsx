@@ -290,7 +290,7 @@ function MajorResult() {
           />
           <Link
             className="primary-outline-btn font-18 margin-left-10 flex-self-start"
-            to="/career"
+            to="/ccDetail"
           >
             Kiểm tra ngay
           </Link>
